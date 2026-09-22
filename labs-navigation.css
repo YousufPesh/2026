@@ -30,9 +30,12 @@
 
 @media (max-width: 480px) {
   .labs-navigation {
-    justify-content: space-between;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px 9px;
     padding-inline: 10px;
-    font-size: .84rem;
+    font-size: .78rem;
   }
+
+  .labs-navigation a { min-width: 0; text-align: center; }
 }

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virtual Teaching Assistant Lab · CampusMind</title>
+  <meta name="description" content="A focused companion to the CampusMind Virtual Teaching Assistant demo, showing LMS access and the questions students can ask throughout a course.">
+  <meta name="theme-color" content="#023347">
+  <link rel="icon" href="/assets/campusmind-favicon.png">
+  <link rel="stylesheet" href="/labs-navigation.css">
+  <link rel="stylesheet" href="/virtual-teaching-assistant.css">
+  <script src="/virtual-teaching-assistant.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the Virtual Teaching Assistant Lab</a>
+  <nav class="labs-navigation" aria-label="Labs">
+    <a href="/">Labs</a>
+    <a href="/accessibility.html">Accessibility</a>
+    <a href="/recruitment.html">Recruitment</a>
+    <a href="/retention.html">Retention</a>
+    <a href="/ontology.html">Ontology</a>
+    <a href="/virtual-teaching-assistant.html" aria-current="page">Teaching assistant</a>
+  </nav>
+
+  <div class="story-shell">
+    <header class="brand-header">
+      <img src="/assets/campusmind-logo.svg" alt="CampusMind" width="140" height="30">
+      <span>Virtual Teaching Assistant demo companion</span>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <header class="intro">
+        <p class="eyebrow">Virtual Teaching Assistant</p>
+        <h1>Course help, right where students are learning.</h1>
+        <p>Students can get course-aware support directly inside Canvas, Blackboard, and Brightspace D2L.</p>
+      </header>
+
+      <section class="integration-section" aria-labelledby="integration-title">
+        <div class="section-heading">
+          <p class="section-number" aria-hidden="true">01</p>
+          <div>
+            <p class="eyebrow">Inside the LMS</p>
+            <h2 id="integration-title">One assistant. Three course environments.</h2>
+          </div>
+        </div>
+
+        <div class="integration-stage">
+          <div class="lms-tabs" role="tablist" aria-label="Choose a learning management system">
+            <button id="canvas-tab" type="button" role="tab" aria-selected="true" aria-controls="canvas-panel" tabindex="0">
+              <span class="platform-mark canvas-mark" aria-hidden="true">C</span><span>Canvas</span>
+            </button>
+            <button id="blackboard-tab" type="button" role="tab" aria-selected="false" aria-controls="blackboard-panel" tabindex="-1">
+              <span class="platform-mark blackboard-mark" aria-hidden="true">B</span><span>Blackboard</span>
+            </button>
+            <button id="d2l-tab" type="button" role="tab" aria-selected="false" aria-controls="d2l-panel" tabindex="-1">
+              <span class="platform-mark d2l-mark" aria-hidden="true">D2L</span><span>Brightspace</span>
+            </button>
+          </div>
+
+          <div class="lms-panels">
+            <figure id="canvas-panel" role="tabpanel" aria-labelledby="canvas-tab" tabindex="0">
+              <div class="screenshot-placeholder">
+                <span class="placeholder-kicker">Canvas</span>
+                <div class="placeholder-frame" aria-hidden="true"><span></span><span></span><span></span><strong>Virtual Teaching Assistant</strong></div>
+                <p>Canvas course view</p>
+                <small>Product screenshot forthcoming</small>
+              </div>
+              <figcaption>Students ask for help without leaving their Canvas course.</figcaption>
+            </figure>
+            <figure id="blackboard-panel" role="tabpanel" aria-labelledby="blackboard-tab" tabindex="0" hidden>
+              <div class="screenshot-placeholder">
+                <span class="placeholder-kicker">Blackboard</span>
+                <div class="placeholder-frame" aria-hidden="true"><span></span><span></span><span></span><strong>Virtual Teaching Assistant</strong></div>
+                <p>Blackboard course view</p>
+                <small>Product screenshot forthcoming</small>
+              </div>
+              <figcaption>Students ask for help without leaving their Blackboard course.</figcaption>
+            </figure>
+            <figure id="d2l-panel" role="tabpanel" aria-labelledby="d2l-tab" tabindex="0" hidden>
+              <div class="screenshot-placeholder">
+                <span class="placeholder-kicker">Brightspace D2L</span>
+                <div class="placeholder-frame" aria-hidden="true"><span></span><span></span><span></span><strong>Virtual Teaching Assistant</strong></div>
+                <p>Brightspace D2L course view</p>
+                <small>Product screenshot forthcoming</small>
+              </div>
+              <figcaption>Students ask for help without leaving their Brightspace course.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="questions-section" aria-labelledby="questions-title">
+        <div class="section-heading">
+          <p class="section-number" aria-hidden="true">02</p>
+          <div>
+            <p class="eyebrow">Throughout the course</p>
+            <h2 id="questions-title">Help with the questions students already ask.</h2>
+            <p class="section-intro">From getting started on an assignment to catching up on a missed lecture.</p>
+          </div>
+        </div>
+
+        <div class="question-groups">
+          <article class="question-group assignment-group">
+            <header><span class="category-icon" aria-hidden="true">01</span><div><p>Assignment help</p><h3>Find a productive next step.</h3></div></header>
+            <ul>
+              <li>I'm stuck on the assignment about periodic trends. Can you guide me on how to start?</li>
+              <li>Can you explain the concept of electronegativity in simple terms?</li>
+              <li>What method should I use to solve the stoichiometry problems in my assignment?</li>
+              <li>Can you help me create a timeline for my project on chemical bonding due next week?</li>
+            </ul>
+          </article>
+
+          <article class="question-group content-group">
+            <header><span class="category-icon" aria-hidden="true">02</span><div><p>Course content</p><h3>Reconnect with the course.</h3></div></header>
+            <span class="context-chip">Course-aware</span>
+            <ul>
+              <li>Has Professor Kamran announced any extra credit opportunities recently?</li>
+              <li>Can you summarize the key points from Unit 5 — The Atom?</li>
+              <li>What are the main takeaways from the reading on thermochemistry?</li>
+              <li>I missed class on 9/7. What did I miss in the lecture on gases?</li>
+            </ul>
+          </article>
+
+          <article class="question-group quiz-group">
+            <header><span class="category-icon" aria-hidden="true">03</span><div><p>Quiz help</p><h3>Prepare with purpose.</h3></div></header>
+            <ul>
+              <li>Can you help me create a checklist of what I should understand before taking the quiz on atomic structure?</li>
+              <li>What are some high-priority topics that usually show up on quizzes about bonding and nomenclature?</li>
+              <li>Can you generate a study guide based on this week's content on the mole concept?</li>
+            </ul>
+          </article>
+
+          <article class="question-group lecture-group">
+            <header><span class="category-icon" aria-hidden="true">04</span><div><p>Lecture and video help</p><h3>Return to the moment that matters.</h3></div></header>
+            <ul><li>Can you provide the video lecture on balancing chemical equations?</li></ul>
+          </article>
+
+          <article class="question-group guardrail-group">
+            <header><span class="category-icon" aria-hidden="true">05</span><div><p>Guardrails</p><h3>Some requests need a different kind of help.</h3></div></header>
+            <p class="guardrail-note">The assistant maintains the course boundary while helping the student keep learning.</p>
+            <ul>
+              <li><span>Direct quiz answer</span>Can you just give me the correct answers for my quiz on thermochemistry?</li>
+              <li><span>Complete student work</span>Can you complete my assignment on the periodic table and give me the final result?</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <footer class="closing">
+        <p>Support that stays connected to the course.</p>
+        <ul aria-label="Virtual Teaching Assistant summary"><li>Inside the LMS</li><li>Course-aware</li><li>Learning-focused</li></ul>
+      </footer>
+    </main>
+  </div>
+  <p class="sr-only" id="platform-status" role="status" aria-live="polite"></p>
+</body>
+</html>
