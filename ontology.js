@@ -1,431 +1,347 @@
 'use strict';
 const $ = id => document.getElementById(id);
-const announce = msg => { $('live').textContent = msg; };
-const SOURCES = 13;
+const announce = m => { $('live').textContent = m; };
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; };
 
-/* ---------- 01 · connection maths ---------- */
-const usecases = $('usecases');
-function renderLayer() {
-  const u = Number(usecases.value);
-  const direct = SOURCES * u;
-  const layered = SOURCES + u;
-  $('usecases-value').textContent = u === 1 ? '1 use case' : u + ' use cases';
-  $('direct-count').textContent = direct.toLocaleString();
-  $('layer-count').textContent = layered.toLocaleString();
-  $('direct-note').textContent = `${SOURCES} source systems × ${u} use case${u === 1 ? '' : 's'}.`;
-  $('layer-note').textContent = `${SOURCES} systems into the layer, plus ${u} use case${u === 1 ? '' : 's'} reading from it.`;
-  $('direct-col').classList.toggle('is-heavy', direct > layered);
-  $('layer-verdict').textContent = u === 1
-    ? 'At one use case the direct route is one connection cheaper. Move the slider.'
-    : `At ${u} use cases the direct route costs ${(direct - layered).toLocaleString()} more connections — every one of them a separate credential, contract and point of failure.`;
-}
-usecases.addEventListener('input', renderLayer);
-
-/* ---------- 02 · source domains ---------- */
-const DOMAINS = [
-  ['Student information', 'Banner, Ellucian Colleague, Workday Student, PeopleSoft', 'Students, terms, sections, enrollments, degree progress, program history'],
-  ['Learning management', 'Canvas, Blackboard, Moodle, D2L', 'Assignments, submissions, grades, attendance, LMS activity'],
-  ['Student financials', 'Banner Finance, Workday, TouchNet', 'Student accounts, balances, holds, payments'],
-  ['Financial aid', 'PowerFAIDS, Banner Financial Aid', 'Aid awards, verification status, scholarships'],
-  ['Student success', 'EAB Navigate, Starfish, Civitas', 'Advising cases, appointments, alerts, interventions, risk'],
-  ['Admissions CRM', 'Slate, Salesforce Education Cloud, TargetX', 'Prospects, applications, application events'],
-  ['Housing', 'StarRez, Adirondack', 'Residence halls, housing assignments, meal plans'],
-  ['Engagement', 'Anthology Engage, Presence, CampusGroups', 'Clubs, memberships, campus events, registrations'],
-  ['Career services', 'Handshake, Symplicity', 'Internships, career appointments'],
-  ['Accessibility', 'AIM, Accommodate', 'Approved accommodations'],
-  ['International', 'Terra Dotta, SEVIS', 'Visa type, expiry, SEVIS status'],
-  ['Facilities and IT', 'ServiceNow, TMA', 'Assets, work orders, service requests, helpdesk tickets'],
-  ['Advancement', "Raiser's Edge, Ellucian Advance", 'Alumni, gifts']
-];
-const chipWrap = $('domain-chips');
-DOMAINS.forEach((d, i) => {
-  const b = document.createElement('button');
-  b.type = 'button';
-  b.textContent = d[0];
-  b.setAttribute('aria-pressed', String(i === 0));
-  b.addEventListener('click', () => {
-    [...chipWrap.children].forEach(el => el.setAttribute('aria-pressed', String(el === b)));
-    $('domain-system').textContent = d[1];
-    $('domain-holds').textContent = d[2];
-    announce(`${d[0]}: ${d[1]}. Holds ${d[2]}.`);
-  });
-  chipWrap.appendChild(b);
+/* ================= presenter notes ================= */
+$('notes-on').addEventListener('change', e => {
+  document.querySelectorAll('.pnote').forEach(p => { p.hidden = !e.target.checked; });
 });
 
-/* ---------- 03 · the same question, two answers ---------- */
-const EXAMPLES = {
+/* ================= 01 · architecture stack ================= */
+const LAYERS = [
+  { key: 'people', name: 'People', tag: 'one interface', chips: ['Students', 'Faculty', 'Advisors', 'Staff', 'Leadership'] },
+  { key: 'campusmind', name: 'CampusMind', tag: '3,000+ connectors', chips: ['Recruitment', 'Retention', 'Student success', 'AI Studio', 'Marketplace'] },
+  { boundary: 'No institutional data crosses this line' },
+  { key: 'agents', name: 'Fabric data agents', tag: 'read only', chips: ['Housing', 'Finance', 'Academic', 'Advising', 'Enrollment'] },
+  { key: 'fabriciq', name: 'Fabric IQ', tag: 'preview', core: true, chips: ['Ontology', 'Semantic models', 'Certified metrics'] },
+  { key: 'onelake', name: 'OneLake', tag: 'you own this', chips: ['raw → cleaned → certified', 'Full lineage', 'Open Delta'] },
+  { key: 'sources', name: 'Source systems', tag: 'nothing replaced', chips: ['SIS', 'LMS', 'CRM', 'Finance', 'Housing', 'Advising'] }
+];
+const stack = $('stack');
+LAYERS.forEach((L, i) => {
+  if (L.boundary) {
+    const b = document.createElement('div');
+    b.className = 'boundary';
+    b.textContent = L.boundary;
+    stack.appendChild(b);
+    return;
+  }
+  if (i > 0 && !LAYERS[i - 1].boundary) {
+    const f = document.createElement('div');
+    f.className = 'flow-mark';
+    f.setAttribute('aria-hidden', 'true');
+    f.innerHTML = '<span class="flow-down">↓</span><span class="flow-up">↑</span>';
+    stack.appendChild(f);
+  }
+  const d = document.createElement('div');
+  d.className = 'layer' + (L.core ? ' is-core' : '');
+  d.dataset.layer = L.key;
+  d.innerHTML = '<span class="layer-rail"></span>' +
+    '<span class="layer-head"><span class="layer-name"></span><span class="layer-tag"></span></span>' +
+    '<span class="layer-chips"></span>';
+  d.querySelector('.layer-name').textContent = L.name;
+  d.querySelector('.layer-tag').textContent = L.tag;
+  d.querySelector('.layer-chips').innerHTML = L.chips.map(c => `<span>${c}</span>`).join('');
+  stack.appendChild(d);
+});
+const spine = document.createElement('div');
+spine.className = 'spine';
+spine.textContent = 'Entra identity · row & column security · Purview · audit trail';
+stack.appendChild(spine);
+
+const TRACE = [
+  ['[data-layer=people]', 'down', 'An advisor asks.'],
+  ['[data-layer=campusmind]', 'down', 'Routed by role.'],
+  ['.boundary', 'down', 'The question crosses. Data never crosses back.'],
+  ['[data-layer=agents]', 'down', 'Read-only query, run as that person.'],
+  ['[data-layer=fabriciq]', 'down', 'Words resolved. Number certified.'],
+  ['[data-layer=onelake]', 'down', 'One governed copy.'],
+  ['[data-layer=sources]', 'down', 'Nothing was replaced.'],
+  ['[data-layer=fabriciq]', 'up', 'Only the answer comes back.'],
+  ['[data-layer=campusmind]', 'up', 'Same permissions.'],
+  ['[data-layer=people]', 'up', 'An answer no single system could give.']
+];
+let tTimer = null, tStep = 0;
+const playBtn = $('trace-play'), cap = $('trace-caption');
+function clearMarks() {
+  document.querySelectorAll('.is-lit,.is-answer').forEach(e => e.classList.remove('is-lit', 'is-answer'));
+  document.querySelectorAll('.flow-down,.flow-up').forEach(e => e.classList.remove('is-on'));
+}
+function stepTrace() {
+  clearMarks();
+  const [sel, dir, text] = TRACE[tStep];
+  const node = document.querySelector(sel);
+  if (node) node.classList.add(dir === 'down' ? 'is-lit' : 'is-answer');
+  document.querySelectorAll(dir === 'down' ? '.flow-down' : '.flow-up').forEach(f => f.classList.add('is-on'));
+  cap.textContent = text;
+  tStep++;
+  if (tStep < TRACE.length) {
+    tTimer = setTimeout(stepTrace, REDUCED ? 2400 : 1400);
+  } else {
+    tTimer = setTimeout(() => {
+      clearMarks();
+      cap.textContent = '';
+      playBtn.disabled = false;
+      playBtn.textContent = '▶ Trace again';
+    }, 2600);
+  }
+}
+playBtn.addEventListener('click', () => {
+  if (tTimer) clearTimeout(tTimer);
+  clearMarks();
+  tStep = 0;
+  playBtn.disabled = true;
+  playBtn.textContent = 'Tracing…';
+  stepTrace();
+});
+
+/* ================= 02 · connection networks ================= */
+const SRC = 13;
+function drawDirect(u) {
+  const svg = $('net-direct');
+  svg.textContent = '';
+  const srcY = i => 14 + i * (212 / (SRC - 1));
+  const useY = i => u === 1 ? 120 : 14 + i * (212 / (u - 1));
+  const g = el('g', {});
+  for (let s = 0; s < SRC; s++) for (let k = 0; k < u; k++)
+    g.appendChild(el('line', { x1: 22, y1: srcY(s), x2: 178, y2: useY(k), class: 'net-line' }));
+  svg.appendChild(g);
+  for (let s = 0; s < SRC; s++) svg.appendChild(el('circle', { cx: 22, cy: srcY(s), r: 4, class: 'net-src' }));
+  for (let k = 0; k < u; k++) svg.appendChild(el('circle', { cx: 178, cy: useY(k), r: 4, class: 'net-use' }));
+}
+function drawLayer(u) {
+  const svg = $('net-layer');
+  svg.textContent = '';
+  const srcY = i => 14 + i * (212 / (SRC - 1));
+  const useY = i => u === 1 ? 120 : 14 + i * (212 / (u - 1));
+  for (let s = 0; s < SRC; s++) svg.appendChild(el('line', { x1: 22, y1: srcY(s), x2: 100, y2: 120, class: 'net-line-hub' }));
+  for (let k = 0; k < u; k++) svg.appendChild(el('line', { x1: 100, y1: 120, x2: 178, y2: useY(k), class: 'net-line-hub' }));
+  for (let s = 0; s < SRC; s++) svg.appendChild(el('circle', { cx: 22, cy: srcY(s), r: 4, class: 'net-src' }));
+  for (let k = 0; k < u; k++) svg.appendChild(el('circle', { cx: 178, cy: useY(k), r: 4, class: 'net-use' }));
+  svg.appendChild(el('rect', { x: 88, y: 100, width: 24, height: 40, rx: 5, class: 'net-hub' }));
+}
+function renderNets() {
+  const u = Number($('usecases').value);
+  const direct = SRC * u, layered = SRC + u;
+  $('usecases-value').textContent = u;
+  $('net-direct-n').textContent = direct.toLocaleString();
+  $('net-layer-n').textContent = layered.toLocaleString();
+  $('net-direct-card').classList.toggle('is-heavy', direct > layered);
+  drawDirect(u);
+  drawLayer(u);
+  announce(`${u} use cases. ${direct} point-to-point connections against ${layered} through one layer.`);
+}
+$('usecases').addEventListener('input', renderNets);
+
+/* ================= 03 · the systems ================= */
+const SYSTEMS = ['Student information', 'Learning management', 'Student financials', 'Financial aid', 'Student success', 'Admissions CRM', 'Housing', 'Engagement', 'Career services', 'Accessibility', 'International', 'Facilities & IT', 'Advancement'];
+$('sys-field').innerHTML = SYSTEMS.map(s => `<div class="sys-tile">${s}</div>`).join('');
+document.querySelectorAll('[data-sysview]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-sysview]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  const linked = b.dataset.sysview === 'layer';
+  $('sys-field').classList.toggle('is-linked', linked);
+  $('sys-bar').hidden = !linked;
+  $('sys-caption').textContent = linked
+    ? 'One definition of a student · permissions applied once'
+    : 'Thirteen contracts · thirteen logins · thirteen definitions of a student';
+  announce($('sys-caption').textContent);
+}));
+
+/* ================= dot grid helper ================= */
+function buildDots(node, total) {
+  node.textContent = '';
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < total; i++) frag.appendChild(document.createElement('span'));
+  node.appendChild(frag);
+  return [...node.children];
+}
+
+/* ================= 04 · rows vs people ================= */
+const EX = {
   events: {
-    kicker: 'EVENT ATTENDANCE',
-    raw: '1,200', rawCap: 'event registrations on record',
-    onto: '398', ontoCap: 'students who actually attended',
-    gap: 'A 3× gap, invisible in the raw table.',
-    reasons: [
-      '<strong>601</strong> of the 1,200 registrations are faculty and staff, not students.',
-      'Of the 599 student registrations, <strong>201</strong> did not show up.'
+    total: 1200, raw: '1,200', rawCap: 'rows in the table', onto: '398', ontoCap: 'actual students',
+    steps: [
+      { n: 601, cls: 'd-grey', label: '601 faculty & staff' },
+      { n: 201, cls: 'd-hollow', label: '201 never showed up' }
     ],
-    rel: '<code>Event Registration</code> links to <code>Student</code> <strong>only</strong> when <code>attendee_type</code> is Student, through a dedicated mapping table.',
-    takeaway: 'Both numbers are correct. They answer different questions. Your engagement report has been using the first one.'
+    legend: [['', 'attended'], ['d-grey', 'faculty & staff'], ['d-hollow', 'no-show']],
+    rel: '<code>Event Registration</code> → <code>Student</code> only when <code>attendee_type</code> is Student.'
   },
   housing: {
-    kicker: 'WHO LIVES IN A HALL',
-    raw: '148', rawCap: 'housing assignment records',
-    onto: '115', ontoCap: 'people actually living there',
-    gap: 'A 33-person gap between the system of record and the building.',
-    reasons: [
-      '<strong>15</strong> were assigned and never checked in.',
-      '<strong>11</strong> checked out while the record stayed open.',
-      '<strong>7</strong> changed rooms mid-semester, so they hold two open records each.'
+    total: 148, raw: '148', rawCap: 'assignment records', onto: '115', ontoCap: 'people living there',
+    steps: [
+      { n: 15, cls: 'd-grey', label: '15 never checked in' },
+      { n: 11, cls: 'd-hollow', label: '11 checked out' },
+      { n: 7, cls: 'd-gold', label: '7 duplicate records' }
     ],
-    rel: '<code>resides_in</code> means checked in and not checked out. <code>has_assignment_in</code> means holding a record of any kind. Two named relationships between the same two entities — and the ontology tells you which question each one answers.',
-    takeaway: 'The housing office reports 148 because that is what its system holds. 115 people sleep there. The ontology names both instead of picking one.'
+    legend: [['', 'resides_in'], ['d-grey', 'never checked in'], ['d-hollow', 'checked out'], ['d-gold', 'duplicate record']],
+    rel: '<code>resides_in</code> vs <code>has_assignment_in</code> — two relationships, two correct numbers.'
   }
 };
+let exKey = 'events', dotCells = [], dTimer = null;
 function renderExample(key) {
-  const e = EXAMPLES[key];
-  $('ex-kicker').textContent = e.kicker;
+  exKey = key;
+  const e = EX[key];
+  if (dTimer) clearTimeout(dTimer);
   $('raw-value').textContent = e.raw;
   $('raw-caption').textContent = e.rawCap;
   $('onto-value').textContent = e.onto;
   $('onto-caption').textContent = e.ontoCap;
-  $('gap-line').textContent = e.gap;
-  $('reason-list').innerHTML = e.reasons.map(r => `<li>${r}</li>`).join('');
   $('relationship-text').innerHTML = e.rel;
-  $('ex-takeaway').textContent = e.takeaway;
-  announce(`${e.kicker}. ${e.raw} ${e.rawCap} against ${e.onto} ${e.ontoCap}. ${e.takeaway}`);
+  $('dot-legend').innerHTML = e.legend.map(l => `<span><i class="${l[0]}" style="${l[0] ? '' : 'background:#087985'}"></i>${l[1]}</span>`).join('');
+  dotCells = buildDots($('dots'), e.total);
+  $('dots-alt').textContent = `${e.raw} ${e.rawCap}, of which ${e.onto} are ${e.ontoCap}.`;
+  $('dots-play').disabled = false;
+  $('dots-play').textContent = '▶ Show the gap';
+  announce(`${e.raw} ${e.rawCap} against ${e.onto} ${e.ontoCap}.`);
 }
+$('dots-play').addEventListener('click', () => {
+  const e = EX[exKey];
+  dotCells.forEach(c => { c.className = ''; });
+  $('raw-value').textContent = e.raw;
+  $('raw-caption').textContent = e.rawCap;
+  $('dots-play').disabled = true;
+  let cursor = e.total, si = 0;
+  const run = () => {
+    if (si >= e.steps.length) {
+      $('dots-play').disabled = false;
+      $('dots-play').textContent = '▶ Again';
+      return;
+    }
+    const s = e.steps[si];
+    for (let i = cursor - s.n; i < cursor; i++) dotCells[i].className = s.cls;
+    cursor -= s.n;
+    $('raw-value').textContent = cursor.toLocaleString();
+    $('raw-caption').textContent = 'minus ' + s.label;
+    announce(s.label);
+    si++;
+    dTimer = setTimeout(run, REDUCED ? 2200 : 1300);
+  };
+  dTimer = setTimeout(run, 400);
+});
 document.querySelectorAll('[data-example]').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('[data-example]').forEach(el => el.setAttribute('aria-pressed', String(el === b)));
+  document.querySelectorAll('[data-example]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
   renderExample(b.dataset.example);
 }));
 
-/* ---------- 04 · question threads ---------- */
+/* ================= 05 + 07 · questions ================= */
 const THREADS = {
-  opener: {
-    intro: 'Thirty seconds, and the fastest way to make a room understand why a semantic layer exists. Run it before any other thread.',
-    questions: [
-      {
-        step: 'ASK FIRST',
-        q: 'How many campus event registrations do we have on record?',
-        expect: '1,200 registrations.',
-        say: 'This is the number your engagement report uses. It counts rows in a table.'
-      },
-      {
-        step: 'THEN ASK',
-        q: 'How many students actually attended a campus event this term?',
-        expect: '398 students. The gap comes from two independent errors, and both are invisible in the raw table.',
-        say: 'Both numbers are correct. They answer different questions. The first counts rows. The second counts students who walked through a door.'
-      }
-    ]
-  },
-  finance: {
-    intro: 'One term from a degree, blocked by money. Four questions, one population the whole way through — each answer should change how the room feels about the previous one.',
-    questions: [
-      {
-        step: 'BEAT 1 · ~2 MIN',
-        q: 'Which students are within one term of a degree but will be stopped from registering, and what is actually stopping each one?',
-        expect: '25 students, named, with the specific blocker for each. It resolves what “within one term of a degree” means against a definition this institution owns.',
-        say: 'It is crossing four systems that have never been joined. Degree progress from the SIS. Holds from the bursar. Balances from student accounts. Risk context from advising. No one person here has access to all four.'
-      },
-      {
-        step: 'BEAT 2 · ~30 SEC · EXPECT A REFUSAL',
-        q: 'Which of those students were flagged, assigned to someone, and never actually reached?',
-        expect: 'It declines — and explains which relationship does not exist, then offers a proxy definition with the caveat attached.',
-        say: 'It did not guess. Every CIO in the room fears confident wrongness. You cannot argue them out of it. You can only show them a system that declines when it cannot prove an answer.'
-      },
-      {
-        step: 'BEAT 3 · ~1 MIN',
-        q: 'How many of those 25 students have a financial aid advising case?',
-        expect: 'Zero.',
-        say: 'The institution carries dozens of open financial aid cases. None of them are these people. Nobody is doing anything wrong — nobody can see across the systems.'
-      },
-      {
-        step: 'BEAT 4 · ~1.5 MIN',
-        q: 'Have those 25 students made any payments this term, do they have financial aid on file, and what would it cost to clear all of their balances?',
-        expect: 'All 25 made a payment this term. They are not delinquent, they are short. $80,500 total, median balance $2,500.',
-        say: 'Eighty thousand dollars. To keep twenty-five students who are one term from a degree, at an institution that will spend considerably more than that recruiting their replacements.'
-      }
-    ]
-  },
-  housing: {
-    intro: 'A smaller, separate build — four entities and six relationships. The cleanest ontology story in the set, because every relationship is a phrase a housing director says out loud.',
-    questions: [
-      {
-        step: 'BEAT 1',
-        q: 'How many students currently reside in Kestrel Hall, and how many hold a housing assignment record there?',
-        expect: '115 current residents. 148 assignment records, belonging to 141 distinct people.',
-        say: 'Both numbers are correct. The ontology does not hide the disagreement — it names both relationships and tells you which is which.'
-      },
-      {
-        step: 'BEAT 2',
-        q: 'If Kestrel Hall goes offline for renovation in Fall 2027, how many current residents would need rehousing?',
-        expect: '92 — not 115, because 14 of the current residents graduate before Fall 2027 and are not displaced at all.',
-        say: 'A planner with a spreadsheet counts residents. This counted residents who will still be here. That difference is fourteen people, and it came from degree progress — which is not a housing system at all.'
-      },
-      {
-        step: 'BEAT 3',
-        q: 'For each accommodation requirement held by Kestrel residents, how many suitable vacant beds exist in the other halls?',
-        expect: 'Four constraints are comfortable. Accessible Bathroom is a hard blocker: 7 students, 3 vacant beds elsewhere, a gap of −4.',
-        say: 'This is the relationship no analyst would think to write. Room satisfies Accommodation — not a foreign key, a statement about what a room is capable of. Without it, four students find out in August.'
-      }
-    ]
-  }
+  opener: [
+    { step: 'ASK FIRST', q: 'How many campus event registrations do we have on record?', expect: '1,200' },
+    { step: 'THEN ASK', q: 'How many students actually attended a campus event this term?', expect: '398' }
+  ],
+  finance: [
+    { step: 'BEAT 1 · ~2 MIN', q: 'Which students are within one term of a degree but will be stopped from registering, and what is actually stopping each one?', expect: '25 students, named' },
+    { step: 'BEAT 2 · EXPECT A REFUSAL', q: 'Which of those students were flagged, assigned to someone, and never actually reached?', expect: 'It declines' },
+    { step: 'BEAT 3', q: 'How many of those 25 students have a financial aid advising case?', expect: 'Zero' },
+    { step: 'BEAT 4', q: 'Have those 25 students made any payments this term, do they have financial aid on file, and what would it cost to clear all of their balances?', expect: '$80,500' }
+  ],
+  housing: [
+    { step: 'BEAT 1', q: 'How many students currently reside in Kestrel Hall, and how many hold a housing assignment record there?', expect: '115 vs 148' },
+    { step: 'BEAT 2', q: 'If Kestrel Hall goes offline for renovation in Fall 2027, how many current residents would need rehousing?', expect: '92, not 115' },
+    { step: 'BEAT 3', q: 'For each accommodation requirement held by Kestrel residents, how many suitable vacant beds exist in the other halls?', expect: '−4 accessible beds' }
+  ]
 };
-
-const STUDENT_QUESTIONS = [
-  {
-    step: 'ASK AS THE STUDENT',
-    q: 'Do I have a financial hold on my student account for Fall 2026, and what is my balance?',
-    expect: 'Hold flag Yes, balance $4,800, and what she can do about it.',
-    say: 'Today she gets this from a red banner that says “hold, contact the bursar.” It does not say why, how much, or what would clear it.'
-  },
-  {
-    step: 'THEN ASK',
-    q: 'What courses am I enrolled in for Fall 2026?',
-    expect: 'Her three courses for the term.',
-    say: 'Ask this one on its own first — it keeps the next answer complete.'
-  },
-  {
-    step: 'THEN ASK',
-    q: 'Show me everything I have going on this term: my courses, my housing, my meal plan, my clubs, and anything open with my advisor.',
-    expect: 'Residence hall and room, meal plan and dining balance, club memberships, advising appointments with outcomes, and an open tutoring case.',
-    say: 'Six logins, six passwords, six interfaces — and no student has ever seen all of it on one screen. This is one question.'
-  }
+const STUDENT_Q = [
+  { step: 'AS THE STUDENT', q: 'Do I have a financial hold on my student account for Fall 2026, and what is my balance?', expect: '$4,800 · hold' },
+  { step: 'THEN', q: 'What financial aid do I have on file for Fall 2026, and what is its status?', expect: '$15,000 pending' },
+  { step: 'THEN', q: 'Show me everything I have going on this term: my courses, my housing, my meal plan, my clubs, and anything open with my advisor.', expect: '6 systems, 1 answer' }
 ];
-
 function qcard(item) {
-  const el = document.createElement('article');
-  el.className = 'qcard';
-  el.innerHTML =
-    `<div class="qcard-top"><span class="qcard-step"></span><button class="copy" type="button">Copy</button></div>` +
-    `<p class="qcard-q"></p>` +
-    `<p class="qcard-expect"><b>EXPECT</b><span></span></p>` +
-    `<p class="qcard-say"><b>SAY WHILE IT RUNS</b><span></span></p>`;
-  el.querySelector('.qcard-step').textContent = item.step;
-  el.querySelector('.qcard-q').textContent = '“' + item.q + '”';
-  el.querySelector('.qcard-expect span').textContent = item.expect;
-  el.querySelector('.qcard-say span').textContent = item.say;
-  el.querySelector('.copy').dataset.copy = item.q;
-  return el;
+  const n = document.createElement('article');
+  n.className = 'qcard';
+  n.innerHTML = '<div class="qcard-top"><span class="qcard-step"></span><button class="copy" type="button">Copy</button></div><p class="qcard-q"></p><span class="qcard-expect"></span>';
+  n.querySelector('.qcard-step').textContent = item.step;
+  n.querySelector('.qcard-q').textContent = '“' + item.q + '”';
+  n.querySelector('.qcard-expect').textContent = item.expect;
+  n.querySelector('.copy').dataset.copy = item.q;
+  return n;
 }
-
 function renderThread(key) {
-  const t = THREADS[key];
-  $('thread-intro').textContent = t.intro;
-  const wrap = $('thread-questions');
-  wrap.innerHTML = '';
-  t.questions.forEach(item => wrap.appendChild(qcard(item)));
-  announce(`${t.questions.length} questions loaded for this thread.`);
+  const w = $('thread-questions');
+  w.innerHTML = '';
+  THREADS[key].forEach(i => w.appendChild(qcard(i)));
+  announce(`${THREADS[key].length} questions ready.`);
 }
 document.querySelectorAll('[data-thread]').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('[data-thread]').forEach(el => el.setAttribute('aria-pressed', String(el === b)));
+  document.querySelectorAll('[data-thread]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
   renderThread(b.dataset.thread);
 }));
+STUDENT_Q.forEach(i => $('student-questions').appendChild(qcard(i)));
 
-STUDENT_QUESTIONS.forEach(item => $('student-questions').appendChild(qcard(item)));
+/* ================= 06 · who sees what ================= */
+const ROLES = {
+  student: { n: 1, label: 'row reachable of 1,000', note: 'Their own record. Nothing else exists.' },
+  advisor: { n: 118, label: 'rows reachable of 1,000', note: 'Their caseload. Not the institution.' },
+  provost: { n: 1000, label: 'rows reachable of 1,000', note: 'Full cohort. Still read only.' }
+};
+const rlsCells = buildDots($('rls-dots'), 1000);
+function renderRole(key) {
+  const r = ROLES[key];
+  rlsCells.forEach((c, i) => { c.className = i < r.n ? '' : 'd-off'; });
+  $('rls-count').textContent = r.n.toLocaleString();
+  $('rls-label').textContent = r.label;
+  $('rls-note').textContent = r.note;
+  $('rls-alt').textContent = `${r.n} of 1,000 student rows reachable. ${r.note}`;
+  announce(`${r.n} of 1,000 rows reachable. ${r.note}`);
+}
+document.querySelectorAll('[data-role]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-role]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  renderRole(b.dataset.role);
+}));
 
-/* ---------- copy to clipboard ---------- */
+/* ================= copy ================= */
 function fallbackCopy(text) {
   try {
     const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.setAttribute('readonly', '');
-    ta.style.position = 'absolute';
-    ta.style.left = '-9999px';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
+    ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.position = 'absolute'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
     return true;
   } catch (e) { return false; }
 }
-document.addEventListener('click', event => {
-  const btn = event.target.closest('.copy');
+document.addEventListener('click', ev => {
+  const btn = ev.target.closest('.copy');
   if (!btn) return;
   const text = btn.dataset.copy || '';
   const done = () => {
     btn.textContent = 'Copied';
     btn.setAttribute('data-done', '');
-    announce('Copied to clipboard.');
-    setTimeout(() => { btn.textContent = 'Copy'; btn.removeAttribute('data-done'); }, 1600);
+    announce('Copied.');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.removeAttribute('data-done'); }, 1500);
   };
-  const fail = () => { btn.textContent = 'Select manually'; setTimeout(() => { btn.textContent = 'Copy'; }, 2400); };
+  const fail = () => { btn.textContent = 'Select it'; setTimeout(() => { btn.textContent = 'Copy'; }, 2200); };
   try {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, () => { fallbackCopy(text) ? done() : fail(); });
-    } else {
-      fallbackCopy(text) ? done() : fail();
-    }
-  } catch (e) { fallbackCopy(text) ? done() : fail(); }
+      navigator.clipboard.writeText(text).then(done, () => { if (fallbackCopy(text)) done(); else fail(); });
+    } else if (fallbackCopy(text)) done(); else fail();
+  } catch (e) { if (fallbackCopy(text)) done(); else fail(); }
 });
 
-/* ---------- section nav ---------- */
+/* ================= section nav ================= */
 $('section-jump').addEventListener('change', e => {
-  const id = e.target.value;
-  history.pushState(null, '', '#' + id);
-  document.getElementById(id).scrollIntoView();
+  history.pushState(null, '', '#' + e.target.value);
+  document.getElementById(e.target.value).scrollIntoView();
 });
-let scrollPending = false;
+let pending = false;
 window.addEventListener('scroll', () => {
-  if (scrollPending) return;
-  scrollPending = true;
+  if (pending) return;
+  pending = true;
   requestAnimationFrame(() => {
-    scrollPending = false;
-    const line = document.querySelector('.section-nav').getBoundingClientRect().height + 70;
-    let id = 'layer';
+    pending = false;
+    const line = document.querySelector('.section-nav').getBoundingClientRect().height + 60;
+    let id = 'architecture';
     document.querySelectorAll('main section').forEach(s => { if (s.getBoundingClientRect().top <= line) id = s.id; });
     $('section-jump').value = id;
   });
 }, { passive: true });
 
-/* ---------- init ---------- */
-renderLayer();
+/* ================= init ================= */
+renderNets();
 renderExample('events');
 renderThread('opener');
-
-/* ---------- 01 · architecture stack ---------- */
-const LAYERS = {
-  people: {
-    kicker: 'LAYER 1 · PEOPLE',
-    title: 'One interface, not six portals.',
-    body: 'Everyone who needs an answer asks in the same place, in plain language. What they are allowed to see is decided underneath, not by which portal they happened to log into.',
-    points: ['Students · Faculty · Advisors · Staff · Leadership', 'The same question from an advisor and a provost reaches different rows.'],
-    say: 'Today the answer to this question lives in four systems, and the person who needs it has a login to two of them.'
-  },
-  campusmind: {
-    kicker: 'LAYER 2 · CAMPUSMIND',
-    title: 'The agents people actually talk to.',
-    body: 'Recruitment, Retention and Student Success agents, plus AI Studio for building your own and a marketplace for the rest. Each agent sees only what the person’s role allows.',
-    points: ['Recruitment agent · Retention agent · Student success agent', 'AI Studio · Agent marketplace', '3,000+ connectors, so an answer can become an action.'],
-    say: 'This is the layer your staff and students see. Everything below it is the reason it can be trusted.',
-    link: '#campusmind', linkText: 'See the CampusMind handoff →'
-  },
-  agents: {
-    kicker: 'LAYER 3 · FABRIC DATA AGENTS',
-    title: 'Read-only, and running as the person asking.',
-    body: 'A data agent per domain. It generates a query, shows you the query it generated, and executes it under the identity of whoever asked — never under a service account with more reach.',
-    points: ['Housing · Finance · Academic · Advising · Enrollment', 'Read only. The agent has no path to write.', 'The generated query is shown, not hidden.'],
-    say: 'It generated a read-only query, and it ran as me. If I could not see those rows in the source system, I cannot see them here either.',
-    link: '#ask', linkText: 'Ask the data agent →'
-  },
-  fabriciq: {
-    kicker: 'LAYER 4 · FABRIC IQ',
-    title: 'What your words mean, and one definition of every number.',
-    body: 'The ontology holds entities and the relationships between them — Student resides_in Hall, Room satisfies Accommodation. The semantic model holds certified metrics, so retention, occupancy and aid mean one thing across the institution.',
-    points: ['Ontology — entities and relationships, written down once and owned.', 'Semantic models — certified metrics: retention, occupancy, aid.', 'Fabric IQ is currently in preview.'],
-    say: 'This is the layer that turns a question in English into a question about your institution. Without it, the agent is guessing what you meant by a student.',
-    link: '#meaning', linkText: 'See what the ontology adds →'
-  },
-  onelake: {
-    kicker: 'LAYER 5 · ONELAKE FOUNDATION',
-    title: 'One governed lake. One copy. You own it.',
-    body: 'Data lands raw, is cleaned, and is certified — with full lineage back to the system it came from. Open Delta format, in your own tenant, with no duplication.',
-    points: ['raw → cleaned → certified', 'Full lineage back to source.', 'Open Delta format in your own tenant — one copy, no duplication.'],
-    say: 'This sits in your tenant, in an open format. If you walked away from every vendor in this diagram tomorrow, the data is still yours and still readable.'
-  },
-  sources: {
-    kicker: 'LAYER 6 · SOURCE SYSTEMS',
-    title: 'Nothing is replaced. They stay where they are.',
-    body: 'The systems your institution already runs keep running. The layer above reads from them — it does not ask you to migrate off them.',
-    points: ['SIS · Banner, Workday', 'LMS · Canvas, Blackboard', 'CRM · Slate, Salesforce', 'Finance · TouchNet  ·  Housing · StarRez  ·  Advising · Navigate'],
-    say: 'Nothing here is a rip-and-replace. Every system on this list keeps doing its job. We are reading from them, not moving off them.',
-    link: '#sources', linkText: 'See where the data lives →'
-  }
-};
-
-const stack = $('stack');
-const detail = $('layer-detail');
-const layerButtons = [...document.querySelectorAll('.layer')];
-
-function openLayer(key) {
-  const d = LAYERS[key];
-  layerButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.layer === key)));
-  $('detail-kicker').textContent = d.kicker;
-  $('detail-title').textContent = d.title;
-  $('detail-body').textContent = d.body;
-  $('detail-points').innerHTML = d.points.map(p => `<li>${p}</li>`).join('');
-  $('detail-say').textContent = d.say;
-  $('detail-copy').dataset.copy = d.say;
-  const link = $('detail-link');
-  if (d.link) { link.href = d.link; link.textContent = d.linkText; link.hidden = false; }
-  else link.hidden = true;
-  detail.hidden = false;
-  $('detail-title').scrollIntoView({ block: 'nearest' });
-}
-layerButtons.forEach(b => {
-  b.setAttribute('aria-pressed', 'false');
-  b.addEventListener('click', () => {
-    if (b.getAttribute('aria-pressed') === 'true') { closeDetail(); return; }
-    stopTrace();
-    openLayer(b.dataset.layer);
-  });
-});
-function closeDetail() {
-  detail.hidden = true;
-  layerButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
-}
-$('detail-close').addEventListener('click', closeDetail);
-
-/* the trace */
-const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const TRACE = [
-  { sel: '[data-layer=people]', dir: 'down', text: 'An advisor asks a question in plain language. One interface, not six portals.' },
-  { sel: '[data-layer=campusmind]', dir: 'down', text: 'CampusMind routes it to the right agent — scoped to what this person’s role allows.' },
-  { sel: '.boundary', dir: 'down', text: 'The question crosses the trust boundary. Institutional data never crosses back up past this line.' },
-  { sel: '[data-layer=agents]', dir: 'down', text: 'A Fabric data agent generates a read-only query, and runs it as the person asking.' },
-  { sel: '[data-layer=fabriciq]', dir: 'down', text: 'Fabric IQ resolves what the words mean, and which certified number answers them.' },
-  { sel: '[data-layer=onelake]', dir: 'down', text: 'The query reads certified tables in one governed lake — one copy, full lineage to source.' },
-  { sel: '[data-layer=sources]', dir: 'down', text: 'Which were fed from the systems you already run. Nothing was replaced.' },
-  { sel: '[data-layer=fabriciq]', dir: 'up', text: 'Only the answer comes back — one number, with the definition behind it.' },
-  { sel: '[data-layer=campusmind]', dir: 'up', text: 'Back through CampusMind, still under the same permissions.' },
-  { sel: '[data-layer=people]', dir: 'up', text: 'The advisor gets an answer no single system on this campus could have given them.' }
-];
-let traceTimer = null, traceStep = 0;
-const playBtn = $('trace-play'), resetBtn = $('trace-reset'), caption = $('trace-caption');
-
-function clearMarks() {
-  document.querySelectorAll('.is-lit,.is-answer').forEach(el => el.classList.remove('is-lit', 'is-answer'));
-  document.querySelectorAll('.flow-down,.flow-up').forEach(el => el.classList.remove('is-on'));
-}
-function stopTrace() {
-  if (traceTimer) { clearTimeout(traceTimer); traceTimer = null; }
-  clearMarks();
-  playBtn.disabled = false;
-  playBtn.textContent = '▶ Trace a question';
-  caption.classList.remove('is-live');
-}
-function stepTrace() {
-  clearMarks();
-  const s = TRACE[traceStep];
-  const el = document.querySelector(s.sel);
-  if (el) el.classList.add(s.dir === 'down' ? 'is-lit' : 'is-answer');
-  document.querySelectorAll(s.dir === 'down' ? '.flow-down' : '.flow-up').forEach(f => f.classList.add('is-on'));
-  caption.textContent = (traceStep + 1) + '/' + TRACE.length + ' · ' + s.text;
-  caption.classList.add('is-live');
-  traceStep++;
-  if (traceStep < TRACE.length) {
-    traceTimer = setTimeout(stepTrace, REDUCED ? 2600 : 1500);
-  } else {
-    traceTimer = setTimeout(function () {
-      clearMarks();
-      caption.textContent = 'A question travels all the way down. Only the answer comes back. Select any layer to open it.';
-      caption.classList.remove('is-live');
-      playBtn.disabled = false;
-      playBtn.textContent = '▶ Trace it again';
-      resetBtn.hidden = true;
-    }, 2600);
-  }
-}
-playBtn.addEventListener('click', function () {
-  closeDetail();
-  stopTrace();
-  traceStep = 0;
-  playBtn.disabled = true;
-  playBtn.textContent = 'Tracing…';
-  resetBtn.hidden = false;
-  stepTrace();
-});
-resetBtn.addEventListener('click', function () {
-  stopTrace();
-  resetBtn.hidden = true;
-  caption.textContent = 'Select any layer to open it, or trace a question through all six.';
-});
+renderRole('student');
