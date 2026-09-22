@@ -77,10 +77,11 @@ check the page at more than one viewport width.
 experiment or the start of a convention. Ask before you copy it to another Lab or
 delete it.
 
-**Retention.** `render()` rebuilds six sections from a single `state` object. The
-weight inputs accept a number only when `0 <= n <= 50` and `n % 5 === 0`. They set
-`aria-invalid` and restore the last valid value on blur. Keep that check. The page also
-preserves the open state of every `<details>` element across re-renders on purpose.
+**Retention.** The page opens as a compact illustrated card stack. Expanding it reveals
+seven connected stage cards, and each card opens its visual in one native `<dialog>`.
+`drawWires()` calculates the connectors from the cards' rendered positions; keep its
+`ResizeObserver` and redraw loop when changing card geometry. The dialog updates the
+URL hash, returns focus to the opening card, and supports direct links to every stage.
 
 **Ontology.** The largest JavaScript file at 431 lines, and the only file with section
 comments. The question trace advances every 1500 ms, or every 2600 ms when

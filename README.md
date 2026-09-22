@@ -16,7 +16,7 @@ Vercel deploys `main` automatically on merge.
 |---|-----|----------|-----------------------|
 | 01 | Accessibility | Document remediation | Open any of the five workflow steps. Pick one of six sample documents, and it stays selected through every step, with before and after images. |
 | 02 | Recruitment | Prospective-student questions | Step through four kinds of student question and see which specialist answers each one. One question escalates to a person. Approve, edit, or hold the draft reply. |
-| 03 | Retention | Risk scoring from student signals | Turn signals on and off, set weights and thresholds, and watch the score, the risk bands, and the advisor briefing recompute. |
+| 03 | Retention | Early identification and coordinated student support | Expand a seven-stage visual flow, then open each stage to see student signals, institutional triggers, configured points, response thresholds, outreach, advisor context, and early intervention. |
 | 04 | Ontology | The semantic layer over campus systems | Open any of six architecture layers. Run an animated trace of one question through all of them. Compare 13 × u point-to-point integrations against 13 + u. |
 | 05 | Virtual Teaching Assistant | Student support inside the LMS | Switch between Canvas, Blackboard, and D2L. Read the example question categories. The screenshots are still placeholders. |
 
