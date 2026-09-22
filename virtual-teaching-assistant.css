@@ -73,7 +73,6 @@ main { padding: 0 22px 54px; }
 .questions-section { padding-top: 18px; border-top: 1px solid var(--line); }
 .question-groups { display: grid; gap: 16px; }
 .question-group { position: relative; overflow: hidden; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); box-shadow: 0 9px 28px #1738480a; }
-.question-group::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--teal); }
 .question-group header { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 16px; }
 .category-icon { display: grid; flex: 0 0 31px; height: 31px; place-items: center; border-radius: 9px; background: var(--mist); color: var(--teal); font-size: .66rem; font-weight: 800; }
 .question-group header p { color: var(--teal); font-size: .7rem; font-weight: 750; letter-spacing: .085em; text-transform: uppercase; }
@@ -82,17 +81,14 @@ main { padding: 0 22px 54px; }
 .question-group li { position: relative; padding: 13px 14px 13px 36px; border: 1px solid #dce7ea; border-radius: 6px 13px 13px 13px; background: #f7fafb; color: var(--ink); font-size: .94rem; line-height: 1.48; }
 .question-group li::before { content: "“"; position: absolute; top: 8px; left: 13px; color: var(--teal); font-family: Georgia, serif; font-size: 1.55rem; line-height: 1; }
 .context-chip { display: inline-block; margin: -3px 0 14px 42px; padding: 4px 8px; border-radius: 999px; background: #eef0ff; color: #4c42b7; font-size: .7rem; font-weight: 700; }
-.content-group::before { background: #5b4de8; }
 .content-group .category-icon { background: #eeecff; color: #5144ca; }
 .content-group header p { color: #5144ca; }
-.quiz-group::before { background: #2b638e; }
 .quiz-group .category-icon { background: #e9f2f8; color: #245b85; }
 .quiz-group header p { color: #245b85; }
 .lecture-group { border-color: #9ed5d8; background: linear-gradient(135deg, #ffffff 0%, #effbfb 100%); }
 .lecture-group li { background: var(--white); font-size: 1rem; }
 
 .guardrail-group { border-color: #dec98d; background: var(--gold-soft); box-shadow: none; }
-.guardrail-group::before { background: #b78212; }
 .guardrail-group .category-icon { background: #fff0bc; color: #75530c; }
 .guardrail-group header p { color: #75530c; }
 .guardrail-note { margin: -2px 0 15px 42px; color: #66552e; font-size: .86rem; line-height: 1.5; }
