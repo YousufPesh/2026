@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Studio Lab · CampusMind</title>
+  <meta name="description" content="Imagine a campus need, connect the workflow, test the agent, and deploy it to the right audience.">
+  <meta name="theme-color" content="#023347">
+  <link rel="icon" href="/assets/campusmind-favicon.png">
+  <link rel="stylesheet" href="/labs-navigation.css">
+  <link rel="stylesheet" href="/agent-studio.css">
+  <script src="/agent-studio.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the Agent Studio Lab</a>
+  <nav class="labs-navigation" aria-label="Labs">
+    <a href="/">Labs</a>
+    <a href="/accessibility.html">Accessibility</a>
+    <a href="/recruitment.html">Recruitment</a>
+    <a href="/retention.html">Retention</a>
+    <a href="/ontology.html">Ontology</a>
+    <a href="/virtual-teaching-assistant.html">Teaching assistant</a>
+    <a href="/agent-studio.html" aria-current="page">Agent Studio</a>
+  </nav>
+
+  <div class="lab-shell">
+    <header class="brand-header">
+      <img src="/assets/campusmind-logo.svg" alt="CampusMind" width="140" height="30">
+      <span>Agent Studio demo companion</span>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <header class="intro">
+        <p class="eyebrow">Agent Studio Lab</p>
+        <h1>What could you build for your campus?</h1>
+        <p>Start with a need. Connect the systems. Test the workflow. Share it with the right people.</p>
+      </header>
+
+      <section class="idea-picker" aria-labelledby="idea-title">
+        <div class="picker-heading">
+          <span>01</span>
+          <div><p class="eyebrow">Choose a starting point</p><h2 id="idea-title">Something worth helping with.</h2></div>
+        </div>
+        <div class="idea-tabs" role="tablist" aria-label="Choose an agent idea">
+          <button id="learning-tab" type="button" role="tab" aria-selected="true" aria-controls="agent-flow" data-idea="learning">
+            <span class="idea-icon" aria-hidden="true">A</span><span>Assignment</span>
+          </button>
+          <button id="event-tab" type="button" role="tab" aria-selected="false" aria-controls="agent-flow" data-idea="event" tabindex="-1">
+            <span class="idea-icon" aria-hidden="true">E</span><span>Campus event</span>
+          </button>
+          <button id="work-tab" type="button" role="tab" aria-selected="false" aria-controls="agent-flow" data-idea="work" tabindex="-1">
+            <span class="idea-icon" aria-hidden="true">W</span><span>Recurring work</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="flow-stage" id="agent-flow" role="tabpanel" aria-labelledby="learning-tab" tabindex="0">
+        <p class="sr-only" id="flow-description">A four-stage diagram moves from a campus need to a connected workflow, an experiment loop, and an audience for deployment.</p>
+
+        <article class="flow-card purpose-card" aria-labelledby="purpose-title">
+          <div class="step-marker"><span>01</span><small>CREATE</small></div>
+          <div class="purpose-copy">
+            <p class="card-kicker">Your idea</p>
+            <h2 id="purpose-title">Guide a classroom assignment</h2>
+            <p id="purpose-description">Help students find a useful next step without doing the work for them.</p>
+          </div>
+          <div class="purpose-symbol" aria-hidden="true"><span id="purpose-symbol">A</span></div>
+        </article>
+
+        <div class="flow-connector" aria-hidden="true"><span></span></div>
+
+        <article class="flow-card builder-card" aria-labelledby="builder-title">
+          <div class="step-marker"><span>02</span><small>CONNECT + BUILD</small></div>
+          <header>
+            <div><p class="card-kicker">Shape the workflow</p><h2 id="builder-title">Decide what starts, happens, and comes back.</h2></div>
+            <span class="connector-count">3,000+ apps</span>
+          </header>
+          <div class="pipedream-band"><span class="plug" aria-hidden="true">⌁</span><strong>Pipedream</strong><span>Connect the tools already in the work</span></div>
+          <div class="workflow-nodes" aria-describedby="flow-description">
+            <div class="workflow-node trigger-node">
+              <span class="node-type">START</span>
+              <strong id="trigger-example">Assignment question</strong>
+              <small>Input · Webhook<br>Schedule · App trigger</small>
+            </div>
+            <span class="node-arrow" aria-hidden="true">→</span>
+            <div class="workflow-node agent-node">
+              <span class="node-type">THINK</span>
+              <strong id="agent-example">Learning agent</strong>
+              <small>AI agent · LLM</small>
+            </div>
+            <span class="node-arrow" aria-hidden="true">→</span>
+            <div class="workflow-node logic-node">
+              <span class="node-type">ROUTE</span>
+              <strong id="logic-example">Choose a next step</strong>
+              <small>If/else · Switch · Loop</small>
+            </div>
+            <span class="node-arrow" aria-hidden="true">→</span>
+            <div class="workflow-node action-node">
+              <span class="node-type">ACT</span>
+              <strong id="action-example">Return guidance</strong>
+              <small>HTTP · App action · Output</small>
+            </div>
+          </div>
+        </article>
+
+        <div class="flow-connector" aria-hidden="true"><span></span></div>
+
+        <article class="flow-card experiment-card" aria-labelledby="experiment-title">
+          <div class="step-marker"><span>03</span><small>EXPERIMENT</small></div>
+          <div class="experiment-copy"><p class="card-kicker">Test the idea</p><h2 id="experiment-title">Try it. See the result. Refine it.</h2></div>
+          <div class="test-loop" aria-hidden="true"><span>TEST</span><i>→</i><strong id="result-example">Useful next step</strong><i>↻</i></div>
+        </article>
+
+        <div class="flow-connector" aria-hidden="true"><span></span></div>
+
+        <article class="flow-card deploy-card" aria-labelledby="deploy-title">
+          <div class="step-marker"><span>04</span><small>DEPLOY</small></div>
+          <div class="deploy-heading"><div><p class="card-kicker">Choose the audience</p><h2 id="deploy-title">Put it where it belongs.</h2></div><span class="deploy-icon" aria-hidden="true">↥</span></div>
+          <div class="audience-scopes" aria-label="Deployment audiences">
+            <span data-scope="classroom" class="is-active">A classroom</span>
+            <span data-scope="group">A specific group</span>
+            <span data-scope="campus">The whole campus</span>
+          </div>
+        </article>
+      </section>
+
+      <footer class="takeaway">
+        <strong>Start focused.</strong> Test it with the right people. Expand when it works.
+      </footer>
+      <p class="sr-only" id="idea-status" role="status" aria-live="polite"></p>
+    </main>
+  </div>
+</body>
+</html>
