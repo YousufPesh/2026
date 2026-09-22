@@ -14,7 +14,7 @@ Vercel deploys `main` automatically on merge.
 
 | # | Lab | Offering | What a visitor can do |
 |---|-----|----------|-----------------------|
-| 01 | Accessibility | Document remediation | Open any of the five workflow steps. Pick one of six sample documents, and it stays selected through every step, with before and after images. |
+| 01 | Accessibility | Document remediation | Reveal the five-step remediation loop and open any stage in place. In AI remediation, compare six sample documents before and after. |
 | 02 | Recruitment | Prospective-student questions | Step through four kinds of student question and see which specialist answers each one. One question escalates to a person. Approve, edit, or hold the draft reply. |
 | 03 | Retention | Early identification and coordinated student support | Expand a seven-stage visual flow, then open each stage to see student signals, institutional triggers, configured points, response thresholds, outreach, advisor context, and early intervention. |
 | 04 | Ontology | The semantic layer over campus systems | Open any of six architecture layers. Run an animated trace of one question through all of them. Compare 13 × u point-to-point integrations against 13 + u. |

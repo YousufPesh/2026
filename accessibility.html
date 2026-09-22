@@ -13,11 +13,11 @@
 <div class="story-shell">
 <header class="brand-header"><img src="assets/campusmind-logo.svg" alt="CampusMind" width="140" height="30"><span>Accessibility demo companion</span></header>
 <main id="story" tabindex="-1">
-<div class="scene-heading intro"><p class="eyebrow">From source to accessible PDF</p><h1 id="access-title">See how AI can help your team speed up remediation.</h1><p>Follow one document through the work. Select a card to explore each step.</p></div>
+<div class="scene-heading intro"><p class="eyebrow">From source to accessible PDF</p><h1 id="access-title">See how AI can help your team speed up remediation.</h1><p>One PDF. A complete remediation loop.</p></div>
 <div id="flow-workspace">
-<div class="flow-dock"><div class="graphic-stage access-stage structure-revealed" id="access-graphic">
+<div class="flow-dock"><div class="graphic-stage access-stage" id="access-graphic">
 <div class="flow-heading"><h2 class="workflow-graphic-title" id="flow-title">A structured remediation loop.</h2></div>
-<div class="workflow-canvas" role="group" aria-labelledby="flow-title" aria-describedby="workflow-description">
+<div id="workflow-canvas" class="workflow-canvas" role="group" aria-labelledby="flow-title" aria-describedby="workflow-description">
 <p class="sr-only" id="workflow-description">An accessible PDF opens into five connected stages, ascending from left to right: source systems, a document being scanned for issues, AI adding document structure, a person inspecting and editing tags, and the accessible PDF. The PDF returns to the source after review and revalidation. Select any card to explore that step. This is a concept illustration.</p>
 <svg class="workflow-wires" aria-hidden="true"><defs><marker id="workflow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#306d7e" stroke-width="1.5"/></marker></defs><path id="workflow-forward-0"/><path id="workflow-forward-1"/><path id="workflow-forward-2"/><path id="workflow-forward-3"/><path id="workflow-return"/></svg>
 <button class="workflow-node source-node" data-workflow-node="0" data-flow="sources" aria-expanded="false" aria-controls="step-panel" aria-haspopup="dialog"><span class="node-number" aria-hidden="true">01</span><span class="workflow-node-title">Source systems</span><div class="workflow-sources"><span>Canvas</span><span>Blackboard</span><span>D2L</span><span>SharePoint</span></div></button>
@@ -25,75 +25,68 @@
 <button class="workflow-node remediate-node" data-workflow-node="2" data-flow="remediation" aria-expanded="false" aria-controls="step-panel" aria-haspopup="dialog"><span class="node-number" aria-hidden="true">03</span><span class="workflow-node-title">AI remediation</span><div class="repair-document"><div><b>H1</b><span></span></div><div><b>P</b><span></span></div><div><b>L</b><span></span></div></div><span class="workflow-node-caption">Build document structure</span></button>
 <button class="workflow-node inspect-node" data-workflow-node="3" data-flow="review" aria-expanded="false" aria-controls="step-panel" aria-haspopup="dialog"><span class="node-number" aria-hidden="true">04</span><span class="workflow-node-title">Human review</span><div class="tag-inspector"><div class="inspector-row"><span>Tag</span><span>Edit</span></div><div class="inspector-row tag-correction"><span><s>H1</s><b>→ H2</b></span><svg viewBox="0 0 24 24"><path d="m5 15 11-11 4 4L9 19l-5 1zM14 6l4 4"/></svg></div><div class="inspector-row"><span>P</span><span class="inspector-text"></span></div></div><span class="workflow-node-caption">Inspect tags & make edits</span></button>
 <button class="workflow-node output-node" data-workflow-node="4" data-flow="output" aria-expanded="false" aria-controls="step-panel" aria-haspopup="dialog"><span class="node-number" aria-hidden="true">05</span><span class="workflow-node-title">Accessible PDF</span><div class="output-document"><span class="output-pdf-label">PDF</span><strong></strong><i></i><i></i><div class="output-tag-lines"><span>H1</span><span>P</span><span>L</span></div></div><span class="workflow-node-caption">Reviewed & revalidated</span></button>
-<div hidden class="pdf-pointer" aria-hidden="true"><span>Accessible PDF</span><svg viewBox="0 0 110 60"><path d="M4 8c45-7 79 1 90 41m-14-8 14 8 4-16"/></svg></div>
+<div class="pdf-pointer" aria-hidden="true"><span>Accessible PDF</span><svg viewBox="0 0 110 60"><path d="M4 8c45-7 79 1 90 41m-14-8 14 8 4-16"/></svg></div>
 <div class="return-label" aria-hidden="true">Return to source</div>
 </div>
-<div class="graphic-footnote">Concept illustration · Human review and revalidation remain part of the workflow.</div>
+<div class="graphic-footnote">Illustrated workflow</div>
 </div>
-<p class="flow-hint" id="flow-hint">Choose a card to open its details. Close the pop-up to return to the flow.</p></div>
-<dialog id="step-panel" class="step-panel" aria-labelledby="panel-title"><div class="step-popup-bar"><span>A structured remediation loop</span><button class="text-button" id="close-step" aria-label="Close step details">Close <span aria-hidden="true">×</span></button></div><div class="step-popup-body">
-<header class="panel-heading"><p class="eyebrow" id="panel-kicker"></p><h2 id="panel-title" tabindex="-1"></h2><p id="panel-intro"></p></header>
-<div class="document-context"><label for="example-select">Document for this walkthrough</label><select id="example-select"></select><span id="example-mode"></span><span class="context-note">Your selection stays with you through every step.</span></div>
+<button class="action-button" id="reveal-structure" aria-expanded="false" aria-controls="workflow-canvas">See the workflow <span aria-hidden="true">↗</span></button><p class="flow-hint" id="flow-hint">Open the PDF to reveal the flow.</p></div>
+<dialog id="step-panel" class="step-panel" aria-labelledby="panel-title"><div class="step-popup-bar"><span>A structured remediation loop</span><div class="popup-controls"><button class="text-button" id="close-step" aria-label="Close step details">Close <span aria-hidden="true">×</span></button></div></div><div class="step-popup-body">
+<header class="panel-heading"><p class="eyebrow" id="panel-kicker"></p><h2 id="panel-title" tabindex="-1"></h2></header>
+<div class="document-context" hidden><label for="example-select" class="sr-only">Example document</label><select id="example-select"></select><span id="example-mode"></span></div>
 <div data-panel="sources" hidden>
 <div class="source-switch" role="group" aria-label="Document source"><button data-source="pdf" aria-pressed="true">One PDF</button><button data-source="collection" aria-pressed="false">Course materials</button></div>
-<div class="source-art" id="source-art"><div class="paper paper-back two" aria-hidden="true"></div><div class="paper paper-back one" aria-hidden="true"></div><div class="paper front"><span class="paper-symbol" aria-hidden="true">PDF</span><span class="paper-title" id="source-title">Your document</span><i></i><i></i><i></i><div class="paper-table" aria-hidden="true"></div></div></div>
-<div id="source-systems" class="system-chips" hidden><span>Canvas</span><span>Blackboard</span><span>Brightspace D2L</span><span>SharePoint</span></div>
-<h3 id="source-caption">Start with a PDF from your computer.</h3><p class="body-copy" id="source-detail">Use one document to see what needs attention, what changes, and where your team’s judgment matters.</p>
-<div class="info-block"><h3>Choose the work to run</h3><ul class="readable-list"><li><strong>Audit:</strong> identify the document’s accessibility issues.</li><li><strong>Audit and remediate:</strong> identify issues and begin addressing them.</li></ul></div>
-<p class="takeaway">Start with one file. Bring the same workflow to a collection.</p>
+<div id="source-systems" class="system-chips source-logos" hidden><span>Canvas</span><span>Blackboard</span><span>Brightspace D2L</span><span>SharePoint</span></div>
+<div class="source-art" id="source-art"><div class="paper paper-back two" aria-hidden="true"></div><div class="paper paper-back one" aria-hidden="true"></div><div class="paper front"><span class="paper-symbol">PDF</span><span class="paper-title" id="source-title">Your document</span><i></i><i></i><i></i><div class="paper-table" aria-hidden="true"></div></div></div>
+<div class="visual-connector" aria-hidden="true">↓</div>
+<div class="source-branches"><div><span class="line-icon" data-icon="search"></span><strong>Audit</strong></div><span class="or-label">or</span><div><span class="line-icon" data-icon="layers"></span><strong>Audit + remediate</strong></div></div>
 </div>
 <div data-panel="audit" hidden>
-<div class="finding-card"><span class="line-icon" data-icon="search"></span><div><p class="detail-kicker">What the audit brings into view</p><h3 data-example-name></h3><p data-example="issue"></p></div></div>
-<h3>Look beyond how the page appears</h3>
-<ul class="readable-list"><li><strong>Document structure.</strong> Are headings, paragraphs, lists, and tables identified by their roles?</li><li><strong>Reading order.</strong> Does the content follow a meaningful sequence?</li><li><strong>Content alternatives.</strong> Can meaningful images, charts, and formulas be understood beyond their visual presentation?</li></ul>
-<details class="support-detail" open><summary>Why this matters for this document</summary><p data-example="subject"></p><p data-example="order"></p></details>
-<p class="takeaway">A page can look organized while its underlying structure is missing.</p>
+<div class="audit-dashboard" aria-label="Reference audit: 99.97 percent of checks passed. Not compliant. Two of 106 rules failed.">
+<div class="score-card"><span class="score-label">Accessibility score</span><strong class="score-value">99.97<span>%</span></strong><span class="score-subtitle">of checks passed</span><div class="score-track" aria-hidden="true"><span></span></div></div>
+<div class="compliance-card"><span class="status-alert" aria-hidden="true">!</span><div><strong>Not compliant</strong><span><b>2</b> of 106 rules failed</span></div></div>
+<div class="audit-badges"><span>2 Critical</span><span>3 WCAG 2.1 criteria affected</span></div>
+<div class="audit-category-grid">
+<div class="has-issue"><b>! 1</b><span>Document structure</span></div><div class="has-issue"><b>! 1</b><span>Headings</span></div>
+<div><b>✓ Pass</b><span>Tables</span></div><div><b>✓ Pass</b><span>Images & non-text</span></div><div><b>✓ Pass</b><span>Links & navigation</span></div><div><b>✓ Pass</b><span>Metadata</span></div><div><b>✓ Pass</b><span>Lists</span></div><div><b>✓ Pass</b><span>Colors & visuals</span></div>
+</div>
+<div class="score-distinction"><span>Checks passed</span><b>≠</b><span>Conformance</span></div>
+</div>
+<p class="visual-note">Reference audit · Your supplied screenshot · PDF/UA-1</p>
 </div>
 <div data-panel="remediation" hidden>
-<h3>Choose the approach for the document</h3>
-<div class="approach-routes full-options">
-<article class="route-card"><div class="route-title"><span class="route-mark">01</span><h3>Preserve layout</h3></div><ul><li><strong>Keep the familiar page design</strong> when the visual layout already works.</li><li>Add or correct tags, heading hierarchy, lists, tables, and reading order.</li><li>Use for documents whose main need is a better underlying structure.</li></ul></article>
-<article class="route-card"><div class="route-title"><span class="route-mark">02</span><h3>Full reconstruction</h3></div><ul><li><strong>Rebuild the presentation</strong> when the content needs more than tagging.</li><li>Turn scans or handwritten material into structured text and formulas.</li><li>Review rebuilt content closely against the original, especially notation and meaning.</li></ul></article>
+<div class="visual-approaches" role="group" aria-label="Remediation approach">
+<button class="visual-route" data-mode="preserve" aria-pressed="true"><strong>Preserve layout</strong><div class="document-transform" aria-hidden="true"><div class="mini-page"><i></i><i></i><div class="mini-grid"></div></div><span>→</span><div class="mini-page tagged"><i></i><i></i><div class="mini-grid"></div><b>H1</b><em>Table</em></div></div><span>Same layout · Added structure</span></button>
+<button class="visual-route" data-mode="reconstruct" aria-pressed="false"><strong>Full reconstruction</strong><div class="document-transform" aria-hidden="true"><div class="mini-page handwritten"><span>y = x² sin x</span><span>f′g + fg′</span></div><span>→</span><div class="mini-page typed"><b>H1</b><span>Product rule</span><span>f′g + fg′</span></div></div><span>Scans → Structured content</span></button>
 </div>
-<div class="info-block"><p class="detail-kicker">For this document</p><h3 id="recommended-mode"></h3><p data-example="change"></p></div>
-<details class="support-detail"><summary>What the remediation work addresses</summary><h4>Tags and hierarchy</h4><p data-example="tags"></p><h4>Reading order</h4><p data-example="order"></p><h4>Images and content alternatives</h4><p data-example="images"></p></details>
+<div class="work-chips"><span>Tags</span><span>Reading order</span><span>Image descriptions</span></div>
 </div>
 <div data-panel="review" hidden>
-<div class="review-focus"><p class="detail-kicker">Your review focus</p><p data-example="review"></p></div>
 <ol class="review-sequence" aria-label="Human review sequence">
-<li><button data-review="0" aria-pressed="true"><span>01</span>Inspect & edit</button></li>
-<li><button data-review="1" aria-pressed="false"><span>02</span>Apply changes</button></li>
-<li><button data-review="2" aria-pressed="false"><span>03</span>Revalidate</button></li>
-<li><button data-review="3" aria-pressed="false"><span>04</span>Updated report</button></li>
+<li><button data-review="0" aria-pressed="true"><span>01</span>Inspect & edit</button></li><li><button data-review="1" aria-pressed="false"><span>02</span>Apply changes</button></li><li><button data-review="2" aria-pressed="false"><span>03</span>Revalidate</button></li><li><button data-review="3" aria-pressed="false"><span>04</span>Updated report</button></li>
 </ol>
-<div class="review-detail" aria-live="polite"><h3 id="review-detail-title"></h3><p id="review-detail-copy"></p><div id="tag-edit-illustration" class="tag-edit-illustration"><div><span>Inspect the tag</span><strong>Section heading</strong></div><span aria-hidden="true">→</span><div><span>Edit its role</span><strong><s>H1</s> → H2 <span aria-hidden="true">✎</span></strong></div><small>Illustrative edit · Choose the role that fits the document’s hierarchy.</small></div><ul id="report-points" class="readable-list" hidden><li>Issues found in the document.</li><li>Changes made during remediation and review.</li><li>Possible remaining issues and the updated score.</li></ul></div>
-<details class="support-detail"><summary>Inspect this document in more detail</summary><h4>Tags and hierarchy</h4><p data-example="tags"></p><h4>Reading order</h4><p data-example="order"></p><h4>Images and content alternatives</h4><p data-example="images"></p></details>
-<p class="takeaway">If issues remain, return to the Tag Editor, make corrections, apply them, and revalidate again.</p>
+<div class="review-visual" data-review-visual="0">
+<div class="tag-tree"><span class="visual-kicker">Tag editor</span><div><b>H1</b><span>Title</span></div><div class="active-tag"><b id="editable-tag">H1</b><span>Section</span><button id="edit-tag" aria-label="Change the illustrative section tag to H2">✎</button></div><div><b>P</b><span>Paragraph</span></div><div><b>L</b><span>List</span></div></div>
+<div class="review-page" aria-hidden="true"><span class="page-label">PDF</span><strong></strong><i></i><i></i><div class="highlight-heading"><b id="page-tag">H1</b><span></span></div><i></i><i></i><i></i><div class="review-page-grid"></div></div>
+<div class="visual-bottom-label">Inspect tags <span>↔</span> Edit structure</div>
+</div>
+<div class="review-visual review-action" data-review-visual="1" hidden><div class="action-document"><span class="line-icon" data-icon="document"></span><span class="edit-badge">✎</span></div><span class="big-arrow">→</span><div class="action-document"><span class="line-icon" data-icon="document"></span><span class="saved-badge">✓</span></div><strong class="visual-bottom-label">Apply edits to the PDF</strong></div>
+<div class="review-visual review-action" data-review-visual="2" hidden><div class="validation-scan"><span class="line-icon" data-icon="document"></span><div class="validation-beam"></div></div><div class="validation-checks"><span>Tags</span><span>Reading order</span><span>Content alternatives</span></div><strong class="visual-bottom-label">Check the revised document</strong></div>
+<div class="review-visual report-visual" data-review-visual="3" hidden><div class="report-sheet"><span class="line-icon" data-icon="report"></span><strong>Updated report</strong><div><span>Issues</span><i></i></div><div><span>Changes</span><i></i></div><div><span>Remaining</span><i></i></div></div><button class="report-return" data-review="0">↶ Return to review</button></div>
+<p class="visual-note">Illustrative workflow</p>
 </div>
 <div data-panel="output" hidden>
-<div class="info-block"><p class="detail-kicker">After review and revalidation</p><h3>Return the document to where it is used.</h3><p>Return files to Canvas, Blackboard, or SharePoint. Replace the original or save a new version.</p></div>
-<button class="action-button return-source" data-open="sources">Follow the loop back to the source <span aria-hidden="true">↶</span></button>
-<details class="support-detail oversight-detail"><summary>See progress across courses and departments</summary><p>Follow the documents and courses you can access. Broader views help teams keep track as materials change.</p><div class="graphic-stage oversight-stage">
-<div class="scope-tabs" role="group" aria-label="Progress scope"><button data-scope="document" aria-pressed="true">Document</button><button data-scope="course" aria-pressed="false">Course</button><button data-scope="department" aria-pressed="false">Department</button></div>
-<svg class="campus-layers" viewBox="0 0 360 335" role="img" aria-labelledby="scope-svg-title scope-svg-desc"><title id="scope-svg-title">Documents connect to courses and a department</title><desc id="scope-svg-desc">Three connected layers show a document, several course materials, and a department’s broader view. These are conceptual groupings, not measured progress.</desc>
-<g class="scope-plate department-plate"><path class="plate-face" d="m20 233 164-71 158 75-164 75z"/><path class="plate-edge" d="m20 233 158 79 164-75v12l-164 76L20 247z"/><path d="m90 242 30-14 28 14-30 14zm54-23 30-14 28 14-30 14zm54-23 30-14 28 14-30 14zm-58 72 30-14 28 14-30 14zm54-24 30-14 28 14-30 14z" class="plate-detail"/></g>
-<g class="scope-plate course-plate"><path class="plate-face" d="m20 151 164-71 158 75-164 75z"/><path class="plate-edge" d="m20 151 158 79 164-75v12l-164 76L20 165z"/><path d="m86 153 51-22 34 16-51 23zm72-31 51-22 34 16-51 23zm-7 62 51-22 34 16-51 23zm72-31 35-16 34 16-35 16z" class="plate-detail"/></g>
-<g class="scope-plate document-plate is-selected"><path class="plate-face" d="m20 69 164-61 158 65-164 75z"/><path class="plate-edge" d="m20 69 158 79 164-75v12l-164 76L20 83z"/><path d="m100 67 70-29 64 28-70 32z" class="plate-detail"/><path d="m122 68 43-18m-29 25 44-19m-29 25 30-14" fill="none" stroke="#588798" stroke-width="3"/></g>
-<path d="M20 90v56m322-56v60M20 173v54m322-53v54" stroke="#9eb6c1" stroke-dasharray="3 5" fill="none"/>
-</svg>
-<div class="scope-caption"><span class="line-icon" data-icon="document" id="scope-icon"></span><div><strong id="scope-name">Document</strong><span id="scope-copy">Inspect changes and review the updated report.</span></div></div>
-<div class="ongoing-loop"><span aria-hidden="true">↻</span><span>New or changed material<br><strong>Audit again. Keep reviewing.</strong></span></div>
-</div>
-</details>
-<p class="takeaway">New or changed material comes back through the loop: audit, remediate, review, and revalidate.</p>
+<div class="return-graphic"><div class="finished-pdf"><span class="line-icon" data-icon="document"></span><strong>Accessible PDF</strong><span>Reviewed + revalidated</span></div><div class="visual-connector" aria-hidden="true">↓</div><div class="return-systems"><img class="return-system-logos" src="assets/source-system-logos.png" alt="Canvas, Blackboard, D2L, and SharePoint"></div><div class="version-options"><span>Replace original</span><b>or</b><span>Save new version</span></div></div>
+<button class="action-button return-source" data-open="sources">Return to source <span aria-hidden="true">↶</span></button>
+<div class="scope-graphic" aria-label="Progress across the documents, courses and departments you can access"><div><span class="line-icon" data-icon="document"></span><span>Document</span></div><b>→</b><div><span class="line-icon" data-icon="folder"></span><span>Course</span></div><b>→</b><div><span class="line-icon" data-icon="campus"></span><span>Department</span></div></div>
+<p class="visual-note">Progress across your access</p>
 </div>
 <section id="example-view" class="comparison-section" aria-labelledby="comparison-title" hidden>
-<h3 id="comparison-title">See the document before and after</h3>
-<p class="body-copy">Use the illustrations to explain the changes, then inspect the actual document in your demo.</p>
-<div class="gallery-card"><div class="gallery-toolbar"><div class="segmented" role="group" aria-label="Example state"><button data-state="before" aria-pressed="true">Before</button><button data-state="after" aria-pressed="false">After</button></div><button class="text-button" id="enlarge" aria-label="Enlarge document preview"><span class="line-icon" data-icon="expand"></span>Enlarge</button></div><img id="document-image" alt=""><p id="example-caption"></p></div>
-<p class="synthetic-note">Synthetic illustrations · Not product outputs or validated PDFs.</p>
+<h3 id="comparison-title" class="sr-only">Before and after</h3>
+<div class="gallery-card"><div class="gallery-toolbar"><div class="segmented" role="group" aria-label="Example state"><button data-state="before" aria-pressed="true">Before</button><button data-state="after" aria-pressed="false">After</button></div><button class="text-button" id="enlarge" aria-label="Enlarge document preview"><span class="line-icon" data-icon="expand"></span>Enlarge</button></div><img id="document-image" alt=""><p id="example-caption" class="sr-only"></p></div>
+<p class="visual-note">Illustrative examples</p>
 </section>
-</div></dialog>
+</div><div class="step-quick-nav" role="group" aria-label="Move between steps"><button id="previous-step" class="step-arrow" aria-label="Previous step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button id="next-step" class="step-arrow" aria-label="Next step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></dialog>
 </div>
 </main></div>
 <div class="sr-only" id="announcement" role="status"></div>
