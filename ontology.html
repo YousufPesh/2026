@@ -10,7 +10,7 @@
 <option value="architecture">1 · Architecture</option>
 <option value="layer">2 · The wiring</option>
 <option value="sources">3 · The systems</option>
-<option value="meaning">4 · Rows vs people</option>
+<option value="meaning">4 · Who answers</option>
 <option value="ask">5 · Questions</option>
 <option value="governance">6 · Who sees what</option>
 <option value="campusmind">7 · The handoff</option>
@@ -73,14 +73,18 @@
 
 <!-- ===== 04 ===== -->
 <section id="meaning" aria-labelledby="meaning-heading">
-<p class="eyebrow"><b>04</b> ROWS VS PEOPLE</p>
-<h2 id="meaning-heading">Same question. Two correct answers.</h2>
+<p class="eyebrow"><b>04</b> WHO ANSWERS</p>
+<h2 id="meaning-heading">Ask one system. Then ask the ontology.</h2>
 
 <div class="choices" role="group" aria-label="Choose an example">
 <button type="button" data-example="events" aria-pressed="true">Event attendance</button>
 <button type="button" data-example="housing" aria-pressed="false">Who lives here</button>
 </div>
 
+<div class="controls"><button type="button" id="paths-play" class="primary-button">▶ Ask both</button></div>
+<div class="paths" id="paths"></div>
+
+<h3 class="mini-head">Where the gap went</h3>
 <figure class="figure count-figure">
   <div class="count-head">
     <div class="count-side"><strong id="raw-value">1,200</strong><span id="raw-caption">rows in the table</span></div>

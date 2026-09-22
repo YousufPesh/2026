@@ -163,6 +163,24 @@ function buildDots(node, total) {
 const EX = {
   events: {
     total: 1200, raw: '1,200', rawCap: 'rows in the table', onto: '398', ontoCap: 'actual students',
+    pathA: {
+      label: 'ASK THE SOURCE SYSTEM',
+      q: 'How many event registrations do we have?',
+      chain: [{ n: 'Engagement platform', sub: 'event_registrations' }],
+      answer: '1,200', unit: 'rows returned',
+      verdict: 'One table. It cannot tell a student from a staff member.'
+    },
+    pathB: {
+      label: 'ASK THE ONTOLOGY',
+      q: 'How many students actually attended?',
+      chain: [
+        { iq: true, n: 'Fabric IQ', sub: 'attendee_type = Student' },
+        { split: [{ n: 'Engagement platform', sub: 'who registered' }, { n: 'Student information system', sub: 'who is a student' }] },
+        { join: true, n: 'Joined, then filtered', sub: 'registrations → students' }
+      ],
+      answer: '398', unit: 'students', good: true,
+      verdict: 'Two systems. One definition. One answer.'
+    },
     steps: [
       { n: 601, cls: 'd-grey', label: '601 faculty & staff' },
       { n: 201, cls: 'd-hollow', label: '201 never showed up' }
@@ -172,6 +190,24 @@ const EX = {
   },
   housing: {
     total: 148, raw: '148', rawCap: 'assignment records', onto: '115', ontoCap: 'people living there',
+    pathA: {
+      label: 'ASK THE SOURCE SYSTEM',
+      q: 'How many housing assignments in Kestrel Hall?',
+      chain: [{ n: 'Housing system', sub: 'housing_assignments' }],
+      answer: '148', unit: 'records returned',
+      verdict: 'One table. A record is not a person in a bed.'
+    },
+    pathB: {
+      label: 'ASK THE ONTOLOGY',
+      q: 'How many students currently reside in Kestrel Hall?',
+      chain: [
+        { iq: true, n: 'Fabric IQ', sub: 'resides_in, not has_assignment_in' },
+        { split: [{ n: 'Housing system', sub: 'checked in, not out' }, { n: 'Student information system', sub: 'still enrolled' }] },
+        { join: true, n: 'One relationship applied', sub: 'current residents only' }
+      ],
+      answer: '115', unit: 'people', good: true,
+      verdict: 'Same system. Two relationships. The ontology names which one you meant.'
+    },
     steps: [
       { n: 15, cls: 'd-grey', label: '15 never checked in' },
       { n: 11, cls: 'd-hollow', label: '11 checked out' },
@@ -181,11 +217,129 @@ const EX = {
     rel: '<code>resides_in</code> vs <code>has_assignment_in</code> — two relationships, two correct numbers.'
   }
 };
+/* --- routing: where each number came from --- */
+const MSG = '<span class="pmsg" aria-hidden="true">✉</span>';
+function pathNode(cfg) {
+  const d = document.createElement('div');
+  d.className = 'pnode' + (cfg.iq ? ' is-iq' : '') + (cfg.join ? ' is-join' : '');
+  d.innerHTML = '<span class="pn-name"></span><span class="pn-sub"></span>' + MSG;
+  d.querySelector('.pn-name').textContent = cfg.n;
+  d.querySelector('.pn-sub').textContent = cfg.sub || '';
+  return d;
+}
+function wire() {
+  const w = document.createElement('div');
+  w.className = 'pwire';
+  w.setAttribute('aria-hidden', 'true');
+  w.textContent = '↓';
+  return w;
+}
+function buildPath(p) {
+  const box = document.createElement('div');
+  box.className = 'path' + (p.good ? ' is-good' : '');
+  const head = document.createElement('div');
+  head.className = 'path-head';
+  head.innerHTML = '<span class="path-label"></span><strong class="path-answer">—</strong>';
+  head.querySelector('.path-label').textContent = p.label;
+  box.appendChild(head);
+
+  const ask = document.createElement('div');
+  ask.className = 'pnode is-ask';
+  ask.innerHTML = '<span class="pn-name"></span>' + MSG;
+  ask.querySelector('.pn-name').textContent = '“' + p.q + '”';
+  box.appendChild(ask);
+
+  p.chain.forEach(step => {
+    box.appendChild(wire());
+    if (step.split) {
+      const g = document.createElement('div');
+      g.className = 'psplit';
+      step.split.forEach(s => g.appendChild(pathNode(s)));
+      box.appendChild(g);
+    } else {
+      box.appendChild(pathNode(step));
+    }
+  });
+
+  const back = document.createElement('div');
+  back.className = 'pwire is-back';
+  back.setAttribute('aria-hidden', 'true');
+  back.textContent = '↑';
+  box.appendChild(back);
+
+  const out = document.createElement('div');
+  out.className = 'pout';
+  out.innerHTML = '<strong></strong><span></span>';
+  out.querySelector('strong').textContent = p.answer;
+  out.querySelector('span').textContent = p.unit;
+  box.appendChild(out);
+
+  const v = document.createElement('p');
+  v.className = 'path-verdict';
+  v.textContent = p.verdict;
+  box.appendChild(v);
+  return box;
+}
+function renderPaths(e) {
+  const wrap = $('paths');
+  wrap.innerHTML = '';
+  wrap.appendChild(buildPath(e.pathA));
+  wrap.appendChild(buildPath(e.pathB));
+  wrap.querySelectorAll('.path-answer').forEach(a => { a.textContent = '—'; });
+}
+let pTimer = null;
+function stopPaths() {
+  if (pTimer) { clearTimeout(pTimer); pTimer = null; }
+  document.querySelectorAll('.pnode,.pwire,.pout').forEach(n => n.classList.remove('is-on', 'is-done'));
+}
+function playPaths() {
+  stopPaths();
+  const btn = $('paths-play');
+  btn.disabled = true;
+  btn.textContent = 'Asking…';
+  const boxes = [...document.querySelectorAll('.path')];
+  let bi = 0;
+  const runBox = () => {
+    if (bi >= boxes.length) {
+      btn.disabled = false;
+      btn.textContent = '▶ Ask again';
+      return;
+    }
+    const box = boxes[bi];
+    const seq = [...box.querySelectorAll('.pnode,.pwire,.pout')];
+    const answerEl = box.querySelector('.path-answer');
+    const outEl = box.querySelector('.pout strong');
+    let si = 0;
+    const step = () => {
+      if (si > 0) seq[si - 1].classList.add('is-done');
+      if (si >= seq.length) {
+        seq.forEach(n => n.classList.remove('is-on'));
+        answerEl.textContent = outEl.textContent;
+        announce(box.querySelector('.path-verdict').textContent);
+        bi++;
+        pTimer = setTimeout(runBox, REDUCED ? 1800 : 900);
+        return;
+      }
+      seq.forEach(n => n.classList.remove('is-on'));
+      seq[si].classList.add('is-on');
+      si++;
+      pTimer = setTimeout(step, REDUCED ? 1500 : 780);
+    };
+    step();
+  };
+  runBox();
+}
+$('paths-play').addEventListener('click', playPaths);
+
 let exKey = 'events', dotCells = [], dTimer = null;
 function renderExample(key) {
   exKey = key;
   const e = EX[key];
   if (dTimer) clearTimeout(dTimer);
+  stopPaths();
+  renderPaths(e);
+  $('paths-play').disabled = false;
+  $('paths-play').textContent = '▶ Ask both';
   $('raw-value').textContent = e.raw;
   $('raw-caption').textContent = e.rawCap;
   $('onto-value').textContent = e.onto;
