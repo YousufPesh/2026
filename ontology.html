@@ -6,19 +6,105 @@
 <div class="masthead"><img src="/assets/campusmind-logo.svg" alt="CampusMind" width="143" height="31"><span>ONTOLOGY LAB</span></div>
 
 <div class="section-nav"><label for="section-jump">Explore the Lab</label><select id="section-jump">
-<option value="layer">1 · Why a base layer</option>
-<option value="sources">2 · Where the data lives</option>
-<option value="meaning">3 · What the ontology adds</option>
-<option value="ask">4 · Ask the data agent</option>
-<option value="governance">5 · Governance</option>
-<option value="campusmind">6 · Into CampusMind</option>
+<option value="architecture">1 · The architecture</option>
+<option value="layer">2 · Why a base layer</option>
+<option value="sources">3 · Where the data lives</option>
+<option value="meaning">4 · What the ontology adds</option>
+<option value="ask">5 · Ask the data agent</option>
+<option value="governance">6 · Governance</option>
+<option value="campusmind">7 · Into CampusMind</option>
 </select></div>
 
 <main id="main">
 
 <!-- ===== 01 ===== -->
+<section id="architecture" aria-labelledby="architecture-heading">
+<p class="eyebrow"><b>01</b> THE ARCHITECTURE</p>
+<h1 id="architecture-heading">A question travels all the way down. Only the answer comes back.</h1>
+<p class="intro">Six layers between a person and the systems your institution already runs. Start here — everything else in this Lab is one of these layers in detail.</p>
+
+<div class="trace-bar">
+<button type="button" id="trace-play" class="trace-button">▶ Trace a question</button>
+<button type="button" id="trace-reset" class="text-button" hidden>Reset</button>
+</div>
+<p class="trace-caption" id="trace-caption" aria-live="polite">Select any layer to open it, or trace a question through all six.</p>
+
+<div class="stack" id="stack">
+
+<button type="button" class="layer" data-layer="people">
+  <span class="layer-rail" aria-hidden="true"></span>
+  <span class="layer-head"><span class="layer-name">People</span><span class="layer-tag">one interface, not six portals</span></span>
+  <span class="layer-items">Students · Faculty · Advisors · Staff · Leadership</span>
+</button>
+
+<div class="flow-mark" aria-hidden="true"><span class="flow-down">↓</span><span class="flow-up">↑</span></div>
+
+<button type="button" class="layer" data-layer="campusmind">
+  <span class="layer-rail" aria-hidden="true"></span>
+  <span class="layer-head"><span class="layer-name">CampusMind</span><span class="layer-tag">3,000+ connectors for action</span></span>
+  <span class="layer-items">Recruitment agent · Retention agent · Student success agent · AI Studio · Agent marketplace</span>
+</button>
+
+<div class="boundary" role="note">
+  <span class="boundary-label">TRUST BOUNDARY</span>
+  <strong>No institutional data crosses this line.</strong>
+  <span>The question goes down. Only the answer comes back up.</span>
+</div>
+
+<button type="button" class="layer" data-layer="agents">
+  <span class="layer-rail" aria-hidden="true"></span>
+  <span class="layer-head"><span class="layer-name">Fabric data agents</span><span class="layer-tag">read only</span></span>
+  <span class="layer-items">Housing · Finance · Academic · Advising · Enrollment</span>
+</button>
+
+<div class="flow-mark" aria-hidden="true"><span class="flow-down">↓</span><span class="flow-up">↑</span></div>
+
+<button type="button" class="layer is-core" data-layer="fabriciq">
+  <span class="layer-rail" aria-hidden="true"></span>
+  <span class="layer-head"><span class="layer-name">Fabric IQ</span><span class="layer-tag">preview</span></span>
+  <span class="layer-items">Ontology · Semantic models — what your words mean, and one definition of every number</span>
+</button>
+
+<div class="flow-mark" aria-hidden="true"><span class="flow-down">↓</span><span class="flow-up">↑</span></div>
+
+<button type="button" class="layer" data-layer="onelake">
+  <span class="layer-rail" aria-hidden="true"></span>
+  <span class="layer-head"><span class="layer-name">OneLake foundation</span><span class="layer-tag">you own this</span></span>
+  <span class="layer-items">One governed lake · raw → cleaned → certified · full lineage to source</span>
+</button>
+
+<div class="flow-mark" aria-hidden="true"><span class="flow-down">↓</span><span class="flow-up">↑</span></div>
+
+<button type="button" class="layer" data-layer="sources">
+  <span class="layer-rail" aria-hidden="true"></span>
+  <span class="layer-head"><span class="layer-name">Source systems</span><span class="layer-tag">nothing is replaced</span></span>
+  <span class="layer-items">SIS · LMS · CRM · Finance · Housing · Advising</span>
+</button>
+
+<div class="spine"><span class="spine-label">ACROSS EVERY LAYER BELOW THE BOUNDARY</span>Microsoft Entra identity · row and column security · Microsoft Purview · complete audit trail</div>
+
+</div>
+
+<div class="layer-detail" id="layer-detail" hidden>
+  <div class="detail-top"><span class="kicker" id="detail-kicker"></span><button type="button" class="detail-close" id="detail-close" aria-label="Close layer details">Close ×</button></div>
+  <h3 id="detail-title"></h3>
+  <p id="detail-body"></p>
+  <ul class="reason-list" id="detail-points"></ul>
+  <div class="quote-block subtle" id="detail-say-wrap">
+    <span class="quote-label">SAY</span>
+    <p id="detail-say"></p>
+    <button class="copy" type="button" id="detail-copy">Copy</button>
+  </div>
+  <a class="detail-link" id="detail-link" href="#layer" hidden>Explore this in detail →</a>
+</div>
+
+<p class="note">Named products are illustrative, not partnerships. Fabric IQ is in preview.</p>
+<p class="inline-note">Which of these layers does your institution already have?</p>
+</section>
+
+<!-- ===== 02 ===== -->
 <section id="layer" aria-labelledby="layer-heading">
-<p class="eyebrow"><b>01</b> WHY A BASE LAYER</p>
+<p class="eyebrow"><b>02</b> WHY A BASE LAYER</p>
 <h1 id="layer-heading">One use case is an integration. A hundred is a liability.</h1>
 <p class="intro">Every AI use case needs data from systems that already exist. The question is whether each one goes and fetches it, or whether they all draw from one governed layer.</p>
 
@@ -56,9 +142,9 @@
 <p class="inline-note">How many source systems would your first use case need to touch?</p>
 </section>
 
-<!-- ===== 02 ===== -->
+<!-- ===== 03 ===== -->
 <section id="sources" aria-labelledby="sources-heading">
-<p class="eyebrow"><b>02</b> WHERE THE DATA LIVES</p>
+<p class="eyebrow"><b>03</b> WHERE THE DATA LIVES</p>
 <h2 id="sources-heading">Thirteen systems. Thirteen offices. Thirteen logins.</h2>
 <p class="intro">Every entity in this ontology came out of a system a real institution already runs — owned by a different office, bought in a different decade, with its own definition of a student.</p>
 
@@ -79,9 +165,9 @@
 </div>
 </section>
 
-<!-- ===== 03 ===== -->
+<!-- ===== 04 ===== -->
 <section id="meaning" aria-labelledby="meaning-heading">
-<p class="eyebrow"><b>03</b> WHAT THE ONTOLOGY ADDS</p>
+<p class="eyebrow"><b>04</b> WHAT THE ONTOLOGY ADDS</p>
 <h2 id="meaning-heading">The same question, two correct answers.</h2>
 <p class="intro">A table gives you rows. An ontology gives you what the rows mean — and it names the difference instead of hiding it.</p>
 
@@ -121,9 +207,9 @@
 </details>
 </section>
 
-<!-- ===== 04 ===== -->
+<!-- ===== 05 ===== -->
 <section id="ask" aria-labelledby="ask-heading">
-<p class="eyebrow"><b>04</b> ASK THE DATA AGENT</p>
+<p class="eyebrow"><b>05</b> ASK THE DATA AGENT</p>
 <h2 id="ask-heading">Questions no single system can answer.</h2>
 <p class="intro">Copy a question, paste it into the data agent, and narrate while it works. Each one crosses systems that have never been joined.</p>
 
@@ -139,9 +225,9 @@
 <p class="note">Answers can take up to two minutes. That pause is the work happening — resolving a definition, then crossing four systems. Narrate through it.</p>
 </section>
 
-<!-- ===== 05 ===== -->
+<!-- ===== 06 ===== -->
 <section id="governance" aria-labelledby="governance-heading">
-<p class="eyebrow"><b>05</b> GOVERNANCE</p>
+<p class="eyebrow"><b>06</b> GOVERNANCE</p>
 <h2 id="governance-heading">The boundary sits under the agent, not inside it.</h2>
 <p class="intro">Bringing the data together is only safe if the permissions come with it. This is the part that decides whether a second use case is a week or a quarter.</p>
 
@@ -167,9 +253,9 @@
 </div>
 </section>
 
-<!-- ===== 06 ===== -->
+<!-- ===== 07 ===== -->
 <section id="campusmind" aria-labelledby="campusmind-heading">
-<p class="eyebrow"><b>06</b> INTO CAMPUSMIND</p>
+<p class="eyebrow"><b>07</b> INTO CAMPUSMIND</p>
 <h2 id="campusmind-heading">The same layer, now answering a student.</h2>
 <p class="intro">The data agent connects to the CampusMind agent as a source. Nothing about the ontology changes — only who is asking, and what they are allowed to reach.</p>
 

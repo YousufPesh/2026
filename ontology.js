@@ -281,3 +281,151 @@ window.addEventListener('scroll', () => {
 renderLayer();
 renderExample('events');
 renderThread('opener');
+
+/* ---------- 01 · architecture stack ---------- */
+const LAYERS = {
+  people: {
+    kicker: 'LAYER 1 · PEOPLE',
+    title: 'One interface, not six portals.',
+    body: 'Everyone who needs an answer asks in the same place, in plain language. What they are allowed to see is decided underneath, not by which portal they happened to log into.',
+    points: ['Students · Faculty · Advisors · Staff · Leadership', 'The same question from an advisor and a provost reaches different rows.'],
+    say: 'Today the answer to this question lives in four systems, and the person who needs it has a login to two of them.'
+  },
+  campusmind: {
+    kicker: 'LAYER 2 · CAMPUSMIND',
+    title: 'The agents people actually talk to.',
+    body: 'Recruitment, Retention and Student Success agents, plus AI Studio for building your own and a marketplace for the rest. Each agent sees only what the person’s role allows.',
+    points: ['Recruitment agent · Retention agent · Student success agent', 'AI Studio · Agent marketplace', '3,000+ connectors, so an answer can become an action.'],
+    say: 'This is the layer your staff and students see. Everything below it is the reason it can be trusted.',
+    link: '#campusmind', linkText: 'See the CampusMind handoff →'
+  },
+  agents: {
+    kicker: 'LAYER 3 · FABRIC DATA AGENTS',
+    title: 'Read-only, and running as the person asking.',
+    body: 'A data agent per domain. It generates a query, shows you the query it generated, and executes it under the identity of whoever asked — never under a service account with more reach.',
+    points: ['Housing · Finance · Academic · Advising · Enrollment', 'Read only. The agent has no path to write.', 'The generated query is shown, not hidden.'],
+    say: 'It generated a read-only query, and it ran as me. If I could not see those rows in the source system, I cannot see them here either.',
+    link: '#ask', linkText: 'Ask the data agent →'
+  },
+  fabriciq: {
+    kicker: 'LAYER 4 · FABRIC IQ',
+    title: 'What your words mean, and one definition of every number.',
+    body: 'The ontology holds entities and the relationships between them — Student resides_in Hall, Room satisfies Accommodation. The semantic model holds certified metrics, so retention, occupancy and aid mean one thing across the institution.',
+    points: ['Ontology — entities and relationships, written down once and owned.', 'Semantic models — certified metrics: retention, occupancy, aid.', 'Fabric IQ is currently in preview.'],
+    say: 'This is the layer that turns a question in English into a question about your institution. Without it, the agent is guessing what you meant by a student.',
+    link: '#meaning', linkText: 'See what the ontology adds →'
+  },
+  onelake: {
+    kicker: 'LAYER 5 · ONELAKE FOUNDATION',
+    title: 'One governed lake. One copy. You own it.',
+    body: 'Data lands raw, is cleaned, and is certified — with full lineage back to the system it came from. Open Delta format, in your own tenant, with no duplication.',
+    points: ['raw → cleaned → certified', 'Full lineage back to source.', 'Open Delta format in your own tenant — one copy, no duplication.'],
+    say: 'This sits in your tenant, in an open format. If you walked away from every vendor in this diagram tomorrow, the data is still yours and still readable.'
+  },
+  sources: {
+    kicker: 'LAYER 6 · SOURCE SYSTEMS',
+    title: 'Nothing is replaced. They stay where they are.',
+    body: 'The systems your institution already runs keep running. The layer above reads from them — it does not ask you to migrate off them.',
+    points: ['SIS · Banner, Workday', 'LMS · Canvas, Blackboard', 'CRM · Slate, Salesforce', 'Finance · TouchNet  ·  Housing · StarRez  ·  Advising · Navigate'],
+    say: 'Nothing here is a rip-and-replace. Every system on this list keeps doing its job. We are reading from them, not moving off them.',
+    link: '#sources', linkText: 'See where the data lives →'
+  }
+};
+
+const stack = $('stack');
+const detail = $('layer-detail');
+const layerButtons = [...document.querySelectorAll('.layer')];
+
+function openLayer(key) {
+  const d = LAYERS[key];
+  layerButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.layer === key)));
+  $('detail-kicker').textContent = d.kicker;
+  $('detail-title').textContent = d.title;
+  $('detail-body').textContent = d.body;
+  $('detail-points').innerHTML = d.points.map(p => `<li>${p}</li>`).join('');
+  $('detail-say').textContent = d.say;
+  $('detail-copy').dataset.copy = d.say;
+  const link = $('detail-link');
+  if (d.link) { link.href = d.link; link.textContent = d.linkText; link.hidden = false; }
+  else link.hidden = true;
+  detail.hidden = false;
+  $('detail-title').scrollIntoView({ block: 'nearest' });
+}
+layerButtons.forEach(b => {
+  b.setAttribute('aria-pressed', 'false');
+  b.addEventListener('click', () => {
+    if (b.getAttribute('aria-pressed') === 'true') { closeDetail(); return; }
+    stopTrace();
+    openLayer(b.dataset.layer);
+  });
+});
+function closeDetail() {
+  detail.hidden = true;
+  layerButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
+}
+$('detail-close').addEventListener('click', closeDetail);
+
+/* the trace */
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TRACE = [
+  { sel: '[data-layer=people]', dir: 'down', text: 'An advisor asks a question in plain language. One interface, not six portals.' },
+  { sel: '[data-layer=campusmind]', dir: 'down', text: 'CampusMind routes it to the right agent — scoped to what this person’s role allows.' },
+  { sel: '.boundary', dir: 'down', text: 'The question crosses the trust boundary. Institutional data never crosses back up past this line.' },
+  { sel: '[data-layer=agents]', dir: 'down', text: 'A Fabric data agent generates a read-only query, and runs it as the person asking.' },
+  { sel: '[data-layer=fabriciq]', dir: 'down', text: 'Fabric IQ resolves what the words mean, and which certified number answers them.' },
+  { sel: '[data-layer=onelake]', dir: 'down', text: 'The query reads certified tables in one governed lake — one copy, full lineage to source.' },
+  { sel: '[data-layer=sources]', dir: 'down', text: 'Which were fed from the systems you already run. Nothing was replaced.' },
+  { sel: '[data-layer=fabriciq]', dir: 'up', text: 'Only the answer comes back — one number, with the definition behind it.' },
+  { sel: '[data-layer=campusmind]', dir: 'up', text: 'Back through CampusMind, still under the same permissions.' },
+  { sel: '[data-layer=people]', dir: 'up', text: 'The advisor gets an answer no single system on this campus could have given them.' }
+];
+let traceTimer = null, traceStep = 0;
+const playBtn = $('trace-play'), resetBtn = $('trace-reset'), caption = $('trace-caption');
+
+function clearMarks() {
+  document.querySelectorAll('.is-lit,.is-answer').forEach(el => el.classList.remove('is-lit', 'is-answer'));
+  document.querySelectorAll('.flow-down,.flow-up').forEach(el => el.classList.remove('is-on'));
+}
+function stopTrace() {
+  if (traceTimer) { clearTimeout(traceTimer); traceTimer = null; }
+  clearMarks();
+  playBtn.disabled = false;
+  playBtn.textContent = '▶ Trace a question';
+  caption.classList.remove('is-live');
+}
+function stepTrace() {
+  clearMarks();
+  const s = TRACE[traceStep];
+  const el = document.querySelector(s.sel);
+  if (el) el.classList.add(s.dir === 'down' ? 'is-lit' : 'is-answer');
+  document.querySelectorAll(s.dir === 'down' ? '.flow-down' : '.flow-up').forEach(f => f.classList.add('is-on'));
+  caption.textContent = (traceStep + 1) + '/' + TRACE.length + ' · ' + s.text;
+  caption.classList.add('is-live');
+  traceStep++;
+  if (traceStep < TRACE.length) {
+    traceTimer = setTimeout(stepTrace, REDUCED ? 2600 : 1500);
+  } else {
+    traceTimer = setTimeout(function () {
+      clearMarks();
+      caption.textContent = 'A question travels all the way down. Only the answer comes back. Select any layer to open it.';
+      caption.classList.remove('is-live');
+      playBtn.disabled = false;
+      playBtn.textContent = '▶ Trace it again';
+      resetBtn.hidden = true;
+    }, 2600);
+  }
+}
+playBtn.addEventListener('click', function () {
+  closeDetail();
+  stopTrace();
+  traceStep = 0;
+  playBtn.disabled = true;
+  playBtn.textContent = 'Tracing…';
+  resetBtn.hidden = false;
+  stepTrace();
+});
+resetBtn.addEventListener('click', function () {
+  stopTrace();
+  resetBtn.hidden = true;
+  caption.textContent = 'Select any layer to open it, or trace a question through all six.';
+});
