@@ -34,6 +34,11 @@ const CONV_TIERS = [10000, 50000, 100000];
 const HOSTED_CONV = { 10000: 3000, 50000: 12500, 100000: 27000 };
 /* Running out mid-term: another 10,000 conversations. */
 const CONV_TOPUP = { pages: 10000, price: 5000 };
+/* Onboarding is standard across the platform. Accessibility sets its own. */
+const ONBOARDING = { tenant: 5000, saas: 3000 };
+/* Hosted licences carry a token allowance for build and testing only.
+   Once it is gone, conversations stop until a tier is bought. */
+const MINIMUM_CONV = 100;
 /* On-tenant conversations run on your own AI spend. */
 const TENANT_CONV_RATE = 1200 / 10000;   /* $1,200 per 10,000 = $0.12 */
 
@@ -65,9 +70,8 @@ const OFFERINGS = [
     includes: ['All frontier + open models', 'File attachments', 'Web search & code interpreter', 'Coach mode', 'Group chats', 'Cost controls'],
     from: 20000,
     price: {
-      tenant: { onboarding: 5000, licence: { s: 20000, m: 25000, l: 30000 }, infraMonthly: { s: 1000, m: 2000, l: 3000 } },
-      /* ASSUMPTION: hosted 100k extrapolated at the same $0.20 a conversation. */
-      saas: { onboarding: 3000, licence: { s: 20000, m: 25000, l: 30000 }, conv: { 10000: 2000, 50000: 10000, 100000: 20000 } }
+      tenant: { onboarding: ONBOARDING.tenant, licence: { s: 20000, m: 25000, l: 30000 }, infraMonthly: { s: 1000, m: 2000, l: 3000 } },
+      saas: { onboarding: ONBOARDING.saas, licence: { s: 20000, m: 25000, l: 30000 }, conv: { 10000: 2000, 50000: 10000, 100000: 20000 }, minimumConv: MINIMUM_CONV }
     },
     questions: [{ id: 'conv', type: 'tier', label: 'Conversations for the term', tiers: CONV_TIERS, def: '10000' }]
   },
@@ -82,9 +86,8 @@ const OFFERINGS = [
     from: 50000,
     includedConvMonthly: 1000,
     price: {
-      /* ASSUMPTION: onboarding not specified, taken from LLM Chat. */
-      tenant: { onboarding: 5000, licence: { s: 50000, m: 70000, l: 100000 }, infraMonthly: { s: 2000, m: 3000, l: 4000 } },
-      saas: { onboarding: 3000, licence: { s: 50000, m: 70000, l: 100000 }, conv: HOSTED_CONV }
+      tenant: { onboarding: ONBOARDING.tenant, licence: { s: 50000, m: 70000, l: 100000 }, infraMonthly: { s: 2000, m: 3000, l: 4000 } },
+      saas: { onboarding: ONBOARDING.saas, licence: { s: 50000, m: 70000, l: 100000 }, conv: HOSTED_CONV }
     },
     questions: [{ id: 'conv', type: 'tier', label: 'Conversations for the term', tiers: CONV_TIERS, def: '10000' }]
   },
@@ -97,9 +100,8 @@ const OFFERINGS = [
     includes: ['Orchestrator + program specialists', 'Website widget', 'CRM handoff with transcript', 'Human review queue'],
     from: 20000,
     price: {
-      /* ASSUMPTION: onboarding not specified, left at zero. */
-      tenant: { onboarding: 0, licence: 20000, infraMonthly: 1500 },
-      saas: { onboarding: 0, licence: 20000, conv: HOSTED_CONV }
+      tenant: { onboarding: ONBOARDING.tenant, licence: 20000, infraMonthly: 1500 },
+      saas: { onboarding: ONBOARDING.saas, licence: 20000, conv: HOSTED_CONV, minimumConv: MINIMUM_CONV }
     },
     questions: [{ id: 'conv', type: 'tier', label: 'Conversations for the term', tiers: CONV_TIERS, def: '10000' }]
   },
@@ -112,8 +114,8 @@ const OFFERINGS = [
     includes: ['Signal rules you configure', 'Weights and action thresholds', 'Outreach spacing rules', 'Advisor context handoff'],
     from: 20000,
     price: {
-      tenant: { onboarding: 0, licence: 20000, infraMonthly: 1500 },
-      saas: { onboarding: 0, licence: 20000, conv: HOSTED_CONV }
+      tenant: { onboarding: ONBOARDING.tenant, licence: 20000, infraMonthly: 1500 },
+      saas: { onboarding: ONBOARDING.saas, licence: 20000, conv: HOSTED_CONV, minimumConv: MINIMUM_CONV }
     },
     questions: [{ id: 'conv', type: 'tier', label: 'Conversations for the term', tiers: CONV_TIERS, def: '10000' }]
   },
@@ -161,8 +163,8 @@ const OFFERINGS = [
     includes: ['Discovery and source mapping', 'Medallion pipeline into OneLake', 'Ontology and semantic model', 'Row and column security, Purview'],
     from: 50000,
     price: {
-      tenant: { onboarding: 0, licence: 50000, infraMonthly: 1500 },
-      saas: { onboarding: 0, licence: 50000, infraMonthly: 1500 }
+      tenant: { onboarding: ONBOARDING.tenant, licence: 50000, infraMonthly: 1500 },
+      saas: { onboarding: ONBOARDING.saas, licence: 50000, infraMonthly: 1500 }
     },
     perSystem: 2500,
     includedSystems: 4,
@@ -411,7 +413,12 @@ function renderTiers() {
     const unit = o.id === 'accessibility' ? 'pages' : 'conversations';
     const chosen = String(state.answers[o.id + '.' + q.id]);
     const max = Math.max(...q.tiers.map(t => tierCost(o.id, t) || 0)) || 1;
-    return `<div class="tier-card"><h3>${o.name}</h3>` + q.tiers.map(t => {
+    const plan = o.price && o.price[dep];
+    const min = plan && plan.minimumConv;
+    const note = dep !== 'saas' ? 'On your own AI spend.'
+      : min ? `Licence carries ${min} conversations for build and testing. Beyond that, buy a tier or it stops.`
+      : 'Hosted bundle, bought up front.';
+    const rows = q.tiers.map(t => {
       const c = tierCost(o.id, t);
       const on = String(t) === chosen;
       return `<div class="tier-row${on ? ' is-on' : ''}">
@@ -419,7 +426,8 @@ function renderTiers() {
         <span class="tier-n">${t.toLocaleString()} ${unit}</span>
         <strong>${c === null ? 'included' : fmt(c)}</strong>
       </div>`;
-    }).join('') + `<p class="tier-note">${dep === 'saas' ? 'Hosted bundle, bought up front.' : 'On your own AI spend.'}</p></div>`;
+    }).join('');
+    return `<div class="tier-card"><h3>${o.name}</h3>${rows}<p class="tier-note">${note}</p></div>`;
   }).join('');
 }
 
@@ -451,6 +459,11 @@ function renderQuote(q) {
       : `Accessibility: pages run on your own AI spend at $${ACCESS.tenant.perPage.toFixed(2)}.`);
   }
   if (state.picked.includes('aistudio')) a.push(`AI Studio carries 1,000 conversations a month. Running out mid-term adds ${CONV_TOPUP.pages.toLocaleString()} for ${fmt(CONV_TOPUP.price)}.`);
+  const minimal = state.picked.filter(id => {
+    const p = offering(id).price;
+    return p && p[deployment()] && p[deployment()].minimumConv;
+  });
+  if (minimal.length) a.push(`The hosted licence carries ${MINIMUM_CONV} conversations for build and testing only. Once those are gone, conversations stop until a tier is bought, so the tier above is what keeps it running.`);
   a.push('Indicative only. Usage is billed on what you actually use.');
   $('quote-assumptions').textContent = a.join(' ');
 }
