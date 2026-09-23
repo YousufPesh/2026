@@ -20,6 +20,7 @@ Vercel deploys `main` automatically on merge.
 | 04 | Ontology | The semantic layer over campus systems | Open any of six architecture layers. Run an animated trace of one question through all of them. Compare 13 × u point-to-point integrations against 13 + u. |
 | 05 | Virtual Teaching Assistant | Student support inside the LMS | Switch between Canvas, Blackboard, and D2L. Read the example question categories. The screenshots are still placeholders. |
 | 06 | Agent Studio | Agent design and governance | Follow a concise path from institutional purpose through agent design, connected knowledge, testing, and governed release. |
+| 07 | LLM Chat | Campus-wide access to every model | A run sheet for the live demo, in the order it is presented. Jump to any of the three runs, copy each of the 24 prompts straight into the product, watch an agent reach out to Canvas or through Fabric to the systems of record, and browse 23 models by provider at the step where the model changes. |
 
 ## Run the Labs locally
 
