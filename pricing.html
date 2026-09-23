@@ -22,6 +22,7 @@
     <a href="./ontology.html">Ontology</a>
     <a href="./virtual-teaching-assistant.html">Teaching assistant</a>
     <a href="./agent-studio.html">Agent Studio</a>
+    <a href="./llm-chat.html">LLM Chat</a>
     <a href="./pricing.html" aria-current="page">Pricing</a>
   </nav>
 
@@ -37,7 +38,7 @@
       <a href="#offerings"><span>01</span>Offerings</a>
       <a href="#about"><span>02</span>About you</a>
       <a href="#detail"><span>03</span>Detail</a>
-      <a href="#usage"><span>04</span>AI usage</a>
+      <a href="#usage"><span>04</span>Volume</a>
       <a href="#quote"><span>05</span>Quote</a>
     </nav>
 
@@ -56,12 +57,12 @@
         <p class="eyebrow"><b>01</b> WHAT DO YOU NEED</p>
         <h1 id="offerings-heading">Pick everything you are interested in.</h1>
         <div class="offer-grid" id="offer-grid"></div>
-        <p class="hint" id="offer-hint">Agent Marketplace includes LLM Chat. Fabric can be added to any of them.</p>
+        <p class="hint" id="offer-hint">AI Studio includes LLM Chat. Fabric can be added to any of them.</p>
       </section>
 
       <section id="about" aria-labelledby="about-heading">
         <p class="eyebrow"><b>02</b> ABOUT YOU</p>
-        <h2 id="about-heading">Three questions we ask everyone.</h2>
+        <h2 id="about-heading">Only what your selection needs.</h2>
         <div id="about-questions"></div>
       </section>
 
@@ -71,16 +72,10 @@
         <div id="detail-questions"></div>
       </section>
 
-      <section id="usage" aria-labelledby="usage-heading">
-        <p class="eyebrow"><b>04</b> AI USAGE</p>
-        <h2 id="usage-heading">What does that budget actually buy?</h2>
-        <div class="range-row">
-          <label class="sr-only" for="aibudget">Annual AI budget</label>
-          <input type="range" id="aibudget" min="6000" max="120000" value="12000" step="2000">
-          <output id="aibudget-value" for="aibudget">$12,000</output>
-        </div>
-        <div class="buy-grid" id="buy-grid"></div>
-        <p class="assumption" id="usage-assumption"></p>
+      <section id="usage" aria-labelledby="usage-heading" hidden>
+        <p class="eyebrow"><b>04</b> VOLUME</p>
+        <h2 id="usage-heading">What each tier costs.</h2>
+        <div class="tier-grid" id="tier-grid"></div>
       </section>
 
       <section id="quote" aria-labelledby="quote-heading">

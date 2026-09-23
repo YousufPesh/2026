@@ -1,0 +1,1481 @@
+student_id,entry_term,college,major,stem,first_gen,pell_eligible,works_20plus_hrs,hs_gpa,fall25_credits_attempted,fall25_credits_earned,fall25_gpa,gateway_math_grade,lms_logins_first4wks,advising_visits_ay25,spring26_gpa,cumulative_gpa,retained_fall26,class_level_fall26
+LU25000,Fall 2025,Business,Marketing,0,0,1,1,3.97,16,16,3.88,,5,1,3.41,3.64,1,Sophomore
+LU25001,Fall 2025,Education,Elementary Education,0,1,1,1,3.53,15,15,2.36,,69,1,2.08,2.22,1,Sophomore
+LU25002,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.33,15,15,2.97,,62,1,3.38,3.17,1,Sophomore
+LU25003,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.44,12,12,3.39,B,51,1,3.37,3.38,1,Sophomore
+LU25004,Fall 2025,Arts & Sciences,Psychology,0,0,1,1,4.0,14,14,3.85,,121,0,4.0,3.92,1,Sophomore
+LU25005,Fall 2025,Education,Secondary Education,0,0,0,0,3.9,15,15,3.01,B,107,1,3.47,3.24,1,Sophomore
+LU25006,Fall 2025,Arts & Sciences,Economics,0,1,0,0,3.65,15,15,4.0,,33,2,3.63,3.81,1,Sophomore
+LU25007,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.38,17,17,3.5,A,80,2,3.55,3.52,1,Sophomore
+LU25008,Fall 2025,Nursing & Health,Kinesiology,1,1,1,1,3.05,16,16,3.32,B,111,1,3.39,3.36,1,Sophomore
+LU25009,Fall 2025,Engineering,Civil Engineering,1,0,1,1,4.0,15,15,3.02,C,133,1,3.36,3.19,1,Sophomore
+LU25010,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.68,16,16,3.07,C,160,0,3.06,3.07,1,Sophomore
+LU25011,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,2.86,12,12,1.54,D,83,2,0.33,0.94,0,Not enrolled
+LU25012,Fall 2025,Arts & Sciences,English,0,0,0,0,3.06,15,12,1.97,C,69,2,1.69,1.83,1,Sophomore
+LU25013,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.38,13,10,2.06,,79,1,1.91,1.99,1,Freshman
+LU25014,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.52,15,15,2.85,C,83,0,2.39,2.62,0,Not enrolled
+LU25015,Fall 2025,Engineering,Computer Science,1,0,1,1,3.59,13,13,2.7,C,49,0,3.28,2.99,1,Sophomore
+LU25016,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.72,13,13,2.76,,43,0,2.07,2.41,1,Sophomore
+LU25017,Fall 2025,Nursing & Health,Kinesiology,1,0,1,1,3.22,15,12,1.65,W,42,1,1.03,1.34,0,Not enrolled
+LU25018,Fall 2025,Business,Marketing,0,0,0,0,3.57,16,16,3.84,A,99,3,3.43,3.64,1,Sophomore
+LU25019,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.55,12,12,2.54,F,81,2,2.27,2.41,1,Sophomore
+LU25020,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.16,16,16,3.39,C,86,1,3.13,3.26,1,Sophomore
+LU25021,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.79,16,16,3.17,A,163,2,3.04,3.11,1,Sophomore
+LU25022,Fall 2025,Business,Finance,0,0,0,1,3.5,16,16,2.92,B,65,1,3.13,3.03,1,Sophomore
+LU25023,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.78,16,16,2.42,F,30,0,1.66,2.04,1,Sophomore
+LU25024,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.69,16,16,2.26,D,30,2,,2.26,0,Not enrolled
+LU25025,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,4.0,17,17,2.51,F,70,1,2.75,2.63,1,Sophomore
+LU25026,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.35,16,16,2.48,,58,2,2.55,2.51,1,Sophomore
+LU25027,Fall 2025,Education,Secondary Education,0,1,1,0,4.0,14,14,3.48,,52,2,3.7,3.59,1,Sophomore
+LU25028,Fall 2025,Business,Marketing,0,1,0,1,3.8,16,16,2.29,W,119,0,1.89,2.09,1,Sophomore
+LU25029,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.52,16,16,3.16,,64,1,2.86,3.01,1,Sophomore
+LU25030,Fall 2025,Engineering,Civil Engineering,1,0,0,0,2.64,16,16,1.35,W,111,3,,1.35,0,Not enrolled
+LU25031,Fall 2025,Arts & Sciences,English,0,0,0,0,3.57,16,16,2.67,B,79,1,3.49,3.08,1,Sophomore
+LU25032,Fall 2025,Arts & Sciences,Economics,0,1,0,0,3.56,13,13,2.49,B,84,0,2.87,2.68,1,Sophomore
+LU25033,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.33,15,15,2.52,C,99,2,2.74,2.63,1,Sophomore
+LU25034,Fall 2025,Business,Finance,0,1,1,1,3.69,15,15,2.76,C,62,0,2.43,2.59,1,Sophomore
+LU25035,Fall 2025,Arts & Sciences,Mathematics,1,1,1,0,3.95,15,15,2.78,F,49,3,2.15,2.47,0,Not enrolled
+LU25036,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.06,14,14,3.65,B,116,1,4.0,3.83,1,Sophomore
+LU25037,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.49,12,12,2.88,,50,3,2.66,2.77,1,Sophomore
+LU25038,Fall 2025,Nursing & Health,Nursing,1,1,0,0,3.43,16,13,2.04,D,73,0,1.5,1.77,0,Not enrolled
+LU25039,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.6,13,13,2.53,F,123,2,2.31,2.42,1,Sophomore
+LU25040,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.18,16,16,3.29,,60,2,3.33,3.31,1,Sophomore
+LU25041,Fall 2025,Education,Secondary Education,0,0,1,0,2.97,13,10,2.2,,110,2,,2.2,0,Not enrolled
+LU25042,Fall 2025,Engineering,Mechanical Engineering,1,0,1,0,3.1,15,15,3.66,B,151,1,3.61,3.63,1,Sophomore
+LU25043,Fall 2025,Nursing & Health,Kinesiology,1,1,1,0,3.25,13,13,2.93,C,47,1,2.98,2.95,1,Sophomore
+LU25044,Fall 2025,Business,Finance,0,0,0,0,3.43,16,16,3.06,B,110,1,3.07,3.07,1,Sophomore
+LU25045,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.71,16,16,2.69,C,124,1,1.26,1.98,0,Not enrolled
+LU25046,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.82,16,16,2.87,,61,2,,2.87,0,Not enrolled
+LU25047,Fall 2025,Engineering,Computer Science,1,0,0,0,3.12,16,16,3.16,B,81,1,3.38,3.27,1,Sophomore
+LU25048,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,4.0,15,15,3.08,C,115,3,2.88,2.98,1,Sophomore
+LU25049,Fall 2025,Education,Elementary Education,0,0,0,0,3.45,15,15,2.26,,52,0,2.2,2.23,1,Sophomore
+LU25050,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,2.86,12,8,1.6,D,54,6,0.86,1.23,0,Not enrolled
+LU25051,Fall 2025,Business,Finance,0,0,0,0,3.21,13,13,2.72,B,37,1,2.06,2.39,1,Sophomore
+LU25052,Fall 2025,Arts & Sciences,English,0,0,0,0,3.8,12,12,2.92,,91,0,2.3,2.61,1,Sophomore
+LU25053,Fall 2025,Engineering,Computer Science,1,1,1,1,3.2,12,9,1.93,F,123,4,2.25,2.09,0,Not enrolled
+LU25054,Fall 2025,Arts & Sciences,Chemistry,1,1,0,0,3.32,13,9,2.08,B,88,1,1.89,1.99,0,Not enrolled
+LU25055,Fall 2025,Arts & Sciences,English,0,0,0,0,3.34,15,15,3.53,B,106,2,,3.53,0,Not enrolled
+LU25056,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.31,12,12,2.34,C,82,3,,2.34,0,Not enrolled
+LU25057,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,3.52,16,4,0.62,D,78,1,,0.62,0,Not enrolled
+LU25058,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.44,14,14,2.79,C,77,1,2.74,2.76,1,Sophomore
+LU25059,Fall 2025,Business,Marketing,0,0,0,0,3.64,14,14,3.75,B,165,0,3.71,3.73,1,Sophomore
+LU25060,Fall 2025,Business,Management,0,0,1,0,2.94,15,15,3.17,C,129,0,3.44,3.31,1,Sophomore
+LU25061,Fall 2025,Business,Accounting,0,0,0,1,3.68,16,16,2.0,,45,2,1.96,1.98,1,Sophomore
+LU25062,Fall 2025,Business,Accounting,0,0,1,1,3.31,14,14,2.58,C,84,1,2.26,2.42,1,Sophomore
+LU25063,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,2.87,16,13,1.53,W,79,4,,1.53,0,Not enrolled
+LU25064,Fall 2025,Engineering,Civil Engineering,1,1,0,1,3.65,12,12,2.62,C,83,0,2.59,2.61,1,Sophomore
+LU25065,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.45,17,17,2.61,,75,2,3.02,2.81,1,Sophomore
+LU25066,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.41,16,16,2.66,D,72,2,2.74,2.7,1,Sophomore
+LU25067,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.03,15,15,3.05,,108,1,3.07,3.06,1,Sophomore
+LU25068,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.65,13,13,3.37,,92,4,3.43,3.4,1,Sophomore
+LU25069,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.84,16,16,3.5,A,99,0,3.59,3.55,1,Sophomore
+LU25070,Fall 2025,Business,Accounting,0,0,0,0,2.72,17,17,2.21,F,98,1,,2.21,0,Not enrolled
+LU25071,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.3,15,15,1.59,F,107,5,1.43,1.51,0,Not enrolled
+LU25072,Fall 2025,Education,Elementary Education,0,0,1,0,3.28,13,13,2.54,,97,0,2.67,2.6,1,Sophomore
+LU25073,Fall 2025,Business,Management,0,0,0,0,3.46,14,14,3.41,,98,3,3.36,3.38,1,Sophomore
+LU25074,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.19,15,15,3.39,A,72,1,3.54,3.47,1,Sophomore
+LU25075,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.91,14,14,3.94,A,85,1,4.0,3.97,1,Sophomore
+LU25076,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.82,17,17,2.77,F,26,1,2.9,2.83,1,Sophomore
+LU25077,Fall 2025,Education,Secondary Education,0,1,1,0,3.34,16,16,2.23,W,109,0,2.57,2.4,1,Sophomore
+LU25078,Fall 2025,Business,Marketing,0,1,0,0,3.06,15,15,2.82,B,86,2,2.96,2.89,1,Sophomore
+LU25079,Fall 2025,Arts & Sciences,English,0,1,1,1,3.67,13,10,2.11,,91,4,1.67,1.89,1,Freshman
+LU25080,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.53,15,15,2.98,B,56,1,3.21,3.09,1,Sophomore
+LU25081,Fall 2025,Education,Elementary Education,0,0,0,0,3.4,15,12,2.07,,123,0,,2.07,0,Not enrolled
+LU25082,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.72,14,14,2.32,W,68,2,2.39,2.35,1,Sophomore
+LU25083,Fall 2025,Arts & Sciences,Psychology,0,1,0,1,3.68,16,16,3.06,,135,1,3.37,3.22,1,Sophomore
+LU25084,Fall 2025,Education,Secondary Education,0,0,0,0,3.78,15,15,2.79,,103,1,3.54,3.17,1,Sophomore
+LU25085,Fall 2025,Business,Management,0,1,1,1,2.98,13,13,3.08,,87,2,3.69,3.38,1,Sophomore
+LU25086,Fall 2025,Business,Accounting,0,1,1,0,3.09,15,15,2.24,B,44,4,1.75,1.99,1,Sophomore
+LU25087,Fall 2025,Arts & Sciences,Chemistry,1,1,0,0,3.57,13,13,2.31,W,91,2,1.75,2.03,0,Not enrolled
+LU25088,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.46,15,15,3.35,B,56,0,3.32,3.34,1,Sophomore
+LU25089,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.39,15,15,3.15,C,73,1,3.28,3.22,1,Sophomore
+LU25090,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,3.84,16,16,3.61,,55,1,3.43,3.52,1,Sophomore
+LU25091,Fall 2025,Education,Elementary Education,0,1,1,1,4.0,14,14,2.34,,5,2,2.06,2.2,1,Sophomore
+LU25092,Fall 2025,Engineering,Civil Engineering,1,1,1,0,3.74,15,15,1.93,W,55,0,1.96,1.94,1,Sophomore
+LU25093,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.82,14,14,2.38,,94,1,2.28,2.33,1,Sophomore
+LU25094,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.79,12,12,3.58,,87,2,4.0,3.79,1,Sophomore
+LU25095,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.08,14,2,1.07,W,27,1,,1.07,0,Not enrolled
+LU25096,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.29,14,14,2.68,B,75,2,2.49,2.59,1,Sophomore
+LU25097,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,2.54,15,15,2.21,W,141,1,,2.21,0,Not enrolled
+LU25098,Fall 2025,Arts & Sciences,English,0,0,1,1,3.57,15,15,2.45,D,75,0,2.8,2.63,1,Sophomore
+LU25099,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,3.65,12,12,3.4,B,158,2,3.93,3.67,1,Sophomore
+LU25100,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.87,15,12,2.13,,86,0,2.44,2.28,1,Sophomore
+LU25101,Fall 2025,Business,Accounting,0,0,0,0,2.86,16,16,2.48,C,50,1,2.92,2.7,1,Sophomore
+LU25102,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.79,16,16,4.0,B,57,1,3.49,3.74,1,Sophomore
+LU25103,Fall 2025,Engineering,Computer Science,1,1,1,1,3.36,15,15,2.37,,85,2,1.91,2.14,1,Sophomore
+LU25104,Fall 2025,Education,Secondary Education,0,0,0,0,2.86,13,9,1.83,,112,2,,1.83,0,Not enrolled
+LU25105,Fall 2025,Arts & Sciences,Political Science,0,1,0,1,3.48,15,15,3.03,,24,2,3.56,3.3,1,Sophomore
+LU25106,Fall 2025,Business,Marketing,0,0,1,0,3.46,15,15,2.35,C,116,0,1.78,2.06,0,Not enrolled
+LU25107,Fall 2025,Business,Marketing,0,1,0,0,3.4,15,15,2.24,D,132,0,2.31,2.28,1,Sophomore
+LU25108,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.47,14,14,3.94,A,45,3,4.0,3.97,1,Sophomore
+LU25109,Fall 2025,Engineering,Electrical Engineering,1,1,0,0,3.74,12,12,2.58,C,65,0,2.25,2.42,0,Not enrolled
+LU25110,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.62,16,16,2.74,B,10,1,2.84,2.79,1,Sophomore
+LU25111,Fall 2025,Education,Secondary Education,0,1,0,0,3.05,13,13,3.26,,105,2,3.55,3.4,1,Sophomore
+LU25112,Fall 2025,Arts & Sciences,Chemistry,1,1,1,0,3.46,14,14,4.0,B,74,1,4.0,4.0,1,Sophomore
+LU25113,Fall 2025,Education,Elementary Education,0,0,0,1,3.34,16,16,4.0,,116,2,3.72,3.86,1,Sophomore
+LU25114,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.42,15,15,2.92,B,124,1,2.48,2.7,1,Sophomore
+LU25115,Fall 2025,Nursing & Health,Public Health,0,0,0,0,4.0,15,15,4.0,A,120,0,4.0,4.0,1,Sophomore
+LU25116,Fall 2025,Nursing & Health,Nursing,1,1,0,0,4.0,15,15,2.82,B,78,0,2.79,2.81,1,Sophomore
+LU25117,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.78,12,12,3.82,A,144,1,4.0,3.91,1,Sophomore
+LU25118,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,3.36,16,16,2.38,,33,1,2.8,2.59,1,Sophomore
+LU25119,Fall 2025,Nursing & Health,Public Health,0,0,1,1,3.44,15,15,3.56,,95,2,3.58,3.57,1,Sophomore
+LU25120,Fall 2025,Arts & Sciences,Chemistry,1,1,1,1,3.08,15,15,2.27,C,74,1,2.31,2.29,1,Sophomore
+LU25121,Fall 2025,Business,Marketing,0,0,0,0,3.03,14,14,1.42,F,68,0,1.54,1.48,0,Not enrolled
+LU25122,Fall 2025,Nursing & Health,Public Health,0,1,1,1,3.98,14,14,2.66,C,53,3,3.15,2.91,1,Sophomore
+LU25123,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,2.84,17,17,3.05,C,95,2,2.72,2.89,1,Sophomore
+LU25124,Fall 2025,Nursing & Health,Nursing,1,1,0,0,3.92,15,15,2.66,,53,1,2.01,2.34,1,Sophomore
+LU25125,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.58,16,16,3.78,B,70,5,3.8,3.79,1,Sophomore
+LU25126,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.29,12,12,2.68,,84,0,2.71,2.69,1,Sophomore
+LU25127,Fall 2025,Arts & Sciences,Biology,1,0,1,1,3.08,17,17,2.32,B,55,0,2.75,2.53,1,Sophomore
+LU25128,Fall 2025,Arts & Sciences,Economics,0,1,1,1,3.07,15,15,2.41,C,92,4,2.56,2.48,1,Sophomore
+LU25129,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.8,16,16,3.24,,104,1,3.83,3.54,1,Sophomore
+LU25130,Fall 2025,Undeclared,Undeclared,0,0,1,0,3.59,12,12,3.29,C,132,2,3.33,3.31,1,Sophomore
+LU25131,Fall 2025,Business,Finance,0,0,0,0,3.37,15,12,1.7,D,97,2,1.79,1.74,1,Sophomore
+LU25132,Fall 2025,Arts & Sciences,English,0,0,0,1,3.68,15,15,3.07,,105,1,3.19,3.13,1,Sophomore
+LU25133,Fall 2025,Arts & Sciences,Economics,0,1,0,1,3.96,16,16,2.8,,39,0,3.1,2.95,1,Sophomore
+LU25134,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.6,13,13,3.58,C,67,0,3.61,3.6,1,Sophomore
+LU25135,Fall 2025,Engineering,Computer Science,1,1,1,0,3.95,17,17,2.9,,56,1,2.78,2.84,1,Sophomore
+LU25136,Fall 2025,Undeclared,Undeclared,0,0,1,0,3.57,13,13,3.82,B,86,1,4.0,3.91,1,Sophomore
+LU25137,Fall 2025,Engineering,Civil Engineering,1,1,0,1,3.63,12,12,2.53,C,107,1,2.85,2.69,1,Sophomore
+LU25138,Fall 2025,Engineering,Mechanical Engineering,1,1,0,1,3.26,14,14,2.08,W,79,5,,2.08,0,Not enrolled
+LU25139,Fall 2025,Education,Secondary Education,0,1,1,0,3.76,14,14,1.82,D,73,0,1.53,1.67,1,Sophomore
+LU25140,Fall 2025,Nursing & Health,Public Health,0,0,0,0,4.0,16,16,2.82,,109,0,2.99,2.9,1,Sophomore
+LU25141,Fall 2025,Business,Accounting,0,0,0,1,2.9,15,15,2.42,C,28,0,2.38,2.4,0,Not enrolled
+LU25142,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.36,16,16,2.29,,87,3,1.99,2.14,1,Sophomore
+LU25143,Fall 2025,Education,Elementary Education,0,0,1,0,3.87,14,14,4.0,B,138,0,4.0,4.0,1,Sophomore
+LU25144,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.38,16,16,2.87,C,87,0,2.84,2.86,1,Sophomore
+LU25145,Fall 2025,Education,Elementary Education,0,0,0,0,3.05,14,14,3.13,B,133,1,3.32,3.22,1,Sophomore
+LU25146,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,2.95,15,8,1.44,F,85,1,,1.44,0,Not enrolled
+LU25147,Fall 2025,Engineering,Computer Science,1,1,1,1,2.87,15,15,2.22,C,92,2,2.18,2.2,1,Sophomore
+LU25148,Fall 2025,Engineering,Mechanical Engineering,1,1,1,1,3.72,15,15,3.17,B,81,2,2.76,2.96,0,Not enrolled
+LU25149,Fall 2025,Undeclared,Undeclared,0,1,1,0,2.96,12,12,2.19,,104,2,2.59,2.39,1,Sophomore
+LU25150,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.35,13,13,3.13,,83,2,3.0,3.07,1,Sophomore
+LU25151,Fall 2025,Nursing & Health,Kinesiology,1,1,0,0,3.35,15,15,4.0,A,90,2,4.0,4.0,1,Sophomore
+LU25152,Fall 2025,Business,Finance,0,1,0,0,3.78,16,16,2.89,C,96,0,3.32,3.1,1,Sophomore
+LU25153,Fall 2025,Business,Marketing,0,0,0,1,4.0,15,15,2.92,B,100,1,3.32,3.12,1,Sophomore
+LU25154,Fall 2025,Business,Accounting,0,0,0,1,3.8,13,13,3.78,A,92,0,3.69,3.74,1,Sophomore
+LU25155,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.47,15,15,2.74,W,5,1,3.59,3.17,1,Sophomore
+LU25156,Fall 2025,Arts & Sciences,Psychology,0,0,1,1,2.76,14,14,2.42,,93,2,2.14,2.28,1,Sophomore
+LU25157,Fall 2025,Engineering,Computer Science,1,0,1,1,2.97,13,13,1.58,D,109,0,1.35,1.47,0,Not enrolled
+LU25158,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.43,13,13,2.29,W,67,3,2.47,2.38,1,Sophomore
+LU25159,Fall 2025,Arts & Sciences,English,0,1,0,0,3.82,15,15,4.0,,80,1,4.0,4.0,1,Sophomore
+LU25160,Fall 2025,Arts & Sciences,Biology,1,1,1,1,3.68,15,15,2.25,D,19,2,1.87,2.06,1,Sophomore
+LU25161,Fall 2025,Education,Secondary Education,0,0,0,1,3.74,12,12,3.25,,55,0,3.37,3.31,1,Sophomore
+LU25162,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.46,14,14,4.0,A,94,0,3.99,4.0,1,Sophomore
+LU25163,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.11,13,13,1.67,,54,2,,1.67,0,Not enrolled
+LU25164,Fall 2025,Business,Marketing,0,0,0,1,3.6,12,12,3.16,B,53,0,3.65,3.4,1,Sophomore
+LU25165,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.34,14,14,2.34,C,144,0,2.15,2.25,1,Sophomore
+LU25166,Fall 2025,Business,Marketing,0,0,0,0,3.74,16,16,2.49,C,60,0,2.18,2.33,1,Sophomore
+LU25167,Fall 2025,Business,Marketing,0,0,0,1,3.05,15,15,2.07,D,38,1,1.97,2.02,1,Sophomore
+LU25168,Fall 2025,Arts & Sciences,Biology,1,1,1,1,3.21,16,16,2.37,W,106,0,1.36,1.86,0,Not enrolled
+LU25169,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.54,17,17,3.15,,117,0,3.44,3.29,1,Sophomore
+LU25170,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.52,15,15,2.83,D,74,2,2.48,2.66,1,Sophomore
+LU25171,Fall 2025,Business,Finance,0,1,1,0,3.53,15,15,2.67,B,84,0,2.23,2.45,1,Sophomore
+LU25172,Fall 2025,Business,Accounting,0,1,0,1,3.2,16,16,2.91,C,77,0,3.34,3.12,1,Sophomore
+LU25173,Fall 2025,Arts & Sciences,English,0,0,0,0,3.64,14,14,3.93,,136,0,4.0,3.96,1,Sophomore
+LU25174,Fall 2025,Arts & Sciences,English,0,1,0,1,3.1,14,14,2.23,C,52,2,1.78,2.01,1,Sophomore
+LU25175,Fall 2025,Engineering,Mechanical Engineering,1,1,0,1,3.42,14,14,2.15,C,17,3,2.27,2.21,1,Sophomore
+LU25176,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.67,15,15,2.72,C,103,3,2.37,2.55,1,Sophomore
+LU25177,Fall 2025,Nursing & Health,Nursing,1,1,0,0,3.67,16,16,2.9,B,88,1,3.37,3.13,1,Sophomore
+LU25178,Fall 2025,Nursing & Health,Nursing,1,0,1,0,3.34,14,14,3.19,B,103,3,3.16,3.17,1,Sophomore
+LU25179,Fall 2025,Arts & Sciences,Biology,1,1,1,1,4.0,15,15,2.41,C,83,1,1.99,2.2,1,Sophomore
+LU25180,Fall 2025,Education,Elementary Education,0,1,0,1,3.22,15,15,3.37,,57,2,3.55,3.46,1,Sophomore
+LU25181,Fall 2025,Nursing & Health,Nursing,1,1,1,0,3.87,16,16,3.52,A,88,1,3.06,3.29,1,Sophomore
+LU25182,Fall 2025,Education,Secondary Education,0,0,1,1,3.93,16,16,3.47,B,97,1,3.64,3.55,1,Sophomore
+LU25183,Fall 2025,Engineering,Mechanical Engineering,1,0,1,1,3.2,15,15,2.79,,64,0,3.07,2.93,1,Sophomore
+LU25184,Fall 2025,Education,Elementary Education,0,0,0,0,3.47,15,15,2.69,F,104,2,2.57,2.63,1,Sophomore
+LU25185,Fall 2025,Arts & Sciences,English,0,1,0,0,4.0,15,15,3.69,,79,1,3.43,3.56,1,Sophomore
+LU25186,Fall 2025,Arts & Sciences,English,0,1,0,1,3.94,15,15,4.0,A,23,0,4.0,4.0,1,Sophomore
+LU25187,Fall 2025,Arts & Sciences,Mathematics,1,0,1,1,3.48,14,11,1.55,F,48,1,1.48,1.52,1,Freshman
+LU25188,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.51,15,11,1.34,W,34,1,0.89,1.12,0,Not enrolled
+LU25189,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,3.4,16,16,2.66,,70,0,2.03,2.34,1,Sophomore
+LU25190,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,2.78,16,16,2.71,W,108,1,2.43,2.57,1,Sophomore
+LU25191,Fall 2025,Business,Accounting,0,0,0,1,3.2,16,9,1.9,C,61,1,2.08,1.99,1,Freshman
+LU25192,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.46,13,13,2.91,C,120,1,2.74,2.83,1,Sophomore
+LU25193,Fall 2025,Business,Accounting,0,1,0,0,3.1,13,13,2.94,C,105,0,3.04,2.99,1,Sophomore
+LU25194,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.5,12,12,2.68,C,98,1,2.69,2.68,1,Sophomore
+LU25195,Fall 2025,Business,Accounting,0,0,0,0,3.82,12,12,2.96,,87,1,3.09,3.02,1,Sophomore
+LU25196,Fall 2025,Arts & Sciences,Biology,1,1,1,0,3.45,14,14,2.58,,68,2,2.06,2.32,1,Sophomore
+LU25197,Fall 2025,Arts & Sciences,English,0,1,1,1,3.22,14,7,1.53,,42,2,0.97,1.25,0,Not enrolled
+LU25198,Fall 2025,Education,Elementary Education,0,0,1,0,3.44,13,13,3.26,C,129,0,4.0,3.63,1,Sophomore
+LU25199,Fall 2025,Engineering,Electrical Engineering,1,0,1,0,2.76,14,14,1.89,F,47,3,2.2,2.04,1,Sophomore
+LU25200,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,2.95,15,15,1.79,D,58,4,1.93,1.86,1,Sophomore
+LU25201,Fall 2025,Business,Finance,0,0,1,1,3.2,15,15,2.19,D,87,3,2.49,2.34,1,Sophomore
+LU25202,Fall 2025,Business,Management,0,0,0,0,3.57,15,15,3.89,B,86,2,3.59,3.74,1,Sophomore
+LU25203,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.61,16,16,3.08,,133,2,2.93,3.0,1,Sophomore
+LU25204,Fall 2025,Business,Finance,0,0,0,0,3.8,17,17,2.59,B,77,3,2.89,2.74,1,Sophomore
+LU25205,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.4,16,13,1.87,,47,3,1.9,1.89,1,Sophomore
+LU25206,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.1,14,14,2.74,,75,1,3.08,2.91,1,Sophomore
+LU25207,Fall 2025,Undeclared,Undeclared,0,0,0,0,2.93,16,12,2.1,C,114,2,1.85,1.97,1,Sophomore
+LU25208,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.3,14,10,1.37,D,85,3,0.96,1.17,0,Not enrolled
+LU25209,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,2.54,12,12,1.59,W,123,1,1.88,1.74,1,Sophomore
+LU25210,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.65,15,15,2.58,D,81,0,2.68,2.63,1,Sophomore
+LU25211,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.61,17,17,2.84,B,76,1,2.44,2.64,1,Sophomore
+LU25212,Fall 2025,Arts & Sciences,Economics,0,0,0,0,4.0,13,13,2.45,,101,1,1.65,2.05,1,Sophomore
+LU25213,Fall 2025,Business,Management,0,0,1,1,3.9,15,15,3.6,C,60,1,3.56,3.58,1,Sophomore
+LU25214,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.35,14,14,3.19,A,78,0,3.82,3.51,1,Sophomore
+LU25215,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.92,17,17,2.38,W,39,1,2.67,2.52,1,Sophomore
+LU25216,Fall 2025,Education,Elementary Education,0,1,1,1,2.97,14,14,2.04,C,111,1,1.7,1.87,1,Sophomore
+LU25217,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.37,17,14,2.19,F,114,2,2.02,2.1,1,Sophomore
+LU25218,Fall 2025,Arts & Sciences,Biology,1,1,0,0,3.59,15,15,2.58,C,94,0,2.49,2.53,1,Sophomore
+LU25219,Fall 2025,Nursing & Health,Public Health,0,0,0,1,2.91,14,14,1.75,,82,1,,1.75,0,Not enrolled
+LU25220,Fall 2025,Education,Elementary Education,0,0,0,0,3.51,15,15,2.1,,70,5,2.39,2.24,1,Sophomore
+LU25221,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.36,12,12,2.33,,78,0,2.66,2.5,1,Sophomore
+LU25222,Fall 2025,Business,Marketing,0,1,1,1,3.24,17,5,1.05,D,30,2,1.05,1.05,0,Not enrolled
+LU25223,Fall 2025,Business,Marketing,0,0,0,0,3.41,17,17,1.83,D,64,1,2.53,2.18,1,Sophomore
+LU25224,Fall 2025,Business,Management,0,0,0,0,3.32,14,14,4.0,A,94,0,3.98,3.99,1,Sophomore
+LU25225,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,2.9,15,15,2.43,C,64,3,2.4,2.41,1,Sophomore
+LU25226,Fall 2025,Business,Accounting,0,0,0,1,3.36,14,14,3.67,A,118,0,3.84,3.75,1,Sophomore
+LU25227,Fall 2025,Business,Management,0,0,1,1,3.7,14,11,1.72,D,131,3,,1.72,0,Not enrolled
+LU25228,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.32,16,16,3.74,B,73,0,3.98,3.86,1,Sophomore
+LU25229,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.68,14,14,2.62,,84,2,3.08,2.85,1,Sophomore
+LU25230,Fall 2025,Arts & Sciences,Chemistry,1,1,0,0,3.87,15,15,3.09,B,77,1,2.62,2.85,0,Not enrolled
+LU25231,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.61,15,15,2.91,B,138,2,2.9,2.91,1,Sophomore
+LU25232,Fall 2025,Education,Elementary Education,0,1,0,0,3.37,14,14,2.97,B,119,1,3.32,3.15,1,Sophomore
+LU25233,Fall 2025,Education,Elementary Education,0,0,1,1,3.14,16,16,2.99,,70,0,3.66,3.33,1,Sophomore
+LU25234,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,3.57,16,16,2.91,C,106,0,3.06,2.98,1,Sophomore
+LU25235,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.29,16,16,3.49,B,66,1,3.26,3.37,1,Sophomore
+LU25236,Fall 2025,Business,Management,0,0,0,0,2.78,14,10,2.08,D,124,2,2.69,2.39,1,Freshman
+LU25237,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.99,15,15,2.5,B,57,1,2.42,2.46,1,Sophomore
+LU25238,Fall 2025,Business,Accounting,0,0,0,0,3.36,13,13,3.19,A,94,0,3.45,3.32,1,Sophomore
+LU25239,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.76,15,15,3.35,,103,1,3.34,3.34,0,Not enrolled
+LU25240,Fall 2025,Arts & Sciences,Biology,1,1,1,1,3.58,15,15,2.52,C,70,1,2.39,2.45,0,Not enrolled
+LU25241,Fall 2025,Arts & Sciences,Mathematics,1,1,1,1,3.59,13,13,2.48,C,44,0,2.54,2.51,1,Sophomore
+LU25242,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.32,15,15,3.61,A,89,1,3.91,3.76,1,Sophomore
+LU25243,Fall 2025,Business,Management,0,0,0,1,3.74,14,14,3.3,B,61,1,3.87,3.58,1,Sophomore
+LU25244,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.49,15,15,2.7,C,97,1,2.96,2.83,1,Sophomore
+LU25245,Fall 2025,Engineering,Mechanical Engineering,1,0,1,1,3.25,17,17,3.51,B,79,0,3.23,3.37,1,Sophomore
+LU25246,Fall 2025,Arts & Sciences,Biology,1,1,1,1,3.27,16,13,1.83,F,70,0,1.07,1.45,1,Sophomore
+LU25247,Fall 2025,Business,Management,0,0,0,0,3.67,16,16,2.41,C,69,0,2.69,2.55,1,Sophomore
+LU25248,Fall 2025,Nursing & Health,Public Health,0,0,1,0,3.63,12,12,3.52,B,135,3,2.82,3.17,1,Sophomore
+LU25249,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.14,17,17,2.69,,48,1,2.95,2.82,1,Sophomore
+LU25250,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.06,15,11,1.65,,32,0,1.51,1.58,1,Freshman
+LU25251,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.74,16,16,4.0,A,97,3,4.0,4.0,1,Sophomore
+LU25252,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,3.37,14,14,3.99,,61,2,4.0,3.99,1,Sophomore
+LU25253,Fall 2025,Arts & Sciences,Biology,1,1,0,1,3.27,16,16,2.89,A,32,2,3.28,3.08,1,Sophomore
+LU25254,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.57,15,15,3.13,B,99,3,3.75,3.44,1,Sophomore
+LU25255,Fall 2025,Engineering,Computer Science,1,1,0,0,3.38,15,15,2.3,C,95,3,2.66,2.48,1,Sophomore
+LU25256,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.36,15,15,3.29,B,110,1,3.37,3.33,1,Sophomore
+LU25257,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.42,14,14,2.57,A,114,4,2.25,2.41,1,Sophomore
+LU25258,Fall 2025,Business,Management,0,0,1,1,2.97,14,14,2.56,C,65,1,2.28,2.42,1,Sophomore
+LU25259,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.65,15,15,3.39,B,128,3,3.89,3.64,1,Sophomore
+LU25260,Fall 2025,Arts & Sciences,Biology,1,0,1,0,3.43,12,12,3.25,A,94,4,2.92,3.08,1,Sophomore
+LU25261,Fall 2025,Nursing & Health,Nursing,1,1,0,0,3.14,16,16,3.18,B,71,0,3.26,3.22,1,Sophomore
+LU25262,Fall 2025,Arts & Sciences,Chemistry,1,1,1,0,3.26,13,13,3.42,C,48,1,3.66,3.54,1,Sophomore
+LU25263,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.8,16,16,3.28,B,25,1,3.32,3.3,1,Sophomore
+LU25264,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,3.54,17,17,3.09,,69,1,2.86,2.97,1,Sophomore
+LU25265,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.2,14,14,3.52,B,77,1,4.0,3.76,1,Sophomore
+LU25266,Fall 2025,Education,Secondary Education,0,0,0,0,2.83,16,16,3.22,,120,2,2.74,2.98,1,Sophomore
+LU25267,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,4.0,12,12,3.65,B,69,0,3.96,3.81,1,Sophomore
+LU25268,Fall 2025,Arts & Sciences,Mathematics,1,1,1,1,3.3,12,12,1.92,W,113,3,1.46,1.69,0,Not enrolled
+LU25269,Fall 2025,Nursing & Health,Kinesiology,1,1,0,0,3.88,13,13,2.97,C,58,1,2.8,2.88,0,Not enrolled
+LU25270,Fall 2025,Business,Management,0,1,0,0,3.76,17,17,2.93,B,71,1,2.84,2.89,1,Sophomore
+LU25271,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,2.77,15,12,1.47,F,117,2,,1.47,0,Not enrolled
+LU25272,Fall 2025,Engineering,Computer Science,1,0,1,1,3.48,13,13,2.51,,63,0,2.27,2.39,1,Sophomore
+LU25273,Fall 2025,Education,Secondary Education,0,0,1,1,3.74,13,13,3.85,,130,1,3.7,3.78,1,Sophomore
+LU25274,Fall 2025,Arts & Sciences,Biology,1,1,1,1,3.26,15,12,1.4,C,84,0,1.05,1.22,0,Not enrolled
+LU25275,Fall 2025,Business,Finance,0,0,0,0,4.0,17,17,3.16,B,65,0,3.16,3.16,1,Sophomore
+LU25276,Fall 2025,Arts & Sciences,English,0,0,0,0,3.85,16,16,4.0,A,65,0,3.54,3.77,1,Sophomore
+LU25277,Fall 2025,Nursing & Health,Kinesiology,1,1,0,0,3.44,15,15,3.21,C,69,1,3.22,3.21,1,Sophomore
+LU25278,Fall 2025,Nursing & Health,Kinesiology,1,1,0,0,3.72,15,15,3.35,C,101,1,,3.35,0,Not enrolled
+LU25279,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.56,15,15,2.75,,26,1,2.46,2.61,1,Sophomore
+LU25280,Fall 2025,Business,Management,0,0,0,0,4.0,16,16,3.38,A,72,1,3.71,3.54,1,Sophomore
+LU25281,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,4.0,16,16,2.99,C,92,2,3.05,3.02,1,Sophomore
+LU25282,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.41,16,9,2.2,,33,1,2.22,2.21,1,Freshman
+LU25283,Fall 2025,Engineering,Mechanical Engineering,1,1,0,1,3.31,16,16,3.19,B,101,0,3.29,3.24,1,Sophomore
+LU25284,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.37,16,16,1.84,F,75,3,1.9,1.87,1,Sophomore
+LU25285,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.45,15,15,2.11,W,66,1,2.44,2.27,1,Sophomore
+LU25286,Fall 2025,Arts & Sciences,English,0,1,1,0,3.81,16,16,3.26,B,90,0,2.79,3.02,1,Sophomore
+LU25287,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.86,12,12,2.58,C,98,1,3.38,2.98,1,Sophomore
+LU25288,Fall 2025,Nursing & Health,Nursing,1,0,0,1,4.0,17,17,3.14,C,65,0,2.92,3.03,1,Sophomore
+LU25289,Fall 2025,Education,Secondary Education,0,1,0,1,3.68,14,14,3.29,,21,3,3.95,3.62,1,Sophomore
+LU25290,Fall 2025,Arts & Sciences,Biology,1,1,0,1,3.58,14,14,1.95,C,17,4,1.87,1.91,1,Sophomore
+LU25291,Fall 2025,Arts & Sciences,Biology,1,0,0,1,4.0,13,13,4.0,A,107,2,3.96,3.98,1,Sophomore
+LU25292,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.44,15,15,2.5,D,105,0,3.07,2.78,1,Sophomore
+LU25293,Fall 2025,Business,Accounting,0,0,0,0,4.0,17,17,3.31,C,166,0,3.36,3.33,1,Sophomore
+LU25294,Fall 2025,Nursing & Health,Kinesiology,1,1,1,1,3.31,15,15,2.44,B,24,1,2.5,2.47,1,Sophomore
+LU25295,Fall 2025,Undeclared,Undeclared,0,0,0,0,4.0,13,13,2.79,,129,2,2.72,2.75,1,Sophomore
+LU25296,Fall 2025,Education,Secondary Education,0,1,1,1,3.02,12,8,1.66,W,78,6,1.91,1.79,1,Freshman
+LU25297,Fall 2025,Nursing & Health,Kinesiology,1,1,1,1,3.64,16,16,3.41,B,60,0,3.73,3.57,1,Sophomore
+LU25298,Fall 2025,Nursing & Health,Nursing,1,0,0,1,2.88,16,13,1.69,W,22,1,,1.69,0,Not enrolled
+LU25299,Fall 2025,Engineering,Mechanical Engineering,1,1,1,0,3.48,17,17,3.63,A,78,2,3.7,3.67,1,Sophomore
+LU25300,Fall 2025,Business,Accounting,0,0,0,0,3.25,15,15,3.46,,77,1,3.5,3.48,1,Sophomore
+LU25301,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.77,16,9,2.15,,94,2,2.36,2.26,1,Freshman
+LU25302,Fall 2025,Nursing & Health,Nursing,1,0,0,0,2.94,16,16,2.44,C,98,1,1.9,2.17,1,Sophomore
+LU25303,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.47,12,12,3.52,B,97,2,3.45,3.48,1,Sophomore
+LU25304,Fall 2025,Nursing & Health,Public Health,0,0,1,0,3.6,15,15,3.27,B,132,0,2.94,3.11,1,Sophomore
+LU25305,Fall 2025,Engineering,Computer Science,1,1,1,0,3.1,14,14,2.04,W,38,1,,2.04,0,Not enrolled
+LU25306,Fall 2025,Arts & Sciences,Psychology,0,0,1,1,3.71,16,16,3.03,,48,0,2.88,2.95,1,Sophomore
+LU25307,Fall 2025,Engineering,Computer Science,1,0,0,1,3.2,12,8,1.98,C,65,2,1.99,1.99,1,Freshman
+LU25308,Fall 2025,Arts & Sciences,English,0,0,0,0,2.95,14,14,2.33,,97,1,2.95,2.64,1,Sophomore
+LU25309,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.54,17,17,2.75,B,89,1,2.89,2.82,1,Sophomore
+LU25310,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.0,15,12,2.11,D,50,2,1.76,1.94,0,Not enrolled
+LU25311,Fall 2025,Engineering,Electrical Engineering,1,0,1,0,3.34,17,17,3.56,B,135,1,3.48,3.52,1,Sophomore
+LU25312,Fall 2025,Engineering,Electrical Engineering,1,1,1,1,3.5,16,16,2.9,B,93,1,3.37,3.14,1,Sophomore
+LU25313,Fall 2025,Nursing & Health,Kinesiology,1,1,1,0,3.32,14,14,3.06,A,76,0,2.97,3.02,1,Sophomore
+LU25314,Fall 2025,Engineering,Electrical Engineering,1,1,0,1,4.0,14,14,3.4,B,97,2,3.82,3.61,1,Sophomore
+LU25315,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.52,15,15,2.21,C,69,2,2.25,2.23,0,Not enrolled
+LU25316,Fall 2025,Education,Elementary Education,0,0,0,0,3.34,13,13,2.25,,94,0,2.66,2.46,1,Sophomore
+LU25317,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,3.43,15,15,2.39,D,102,1,2.07,2.23,1,Sophomore
+LU25318,Fall 2025,Arts & Sciences,Biology,1,1,1,1,3.93,16,16,2.34,D,34,0,1.95,2.14,0,Not enrolled
+LU25319,Fall 2025,Nursing & Health,Public Health,0,0,1,0,3.36,16,16,2.9,,97,2,2.72,2.81,1,Sophomore
+LU25320,Fall 2025,Undeclared,Undeclared,0,0,1,0,3.53,13,9,2.17,,76,3,2.33,2.25,1,Freshman
+LU25321,Fall 2025,Arts & Sciences,Economics,0,1,0,0,2.91,14,14,3.61,,97,2,3.35,3.48,1,Sophomore
+LU25322,Fall 2025,Business,Management,0,1,1,1,3.61,15,15,2.47,D,38,2,2.67,2.57,1,Sophomore
+LU25323,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.18,15,15,3.24,D,100,0,2.75,2.99,1,Sophomore
+LU25324,Fall 2025,Education,Secondary Education,0,0,1,1,2.86,16,16,2.63,F,81,0,1.68,2.15,0,Not enrolled
+LU25325,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,3.79,14,14,3.58,,150,0,3.46,3.52,1,Sophomore
+LU25326,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.24,14,14,4.0,,95,4,3.78,3.89,1,Sophomore
+LU25327,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.47,13,13,2.39,,56,1,1.58,1.98,1,Sophomore
+LU25328,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,2.98,14,14,2.7,,51,0,2.43,2.56,1,Sophomore
+LU25329,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,3.54,16,16,2.51,B,102,2,2.57,2.54,1,Sophomore
+LU25330,Fall 2025,Business,Accounting,0,0,0,0,3.12,15,12,2.16,F,115,2,1.58,1.87,1,Sophomore
+LU25331,Fall 2025,Engineering,Civil Engineering,1,0,0,0,4.0,17,17,3.08,A,123,2,2.9,2.99,1,Sophomore
+LU25332,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.3,15,8,2.04,C,76,0,2.6,2.32,1,Freshman
+LU25333,Fall 2025,Arts & Sciences,English,0,0,1,1,3.73,16,16,2.54,,57,2,1.9,2.22,0,Not enrolled
+LU25334,Fall 2025,Education,Secondary Education,0,1,1,1,3.81,16,16,2.25,A,45,0,2.4,2.33,1,Sophomore
+LU25335,Fall 2025,Arts & Sciences,Biology,1,0,0,1,2.87,16,13,2.04,,102,2,2.41,2.23,1,Sophomore
+LU25336,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.61,13,13,2.8,,122,1,2.67,2.74,1,Sophomore
+LU25337,Fall 2025,Arts & Sciences,Mathematics,1,1,0,1,3.23,14,14,2.84,B,73,0,3.27,3.05,1,Sophomore
+LU25338,Fall 2025,Engineering,Civil Engineering,1,0,1,0,3.06,15,15,2.43,C,95,0,2.95,2.69,1,Sophomore
+LU25339,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.84,15,15,2.91,,61,2,2.96,2.93,1,Sophomore
+LU25340,Fall 2025,Arts & Sciences,English,0,0,0,0,3.15,15,15,2.78,,90,1,3.2,2.99,1,Sophomore
+LU25341,Fall 2025,Arts & Sciences,Biology,1,0,1,0,3.7,17,17,4.0,A,108,3,3.94,3.97,1,Sophomore
+LU25342,Fall 2025,Business,Management,0,1,0,0,3.74,16,16,4.0,A,88,2,4.0,4.0,1,Sophomore
+LU25343,Fall 2025,Engineering,Computer Science,1,0,1,1,3.39,13,13,2.5,,52,1,1.7,2.1,0,Not enrolled
+LU25344,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.39,17,14,1.51,D,31,2,0.92,1.21,0,Not enrolled
+LU25345,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.72,13,13,2.86,,87,2,3.05,2.95,1,Sophomore
+LU25346,Fall 2025,Education,Secondary Education,0,0,1,1,3.31,14,14,2.41,,58,2,2.29,2.35,1,Sophomore
+LU25347,Fall 2025,Education,Elementary Education,0,0,0,0,2.91,15,11,2.09,,121,1,1.85,1.97,1,Freshman
+LU25348,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.44,17,17,3.51,,69,2,3.49,3.5,1,Sophomore
+LU25349,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.6,15,15,4.0,A,83,1,4.0,4.0,1,Sophomore
+LU25350,Fall 2025,Arts & Sciences,English,0,0,0,0,3.53,15,15,3.39,,98,0,3.71,3.55,1,Sophomore
+LU25351,Fall 2025,Arts & Sciences,Mathematics,1,0,1,0,3.91,15,15,3.23,A,5,1,2.89,3.06,1,Sophomore
+LU25352,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.09,16,16,1.31,W,90,4,1.79,1.55,1,Sophomore
+LU25353,Fall 2025,Engineering,Civil Engineering,1,1,0,0,3.23,14,14,2.56,C,92,1,2.71,2.63,0,Not enrolled
+LU25354,Fall 2025,Arts & Sciences,English,0,0,0,0,3.11,16,16,3.05,,54,4,3.11,3.08,1,Sophomore
+LU25355,Fall 2025,Arts & Sciences,English,0,0,0,0,3.62,16,16,3.1,A,77,3,4.0,3.55,1,Sophomore
+LU25356,Fall 2025,Education,Secondary Education,0,0,0,0,3.29,15,15,3.14,C,144,1,3.15,3.14,1,Sophomore
+LU25357,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.48,12,12,2.82,C,42,1,2.63,2.73,1,Sophomore
+LU25358,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.44,14,7,1.21,W,104,0,1.55,1.38,1,Freshman
+LU25359,Fall 2025,Business,Marketing,0,0,1,1,3.48,13,13,2.75,C,94,0,2.86,2.81,1,Sophomore
+LU25360,Fall 2025,Arts & Sciences,English,0,0,0,0,4.0,13,13,4.0,,57,3,3.94,3.97,1,Sophomore
+LU25361,Fall 2025,Engineering,Electrical Engineering,1,1,1,1,3.2,13,10,1.4,D,96,0,0.98,1.19,0,Not enrolled
+LU25362,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,2.92,15,15,2.92,C,81,1,2.96,2.94,1,Sophomore
+LU25363,Fall 2025,Engineering,Civil Engineering,1,1,0,0,3.29,14,14,3.68,B,71,4,3.8,3.74,1,Sophomore
+LU25364,Fall 2025,Business,Finance,0,0,0,0,3.55,15,15,3.25,B,79,1,3.53,3.39,1,Sophomore
+LU25365,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.42,13,13,1.78,C,85,1,2.07,1.93,1,Sophomore
+LU25366,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.34,16,13,1.87,W,67,2,2.0,1.93,0,Not enrolled
+LU25367,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.99,15,15,2.79,C,105,1,2.76,2.77,1,Sophomore
+LU25368,Fall 2025,Education,Secondary Education,0,0,0,1,3.75,15,15,3.2,,119,1,3.16,3.18,1,Sophomore
+LU25369,Fall 2025,Arts & Sciences,English,0,0,1,1,3.74,14,14,2.24,,65,2,1.87,2.06,1,Sophomore
+LU25370,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.31,15,8,2.07,W,54,4,2.66,2.37,1,Freshman
+LU25371,Fall 2025,Arts & Sciences,Mathematics,1,0,1,0,3.19,15,8,2.09,D,100,2,1.74,1.91,1,Freshman
+LU25372,Fall 2025,Undeclared,Undeclared,0,0,1,1,4.0,14,14,3.2,,38,2,3.37,3.28,1,Sophomore
+LU25373,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.16,15,15,2.27,C,90,0,1.89,2.08,1,Sophomore
+LU25374,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.28,16,16,2.9,,127,1,3.44,3.17,1,Sophomore
+LU25375,Fall 2025,Undeclared,Undeclared,0,1,1,0,3.43,17,17,3.63,,100,1,3.52,3.58,1,Sophomore
+LU25376,Fall 2025,Arts & Sciences,English,0,0,0,1,3.34,15,15,3.08,,56,1,2.48,2.78,1,Sophomore
+LU25377,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.31,17,17,2.12,W,34,1,2.37,2.25,1,Sophomore
+LU25378,Fall 2025,Engineering,Civil Engineering,1,0,1,1,3.94,14,7,2.08,W,118,2,2.14,2.11,1,Freshman
+LU25379,Fall 2025,Education,Elementary Education,0,1,1,1,4.0,14,14,2.28,F,32,0,2.19,2.23,1,Sophomore
+LU25380,Fall 2025,Arts & Sciences,English,0,0,1,0,3.6,14,14,2.59,,64,1,2.22,2.41,1,Sophomore
+LU25381,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.51,13,13,2.71,C,61,0,2.1,2.4,1,Sophomore
+LU25382,Fall 2025,Business,Management,0,0,0,1,2.58,17,13,1.63,D,69,0,1.75,1.69,1,Sophomore
+LU25383,Fall 2025,Arts & Sciences,Economics,0,1,0,0,3.67,15,15,3.38,A,45,0,3.32,3.35,1,Sophomore
+LU25384,Fall 2025,Arts & Sciences,Economics,0,0,0,0,2.78,15,15,3.43,,115,0,3.75,3.59,1,Sophomore
+LU25385,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.76,15,15,3.26,B,29,1,3.15,3.21,1,Sophomore
+LU25386,Fall 2025,Education,Secondary Education,0,0,1,0,3.38,15,15,2.58,,43,2,2.64,2.61,1,Sophomore
+LU25387,Fall 2025,Nursing & Health,Public Health,0,0,1,1,2.88,16,16,2.06,F,68,1,1.86,1.96,1,Sophomore
+LU25388,Fall 2025,Nursing & Health,Kinesiology,1,1,0,1,3.45,16,16,3.19,C,84,1,3.03,3.11,1,Sophomore
+LU25389,Fall 2025,Nursing & Health,Public Health,0,1,1,0,3.01,16,16,2.99,,36,2,3.07,3.03,1,Sophomore
+LU25390,Fall 2025,Business,Accounting,0,0,0,0,3.24,15,15,2.57,C,114,1,2.63,2.6,1,Sophomore
+LU25391,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.34,14,14,3.28,B,73,0,3.31,3.3,1,Sophomore
+LU25392,Fall 2025,Business,Finance,0,1,1,0,2.91,12,12,3.11,B,56,0,2.75,2.93,1,Sophomore
+LU25393,Fall 2025,Nursing & Health,Kinesiology,1,1,0,1,3.4,14,14,3.08,B,67,1,3.17,3.12,1,Sophomore
+LU25394,Fall 2025,Arts & Sciences,Biology,1,1,0,0,2.94,13,13,1.77,F,98,1,1.3,1.54,1,Sophomore
+LU25395,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.74,15,15,3.34,,111,3,3.71,3.52,1,Sophomore
+LU25396,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.07,13,9,1.33,,60,4,1.49,1.41,0,Not enrolled
+LU25397,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.62,12,12,2.6,,109,1,,2.6,0,Not enrolled
+LU25398,Fall 2025,Education,Elementary Education,0,0,0,1,3.39,14,14,2.31,,12,1,2.2,2.25,1,Sophomore
+LU25399,Fall 2025,Business,Marketing,0,0,0,1,3.0,15,15,3.66,A,45,2,3.38,3.52,1,Sophomore
+LU25400,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.13,15,11,1.89,F,74,1,1.94,1.91,1,Freshman
+LU25401,Fall 2025,Education,Secondary Education,0,0,0,0,3.8,14,14,3.49,A,90,1,3.19,3.34,1,Sophomore
+LU25402,Fall 2025,Arts & Sciences,Economics,0,1,1,1,3.37,14,11,2.09,D,63,5,2.46,2.28,1,Freshman
+LU25403,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.55,14,14,3.06,B,100,2,3.72,3.39,1,Sophomore
+LU25404,Fall 2025,Arts & Sciences,English,0,0,0,0,3.04,16,16,2.62,,92,2,2.42,2.52,1,Sophomore
+LU25405,Fall 2025,Undeclared,Undeclared,0,0,1,1,3.97,13,13,3.3,,106,2,3.33,3.31,1,Sophomore
+LU25406,Fall 2025,Business,Management,0,0,1,1,3.31,14,14,3.32,A,109,1,3.16,3.24,1,Sophomore
+LU25407,Fall 2025,Nursing & Health,Kinesiology,1,0,1,1,3.55,17,17,3.05,,90,1,3.0,3.03,1,Sophomore
+LU25408,Fall 2025,Arts & Sciences,Chemistry,1,1,0,0,3.9,15,15,3.43,A,111,2,3.14,3.29,1,Sophomore
+LU25409,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.3,15,8,2.12,F,82,1,,2.12,0,Not enrolled
+LU25410,Fall 2025,Business,Marketing,0,0,0,1,3.31,14,14,2.98,B,130,1,3.18,3.08,1,Sophomore
+LU25411,Fall 2025,Business,Accounting,0,1,0,0,3.51,16,16,3.62,B,102,2,3.4,3.51,1,Sophomore
+LU25412,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.14,15,15,2.82,,53,0,3.04,2.93,1,Sophomore
+LU25413,Fall 2025,Engineering,Computer Science,1,1,0,0,2.89,16,16,2.75,C,62,1,2.71,2.73,1,Sophomore
+LU25414,Fall 2025,Engineering,Computer Science,1,0,0,0,3.51,13,13,2.96,C,75,2,2.96,2.96,1,Sophomore
+LU25415,Fall 2025,Business,Management,0,0,0,0,3.76,14,14,3.93,A,106,1,3.91,3.92,1,Sophomore
+LU25416,Fall 2025,Nursing & Health,Nursing,1,1,0,0,3.08,14,14,2.84,,81,0,3.07,2.96,1,Sophomore
+LU25417,Fall 2025,Arts & Sciences,Economics,0,0,0,1,2.93,12,5,2.13,D,56,1,2.29,2.21,1,Freshman
+LU25418,Fall 2025,Business,Marketing,0,0,0,0,3.46,12,12,3.28,B,23,0,,3.28,0,Not enrolled
+LU25419,Fall 2025,Arts & Sciences,Psychology,0,1,0,0,3.19,15,15,3.07,,85,1,2.53,2.8,1,Sophomore
+LU25420,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.99,14,14,3.13,C,88,1,2.88,3.0,1,Sophomore
+LU25421,Fall 2025,Nursing & Health,Public Health,0,1,1,0,3.53,15,15,2.85,,62,2,3.35,3.1,1,Sophomore
+LU25422,Fall 2025,Arts & Sciences,Biology,1,0,1,1,3.78,17,17,2.89,A,115,3,2.88,2.88,1,Sophomore
+LU25423,Fall 2025,Nursing & Health,Nursing,1,0,0,0,2.96,12,12,3.18,B,97,1,3.38,3.28,0,Not enrolled
+LU25424,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.41,16,16,3.15,,115,5,3.11,3.13,1,Sophomore
+LU25425,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.07,15,15,3.18,,101,0,3.07,3.12,1,Sophomore
+LU25426,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.47,15,15,3.54,C,59,2,3.36,3.45,1,Sophomore
+LU25427,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.53,14,14,3.85,A,69,1,3.49,3.67,1,Sophomore
+LU25428,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.31,16,16,1.95,F,49,2,,1.95,0,Not enrolled
+LU25429,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.16,12,12,3.21,B,107,0,3.15,3.18,1,Sophomore
+LU25430,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.91,12,12,3.28,C,116,1,3.24,3.26,1,Sophomore
+LU25431,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.78,15,15,2.3,C,76,0,2.2,2.25,0,Not enrolled
+LU25432,Fall 2025,Business,Finance,0,1,0,1,2.8,15,12,1.98,W,72,4,2.08,2.03,0,Not enrolled
+LU25433,Fall 2025,Engineering,Computer Science,1,0,0,0,3.55,14,14,2.57,B,101,1,2.13,2.35,1,Sophomore
+LU25434,Fall 2025,Education,Secondary Education,0,1,0,1,3.74,12,12,2.8,,92,2,2.33,2.57,1,Sophomore
+LU25435,Fall 2025,Arts & Sciences,English,0,1,0,0,3.36,16,16,2.27,,68,1,2.04,2.15,1,Sophomore
+LU25436,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.61,15,15,3.71,A,133,2,4.0,3.86,1,Sophomore
+LU25437,Fall 2025,Business,Management,0,0,0,0,2.94,15,15,3.05,D,80,0,2.97,3.01,1,Sophomore
+LU25438,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.41,15,15,2.44,W,51,1,,2.44,0,Not enrolled
+LU25439,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.72,15,15,3.14,,96,1,3.11,3.13,1,Sophomore
+LU25440,Fall 2025,Business,Management,0,0,0,1,3.23,16,13,1.91,D,52,4,,1.91,0,Not enrolled
+LU25441,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.77,13,13,3.81,A,103,1,3.47,3.64,1,Sophomore
+LU25442,Fall 2025,Arts & Sciences,English,0,1,1,1,4.0,13,13,3.71,,94,0,4.0,3.85,1,Sophomore
+LU25443,Fall 2025,Education,Elementary Education,0,0,0,0,3.55,15,15,3.83,,136,0,4.0,3.92,1,Sophomore
+LU25444,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.61,15,15,2.52,C,88,0,2.36,2.44,1,Sophomore
+LU25445,Fall 2025,Engineering,Mechanical Engineering,1,1,0,1,3.15,15,12,1.53,W,44,2,1.76,1.64,0,Not enrolled
+LU25446,Fall 2025,Nursing & Health,Public Health,0,1,0,0,3.45,15,15,2.74,,89,1,2.24,2.49,0,Not enrolled
+LU25447,Fall 2025,Business,Management,0,0,0,0,2.87,15,15,3.1,B,74,2,3.05,3.07,1,Sophomore
+LU25448,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,3.61,15,15,3.47,A,134,1,3.5,3.48,1,Sophomore
+LU25449,Fall 2025,Nursing & Health,Public Health,0,0,0,1,2.66,15,11,2.03,,79,2,1.65,1.84,0,Not enrolled
+LU25450,Fall 2025,Engineering,Computer Science,1,0,0,1,3.21,17,17,2.39,,80,1,,2.39,0,Not enrolled
+LU25451,Fall 2025,Business,Finance,0,0,1,1,3.3,15,15,2.14,C,81,1,2.26,2.2,0,Not enrolled
+LU25452,Fall 2025,Nursing & Health,Kinesiology,1,1,0,0,4.0,13,13,3.8,A,117,2,3.89,3.84,1,Sophomore
+LU25453,Fall 2025,Business,Management,0,0,0,0,3.19,17,17,2.64,C,84,1,2.3,2.47,1,Sophomore
+LU25454,Fall 2025,Business,Marketing,0,0,0,0,3.52,16,16,2.58,,78,1,2.78,2.68,1,Sophomore
+LU25455,Fall 2025,Engineering,Civil Engineering,1,0,0,0,4.0,15,15,3.87,A,87,0,3.99,3.93,1,Sophomore
+LU25456,Fall 2025,Engineering,Civil Engineering,1,0,0,1,2.64,15,15,2.68,,35,3,3.19,2.93,1,Sophomore
+LU25457,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.64,13,13,4.0,A,90,0,4.0,4.0,1,Sophomore
+LU25458,Fall 2025,Nursing & Health,Kinesiology,1,1,1,1,3.43,15,15,2.82,B,54,1,2.67,2.75,1,Sophomore
+LU25459,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.5,14,14,3.14,A,67,5,3.52,3.33,1,Sophomore
+LU25460,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.82,16,16,3.48,,105,3,3.0,3.24,1,Sophomore
+LU25461,Fall 2025,Nursing & Health,Nursing,1,0,1,1,3.42,13,13,3.48,B,90,1,2.49,2.98,0,Not enrolled
+LU25462,Fall 2025,Engineering,Mechanical Engineering,1,0,1,0,3.63,17,17,3.24,,106,1,3.69,3.46,1,Sophomore
+LU25463,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.17,16,16,3.55,B,132,1,3.13,3.34,1,Sophomore
+LU25464,Fall 2025,Nursing & Health,Nursing,1,1,1,1,3.13,15,15,2.18,,45,1,2.16,2.17,1,Sophomore
+LU25465,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,3.79,16,16,2.31,F,144,0,2.0,2.16,1,Sophomore
+LU25466,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.02,12,3,0.68,F,66,3,1.19,0.93,0,Not enrolled
+LU25467,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.24,16,16,2.86,W,114,2,3.07,2.97,1,Sophomore
+LU25468,Fall 2025,Engineering,Computer Science,1,0,1,0,3.6,12,12,3.26,,92,1,3.62,3.44,1,Sophomore
+LU25469,Fall 2025,Business,Management,0,0,0,0,3.48,16,16,3.47,,101,0,3.33,3.4,1,Sophomore
+LU25470,Fall 2025,Arts & Sciences,Psychology,0,1,0,1,3.72,15,15,3.05,,63,2,3.49,3.27,1,Sophomore
+LU25471,Fall 2025,Engineering,Mechanical Engineering,1,1,1,1,3.18,14,14,3.03,B,57,1,2.89,2.96,1,Sophomore
+LU25472,Fall 2025,Education,Elementary Education,0,0,1,0,3.5,15,15,2.25,F,116,2,2.08,2.17,1,Sophomore
+LU25473,Fall 2025,Business,Accounting,0,1,1,1,3.53,14,14,2.8,B,5,3,2.53,2.67,1,Sophomore
+LU25474,Fall 2025,Engineering,Civil Engineering,1,1,0,0,2.96,13,13,2.52,,34,1,2.8,2.66,1,Sophomore
+LU25475,Fall 2025,Business,Finance,0,0,1,0,3.34,15,15,2.08,F,94,1,1.55,1.81,1,Sophomore
+LU25476,Fall 2025,Business,Management,0,0,0,1,3.57,15,15,3.01,B,87,3,,3.01,0,Not enrolled
+LU25477,Fall 2025,Business,Accounting,0,0,1,1,3.48,15,15,2.98,B,20,1,3.39,3.19,1,Sophomore
+LU25478,Fall 2025,Engineering,Mechanical Engineering,1,1,1,1,3.62,12,12,2.27,C,73,0,2.38,2.33,1,Sophomore
+LU25479,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.59,15,15,2.52,,81,1,2.26,2.39,1,Sophomore
+LU25480,Fall 2025,Arts & Sciences,Political Science,0,0,1,0,3.54,14,14,1.63,D,87,4,2.3,1.96,1,Sophomore
+LU25481,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.55,14,14,3.71,C,56,1,3.21,3.46,1,Sophomore
+LU25482,Fall 2025,Engineering,Computer Science,1,1,1,1,3.27,15,15,2.42,D,64,0,1.73,2.08,1,Sophomore
+LU25483,Fall 2025,Undeclared,Undeclared,0,0,0,0,2.91,13,7,0.89,W,52,2,1.47,1.18,0,Not enrolled
+LU25484,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.3,16,16,4.0,,83,0,3.82,3.91,1,Sophomore
+LU25485,Fall 2025,Engineering,Electrical Engineering,1,1,0,0,3.5,15,15,2.56,C,81,3,2.77,2.67,1,Sophomore
+LU25486,Fall 2025,Arts & Sciences,Biology,1,1,1,1,2.96,15,15,1.79,,56,8,1.73,1.76,1,Sophomore
+LU25487,Fall 2025,Business,Accounting,0,0,0,0,3.42,13,13,3.17,B,109,2,3.18,3.18,1,Sophomore
+LU25488,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.46,15,15,1.81,,17,2,1.7,1.75,1,Sophomore
+LU25489,Fall 2025,Education,Secondary Education,0,0,0,0,3.14,13,13,3.08,,105,4,3.15,3.11,1,Sophomore
+LU25490,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.45,12,12,2.96,,45,1,2.36,2.66,1,Sophomore
+LU25491,Fall 2025,Arts & Sciences,Chemistry,1,1,1,1,3.14,14,14,2.33,C,32,4,2.14,2.23,1,Sophomore
+LU25492,Fall 2025,Education,Elementary Education,0,1,0,0,3.35,15,15,3.07,,63,2,3.0,3.03,1,Sophomore
+LU25493,Fall 2025,Engineering,Civil Engineering,1,1,0,1,3.41,14,14,2.29,C,73,0,1.46,1.88,0,Not enrolled
+LU25494,Fall 2025,Business,Marketing,0,0,0,0,3.73,12,12,4.0,B,191,2,3.88,3.94,1,Sophomore
+LU25495,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.21,16,16,2.41,D,105,1,2.76,2.58,1,Sophomore
+LU25496,Fall 2025,Education,Elementary Education,0,0,1,0,3.64,13,13,2.47,D,102,2,2.26,2.36,1,Sophomore
+LU25497,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.79,12,12,3.15,C,119,1,3.22,3.19,1,Sophomore
+LU25498,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,2.84,16,16,2.28,W,113,4,2.27,2.28,1,Sophomore
+LU25499,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.43,15,15,3.67,C,118,1,3.51,3.59,1,Sophomore
+LU25500,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.27,13,13,2.76,,135,2,2.36,2.56,1,Sophomore
+LU25501,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.82,15,15,3.94,A,119,5,3.47,3.7,1,Sophomore
+LU25502,Fall 2025,Nursing & Health,Nursing,1,0,1,1,3.02,17,14,2.18,F,52,1,1.63,1.91,1,Sophomore
+LU25503,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.36,16,16,2.72,,138,4,2.48,2.6,1,Sophomore
+LU25504,Fall 2025,Nursing & Health,Nursing,1,1,0,0,3.43,17,17,2.49,B,79,2,2.32,2.41,1,Sophomore
+LU25505,Fall 2025,Engineering,Civil Engineering,1,0,1,1,3.91,15,15,2.29,C,51,0,1.75,2.02,1,Sophomore
+LU25506,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.06,14,11,1.61,D,70,0,1.77,1.69,0,Not enrolled
+LU25507,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.26,14,14,2.42,,58,1,2.27,2.34,1,Sophomore
+LU25508,Fall 2025,Arts & Sciences,English,0,0,0,0,3.48,16,16,4.0,,116,3,4.0,4.0,1,Sophomore
+LU25509,Fall 2025,Arts & Sciences,English,0,1,1,1,3.4,17,17,3.24,,72,2,3.19,3.22,1,Sophomore
+LU25510,Fall 2025,Business,Marketing,0,0,0,0,3.76,16,16,4.0,A,89,1,4.0,4.0,1,Sophomore
+LU25511,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.39,13,13,2.41,B,85,1,2.68,2.55,1,Sophomore
+LU25512,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.5,16,16,2.41,C,107,2,1.91,2.16,1,Sophomore
+LU25513,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.76,15,15,3.19,C,80,1,3.17,3.18,1,Sophomore
+LU25514,Fall 2025,Nursing & Health,Public Health,0,0,1,1,2.86,14,14,1.28,,87,1,1.32,1.3,1,Sophomore
+LU25515,Fall 2025,Engineering,Civil Engineering,1,1,0,1,3.11,15,15,2.41,F,82,0,1.93,2.17,1,Sophomore
+LU25516,Fall 2025,Arts & Sciences,English,0,0,0,0,4.0,14,14,4.0,A,65,0,4.0,4.0,1,Sophomore
+LU25517,Fall 2025,Business,Marketing,0,1,0,0,3.28,17,17,2.57,,150,3,2.67,2.62,1,Sophomore
+LU25518,Fall 2025,Arts & Sciences,Economics,0,0,0,0,4.0,13,13,3.21,B,86,0,3.19,3.2,1,Sophomore
+LU25519,Fall 2025,Business,Accounting,0,1,1,1,3.53,15,15,3.51,,23,0,3.27,3.39,1,Sophomore
+LU25520,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.89,14,14,3.19,C,73,1,2.7,2.94,1,Sophomore
+LU25521,Fall 2025,Business,Management,0,0,0,1,2.68,14,10,1.99,W,75,2,2.52,2.26,1,Freshman
+LU25522,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.23,15,8,1.88,C,91,4,1.81,1.85,1,Freshman
+LU25523,Fall 2025,Engineering,Computer Science,1,0,1,1,3.52,12,9,1.99,W,86,3,1.94,1.96,1,Freshman
+LU25524,Fall 2025,Engineering,Electrical Engineering,1,0,1,1,3.38,15,15,2.46,C,100,1,2.13,2.29,1,Sophomore
+LU25525,Fall 2025,Business,Management,0,0,0,1,3.68,16,16,3.51,C,120,1,3.3,3.4,1,Sophomore
+LU25526,Fall 2025,Arts & Sciences,English,0,1,0,0,3.33,15,15,3.84,A,52,0,3.77,3.8,1,Sophomore
+LU25527,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.51,14,14,2.94,,80,1,3.6,3.27,1,Sophomore
+LU25528,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,2.6,14,14,1.6,D,116,3,1.6,1.6,1,Sophomore
+LU25529,Fall 2025,Arts & Sciences,Political Science,0,1,1,1,3.63,14,14,3.53,,85,0,3.35,3.44,1,Sophomore
+LU25530,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.99,16,16,3.35,,62,2,3.88,3.61,1,Sophomore
+LU25531,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.84,16,16,3.05,,105,0,2.95,3.0,1,Sophomore
+LU25532,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.75,16,16,3.91,B,86,0,3.21,3.56,1,Sophomore
+LU25533,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.37,16,16,2.39,,109,0,2.48,2.43,1,Sophomore
+LU25534,Fall 2025,Business,Marketing,0,1,0,1,3.64,14,14,2.43,C,61,2,,2.43,0,Not enrolled
+LU25535,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.33,15,15,2.74,,44,0,2.88,2.81,1,Sophomore
+LU25536,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.95,15,15,2.52,A,16,1,3.18,2.85,1,Sophomore
+LU25537,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.52,16,16,1.59,F,93,3,0.96,1.28,0,Not enrolled
+LU25538,Fall 2025,Nursing & Health,Public Health,0,0,1,0,2.79,15,12,2.2,,33,1,1.22,1.71,0,Not enrolled
+LU25539,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,3.9,15,15,4.0,A,60,1,3.55,3.78,1,Sophomore
+LU25540,Fall 2025,Education,Secondary Education,0,1,0,0,3.62,14,14,3.17,B,84,0,3.51,3.34,1,Sophomore
+LU25541,Fall 2025,Business,Management,0,1,1,1,3.46,12,12,2.76,C,45,2,2.42,2.59,0,Not enrolled
+LU25542,Fall 2025,Business,Finance,0,1,0,0,3.67,15,15,2.04,C,67,2,1.95,2.0,1,Sophomore
+LU25543,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.64,13,9,1.57,,125,4,2.19,1.88,1,Freshman
+LU25544,Fall 2025,Nursing & Health,Public Health,0,1,0,0,3.3,16,16,3.33,B,57,1,3.88,3.6,1,Sophomore
+LU25545,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.96,17,17,3.79,A,96,0,4.0,3.89,1,Sophomore
+LU25546,Fall 2025,Arts & Sciences,Political Science,0,0,1,0,3.19,16,16,2.39,C,90,0,3.02,2.71,1,Sophomore
+LU25547,Fall 2025,Engineering,Computer Science,1,0,0,1,3.69,14,14,2.84,C,101,0,2.94,2.89,1,Sophomore
+LU25548,Fall 2025,Engineering,Electrical Engineering,1,0,1,1,3.03,16,16,3.38,B,97,0,3.22,3.3,1,Sophomore
+LU25549,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.57,15,15,3.09,,52,0,2.2,2.64,0,Not enrolled
+LU25550,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.39,15,15,2.76,A,125,3,3.26,3.01,1,Sophomore
+LU25551,Fall 2025,Business,Finance,0,1,1,0,3.21,16,16,3.31,C,141,0,3.91,3.61,1,Sophomore
+LU25552,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.46,15,15,3.56,A,97,0,3.68,3.62,1,Sophomore
+LU25553,Fall 2025,Arts & Sciences,Economics,0,0,0,1,4.0,13,13,2.8,B,50,1,3.27,3.03,1,Sophomore
+LU25554,Fall 2025,Arts & Sciences,Biology,1,1,1,0,3.53,14,14,3.45,B,118,2,3.54,3.49,1,Sophomore
+LU25555,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.88,16,16,2.96,C,109,1,2.62,2.79,1,Sophomore
+LU25556,Fall 2025,Undeclared,Undeclared,0,1,1,0,3.8,14,14,4.0,B,140,1,4.0,4.0,1,Sophomore
+LU25557,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,3.25,12,12,3.31,,101,1,3.61,3.46,1,Sophomore
+LU25558,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.68,12,12,2.96,,72,1,2.69,2.83,0,Not enrolled
+LU25559,Fall 2025,Arts & Sciences,Biology,1,0,0,0,2.82,14,14,3.04,B,61,1,3.3,3.17,1,Sophomore
+LU25560,Fall 2025,Engineering,Computer Science,1,1,0,1,3.7,13,13,2.3,C,55,0,2.13,2.22,1,Sophomore
+LU25561,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,4.0,15,8,2.15,,114,3,2.64,2.4,1,Freshman
+LU25562,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.44,12,12,2.24,W,63,2,2.3,2.27,0,Not enrolled
+LU25563,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.35,15,15,3.45,A,99,0,4.0,3.72,1,Sophomore
+LU25564,Fall 2025,Arts & Sciences,Mathematics,1,0,1,0,3.46,14,14,2.58,,90,4,2.53,2.56,1,Sophomore
+LU25565,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.21,12,12,3.04,C,53,1,3.12,3.08,1,Sophomore
+LU25566,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,2.99,16,16,3.06,,81,3,3.15,3.11,1,Sophomore
+LU25567,Fall 2025,Business,Management,0,0,0,0,2.97,15,15,3.05,B,121,2,3.38,3.22,1,Sophomore
+LU25568,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.04,15,12,1.86,,61,2,1.71,1.79,1,Sophomore
+LU25569,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,2.61,15,15,1.76,D,81,4,2.24,2.0,1,Sophomore
+LU25570,Fall 2025,Nursing & Health,Kinesiology,1,1,0,0,3.66,15,15,3.87,B,105,0,3.8,3.84,1,Sophomore
+LU25571,Fall 2025,Arts & Sciences,English,0,1,0,0,3.89,15,15,3.76,,59,0,3.27,3.52,1,Sophomore
+LU25572,Fall 2025,Education,Elementary Education,0,0,0,0,3.33,13,13,3.0,,153,1,2.95,2.98,1,Sophomore
+LU25573,Fall 2025,Education,Secondary Education,0,1,0,1,3.76,14,14,2.25,,39,2,1.95,2.1,1,Sophomore
+LU25574,Fall 2025,Business,Management,0,0,0,0,3.06,14,14,2.73,C,107,1,2.85,2.79,1,Sophomore
+LU25575,Fall 2025,Arts & Sciences,Psychology,0,1,0,1,3.81,15,15,3.45,,102,4,4.0,3.73,1,Sophomore
+LU25576,Fall 2025,Business,Management,0,1,0,0,3.69,16,16,2.94,B,34,1,2.78,2.86,1,Sophomore
+LU25577,Fall 2025,Business,Management,0,0,1,0,3.61,12,12,3.01,B,148,4,3.42,3.22,1,Sophomore
+LU25578,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.69,15,15,4.0,,121,0,3.82,3.91,1,Sophomore
+LU25579,Fall 2025,Arts & Sciences,English,0,0,0,0,3.66,16,13,1.74,,94,1,1.72,1.73,1,Sophomore
+LU25580,Fall 2025,Undeclared,Undeclared,0,0,0,0,2.77,16,16,2.33,,124,1,2.17,2.25,1,Sophomore
+LU25581,Fall 2025,Education,Secondary Education,0,0,1,1,2.83,15,15,3.53,B,76,1,3.43,3.48,1,Sophomore
+LU25582,Fall 2025,Arts & Sciences,Mathematics,1,1,1,1,3.83,16,16,2.72,C,93,1,2.82,2.77,1,Sophomore
+LU25583,Fall 2025,Arts & Sciences,Economics,0,1,1,0,4.0,15,15,2.59,,64,1,3.03,2.81,1,Sophomore
+LU25584,Fall 2025,Arts & Sciences,Psychology,0,1,0,0,3.63,14,14,3.47,,90,3,3.66,3.57,0,Not enrolled
+LU25585,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.63,15,15,3.63,B,95,0,3.51,3.57,1,Sophomore
+LU25586,Fall 2025,Education,Elementary Education,0,0,0,0,3.75,15,15,3.42,B,103,0,3.57,3.49,1,Sophomore
+LU25587,Fall 2025,Undeclared,Undeclared,0,0,0,0,4.0,16,16,4.0,A,100,2,3.58,3.79,1,Sophomore
+LU25588,Fall 2025,Business,Finance,0,1,1,1,3.07,16,16,1.91,D,48,4,,1.91,0,Not enrolled
+LU25589,Fall 2025,Business,Accounting,0,0,1,1,3.53,16,16,3.05,C,116,0,3.84,3.45,1,Sophomore
+LU25590,Fall 2025,Business,Finance,0,1,1,0,3.91,13,13,3.13,B,133,1,2.9,3.01,1,Sophomore
+LU25591,Fall 2025,Business,Marketing,0,1,0,0,2.97,15,15,2.86,C,79,2,2.8,2.83,1,Sophomore
+LU25592,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.05,15,12,1.53,,36,0,1.21,1.37,0,Not enrolled
+LU25593,Fall 2025,Business,Accounting,0,0,0,0,3.9,16,16,3.74,B,103,1,3.61,3.68,1,Sophomore
+LU25594,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.16,13,13,1.87,F,143,0,1.21,1.54,1,Sophomore
+LU25595,Fall 2025,Engineering,Computer Science,1,1,1,0,2.86,14,14,2.45,F,124,6,2.71,2.58,1,Sophomore
+LU25596,Fall 2025,Arts & Sciences,Psychology,0,1,0,1,4.0,12,12,3.37,,90,3,3.46,3.42,1,Sophomore
+LU25597,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.04,12,12,1.41,,56,4,1.39,1.4,0,Not enrolled
+LU25598,Fall 2025,Business,Finance,0,0,1,1,3.2,13,13,2.82,C,79,3,3.47,3.15,1,Sophomore
+LU25599,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,2.88,14,10,1.92,,82,0,1.72,1.82,1,Freshman
+LU25600,Fall 2025,Nursing & Health,Kinesiology,1,0,1,1,3.0,14,10,2.02,C,72,2,1.66,1.84,0,Not enrolled
+LU25601,Fall 2025,Nursing & Health,Nursing,1,0,0,0,4.0,14,14,3.23,C,88,2,3.12,3.18,1,Sophomore
+LU25602,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.12,15,15,2.84,C,98,0,3.31,3.08,1,Sophomore
+LU25603,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.67,17,17,2.64,C,18,0,,2.64,0,Not enrolled
+LU25604,Fall 2025,Arts & Sciences,English,0,0,0,1,3.28,16,16,3.18,,30,2,4.0,3.59,1,Sophomore
+LU25605,Fall 2025,Arts & Sciences,Economics,0,1,0,0,3.89,15,15,3.07,,122,1,2.54,2.81,1,Sophomore
+LU25606,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,4.0,15,15,2.29,W,99,1,2.22,2.26,1,Sophomore
+LU25607,Fall 2025,Engineering,Mechanical Engineering,1,0,1,0,3.92,14,14,3.79,A,150,0,3.58,3.69,1,Sophomore
+LU25608,Fall 2025,Education,Elementary Education,0,0,0,0,2.93,12,12,3.17,C,135,0,3.1,3.14,1,Sophomore
+LU25609,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.02,15,15,3.11,B,75,1,3.34,3.23,1,Sophomore
+LU25610,Fall 2025,Education,Secondary Education,0,0,0,1,3.2,14,14,2.58,C,111,1,2.74,2.66,1,Sophomore
+LU25611,Fall 2025,Business,Management,0,1,0,0,3.3,16,16,2.68,,86,1,2.63,2.66,1,Sophomore
+LU25612,Fall 2025,Nursing & Health,Public Health,0,1,0,0,3.39,12,12,2.97,,114,0,2.83,2.9,1,Sophomore
+LU25613,Fall 2025,Engineering,Mechanical Engineering,1,1,1,0,3.48,16,16,3.38,B,104,0,3.76,3.57,1,Sophomore
+LU25614,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,3.66,17,17,4.0,,102,2,3.72,3.86,1,Sophomore
+LU25615,Fall 2025,Nursing & Health,Kinesiology,1,0,1,0,3.6,17,17,2.06,C,47,3,2.03,2.05,1,Sophomore
+LU25616,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.24,12,12,2.84,C,53,1,2.81,2.83,1,Sophomore
+LU25617,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,2.72,15,15,3.47,A,63,2,3.28,3.37,1,Sophomore
+LU25618,Fall 2025,Nursing & Health,Public Health,0,1,1,0,3.24,17,17,2.55,C,80,1,3.22,2.88,1,Sophomore
+LU25619,Fall 2025,Business,Finance,0,0,0,0,2.65,14,5,1.19,W,77,3,,1.19,0,Not enrolled
+LU25620,Fall 2025,Arts & Sciences,English,0,0,0,1,3.53,16,16,2.97,B,60,1,3.07,3.02,1,Sophomore
+LU25621,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.52,15,15,2.91,B,97,1,3.4,3.16,1,Sophomore
+LU25622,Fall 2025,Education,Elementary Education,0,0,0,0,3.52,15,15,4.0,B,105,2,4.0,4.0,1,Sophomore
+LU25623,Fall 2025,Arts & Sciences,English,0,0,0,1,3.36,16,16,3.03,,71,1,2.85,2.94,1,Sophomore
+LU25624,Fall 2025,Business,Accounting,0,1,1,0,3.26,15,15,2.88,B,114,1,3.35,3.12,1,Sophomore
+LU25625,Fall 2025,Arts & Sciences,Chemistry,1,1,0,1,3.75,14,14,2.61,B,144,1,2.87,2.74,1,Sophomore
+LU25626,Fall 2025,Nursing & Health,Public Health,0,0,1,0,2.73,13,13,2.41,,47,0,2.4,2.41,1,Sophomore
+LU25627,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,2.99,16,13,2.1,D,173,3,2.61,2.35,1,Sophomore
+LU25628,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.66,15,15,4.0,A,86,0,3.15,3.57,1,Sophomore
+LU25629,Fall 2025,Arts & Sciences,English,0,0,1,0,3.19,16,16,2.76,,130,1,2.66,2.71,1,Sophomore
+LU25630,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.82,15,15,3.45,B,105,3,3.35,3.4,1,Sophomore
+LU25631,Fall 2025,Nursing & Health,Public Health,0,0,1,0,2.92,15,15,1.71,F,70,2,1.73,1.72,1,Sophomore
+LU25632,Fall 2025,Arts & Sciences,English,0,0,0,1,3.49,13,13,3.28,,70,2,2.76,3.02,1,Sophomore
+LU25633,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.46,14,14,2.84,B,79,1,2.54,2.69,1,Sophomore
+LU25634,Fall 2025,Nursing & Health,Kinesiology,1,1,1,1,3.23,15,15,2.6,C,84,0,2.37,2.49,1,Sophomore
+LU25635,Fall 2025,Business,Accounting,0,0,1,1,3.82,14,14,2.92,C,73,1,3.5,3.21,1,Sophomore
+LU25636,Fall 2025,Arts & Sciences,English,0,0,0,0,3.22,15,15,4.0,A,110,0,4.0,4.0,1,Sophomore
+LU25637,Fall 2025,Business,Finance,0,0,0,0,3.59,15,15,2.71,C,107,0,2.33,2.52,1,Sophomore
+LU25638,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.46,17,17,3.04,B,5,3,3.18,3.11,1,Sophomore
+LU25639,Fall 2025,Education,Elementary Education,0,0,1,1,3.47,15,15,2.91,,121,0,3.41,3.16,1,Sophomore
+LU25640,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.29,15,15,2.52,C,124,3,3.15,2.84,1,Sophomore
+LU25641,Fall 2025,Nursing & Health,Public Health,0,1,0,1,3.52,14,14,2.09,,8,3,1.28,1.68,0,Not enrolled
+LU25642,Fall 2025,Business,Marketing,0,0,1,1,3.55,16,16,2.18,,104,1,,2.18,0,Not enrolled
+LU25643,Fall 2025,Nursing & Health,Nursing,1,0,1,0,3.47,16,16,2.79,A,87,1,2.86,2.82,1,Sophomore
+LU25644,Fall 2025,Arts & Sciences,English,0,1,0,1,3.25,14,14,3.02,,89,0,3.03,3.03,1,Sophomore
+LU25645,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.51,14,14,3.01,C,70,0,2.3,2.66,1,Sophomore
+LU25646,Fall 2025,Business,Management,0,0,0,1,3.43,15,15,3.56,B,112,2,3.55,3.55,1,Sophomore
+LU25647,Fall 2025,Engineering,Civil Engineering,1,0,1,0,3.43,13,13,2.33,C,136,2,2.91,2.62,1,Sophomore
+LU25648,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.52,17,17,3.41,A,120,0,3.93,3.67,1,Sophomore
+LU25649,Fall 2025,Undeclared,Undeclared,0,0,1,0,3.28,15,15,3.58,B,60,2,3.54,3.56,1,Sophomore
+LU25650,Fall 2025,Business,Accounting,0,0,0,1,3.0,14,11,2.05,D,67,1,1.81,1.93,1,Freshman
+LU25651,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.13,16,16,1.68,,26,3,,1.68,0,Not enrolled
+LU25652,Fall 2025,Nursing & Health,Nursing,1,1,0,1,2.85,12,12,1.58,,67,1,1.28,1.43,0,Not enrolled
+LU25653,Fall 2025,Arts & Sciences,English,0,0,0,0,3.45,13,13,2.47,,119,1,3.04,2.75,1,Sophomore
+LU25654,Fall 2025,Engineering,Electrical Engineering,1,0,1,0,3.54,16,16,3.4,B,43,3,3.29,3.35,1,Sophomore
+LU25655,Fall 2025,Nursing & Health,Public Health,0,1,1,0,3.66,14,14,3.81,,102,0,4.0,3.91,1,Sophomore
+LU25656,Fall 2025,Engineering,Computer Science,1,1,0,0,3.46,14,14,2.33,C,65,0,2.3,2.31,1,Sophomore
+LU25657,Fall 2025,Arts & Sciences,English,0,0,0,1,3.25,16,12,1.47,,78,2,1.68,1.57,1,Sophomore
+LU25658,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.31,14,14,2.35,D,108,1,1.68,2.01,1,Sophomore
+LU25659,Fall 2025,Arts & Sciences,Economics,0,0,0,0,2.5,16,16,2.45,,119,1,2.7,2.58,1,Sophomore
+LU25660,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.71,15,15,3.38,B,162,0,3.53,3.46,1,Sophomore
+LU25661,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.34,14,14,3.26,B,103,0,3.62,3.44,1,Sophomore
+LU25662,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.04,14,14,2.76,C,65,0,,2.76,0,Not enrolled
+LU25663,Fall 2025,Arts & Sciences,English,0,1,1,0,2.94,15,15,2.42,,96,1,2.45,2.43,1,Sophomore
+LU25664,Fall 2025,Engineering,Computer Science,1,1,0,0,3.2,16,12,1.79,D,70,2,1.08,1.43,0,Not enrolled
+LU25665,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,3.27,12,12,3.1,C,101,1,2.98,3.04,1,Sophomore
+LU25666,Fall 2025,Nursing & Health,Nursing,1,0,0,0,4.0,16,16,2.68,,96,1,3.2,2.94,1,Sophomore
+LU25667,Fall 2025,Education,Secondary Education,0,1,0,0,3.86,17,17,4.0,A,84,1,3.99,4.0,1,Sophomore
+LU25668,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.3,16,16,2.54,C,87,0,2.48,2.51,1,Sophomore
+LU25669,Fall 2025,Business,Management,0,0,0,0,3.8,12,12,2.96,B,77,0,2.8,2.88,1,Sophomore
+LU25670,Fall 2025,Engineering,Computer Science,1,0,0,0,3.37,14,14,2.48,C,91,1,2.7,2.59,1,Sophomore
+LU25671,Fall 2025,Arts & Sciences,English,0,0,1,0,3.39,16,16,3.15,A,55,1,3.21,3.18,1,Sophomore
+LU25672,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.32,13,10,1.42,,68,0,2.28,1.85,1,Freshman
+LU25673,Fall 2025,Education,Secondary Education,0,1,0,0,4.0,14,14,2.72,B,69,1,2.35,2.53,1,Sophomore
+LU25674,Fall 2025,Engineering,Electrical Engineering,1,1,1,1,3.15,15,15,2.55,D,96,1,2.63,2.59,1,Sophomore
+LU25675,Fall 2025,Nursing & Health,Nursing,1,0,1,0,3.86,13,13,3.39,B,107,1,3.11,3.25,1,Sophomore
+LU25676,Fall 2025,Arts & Sciences,Mathematics,1,1,0,1,3.16,14,14,2.57,F,11,2,2.09,2.33,1,Sophomore
+LU25677,Fall 2025,Business,Accounting,0,1,0,0,3.55,15,15,3.9,,61,1,4.0,3.95,1,Sophomore
+LU25678,Fall 2025,Education,Secondary Education,0,0,1,1,3.79,13,13,3.13,B,92,0,3.34,3.24,1,Sophomore
+LU25679,Fall 2025,Education,Elementary Education,0,0,0,0,3.91,13,13,3.65,,131,1,3.45,3.55,1,Sophomore
+LU25680,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.15,12,12,2.51,C,126,2,,2.51,0,Not enrolled
+LU25681,Fall 2025,Engineering,Computer Science,1,1,0,0,3.25,13,13,2.6,,73,2,2.66,2.63,1,Sophomore
+LU25682,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.46,12,12,2.75,F,114,1,3.2,2.98,1,Sophomore
+LU25683,Fall 2025,Nursing & Health,Public Health,0,1,0,1,3.48,15,12,1.95,W,39,2,1.51,1.73,0,Not enrolled
+LU25684,Fall 2025,Arts & Sciences,English,0,0,0,1,3.12,14,14,2.77,,63,0,2.89,2.83,1,Sophomore
+LU25685,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.28,14,14,2.69,C,88,0,2.78,2.74,1,Sophomore
+LU25686,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.76,16,16,3.11,,125,4,3.19,3.15,1,Sophomore
+LU25687,Fall 2025,Engineering,Computer Science,1,0,0,0,3.69,16,16,3.98,A,102,0,3.81,3.89,0,Not enrolled
+LU25688,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.73,15,15,3.56,B,41,0,3.66,3.61,0,Not enrolled
+LU25689,Fall 2025,Undeclared,Undeclared,0,1,0,1,3.58,15,15,2.35,B,91,1,2.57,2.46,1,Sophomore
+LU25690,Fall 2025,Arts & Sciences,English,0,0,1,1,3.34,14,10,1.81,D,137,2,1.99,1.9,1,Freshman
+LU25691,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.4,17,17,1.56,W,59,4,2.24,1.9,1,Sophomore
+LU25692,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.51,14,14,2.74,F,43,0,2.74,2.74,1,Sophomore
+LU25693,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.4,15,15,3.09,B,67,1,3.44,3.26,1,Sophomore
+LU25694,Fall 2025,Arts & Sciences,English,0,0,0,0,3.17,14,14,3.06,A,56,0,3.48,3.27,1,Sophomore
+LU25695,Fall 2025,Business,Marketing,0,1,0,1,3.03,14,14,2.25,,96,1,2.43,2.34,1,Sophomore
+LU25696,Fall 2025,Undeclared,Undeclared,0,1,0,1,2.81,17,17,2.95,,108,0,,2.95,0,Not enrolled
+LU25697,Fall 2025,Business,Finance,0,0,0,0,3.44,16,16,2.99,C,66,0,2.51,2.75,1,Sophomore
+LU25698,Fall 2025,Business,Marketing,0,1,0,0,3.1,15,15,2.42,C,59,1,2.56,2.49,1,Sophomore
+LU25699,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.35,13,6,1.98,D,36,3,2.08,2.03,0,Not enrolled
+LU25700,Fall 2025,Business,Marketing,0,0,0,0,3.35,15,15,3.09,C,132,3,3.33,3.21,1,Sophomore
+LU25701,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.35,14,14,2.71,C,65,2,3.09,2.9,1,Sophomore
+LU25702,Fall 2025,Business,Marketing,0,0,0,0,3.47,16,16,3.66,A,101,1,3.38,3.52,1,Sophomore
+LU25703,Fall 2025,Nursing & Health,Public Health,0,0,1,0,2.65,15,15,1.76,,85,3,1.0,1.38,1,Sophomore
+LU25704,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.84,15,15,2.56,B,104,1,3.29,2.93,1,Sophomore
+LU25705,Fall 2025,Arts & Sciences,Chemistry,1,1,1,0,3.36,16,16,2.09,,6,2,1.69,1.89,1,Sophomore
+LU25706,Fall 2025,Business,Accounting,0,0,1,0,3.37,16,16,2.94,,135,1,2.85,2.9,1,Sophomore
+LU25707,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.36,16,16,3.73,A,133,3,3.8,3.76,1,Sophomore
+LU25708,Fall 2025,Arts & Sciences,Biology,1,1,0,0,3.73,17,17,3.71,,123,1,3.82,3.77,1,Sophomore
+LU25709,Fall 2025,Business,Marketing,0,0,0,1,3.37,15,15,3.37,C,99,0,2.31,2.84,0,Not enrolled
+LU25710,Fall 2025,Nursing & Health,Nursing,1,0,0,1,4.0,16,16,2.5,C,53,3,2.49,2.5,1,Sophomore
+LU25711,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.21,13,13,3.01,W,63,2,3.47,3.24,1,Sophomore
+LU25712,Fall 2025,Engineering,Electrical Engineering,1,1,0,0,3.45,16,16,3.09,C,35,1,3.15,3.12,0,Not enrolled
+LU25713,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.23,16,16,2.27,,53,0,1.89,2.08,1,Sophomore
+LU25714,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,4.0,13,13,3.33,C,102,0,2.76,3.05,1,Sophomore
+LU25715,Fall 2025,Arts & Sciences,Mathematics,1,1,0,1,3.84,13,13,4.0,A,81,1,4.0,4.0,1,Sophomore
+LU25716,Fall 2025,Arts & Sciences,Economics,0,1,0,0,4.0,13,13,4.0,,100,1,4.0,4.0,1,Sophomore
+LU25717,Fall 2025,Engineering,Computer Science,1,0,1,0,3.34,16,16,3.83,,97,3,3.34,3.59,1,Sophomore
+LU25718,Fall 2025,Business,Accounting,0,0,0,0,3.44,12,12,2.62,B,82,1,3.26,2.94,1,Sophomore
+LU25719,Fall 2025,Engineering,Computer Science,1,0,0,0,3.24,13,13,2.55,C,76,1,2.67,2.61,1,Sophomore
+LU25720,Fall 2025,Arts & Sciences,Economics,0,1,0,1,3.62,17,17,1.44,,58,4,1.37,1.4,0,Not enrolled
+LU25721,Fall 2025,Nursing & Health,Nursing,1,1,0,0,3.7,15,15,3.72,B,127,3,3.59,3.65,1,Sophomore
+LU25722,Fall 2025,Education,Secondary Education,0,0,1,1,3.27,12,12,2.39,,36,3,2.68,2.54,1,Sophomore
+LU25723,Fall 2025,Arts & Sciences,Psychology,0,1,0,0,3.45,14,14,4.0,,87,1,3.55,3.78,1,Sophomore
+LU25724,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.53,16,16,3.02,,81,2,3.58,3.3,1,Sophomore
+LU25725,Fall 2025,Arts & Sciences,Political Science,0,1,1,1,3.7,14,14,3.83,,91,1,3.92,3.87,1,Sophomore
+LU25726,Fall 2025,Nursing & Health,Nursing,1,0,1,1,3.13,15,15,3.57,B,87,0,3.19,3.38,1,Sophomore
+LU25727,Fall 2025,Education,Elementary Education,0,0,1,1,3.67,14,14,2.48,,90,2,3.11,2.79,1,Sophomore
+LU25728,Fall 2025,Arts & Sciences,Biology,1,0,1,0,3.0,14,14,2.47,W,79,0,2.63,2.55,1,Sophomore
+LU25729,Fall 2025,Arts & Sciences,Mathematics,1,0,1,1,3.46,15,15,2.16,D,54,1,2.09,2.13,0,Not enrolled
+LU25730,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.14,15,15,3.21,,52,0,3.23,3.22,1,Sophomore
+LU25731,Fall 2025,Engineering,Electrical Engineering,1,1,0,1,3.14,15,11,1.69,W,42,1,1.07,1.38,0,Not enrolled
+LU25732,Fall 2025,Education,Secondary Education,0,0,0,1,3.84,15,15,3.03,B,132,0,2.47,2.75,1,Sophomore
+LU25733,Fall 2025,Arts & Sciences,English,0,0,0,0,3.4,16,16,3.3,B,89,1,3.46,3.38,1,Sophomore
+LU25734,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.7,15,15,3.14,C,54,0,3.3,3.22,1,Sophomore
+LU25735,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,3.3,16,9,1.82,D,90,2,1.97,1.89,1,Freshman
+LU25736,Fall 2025,Engineering,Electrical Engineering,1,1,0,1,2.76,14,7,1.56,,70,4,1.29,1.42,1,Freshman
+LU25737,Fall 2025,Nursing & Health,Kinesiology,1,0,1,1,3.53,17,17,3.12,B,135,1,3.67,3.39,1,Sophomore
+LU25738,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.91,14,14,3.46,C,109,0,3.58,3.52,1,Sophomore
+LU25739,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.35,17,17,3.54,A,116,0,3.75,3.65,1,Sophomore
+LU25740,Fall 2025,Arts & Sciences,Mathematics,1,1,1,0,3.47,15,15,3.46,A,102,0,3.58,3.52,1,Sophomore
+LU25741,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.06,16,12,1.78,W,67,3,1.58,1.68,1,Sophomore
+LU25742,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.93,15,12,2.12,D,65,4,1.58,1.85,1,Sophomore
+LU25743,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,2.86,12,12,2.31,,45,1,,2.31,0,Not enrolled
+LU25744,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.23,13,13,3.16,,73,2,2.76,2.96,1,Sophomore
+LU25745,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,2.77,15,15,3.05,C,39,2,3.11,3.08,1,Sophomore
+LU25746,Fall 2025,Nursing & Health,Public Health,0,1,0,0,3.32,15,15,2.49,W,125,1,2.42,2.46,1,Sophomore
+LU25747,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.74,12,12,2.66,C,75,2,,2.66,0,Not enrolled
+LU25748,Fall 2025,Education,Elementary Education,0,0,0,0,3.67,14,14,3.5,B,130,2,3.52,3.51,1,Sophomore
+LU25749,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.86,15,15,2.53,C,137,2,1.99,2.26,1,Sophomore
+LU25750,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.95,14,14,3.49,B,51,1,3.52,3.51,1,Sophomore
+LU25751,Fall 2025,Business,Management,0,0,0,0,3.17,14,14,2.95,C,94,1,2.77,2.86,1,Sophomore
+LU25752,Fall 2025,Engineering,Electrical Engineering,1,0,1,0,4.0,14,14,3.54,B,89,2,3.5,3.52,1,Sophomore
+LU25753,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.46,16,16,2.33,C,40,2,2.07,2.2,1,Sophomore
+LU25754,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.61,16,16,2.85,,91,1,2.91,2.88,1,Sophomore
+LU25755,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.61,14,14,3.62,,87,4,3.71,3.67,1,Sophomore
+LU25756,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.72,15,15,2.75,B,85,0,2.6,2.67,1,Sophomore
+LU25757,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.43,16,16,3.37,B,140,1,3.71,3.54,1,Sophomore
+LU25758,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.88,13,13,3.51,,106,0,3.68,3.6,1,Sophomore
+LU25759,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.84,15,11,2.09,F,57,0,2.04,2.06,0,Not enrolled
+LU25760,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.56,14,14,2.69,,80,3,3.05,2.87,1,Sophomore
+LU25761,Fall 2025,Business,Marketing,0,1,1,1,3.08,16,16,2.57,C,67,1,2.42,2.5,1,Sophomore
+LU25762,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.82,13,13,3.73,,140,3,3.73,3.73,1,Sophomore
+LU25763,Fall 2025,Arts & Sciences,Chemistry,1,1,1,1,3.44,13,13,1.65,F,86,4,,1.65,0,Not enrolled
+LU25764,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.41,14,14,4.0,,103,2,4.0,4.0,1,Sophomore
+LU25765,Fall 2025,Nursing & Health,Nursing,1,0,0,1,4.0,13,13,2.93,C,30,0,3.09,3.01,1,Sophomore
+LU25766,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.77,13,13,2.64,C,126,2,2.04,2.34,0,Not enrolled
+LU25767,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.23,15,15,3.73,A,107,1,3.94,3.84,1,Sophomore
+LU25768,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.97,16,16,3.16,B,7,1,3.2,3.18,1,Sophomore
+LU25769,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.8,16,16,3.13,B,129,1,2.86,3.0,1,Sophomore
+LU25770,Fall 2025,Education,Elementary Education,0,0,0,0,3.59,12,12,2.41,W,122,1,2.81,2.61,1,Sophomore
+LU25771,Fall 2025,Education,Secondary Education,0,0,0,0,3.57,14,14,3.26,A,128,0,3.42,3.34,1,Sophomore
+LU25772,Fall 2025,Arts & Sciences,English,0,1,0,0,3.37,13,13,3.57,B,92,1,3.61,3.59,1,Sophomore
+LU25773,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.47,16,16,2.32,D,123,0,2.55,2.44,1,Sophomore
+LU25774,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.67,14,14,2.82,W,5,1,,2.82,0,Not enrolled
+LU25775,Fall 2025,Arts & Sciences,Chemistry,1,1,1,1,3.06,16,16,2.52,,133,0,1.87,2.19,0,Not enrolled
+LU25776,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.13,15,15,2.42,W,142,0,2.24,2.33,1,Sophomore
+LU25777,Fall 2025,Business,Accounting,0,0,1,1,3.72,15,15,3.25,B,136,3,3.63,3.44,1,Sophomore
+LU25778,Fall 2025,Education,Secondary Education,0,0,0,1,3.02,16,16,2.99,A,68,2,2.97,2.98,1,Sophomore
+LU25779,Fall 2025,Arts & Sciences,Psychology,0,0,1,1,3.91,15,15,2.33,,11,2,2.7,2.52,1,Sophomore
+LU25780,Fall 2025,Business,Finance,0,1,0,0,2.62,12,12,1.74,,63,3,1.5,1.62,1,Sophomore
+LU25781,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,3.88,13,13,2.61,C,57,1,2.52,2.56,0,Not enrolled
+LU25782,Fall 2025,Arts & Sciences,Chemistry,1,1,1,0,3.77,16,16,3.44,A,27,0,3.68,3.56,1,Sophomore
+LU25783,Fall 2025,Undeclared,Undeclared,0,0,1,0,3.21,15,15,2.98,,56,0,2.29,2.64,1,Sophomore
+LU25784,Fall 2025,Business,Marketing,0,1,0,1,3.5,16,16,3.33,A,126,1,3.6,3.46,1,Sophomore
+LU25785,Fall 2025,Arts & Sciences,Biology,1,1,0,0,2.69,13,10,1.91,W,106,1,2.0,1.96,1,Freshman
+LU25786,Fall 2025,Education,Secondary Education,0,0,0,0,3.47,16,16,2.94,C,122,1,2.56,2.75,1,Sophomore
+LU25787,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.3,14,14,2.95,B,85,1,3.01,2.98,1,Sophomore
+LU25788,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,2.86,16,13,2.05,F,71,0,,2.05,0,Not enrolled
+LU25789,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,2.96,15,15,2.63,C,63,0,2.28,2.45,0,Not enrolled
+LU25790,Fall 2025,Education,Elementary Education,0,1,0,1,3.47,14,10,2.17,,25,1,1.99,2.08,0,Not enrolled
+LU25791,Fall 2025,Arts & Sciences,Psychology,0,1,1,1,3.15,15,15,2.73,C,63,1,2.74,2.73,1,Sophomore
+LU25792,Fall 2025,Education,Elementary Education,0,1,0,0,3.11,15,15,1.97,,92,1,1.94,1.96,1,Sophomore
+LU25793,Fall 2025,Business,Accounting,0,0,0,0,3.4,15,15,2.91,C,123,1,3.43,3.17,1,Sophomore
+LU25794,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.25,15,12,2.08,,42,3,2.9,2.49,1,Sophomore
+LU25795,Fall 2025,Business,Management,0,1,0,0,3.4,17,17,3.77,A,96,3,4.0,3.89,1,Sophomore
+LU25796,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.19,12,12,1.71,,67,4,1.69,1.7,1,Sophomore
+LU25797,Fall 2025,Business,Accounting,0,1,1,1,3.53,16,16,2.93,C,23,0,2.97,2.95,1,Sophomore
+LU25798,Fall 2025,Nursing & Health,Nursing,1,0,1,0,3.65,15,15,3.32,A,54,2,3.71,3.52,1,Sophomore
+LU25799,Fall 2025,Business,Finance,0,0,0,0,3.65,16,16,3.19,,111,3,3.04,3.12,1,Sophomore
+LU25800,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.27,14,14,4.0,A,94,2,3.86,3.93,1,Sophomore
+LU25801,Fall 2025,Arts & Sciences,English,0,0,0,0,3.44,16,16,3.39,,73,2,4.0,3.7,1,Sophomore
+LU25802,Fall 2025,Nursing & Health,Nursing,1,0,1,1,2.95,14,7,1.85,,76,1,1.86,1.86,0,Not enrolled
+LU25803,Fall 2025,Engineering,Computer Science,1,0,0,0,3.3,15,15,2.56,C,129,2,2.21,2.39,1,Sophomore
+LU25804,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.83,14,14,3.29,,118,1,3.0,3.15,1,Sophomore
+LU25805,Fall 2025,Education,Elementary Education,0,1,1,0,3.52,12,12,2.78,C,114,2,3.11,2.94,1,Sophomore
+LU25806,Fall 2025,Undeclared,Undeclared,0,1,1,0,4.0,14,14,3.51,,86,0,3.31,3.41,0,Not enrolled
+LU25807,Fall 2025,Arts & Sciences,Psychology,0,0,1,1,3.06,14,11,2.17,,66,2,2.42,2.3,1,Freshman
+LU25808,Fall 2025,Engineering,Civil Engineering,1,0,1,1,3.31,14,14,2.39,C,87,0,1.7,2.04,0,Not enrolled
+LU25809,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.55,15,15,2.57,,56,3,3.04,2.81,1,Sophomore
+LU25810,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.29,15,12,2.2,,91,0,2.31,2.25,1,Sophomore
+LU25811,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.13,15,15,2.1,C,12,1,2.32,2.21,1,Sophomore
+LU25812,Fall 2025,Undeclared,Undeclared,0,0,1,0,3.64,16,16,4.0,A,89,3,3.83,3.92,1,Sophomore
+LU25813,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.06,16,13,2.18,D,98,2,2.29,2.24,1,Sophomore
+LU25814,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.62,12,12,2.48,,94,2,2.42,2.45,1,Sophomore
+LU25815,Fall 2025,Nursing & Health,Kinesiology,1,1,0,0,3.25,15,8,1.74,D,72,2,0.41,1.08,0,Not enrolled
+LU25816,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.74,14,14,2.79,C,82,0,2.51,2.65,1,Sophomore
+LU25817,Fall 2025,Engineering,Electrical Engineering,1,0,1,0,2.85,13,13,3.48,A,75,1,3.06,3.27,1,Sophomore
+LU25818,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,2.99,12,12,3.7,B,132,0,3.68,3.69,1,Sophomore
+LU25819,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.63,12,12,2.68,,123,1,3.1,2.89,1,Sophomore
+LU25820,Fall 2025,Arts & Sciences,Political Science,0,0,1,0,2.87,13,13,3.39,B,106,1,3.57,3.48,1,Sophomore
+LU25821,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,3.81,15,15,2.52,,123,0,,2.52,0,Not enrolled
+LU25822,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.85,13,13,3.44,B,89,1,3.37,3.4,1,Sophomore
+LU25823,Fall 2025,Business,Finance,0,0,1,1,3.3,12,12,3.13,B,99,2,3.23,3.18,1,Sophomore
+LU25824,Fall 2025,Business,Management,0,0,1,1,3.46,16,13,1.61,D,62,3,1.33,1.47,0,Not enrolled
+LU25825,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.85,15,15,4.0,A,132,1,4.0,4.0,1,Sophomore
+LU25826,Fall 2025,Arts & Sciences,English,0,1,0,1,3.39,14,10,2.12,F,84,4,2.33,2.22,1,Freshman
+LU25827,Fall 2025,Arts & Sciences,Mathematics,1,0,1,1,3.2,15,15,3.58,A,95,1,3.75,3.67,1,Sophomore
+LU25828,Fall 2025,Arts & Sciences,Psychology,0,1,0,0,3.5,15,15,3.05,B,121,1,,3.05,0,Not enrolled
+LU25829,Fall 2025,Arts & Sciences,Biology,1,0,1,0,3.01,14,10,1.74,D,92,0,1.75,1.75,1,Freshman
+LU25830,Fall 2025,Nursing & Health,Public Health,0,1,0,0,3.69,14,14,4.0,A,82,0,3.88,3.94,1,Sophomore
+LU25831,Fall 2025,Arts & Sciences,Psychology,0,1,1,0,3.25,15,15,2.72,C,85,2,2.76,2.74,1,Sophomore
+LU25832,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.44,12,12,2.95,B,85,2,2.37,2.66,1,Sophomore
+LU25833,Fall 2025,Business,Finance,0,1,0,0,3.11,12,12,3.63,B,84,2,3.2,3.42,1,Sophomore
+LU25834,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.62,13,13,3.09,,126,2,3.44,3.27,1,Sophomore
+LU25835,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.67,15,15,2.97,,66,1,3.41,3.19,1,Sophomore
+LU25836,Fall 2025,Business,Management,0,0,0,0,3.3,17,17,3.12,,92,1,3.4,3.26,1,Sophomore
+LU25837,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.42,15,12,2.05,,39,1,2.2,2.13,1,Sophomore
+LU25838,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.86,14,14,3.13,,110,1,3.04,3.08,1,Sophomore
+LU25839,Fall 2025,Business,Accounting,0,0,0,0,2.77,14,7,1.96,W,125,1,1.63,1.8,1,Freshman
+LU25840,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.0,15,12,1.62,W,93,1,0.9,1.26,0,Not enrolled
+LU25841,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.75,14,14,3.87,B,111,3,3.85,3.86,1,Sophomore
+LU25842,Fall 2025,Business,Finance,0,0,0,1,3.95,17,17,3.04,B,62,0,2.61,2.83,0,Not enrolled
+LU25843,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.54,17,11,0.77,W,85,4,0.61,0.69,0,Not enrolled
+LU25844,Fall 2025,Arts & Sciences,Biology,1,1,0,0,3.27,13,13,2.35,W,95,2,2.07,2.21,1,Sophomore
+LU25845,Fall 2025,Business,Accounting,0,0,0,1,3.19,14,14,2.53,C,120,3,2.77,2.65,1,Sophomore
+LU25846,Fall 2025,Business,Marketing,0,1,0,0,3.77,15,15,3.89,A,111,5,4.0,3.95,1,Sophomore
+LU25847,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.44,13,13,2.76,,119,3,3.08,2.92,1,Sophomore
+LU25848,Fall 2025,Business,Finance,0,0,0,1,3.41,12,12,3.71,A,87,2,,3.71,0,Not enrolled
+LU25849,Fall 2025,Arts & Sciences,Economics,0,1,0,0,3.81,15,15,2.74,,138,1,2.72,2.73,1,Sophomore
+LU25850,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.45,15,15,2.25,C,54,1,1.69,1.97,1,Sophomore
+LU25851,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.25,13,13,3.21,,121,1,3.03,3.12,1,Sophomore
+LU25852,Fall 2025,Arts & Sciences,Psychology,0,1,1,0,2.87,16,16,3.02,,16,0,2.93,2.98,1,Sophomore
+LU25853,Fall 2025,Arts & Sciences,English,0,0,1,0,3.45,15,15,3.5,A,57,3,4.0,3.75,1,Sophomore
+LU25854,Fall 2025,Undeclared,Undeclared,0,0,1,1,3.4,16,16,2.41,C,37,1,3.17,2.79,1,Sophomore
+LU25855,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.51,12,12,2.72,,134,1,3.08,2.9,1,Sophomore
+LU25856,Fall 2025,Business,Marketing,0,0,0,1,3.28,16,16,3.21,A,64,1,3.22,3.22,1,Sophomore
+LU25857,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.88,16,16,3.01,C,117,0,2.82,2.91,1,Sophomore
+LU25858,Fall 2025,Undeclared,Undeclared,0,0,1,1,3.4,14,14,3.42,A,46,1,3.45,3.43,1,Sophomore
+LU25859,Fall 2025,Arts & Sciences,English,0,0,1,0,2.99,17,17,1.87,,150,1,2.26,2.06,1,Sophomore
+LU25860,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.39,14,14,2.34,C,93,2,2.71,2.52,1,Sophomore
+LU25861,Fall 2025,Business,Accounting,0,1,0,1,3.07,14,10,1.37,D,81,3,0.76,1.07,0,Not enrolled
+LU25862,Fall 2025,Business,Finance,0,0,1,1,3.47,16,16,2.52,C,99,1,,2.52,0,Not enrolled
+LU25863,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.62,15,15,2.58,C,100,1,2.85,2.71,1,Sophomore
+LU25864,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.52,14,7,1.86,D,76,3,2.18,2.02,1,Freshman
+LU25865,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,3.63,15,15,3.03,,90,3,3.29,3.16,1,Sophomore
+LU25866,Fall 2025,Arts & Sciences,Chemistry,1,1,1,0,3.55,15,15,2.6,C,51,0,,2.6,0,Not enrolled
+LU25867,Fall 2025,Engineering,Computer Science,1,0,0,0,3.35,17,17,2.47,C,162,0,2.52,2.5,1,Sophomore
+LU25868,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.62,13,13,3.14,A,89,1,2.91,3.03,0,Not enrolled
+LU25869,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.19,16,16,2.41,W,122,3,2.52,2.46,1,Sophomore
+LU25870,Fall 2025,Arts & Sciences,Chemistry,1,1,0,0,3.76,15,15,2.9,C,72,4,2.66,2.78,1,Sophomore
+LU25871,Fall 2025,Arts & Sciences,Economics,0,1,1,1,3.17,13,13,2.5,,79,2,2.79,2.65,1,Sophomore
+LU25872,Fall 2025,Arts & Sciences,Economics,0,0,0,0,4.0,16,16,4.0,,90,2,4.0,4.0,1,Sophomore
+LU25873,Fall 2025,Education,Secondary Education,0,0,1,0,3.8,15,15,2.98,,86,2,3.58,3.28,1,Sophomore
+LU25874,Fall 2025,Engineering,Electrical Engineering,1,0,1,0,3.47,16,16,3.83,A,124,3,3.87,3.85,1,Sophomore
+LU25875,Fall 2025,Arts & Sciences,English,0,0,0,0,3.03,16,12,2.14,,75,1,,2.14,0,Not enrolled
+LU25876,Fall 2025,Business,Accounting,0,0,0,1,3.31,12,12,1.63,,11,1,1.55,1.59,1,Sophomore
+LU25877,Fall 2025,Arts & Sciences,Psychology,0,1,0,0,2.99,14,11,1.92,,91,1,1.51,1.71,1,Freshman
+LU25878,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.12,13,13,2.24,D,81,1,1.82,2.03,0,Not enrolled
+LU25879,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.5,16,16,2.39,D,75,1,2.55,2.47,1,Sophomore
+LU25880,Fall 2025,Education,Elementary Education,0,1,1,0,3.46,15,15,3.74,A,48,1,3.52,3.63,1,Sophomore
+LU25881,Fall 2025,Business,Finance,0,0,0,0,3.1,17,17,2.75,B,105,1,2.48,2.62,1,Sophomore
+LU25882,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,4.0,17,17,2.89,C,101,0,2.96,2.93,1,Sophomore
+LU25883,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.54,16,13,1.35,W,44,5,,1.35,0,Not enrolled
+LU25884,Fall 2025,Arts & Sciences,Biology,1,0,0,0,2.89,12,12,2.7,C,104,0,2.69,2.69,1,Sophomore
+LU25885,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,4.0,12,12,3.21,C,66,2,3.24,3.23,1,Sophomore
+LU25886,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.45,13,9,1.94,W,95,5,1.81,1.87,1,Freshman
+LU25887,Fall 2025,Arts & Sciences,Psychology,0,1,1,0,3.32,15,11,2.15,,87,2,2.13,2.14,1,Freshman
+LU25888,Fall 2025,Business,Accounting,0,1,1,0,2.75,16,16,3.53,A,107,1,3.93,3.73,1,Sophomore
+LU25889,Fall 2025,Arts & Sciences,Chemistry,1,1,1,0,3.64,14,14,2.23,C,107,1,1.93,2.08,1,Sophomore
+LU25890,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,3.81,15,15,2.95,,152,2,2.64,2.79,1,Sophomore
+LU25891,Fall 2025,Education,Secondary Education,0,0,0,0,3.65,16,16,3.22,,69,0,3.37,3.3,1,Sophomore
+LU25892,Fall 2025,Arts & Sciences,Chemistry,1,1,1,1,3.24,15,15,2.86,B,89,0,1.92,2.39,1,Sophomore
+LU25893,Fall 2025,Arts & Sciences,Economics,0,1,0,0,3.63,12,12,3.41,,93,5,3.92,3.66,1,Sophomore
+LU25894,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.06,15,9,1.13,,58,1,1.08,1.11,0,Not enrolled
+LU25895,Fall 2025,Nursing & Health,Public Health,0,1,0,0,3.16,16,16,2.85,,151,0,3.69,3.27,1,Sophomore
+LU25896,Fall 2025,Business,Accounting,0,1,1,1,3.43,12,12,2.17,W,64,4,2.02,2.09,1,Sophomore
+LU25897,Fall 2025,Engineering,Civil Engineering,1,0,1,0,3.47,13,13,3.08,B,92,0,,3.08,0,Not enrolled
+LU25898,Fall 2025,Business,Finance,0,0,0,0,3.35,16,16,3.19,C,105,0,3.02,3.1,1,Sophomore
+LU25899,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,4.0,14,14,2.58,B,70,2,2.57,2.57,1,Sophomore
+LU25900,Fall 2025,Arts & Sciences,Psychology,0,1,1,1,3.32,14,14,2.56,C,89,0,2.91,2.74,1,Sophomore
+LU25901,Fall 2025,Business,Finance,0,0,0,0,3.46,15,15,3.19,,107,0,2.85,3.02,1,Sophomore
+LU25902,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.4,14,14,3.48,A,85,3,3.81,3.65,1,Sophomore
+LU25903,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.58,17,17,2.65,,115,2,2.39,2.52,1,Sophomore
+LU25904,Fall 2025,Business,Marketing,0,1,0,0,3.73,14,14,2.9,C,63,1,3.01,2.96,1,Sophomore
+LU25905,Fall 2025,Engineering,Electrical Engineering,1,1,0,0,3.52,13,13,2.96,C,71,1,2.06,2.51,0,Not enrolled
+LU25906,Fall 2025,Arts & Sciences,English,0,0,0,0,3.4,16,16,3.81,,109,1,3.91,3.86,1,Sophomore
+LU25907,Fall 2025,Education,Secondary Education,0,0,1,1,3.6,13,13,2.83,C,50,2,3.22,3.02,1,Sophomore
+LU25908,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.09,17,17,2.69,,68,1,2.5,2.6,1,Sophomore
+LU25909,Fall 2025,Arts & Sciences,Political Science,0,1,1,1,3.36,12,8,1.95,,75,3,1.92,1.94,1,Freshman
+LU25910,Fall 2025,Business,Accounting,0,0,0,0,3.15,16,16,2.46,W,84,1,2.24,2.35,0,Not enrolled
+LU25911,Fall 2025,Nursing & Health,Nursing,1,0,1,0,3.44,14,10,2.0,C,87,0,1.72,1.86,0,Not enrolled
+LU25912,Fall 2025,Nursing & Health,Public Health,0,1,1,0,3.36,16,16,3.03,,26,0,3.27,3.15,1,Sophomore
+LU25913,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,4.0,15,15,3.83,B,71,0,3.79,3.81,1,Sophomore
+LU25914,Fall 2025,Arts & Sciences,Mathematics,1,1,1,0,2.93,12,12,2.38,F,121,1,3.02,2.7,1,Sophomore
+LU25915,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,3.17,14,14,2.56,C,82,0,2.63,2.6,0,Not enrolled
+LU25916,Fall 2025,Nursing & Health,Nursing,1,0,1,1,2.87,16,13,1.54,W,89,3,0.95,1.24,1,Sophomore
+LU25917,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.4,15,15,3.9,,59,1,4.0,3.95,1,Sophomore
+LU25918,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.89,12,12,3.18,A,64,2,3.35,3.27,1,Sophomore
+LU25919,Fall 2025,Education,Elementary Education,0,1,0,1,3.07,14,14,2.4,C,57,0,2.83,2.61,1,Sophomore
+LU25920,Fall 2025,Engineering,Civil Engineering,1,0,1,1,3.29,12,12,2.46,F,34,1,2.91,2.69,1,Sophomore
+LU25921,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.64,15,15,4.0,A,89,3,3.29,3.64,1,Sophomore
+LU25922,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,3.59,13,13,3.26,B,89,1,3.25,3.25,1,Sophomore
+LU25923,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.41,16,16,2.77,,9,1,2.47,2.62,1,Sophomore
+LU25924,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,3.65,15,15,3.02,B,68,3,2.67,2.85,1,Sophomore
+LU25925,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.25,13,9,2.11,,60,2,2.04,2.08,1,Freshman
+LU25926,Fall 2025,Business,Finance,0,0,0,1,3.95,17,17,3.23,B,55,0,3.38,3.3,1,Sophomore
+LU25927,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.67,15,15,3.74,A,109,0,3.74,3.74,1,Sophomore
+LU25928,Fall 2025,Education,Secondary Education,0,1,0,0,3.79,15,15,2.75,C,73,0,,2.75,0,Not enrolled
+LU25929,Fall 2025,Education,Elementary Education,0,1,0,1,3.33,16,16,3.36,B,96,3,3.28,3.32,1,Sophomore
+LU25930,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.58,15,15,3.27,A,60,3,3.13,3.2,1,Sophomore
+LU25931,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.76,14,14,3.92,,82,1,3.31,3.62,1,Sophomore
+LU25932,Fall 2025,Education,Elementary Education,0,1,0,1,3.52,15,15,2.53,,48,1,2.95,2.74,1,Sophomore
+LU25933,Fall 2025,Engineering,Computer Science,1,1,1,1,2.73,12,12,2.65,,63,1,2.42,2.53,1,Sophomore
+LU25934,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.82,15,15,2.46,C,119,1,2.5,2.48,1,Sophomore
+LU25935,Fall 2025,Arts & Sciences,Chemistry,1,1,0,0,3.98,15,15,2.7,C,105,2,1.89,2.29,1,Sophomore
+LU25936,Fall 2025,Undeclared,Undeclared,0,1,0,1,3.48,15,15,4.0,,24,0,3.41,3.71,1,Sophomore
+LU25937,Fall 2025,Business,Management,0,1,0,0,3.16,15,15,3.33,B,54,1,2.92,3.12,1,Sophomore
+LU25938,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.56,16,16,2.45,C,132,2,2.17,2.31,1,Sophomore
+LU25939,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.67,15,15,3.84,B,81,1,4.0,3.92,1,Sophomore
+LU25940,Fall 2025,Engineering,Computer Science,1,0,0,1,3.37,15,15,3.67,A,126,5,3.85,3.76,1,Sophomore
+LU25941,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.05,12,12,2.25,C,59,1,1.49,1.87,1,Sophomore
+LU25942,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.7,13,9,1.88,D,72,3,0.92,1.4,0,Not enrolled
+LU25943,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.71,13,13,3.25,B,115,1,2.87,3.06,1,Sophomore
+LU25944,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.5,14,10,1.74,,78,1,1.7,1.72,1,Freshman
+LU25945,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.53,12,12,3.98,,139,1,3.67,3.82,1,Sophomore
+LU25946,Fall 2025,Engineering,Mechanical Engineering,1,0,1,1,3.28,15,15,3.03,C,76,1,2.96,3.0,1,Sophomore
+LU25947,Fall 2025,Nursing & Health,Nursing,1,0,1,1,3.39,16,16,2.74,B,92,1,2.79,2.77,0,Not enrolled
+LU25948,Fall 2025,Business,Management,0,1,1,1,3.41,14,14,2.43,C,84,1,2.22,2.33,0,Not enrolled
+LU25949,Fall 2025,Nursing & Health,Kinesiology,1,0,1,0,3.3,12,12,2.55,B,100,1,2.28,2.41,0,Not enrolled
+LU25950,Fall 2025,Business,Management,0,0,0,0,3.27,14,14,1.74,W,104,0,1.26,1.5,1,Sophomore
+LU25951,Fall 2025,Arts & Sciences,Economics,0,1,1,1,3.25,16,16,1.85,D,65,3,,1.85,0,Not enrolled
+LU25952,Fall 2025,Nursing & Health,Public Health,0,1,0,1,3.52,16,7,1.18,,57,1,0.54,0.86,0,Not enrolled
+LU25953,Fall 2025,Arts & Sciences,Biology,1,1,0,0,3.36,15,11,1.96,W,101,2,1.38,1.67,1,Freshman
+LU25954,Fall 2025,Business,Management,0,0,1,0,3.47,15,15,3.37,B,136,0,3.58,3.47,1,Sophomore
+LU25955,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,3.64,12,12,4.0,B,128,1,4.0,4.0,1,Sophomore
+LU25956,Fall 2025,Engineering,Electrical Engineering,1,1,0,1,3.86,14,14,3.73,,63,2,3.2,3.47,1,Sophomore
+LU25957,Fall 2025,Undeclared,Undeclared,0,1,1,0,3.4,14,14,3.72,,174,0,4.0,3.86,1,Sophomore
+LU25958,Fall 2025,Engineering,Mechanical Engineering,1,1,1,1,3.17,16,9,2.06,D,69,1,2.2,2.13,0,Not enrolled
+LU25959,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.67,15,15,3.77,,66,0,3.8,3.78,1,Sophomore
+LU25960,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.29,16,16,2.74,C,43,2,3.4,3.07,1,Sophomore
+LU25961,Fall 2025,Business,Management,0,0,0,1,3.39,12,12,2.77,C,110,1,2.27,2.52,1,Sophomore
+LU25962,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.01,12,0,1.12,D,105,0,1.3,1.21,0,Not enrolled
+LU25963,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.52,12,12,3.21,,102,0,2.76,2.99,0,Not enrolled
+LU25964,Fall 2025,Arts & Sciences,Economics,0,0,1,0,3.51,16,16,3.5,A,85,0,3.53,3.52,1,Sophomore
+LU25965,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.96,13,13,3.4,,110,0,4.0,3.7,1,Sophomore
+LU25966,Fall 2025,Engineering,Electrical Engineering,1,1,0,1,4.0,12,12,2.14,C,76,2,1.67,1.91,1,Sophomore
+LU25967,Fall 2025,Engineering,Computer Science,1,0,0,0,3.53,15,15,2.66,C,47,0,2.86,2.76,1,Sophomore
+LU25968,Fall 2025,Arts & Sciences,Economics,0,1,0,0,3.76,14,7,1.42,,75,1,1.95,1.68,1,Freshman
+LU25969,Fall 2025,Business,Accounting,0,0,0,0,3.36,14,14,3.31,A,54,1,3.42,3.36,1,Sophomore
+LU25970,Fall 2025,Arts & Sciences,Chemistry,1,1,0,1,3.7,15,12,2.17,F,108,3,1.37,1.77,1,Sophomore
+LU25971,Fall 2025,Education,Elementary Education,0,1,0,0,3.44,15,15,3.86,A,75,1,3.87,3.86,1,Sophomore
+LU25972,Fall 2025,Undeclared,Undeclared,0,0,1,0,3.69,13,13,3.01,,116,1,2.97,2.99,1,Sophomore
+LU25973,Fall 2025,Engineering,Civil Engineering,1,0,1,1,3.09,15,15,2.28,W,82,1,1.72,2.0,1,Sophomore
+LU25974,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.83,13,13,2.24,W,34,1,1.85,2.04,0,Not enrolled
+LU25975,Fall 2025,Nursing & Health,Public Health,0,1,0,1,3.5,14,14,3.03,,45,0,2.96,2.99,1,Sophomore
+LU25976,Fall 2025,Arts & Sciences,English,0,0,0,0,3.38,13,13,2.87,C,132,1,2.69,2.78,1,Sophomore
+LU25977,Fall 2025,Nursing & Health,Public Health,0,1,0,0,3.1,14,14,2.63,,118,2,2.43,2.53,1,Sophomore
+LU25978,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,3.08,16,16,1.62,,49,1,1.92,1.77,1,Sophomore
+LU25979,Fall 2025,Business,Management,0,0,0,1,4.0,12,12,3.95,B,94,1,4.0,3.98,1,Sophomore
+LU25980,Fall 2025,Arts & Sciences,Political Science,0,0,1,0,3.36,15,15,3.32,,21,2,3.22,3.27,1,Sophomore
+LU25981,Fall 2025,Business,Accounting,0,0,0,0,3.39,17,17,4.0,,94,2,3.9,3.95,1,Sophomore
+LU25982,Fall 2025,Education,Elementary Education,0,0,1,1,3.05,15,15,2.89,B,113,1,3.1,2.99,1,Sophomore
+LU25983,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.08,17,17,3.39,C,80,2,3.68,3.54,1,Sophomore
+LU25984,Fall 2025,Nursing & Health,Public Health,0,0,0,1,2.99,12,12,2.86,,54,1,2.55,2.71,1,Sophomore
+LU25985,Fall 2025,Engineering,Electrical Engineering,1,1,0,1,3.21,16,13,1.81,W,51,1,2.19,2.0,1,Sophomore
+LU25986,Fall 2025,Arts & Sciences,Psychology,0,1,1,0,3.83,16,16,3.92,A,73,1,4.0,3.96,1,Sophomore
+LU25987,Fall 2025,Arts & Sciences,Psychology,0,1,1,0,3.19,15,15,2.29,,65,3,2.32,2.31,1,Sophomore
+LU25988,Fall 2025,Arts & Sciences,Biology,1,1,0,0,3.51,15,9,1.04,F,100,1,0.8,0.92,0,Not enrolled
+LU25989,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.97,17,17,3.09,,56,1,3.21,3.15,1,Sophomore
+LU25990,Fall 2025,Business,Management,0,0,1,0,3.2,15,15,2.54,C,76,1,2.46,2.5,1,Sophomore
+LU25991,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.61,15,15,2.41,,117,1,2.9,2.65,1,Sophomore
+LU25992,Fall 2025,Business,Finance,0,0,0,0,3.51,14,14,2.65,C,99,1,3.42,3.04,1,Sophomore
+LU25993,Fall 2025,Undeclared,Undeclared,0,1,1,0,3.24,12,12,2.27,,13,0,1.59,1.93,0,Not enrolled
+LU25994,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.31,17,17,2.6,,54,0,3.56,3.08,1,Sophomore
+LU25995,Fall 2025,Education,Elementary Education,0,0,1,0,3.68,15,15,2.81,C,52,1,3.31,3.06,1,Sophomore
+LU25996,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.53,15,15,2.47,,90,1,2.82,2.65,1,Sophomore
+LU25997,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,2.66,15,15,2.34,F,61,1,1.63,1.99,0,Not enrolled
+LU25998,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.65,16,16,3.5,,64,0,2.94,3.22,1,Sophomore
+LU25999,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,4.0,15,15,3.5,B,65,0,4.0,3.75,1,Sophomore
+LU26000,Fall 2025,Education,Elementary Education,0,1,0,1,3.33,16,16,2.4,,72,2,,2.4,0,Not enrolled
+LU26001,Fall 2025,Education,Elementary Education,0,1,0,1,3.87,12,12,3.43,,55,2,3.77,3.6,1,Sophomore
+LU26002,Fall 2025,Business,Finance,0,0,0,0,3.75,15,15,4.0,A,112,1,3.96,3.98,1,Sophomore
+LU26003,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.45,16,16,2.51,C,119,1,2.24,2.38,1,Sophomore
+LU26004,Fall 2025,Arts & Sciences,Mathematics,1,1,1,0,3.46,12,12,2.1,F,83,3,1.74,1.92,0,Not enrolled
+LU26005,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,3.69,13,13,2.47,,16,1,2.46,2.46,0,Not enrolled
+LU26006,Fall 2025,Arts & Sciences,Chemistry,1,1,1,0,3.62,16,16,2.96,B,90,1,2.66,2.81,1,Sophomore
+LU26007,Fall 2025,Arts & Sciences,Psychology,0,1,1,1,3.22,15,11,1.66,,40,2,,1.66,0,Not enrolled
+LU26008,Fall 2025,Arts & Sciences,English,0,0,0,0,3.4,15,15,2.88,,81,1,2.9,2.89,1,Sophomore
+LU26009,Fall 2025,Nursing & Health,Public Health,0,1,1,1,3.52,15,15,2.98,B,64,0,2.83,2.9,1,Sophomore
+LU26010,Fall 2025,Education,Secondary Education,0,0,0,0,3.82,15,15,3.51,B,138,4,3.32,3.42,1,Sophomore
+LU26011,Fall 2025,Arts & Sciences,Biology,1,1,1,1,2.78,16,16,2.08,W,118,0,2.66,2.37,1,Sophomore
+LU26012,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.76,15,15,2.88,B,129,1,2.98,2.93,1,Sophomore
+LU26013,Fall 2025,Arts & Sciences,English,0,0,0,0,3.76,15,15,3.43,,79,0,3.6,3.51,1,Sophomore
+LU26014,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.14,15,15,2.79,,81,1,2.67,2.73,1,Sophomore
+LU26015,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,2.83,13,9,1.72,D,78,0,2.1,1.91,0,Not enrolled
+LU26016,Fall 2025,Business,Finance,0,1,1,1,3.45,16,16,3.87,A,40,1,4.0,3.94,1,Sophomore
+LU26017,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.4,15,15,2.8,B,74,4,3.5,3.15,1,Sophomore
+LU26018,Fall 2025,Engineering,Computer Science,1,1,0,1,3.59,16,16,3.82,B,65,1,3.67,3.74,1,Sophomore
+LU26019,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.78,12,12,2.18,C,77,0,2.34,2.26,1,Sophomore
+LU26020,Fall 2025,Business,Management,0,0,0,0,3.62,14,14,3.14,A,123,2,2.85,2.99,1,Sophomore
+LU26021,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.72,14,14,3.37,,36,1,3.73,3.55,1,Sophomore
+LU26022,Fall 2025,Engineering,Electrical Engineering,1,1,0,1,3.91,13,13,3.34,,62,2,3.44,3.39,1,Sophomore
+LU26023,Fall 2025,Engineering,Civil Engineering,1,1,1,0,4.0,15,15,3.23,C,102,1,3.33,3.28,1,Sophomore
+LU26024,Fall 2025,Education,Secondary Education,0,0,0,0,3.26,15,15,3.09,,99,2,2.84,2.97,1,Sophomore
+LU26025,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.19,15,15,4.0,A,102,0,4.0,4.0,1,Sophomore
+LU26026,Fall 2025,Business,Finance,0,0,0,0,3.19,15,15,2.44,F,34,0,2.25,2.35,1,Sophomore
+LU26027,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.89,15,15,3.21,B,19,0,2.87,3.04,1,Sophomore
+LU26028,Fall 2025,Education,Secondary Education,0,0,1,0,3.35,16,16,2.55,,72,2,3.12,2.83,1,Sophomore
+LU26029,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,2.7,14,11,1.23,D,45,3,1.21,1.22,1,Freshman
+LU26030,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,2.83,13,10,1.41,,48,1,1.43,1.42,0,Not enrolled
+LU26031,Fall 2025,Education,Elementary Education,0,0,1,1,3.78,14,14,2.69,C,142,2,2.86,2.77,1,Sophomore
+LU26032,Fall 2025,Business,Marketing,0,1,0,1,3.84,15,15,2.36,F,77,1,2.26,2.31,0,Not enrolled
+LU26033,Fall 2025,Arts & Sciences,Mathematics,1,1,1,1,2.9,14,11,1.24,W,29,3,1.09,1.17,0,Not enrolled
+LU26034,Fall 2025,Arts & Sciences,Psychology,0,1,1,1,3.51,16,16,3.28,,97,2,3.2,3.24,1,Sophomore
+LU26035,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.38,14,14,2.55,,93,0,,2.55,0,Not enrolled
+LU26036,Fall 2025,Arts & Sciences,English,0,0,0,1,3.27,15,15,2.46,,64,0,2.93,2.7,1,Sophomore
+LU26037,Fall 2025,Arts & Sciences,Political Science,0,0,1,0,3.5,12,12,3.72,,91,2,3.61,3.67,1,Sophomore
+LU26038,Fall 2025,Undeclared,Undeclared,0,0,1,1,3.28,15,15,2.59,F,79,0,2.55,2.57,0,Not enrolled
+LU26039,Fall 2025,Arts & Sciences,Economics,0,1,0,0,3.75,15,15,2.95,,63,0,3.12,3.04,1,Sophomore
+LU26040,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.55,15,15,2.88,C,114,2,2.75,2.82,1,Sophomore
+LU26041,Fall 2025,Arts & Sciences,Economics,0,1,0,1,3.57,13,13,3.79,,40,3,3.39,3.59,1,Sophomore
+LU26042,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.65,14,14,3.47,,133,1,3.95,3.71,1,Sophomore
+LU26043,Fall 2025,Engineering,Civil Engineering,1,1,0,1,3.63,12,12,2.16,D,36,0,2.62,2.39,1,Sophomore
+LU26044,Fall 2025,Business,Finance,0,0,0,1,3.82,17,14,2.12,W,50,2,2.22,2.17,0,Not enrolled
+LU26045,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.22,12,12,1.83,F,95,1,,1.83,0,Not enrolled
+LU26046,Fall 2025,Arts & Sciences,Political Science,0,0,1,0,3.33,14,14,3.31,,79,1,2.86,3.09,1,Sophomore
+LU26047,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.16,17,17,2.19,W,74,0,2.1,2.15,1,Sophomore
+LU26048,Fall 2025,Nursing & Health,Nursing,1,1,1,0,2.91,16,16,3.05,C,108,1,3.45,3.25,1,Sophomore
+LU26049,Fall 2025,Business,Accounting,0,1,1,1,3.6,15,15,2.83,B,80,2,2.99,2.91,1,Sophomore
+LU26050,Fall 2025,Arts & Sciences,Biology,1,1,1,1,3.49,12,12,2.36,C,107,3,2.4,2.38,1,Sophomore
+LU26051,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.8,15,11,1.87,W,94,5,2.06,1.97,1,Freshman
+LU26052,Fall 2025,Business,Marketing,0,0,0,1,3.67,14,14,2.22,D,87,0,1.86,2.04,0,Not enrolled
+LU26053,Fall 2025,Engineering,Mechanical Engineering,1,0,1,1,3.16,17,14,2.13,C,76,3,2.16,2.14,1,Sophomore
+LU26054,Fall 2025,Education,Secondary Education,0,1,1,0,3.22,16,16,3.69,,83,1,3.81,3.75,1,Sophomore
+LU26055,Fall 2025,Engineering,Computer Science,1,0,1,1,3.77,15,15,2.85,C,92,3,2.38,2.62,1,Sophomore
+LU26056,Fall 2025,Engineering,Computer Science,1,1,0,0,3.87,15,12,1.96,D,114,1,1.54,1.75,0,Not enrolled
+LU26057,Fall 2025,Arts & Sciences,English,0,0,1,0,3.21,16,16,2.37,B,129,1,2.3,2.34,1,Sophomore
+LU26058,Fall 2025,Business,Management,0,1,0,0,3.39,14,14,3.1,B,81,1,3.01,3.05,1,Sophomore
+LU26059,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.0,16,13,1.7,,89,3,1.23,1.46,1,Sophomore
+LU26060,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.55,13,13,2.3,C,64,4,2.28,2.29,1,Sophomore
+LU26061,Fall 2025,Arts & Sciences,English,0,1,0,0,3.81,14,14,4.0,A,127,1,4.0,4.0,1,Sophomore
+LU26062,Fall 2025,Undeclared,Undeclared,0,0,0,1,2.54,16,16,2.62,,63,5,3.18,2.9,1,Sophomore
+LU26063,Fall 2025,Business,Accounting,0,0,0,0,3.69,14,14,2.87,C,89,2,2.75,2.81,1,Sophomore
+LU26064,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.48,17,17,2.42,D,90,1,1.92,2.17,1,Sophomore
+LU26065,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,3.18,13,6,1.23,D,77,3,,1.23,0,Not enrolled
+LU26066,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.19,15,15,3.42,,99,2,3.34,3.38,1,Sophomore
+LU26067,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.4,14,14,2.77,,114,0,2.65,2.71,1,Sophomore
+LU26068,Fall 2025,Business,Finance,0,1,1,1,3.55,12,12,2.81,C,90,1,3.03,2.92,1,Sophomore
+LU26069,Fall 2025,Business,Finance,0,0,0,1,3.13,13,13,2.51,D,61,2,2.36,2.43,1,Sophomore
+LU26070,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.24,17,17,2.31,W,105,1,1.93,2.12,0,Not enrolled
+LU26071,Fall 2025,Education,Elementary Education,0,1,0,0,3.11,16,16,2.36,C,68,0,2.82,2.59,1,Sophomore
+LU26072,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.18,16,16,2.35,,96,5,2.47,2.41,1,Sophomore
+LU26073,Fall 2025,Engineering,Computer Science,1,0,1,0,3.09,14,14,2.51,C,74,1,1.7,2.1,1,Sophomore
+LU26074,Fall 2025,Arts & Sciences,Mathematics,1,0,1,0,3.43,13,13,3.09,B,69,3,3.78,3.44,1,Sophomore
+LU26075,Fall 2025,Education,Secondary Education,0,1,0,1,3.44,15,15,3.39,,34,0,3.03,3.21,1,Sophomore
+LU26076,Fall 2025,Arts & Sciences,English,0,1,1,0,3.73,14,14,3.81,,54,3,4.0,3.91,1,Sophomore
+LU26077,Fall 2025,Business,Marketing,0,0,1,1,3.99,14,14,4.0,A,88,2,3.77,3.88,1,Sophomore
+LU26078,Fall 2025,Engineering,Mechanical Engineering,1,0,1,0,3.43,16,16,2.25,F,49,2,2.48,2.36,1,Sophomore
+LU26079,Fall 2025,Education,Secondary Education,0,0,1,0,3.62,15,15,3.24,B,87,1,3.36,3.3,1,Sophomore
+LU26080,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.72,12,12,3.05,,101,1,2.71,2.88,1,Sophomore
+LU26081,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.58,14,14,2.96,B,96,1,2.87,2.92,1,Sophomore
+LU26082,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.31,14,14,3.97,,139,0,4.0,3.99,1,Sophomore
+LU26083,Fall 2025,Business,Management,0,0,0,0,3.73,14,14,4.0,B,66,0,3.29,3.65,1,Sophomore
+LU26084,Fall 2025,Arts & Sciences,Political Science,0,0,1,0,4.0,15,15,3.54,B,92,0,3.97,3.75,1,Sophomore
+LU26085,Fall 2025,Engineering,Electrical Engineering,1,1,0,1,3.69,16,16,3.61,C,69,2,3.45,3.53,1,Sophomore
+LU26086,Fall 2025,Arts & Sciences,Mathematics,1,1,0,1,3.79,15,15,2.39,C,35,6,,2.39,0,Not enrolled
+LU26087,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.14,12,12,2.15,F,63,5,2.16,2.15,1,Sophomore
+LU26088,Fall 2025,Arts & Sciences,Biology,1,0,1,0,3.0,16,12,2.0,F,132,1,2.16,2.08,1,Sophomore
+LU26089,Fall 2025,Arts & Sciences,Biology,1,1,1,0,3.4,13,13,2.41,B,72,0,2.46,2.44,0,Not enrolled
+LU26090,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.09,14,10,1.31,W,141,0,1.33,1.32,1,Freshman
+LU26091,Fall 2025,Business,Accounting,0,0,0,1,3.17,16,16,2.45,,77,3,2.17,2.31,1,Sophomore
+LU26092,Fall 2025,Nursing & Health,Nursing,1,1,1,1,3.3,15,12,1.89,C,100,3,0.98,1.43,0,Not enrolled
+LU26093,Fall 2025,Education,Elementary Education,0,1,0,1,3.8,16,16,2.1,F,46,0,1.46,1.78,0,Not enrolled
+LU26094,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.42,14,14,3.39,A,49,1,3.5,3.45,1,Sophomore
+LU26095,Fall 2025,Business,Finance,0,0,0,1,3.2,14,14,1.93,W,39,1,2.0,1.97,1,Sophomore
+LU26096,Fall 2025,Arts & Sciences,English,0,1,0,1,3.34,17,17,2.74,B,125,1,2.85,2.8,1,Sophomore
+LU26097,Fall 2025,Arts & Sciences,English,0,0,0,0,3.63,15,15,3.18,,77,0,2.98,3.08,1,Sophomore
+LU26098,Fall 2025,Undeclared,Undeclared,0,1,1,0,3.42,15,15,2.37,C,47,2,,2.37,0,Not enrolled
+LU26099,Fall 2025,Arts & Sciences,English,0,1,1,0,3.36,13,13,3.22,,136,0,3.13,3.17,1,Sophomore
+LU26100,Fall 2025,Education,Elementary Education,0,1,1,0,2.65,15,12,1.89,,66,1,1.96,1.93,1,Sophomore
+LU26101,Fall 2025,Business,Finance,0,0,0,0,2.89,17,17,2.25,F,100,0,2.63,2.44,1,Sophomore
+LU26102,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.31,13,13,2.32,,85,1,,2.32,0,Not enrolled
+LU26103,Fall 2025,Nursing & Health,Public Health,0,0,1,1,3.45,15,15,3.39,B,64,0,3.63,3.51,1,Sophomore
+LU26104,Fall 2025,Arts & Sciences,Biology,1,1,0,0,3.38,14,14,2.97,C,48,3,2.94,2.96,1,Sophomore
+LU26105,Fall 2025,Education,Secondary Education,0,0,0,0,2.97,14,14,3.04,C,100,0,3.52,3.28,1,Sophomore
+LU26106,Fall 2025,Arts & Sciences,English,0,0,1,1,3.41,14,14,3.54,B,62,1,3.12,3.33,1,Sophomore
+LU26107,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,4.0,16,16,3.28,B,67,0,2.74,3.01,1,Sophomore
+LU26108,Fall 2025,Nursing & Health,Nursing,1,0,0,0,2.54,15,15,2.88,B,119,1,3.14,3.01,1,Sophomore
+LU26109,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,3.86,14,14,3.76,B,56,1,3.87,3.81,1,Sophomore
+LU26110,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.81,15,15,3.58,,63,0,3.78,3.68,1,Sophomore
+LU26111,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,3.08,13,13,2.03,D,63,3,1.03,1.53,0,Not enrolled
+LU26112,Fall 2025,Arts & Sciences,English,0,1,1,0,3.3,16,16,1.94,F,59,3,2.19,2.07,1,Sophomore
+LU26113,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,2.87,15,12,2.15,C,60,2,2.01,2.08,1,Sophomore
+LU26114,Fall 2025,Nursing & Health,Nursing,1,1,0,1,3.85,17,17,2.27,C,66,0,1.9,2.08,1,Sophomore
+LU26115,Fall 2025,Nursing & Health,Nursing,1,1,1,1,3.83,12,12,3.06,B,88,2,2.94,3.0,1,Sophomore
+LU26116,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.6,14,14,4.0,A,70,1,3.38,3.69,1,Sophomore
+LU26117,Fall 2025,Business,Finance,0,1,0,1,3.17,14,14,3.38,B,61,0,2.96,3.17,1,Sophomore
+LU26118,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.05,15,15,2.73,,13,2,3.31,3.02,1,Sophomore
+LU26119,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.57,16,13,2.16,C,35,3,,2.16,0,Not enrolled
+LU26120,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.44,12,12,3.1,B,66,0,3.02,3.06,1,Sophomore
+LU26121,Fall 2025,Arts & Sciences,English,0,0,0,1,3.84,16,16,3.28,,55,2,4.0,3.64,1,Sophomore
+LU26122,Fall 2025,Education,Secondary Education,0,0,0,1,2.99,13,13,2.59,,97,2,2.6,2.6,0,Not enrolled
+LU26123,Fall 2025,Business,Marketing,0,1,1,0,3.57,16,16,2.09,,66,3,2.05,2.07,1,Sophomore
+LU26124,Fall 2025,Education,Secondary Education,0,0,0,0,3.07,14,14,3.32,A,161,2,2.99,3.15,1,Sophomore
+LU26125,Fall 2025,Nursing & Health,Nursing,1,0,1,0,3.63,17,17,3.45,B,97,1,3.37,3.41,1,Sophomore
+LU26126,Fall 2025,Education,Elementary Education,0,0,1,0,3.67,13,13,4.0,B,69,2,3.68,3.84,1,Sophomore
+LU26127,Fall 2025,Arts & Sciences,Chemistry,1,0,1,0,3.44,16,16,2.88,B,89,1,3.05,2.96,1,Sophomore
+LU26128,Fall 2025,Business,Finance,0,0,0,0,3.06,15,15,2.76,C,70,3,3.79,3.28,1,Sophomore
+LU26129,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.56,12,12,2.91,B,63,1,3.19,3.05,1,Sophomore
+LU26130,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.07,15,15,4.0,,102,0,3.76,3.88,1,Sophomore
+LU26131,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.77,17,17,2.91,B,87,0,2.89,2.9,1,Sophomore
+LU26132,Fall 2025,Business,Management,0,1,0,0,2.52,16,16,2.88,B,66,2,2.98,2.93,1,Sophomore
+LU26133,Fall 2025,Business,Marketing,0,1,0,0,2.89,15,15,2.82,B,109,1,2.36,2.59,1,Sophomore
+LU26134,Fall 2025,Education,Secondary Education,0,0,0,0,3.84,13,13,3.31,,93,1,2.95,3.13,1,Sophomore
+LU26135,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.79,16,16,4.0,A,108,1,3.68,3.84,1,Sophomore
+LU26136,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.81,12,12,3.29,A,96,3,3.57,3.43,1,Sophomore
+LU26137,Fall 2025,Arts & Sciences,English,0,1,1,0,3.58,16,16,2.94,,62,0,2.19,2.56,0,Not enrolled
+LU26138,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.36,17,17,3.51,B,77,0,3.26,3.39,1,Sophomore
+LU26139,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.4,14,11,2.18,F,110,1,2.18,2.18,1,Freshman
+LU26140,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.63,16,16,3.21,B,92,1,2.87,3.04,1,Sophomore
+LU26141,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,2.92,15,15,2.52,F,55,1,2.58,2.55,1,Sophomore
+LU26142,Fall 2025,Business,Management,0,0,0,1,3.92,15,15,3.26,C,119,0,3.42,3.34,1,Sophomore
+LU26143,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.81,14,14,3.95,A,133,0,4.0,3.98,1,Sophomore
+LU26144,Fall 2025,Arts & Sciences,Biology,1,1,0,0,3.41,15,15,3.21,B,135,3,3.65,3.43,1,Sophomore
+LU26145,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.22,14,14,2.41,F,124,1,,2.41,0,Not enrolled
+LU26146,Fall 2025,Education,Elementary Education,0,1,0,1,3.06,13,13,2.65,,69,2,2.7,2.68,1,Sophomore
+LU26147,Fall 2025,Business,Management,0,0,0,0,3.17,12,12,2.7,W,72,1,2.49,2.6,1,Sophomore
+LU26148,Fall 2025,Arts & Sciences,Biology,1,1,0,0,3.75,15,15,3.55,,63,1,3.6,3.57,1,Sophomore
+LU26149,Fall 2025,Engineering,Computer Science,1,0,1,1,3.38,13,13,3.45,,126,1,3.59,3.52,1,Sophomore
+LU26150,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.91,14,14,2.94,B,107,0,2.78,2.86,1,Sophomore
+LU26151,Fall 2025,Business,Finance,0,0,0,0,3.43,13,13,2.65,C,70,0,,2.65,0,Not enrolled
+LU26152,Fall 2025,Business,Accounting,0,0,0,1,3.73,15,15,3.7,A,65,2,3.2,3.45,0,Not enrolled
+LU26153,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.49,12,12,2.47,,31,1,2.43,2.45,1,Sophomore
+LU26154,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.67,13,13,2.7,D,131,0,3.37,3.04,1,Sophomore
+LU26155,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.4,17,17,3.0,B,95,0,2.75,2.88,1,Sophomore
+LU26156,Fall 2025,Business,Management,0,1,1,1,3.5,12,12,2.52,D,117,0,,2.52,0,Not enrolled
+LU26157,Fall 2025,Education,Elementary Education,0,1,1,0,3.17,15,15,2.69,W,109,1,3.17,2.93,1,Sophomore
+LU26158,Fall 2025,Business,Marketing,0,0,1,0,3.48,12,12,2.94,C,90,2,2.84,2.89,1,Sophomore
+LU26159,Fall 2025,Engineering,Electrical Engineering,1,0,1,1,3.99,15,15,2.62,C,67,1,2.61,2.61,1,Sophomore
+LU26160,Fall 2025,Nursing & Health,Nursing,1,1,1,0,3.29,13,13,3.78,A,99,1,4.0,3.89,1,Sophomore
+LU26161,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.29,16,16,2.26,C,84,2,1.93,2.09,1,Sophomore
+LU26162,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.15,16,16,1.65,,80,1,1.51,1.58,1,Sophomore
+LU26163,Fall 2025,Arts & Sciences,Political Science,0,1,1,1,3.96,13,13,3.26,,57,1,3.11,3.18,1,Sophomore
+LU26164,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.85,12,12,2.99,B,95,3,2.75,2.87,1,Sophomore
+LU26165,Fall 2025,Nursing & Health,Nursing,1,0,0,1,2.71,12,9,2.05,W,65,3,1.98,2.02,1,Freshman
+LU26166,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.04,14,14,3.37,,84,1,2.83,3.1,1,Sophomore
+LU26167,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.14,15,11,1.89,F,69,2,,1.89,0,Not enrolled
+LU26168,Fall 2025,Business,Finance,0,0,0,0,3.73,15,15,3.46,,94,2,3.5,3.48,0,Not enrolled
+LU26169,Fall 2025,Engineering,Mechanical Engineering,1,0,0,0,3.28,12,12,3.32,A,113,1,3.5,3.41,1,Sophomore
+LU26170,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.22,14,14,1.29,F,23,3,0.91,1.1,0,Not enrolled
+LU26171,Fall 2025,Nursing & Health,Public Health,0,1,1,0,3.58,17,17,2.94,,120,0,3.29,3.12,1,Sophomore
+LU26172,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.58,15,15,3.13,,23,1,3.49,3.31,1,Sophomore
+LU26173,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.33,15,15,3.7,A,149,2,3.64,3.67,1,Sophomore
+LU26174,Fall 2025,Education,Secondary Education,0,1,0,0,3.99,14,14,3.48,A,40,1,2.99,3.23,1,Sophomore
+LU26175,Fall 2025,Arts & Sciences,English,0,0,1,0,4.0,14,14,2.83,B,106,0,3.12,2.97,1,Sophomore
+LU26176,Fall 2025,Arts & Sciences,English,0,1,1,1,3.03,15,15,3.29,,92,0,3.09,3.19,1,Sophomore
+LU26177,Fall 2025,Education,Secondary Education,0,1,1,0,3.49,15,15,3.44,,67,1,4.0,3.72,1,Sophomore
+LU26178,Fall 2025,Engineering,Computer Science,1,0,0,0,3.49,13,13,3.45,,121,0,3.59,3.52,1,Sophomore
+LU26179,Fall 2025,Arts & Sciences,Psychology,0,1,0,1,3.35,15,12,1.99,D,56,1,1.98,1.98,1,Sophomore
+LU26180,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,2.87,15,15,3.41,B,127,2,3.2,3.31,1,Sophomore
+LU26181,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.25,14,10,1.87,D,68,4,1.49,1.68,0,Not enrolled
+LU26182,Fall 2025,Engineering,Computer Science,1,0,0,0,3.75,16,16,3.98,A,96,2,4.0,3.99,1,Sophomore
+LU26183,Fall 2025,Business,Accounting,0,1,1,1,3.4,16,16,3.05,F,76,2,2.12,2.58,0,Not enrolled
+LU26184,Fall 2025,Education,Secondary Education,0,1,0,0,3.6,15,15,3.05,B,60,1,3.33,3.19,1,Sophomore
+LU26185,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.88,14,14,3.51,A,135,1,3.55,3.53,1,Sophomore
+LU26186,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.48,14,14,2.92,C,65,0,2.68,2.8,0,Not enrolled
+LU26187,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.23,15,15,2.81,C,149,2,3.35,3.08,1,Sophomore
+LU26188,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.62,13,13,3.24,,77,3,2.68,2.96,0,Not enrolled
+LU26189,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.38,16,16,2.56,C,82,2,2.48,2.52,1,Sophomore
+LU26190,Fall 2025,Arts & Sciences,English,0,1,0,0,3.4,15,15,1.95,D,100,2,2.01,1.98,1,Sophomore
+LU26191,Fall 2025,Engineering,Civil Engineering,1,0,0,1,3.65,16,16,2.69,C,50,2,2.96,2.83,1,Sophomore
+LU26192,Fall 2025,Education,Elementary Education,0,0,0,0,3.21,13,10,2.13,,67,2,2.07,2.1,1,Freshman
+LU26193,Fall 2025,Engineering,Civil Engineering,1,1,0,1,2.93,16,13,1.59,W,74,2,,1.59,0,Not enrolled
+LU26194,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.11,16,16,2.59,C,123,1,2.69,2.64,1,Sophomore
+LU26195,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.12,15,15,2.38,C,19,0,2.58,2.48,1,Sophomore
+LU26196,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.63,15,15,2.92,C,65,1,3.28,3.1,1,Sophomore
+LU26197,Fall 2025,Education,Secondary Education,0,0,0,0,2.92,14,14,2.39,,55,0,2.03,2.21,0,Not enrolled
+LU26198,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.86,15,15,3.86,B,63,1,3.9,3.88,1,Sophomore
+LU26199,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.29,14,14,2.56,C,125,2,3.0,2.78,1,Sophomore
+LU26200,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,3.73,16,16,2.5,C,66,1,2.01,2.25,1,Sophomore
+LU26201,Fall 2025,Business,Accounting,0,1,0,1,3.27,15,15,1.72,C,70,2,1.71,1.71,1,Sophomore
+LU26202,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,2.99,15,15,2.81,,136,0,2.24,2.52,1,Sophomore
+LU26203,Fall 2025,Education,Elementary Education,0,0,1,1,3.18,15,15,1.93,F,89,1,1.83,1.88,0,Not enrolled
+LU26204,Fall 2025,Education,Secondary Education,0,0,0,1,3.95,16,16,3.26,,100,2,3.59,3.43,1,Sophomore
+LU26205,Fall 2025,Education,Secondary Education,0,0,0,1,4.0,15,15,3.41,,76,0,3.82,3.61,1,Sophomore
+LU26206,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,4.0,15,15,4.0,,104,3,4.0,4.0,1,Sophomore
+LU26207,Fall 2025,Arts & Sciences,English,0,1,0,0,3.54,13,13,2.48,C,91,0,2.13,2.3,1,Sophomore
+LU26208,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.55,17,17,2.73,B,54,1,2.12,2.42,1,Sophomore
+LU26209,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.28,16,16,2.34,,71,1,,2.34,0,Not enrolled
+LU26210,Fall 2025,Nursing & Health,Nursing,1,0,1,0,3.07,17,17,2.26,,58,0,1.68,1.97,1,Sophomore
+LU26211,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.01,14,7,1.55,W,75,1,1.79,1.67,1,Freshman
+LU26212,Fall 2025,Business,Accounting,0,1,1,0,3.57,16,16,3.03,,100,3,2.5,2.76,0,Not enrolled
+LU26213,Fall 2025,Education,Secondary Education,0,0,1,0,3.03,16,16,3.26,,114,1,3.0,3.13,1,Sophomore
+LU26214,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.62,15,15,2.3,,133,1,2.62,2.46,1,Sophomore
+LU26215,Fall 2025,Business,Management,0,0,0,0,3.07,12,12,2.43,D,83,2,2.31,2.37,1,Sophomore
+LU26216,Fall 2025,Education,Elementary Education,0,0,0,0,3.43,13,13,3.74,,100,1,3.39,3.57,1,Sophomore
+LU26217,Fall 2025,Nursing & Health,Kinesiology,1,1,1,1,3.68,15,11,1.76,D,100,3,,1.76,0,Not enrolled
+LU26218,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.64,14,14,3.5,,52,1,3.66,3.58,1,Sophomore
+LU26219,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.14,14,14,2.43,,59,0,2.41,2.42,1,Sophomore
+LU26220,Fall 2025,Nursing & Health,Nursing,1,0,0,1,3.6,17,17,2.19,C,101,0,1.81,2.0,0,Not enrolled
+LU26221,Fall 2025,Arts & Sciences,Chemistry,1,1,1,0,3.77,14,14,3.37,B,67,1,3.09,3.23,1,Sophomore
+LU26222,Fall 2025,Engineering,Civil Engineering,1,1,1,1,3.11,15,15,3.02,B,52,1,2.74,2.88,0,Not enrolled
+LU26223,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.92,17,17,2.94,B,144,0,3.36,3.15,1,Sophomore
+LU26224,Fall 2025,Engineering,Computer Science,1,1,0,0,3.8,16,16,3.25,B,66,1,2.7,2.98,1,Sophomore
+LU26225,Fall 2025,Engineering,Computer Science,1,0,1,1,3.17,15,11,2.2,W,98,2,2.96,2.58,1,Freshman
+LU26226,Fall 2025,Undeclared,Undeclared,0,0,1,1,3.29,16,16,2.31,,78,2,2.2,2.25,1,Sophomore
+LU26227,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.71,13,13,3.09,C,98,0,2.93,3.01,1,Sophomore
+LU26228,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.6,12,12,3.09,,40,2,3.52,3.3,1,Sophomore
+LU26229,Fall 2025,Education,Elementary Education,0,0,0,0,3.71,14,14,3.56,B,113,4,3.7,3.63,1,Sophomore
+LU26230,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.87,14,14,3.78,A,117,0,3.99,3.89,1,Sophomore
+LU26231,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.31,13,13,3.45,,141,3,3.85,3.65,1,Sophomore
+LU26232,Fall 2025,Arts & Sciences,English,0,0,0,0,3.47,15,15,2.53,,104,2,2.7,2.62,1,Sophomore
+LU26233,Fall 2025,Education,Elementary Education,0,0,1,0,3.57,13,13,3.64,,75,1,4.0,3.82,1,Sophomore
+LU26234,Fall 2025,Arts & Sciences,English,0,0,1,1,3.25,13,13,2.87,,80,1,2.97,2.92,1,Sophomore
+LU26235,Fall 2025,Arts & Sciences,Biology,1,1,1,1,2.79,15,15,2.94,C,47,0,2.98,2.96,1,Sophomore
+LU26236,Fall 2025,Education,Elementary Education,0,1,0,1,3.06,14,14,2.3,,37,1,2.65,2.47,1,Sophomore
+LU26237,Fall 2025,Business,Accounting,0,1,1,1,3.74,15,15,2.86,,115,0,3.51,3.18,1,Sophomore
+LU26238,Fall 2025,Business,Accounting,0,0,0,0,3.5,16,16,2.71,C,111,1,3.38,3.05,1,Sophomore
+LU26239,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.79,14,14,2.98,C,76,0,2.86,2.92,1,Sophomore
+LU26240,Fall 2025,Arts & Sciences,Economics,0,1,1,1,3.17,16,16,2.35,,38,2,2.5,2.43,1,Sophomore
+LU26241,Fall 2025,Arts & Sciences,English,0,0,0,1,3.66,17,17,2.13,D,63,3,,2.13,0,Not enrolled
+LU26242,Fall 2025,Engineering,Civil Engineering,1,1,1,0,3.51,16,16,3.26,C,89,1,2.93,3.1,1,Sophomore
+LU26243,Fall 2025,Arts & Sciences,Chemistry,1,1,0,0,3.45,15,12,2.08,C,78,2,1.97,2.02,1,Sophomore
+LU26244,Fall 2025,Engineering,Mechanical Engineering,1,0,1,0,2.9,16,16,2.63,C,53,1,2.72,2.68,1,Sophomore
+LU26245,Fall 2025,Nursing & Health,Kinesiology,1,1,1,1,3.15,14,11,2.12,,79,4,2.31,2.22,1,Freshman
+LU26246,Fall 2025,Business,Marketing,0,0,1,0,3.84,17,17,3.68,A,79,4,3.71,3.7,1,Sophomore
+LU26247,Fall 2025,Business,Management,0,0,1,1,3.76,14,14,2.8,,59,0,3.4,3.1,1,Sophomore
+LU26248,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.08,16,16,2.54,B,83,0,2.68,2.61,1,Sophomore
+LU26249,Fall 2025,Arts & Sciences,Political Science,0,1,1,0,3.43,12,12,3.84,,88,1,4.0,3.92,1,Sophomore
+LU26250,Fall 2025,Education,Secondary Education,0,0,0,0,2.99,16,16,2.44,,131,1,2.4,2.42,1,Sophomore
+LU26251,Fall 2025,Arts & Sciences,Economics,0,1,1,1,3.35,16,13,1.95,D,143,1,1.82,1.89,1,Sophomore
+LU26252,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.95,16,12,1.94,,97,1,1.65,1.79,0,Not enrolled
+LU26253,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.77,14,14,2.56,,79,0,2.4,2.48,1,Sophomore
+LU26254,Fall 2025,Education,Secondary Education,0,0,1,1,3.35,13,13,2.62,,68,2,2.2,2.41,1,Sophomore
+LU26255,Fall 2025,Arts & Sciences,Mathematics,1,0,1,0,3.45,14,14,2.79,C,86,2,3.38,3.08,1,Sophomore
+LU26256,Fall 2025,Engineering,Mechanical Engineering,1,1,1,0,3.03,16,16,2.77,C,49,2,2.48,2.63,1,Sophomore
+LU26257,Fall 2025,Engineering,Civil Engineering,1,1,0,1,3.13,16,7,1.1,,39,2,0.97,1.03,1,Freshman
+LU26258,Fall 2025,Business,Finance,0,1,1,0,3.91,16,16,3.24,,57,3,2.88,3.06,1,Sophomore
+LU26259,Fall 2025,Education,Elementary Education,0,0,0,0,3.41,15,15,2.64,C,125,0,3.11,2.87,1,Sophomore
+LU26260,Fall 2025,Nursing & Health,Nursing,1,1,0,1,3.89,13,13,2.79,B,28,3,,2.79,0,Not enrolled
+LU26261,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.59,15,15,2.68,C,119,2,2.63,2.65,1,Sophomore
+LU26262,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.67,15,15,2.93,,57,2,2.25,2.59,0,Not enrolled
+LU26263,Fall 2025,Business,Accounting,0,1,0,0,2.85,17,17,2.73,A,89,0,2.61,2.67,1,Sophomore
+LU26264,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.65,16,16,3.22,,102,1,2.97,3.09,1,Sophomore
+LU26265,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.55,14,14,3.8,,95,1,3.56,3.68,1,Sophomore
+LU26266,Fall 2025,Nursing & Health,Nursing,1,1,0,1,3.26,13,13,2.31,F,70,3,,2.31,0,Not enrolled
+LU26267,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.19,16,16,2.04,D,75,1,,2.04,0,Not enrolled
+LU26268,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,3.14,17,17,2.48,W,61,0,2.77,2.63,0,Not enrolled
+LU26269,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.23,16,16,2.99,C,98,0,3.37,3.18,1,Sophomore
+LU26270,Fall 2025,Business,Management,0,0,0,1,3.44,16,16,3.1,,32,0,3.0,3.05,1,Sophomore
+LU26271,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.42,13,13,2.08,W,57,5,,2.08,0,Not enrolled
+LU26272,Fall 2025,Business,Management,0,1,1,0,2.96,12,12,2.59,D,72,1,2.81,2.7,1,Sophomore
+LU26273,Fall 2025,Engineering,Computer Science,1,0,1,0,3.54,16,16,2.88,,43,0,3.08,2.98,1,Sophomore
+LU26274,Fall 2025,Business,Marketing,0,1,1,1,3.87,15,15,3.72,A,66,1,4.0,3.86,1,Sophomore
+LU26275,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.48,16,16,3.41,C,98,0,3.68,3.55,1,Sophomore
+LU26276,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.52,16,16,3.01,,84,4,3.48,3.24,1,Sophomore
+LU26277,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.33,15,15,1.63,W,85,2,1.3,1.47,0,Not enrolled
+LU26278,Fall 2025,Engineering,Electrical Engineering,1,1,0,0,2.8,16,9,1.6,D,37,2,1.18,1.39,1,Freshman
+LU26279,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.11,15,15,3.6,,103,4,3.14,3.37,1,Sophomore
+LU26280,Fall 2025,Arts & Sciences,Biology,1,0,1,1,3.92,17,17,3.21,C,62,1,3.58,3.39,1,Sophomore
+LU26281,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.72,14,10,2.03,C,62,1,2.21,2.12,0,Not enrolled
+LU26282,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,3.83,15,15,3.15,C,99,1,3.62,3.38,1,Sophomore
+LU26283,Fall 2025,Arts & Sciences,Mathematics,1,0,1,1,3.76,16,16,3.45,A,129,2,3.11,3.28,1,Sophomore
+LU26284,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.35,12,12,2.78,B,89,1,3.0,2.89,1,Sophomore
+LU26285,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.26,15,12,2.08,W,108,3,2.35,2.21,1,Sophomore
+LU26286,Fall 2025,Arts & Sciences,Political Science,0,0,0,0,3.64,16,16,3.03,B,80,2,2.79,2.91,1,Sophomore
+LU26287,Fall 2025,Business,Management,0,0,0,0,3.43,12,12,2.39,C,119,0,2.2,2.3,1,Sophomore
+LU26288,Fall 2025,Education,Elementary Education,0,0,1,0,3.69,15,15,2.89,,94,1,2.72,2.81,1,Sophomore
+LU26289,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.11,15,15,2.47,W,72,0,2.56,2.51,1,Sophomore
+LU26290,Fall 2025,Engineering,Computer Science,1,0,0,1,3.27,15,15,3.26,,72,0,3.52,3.39,1,Sophomore
+LU26291,Fall 2025,Engineering,Computer Science,1,0,0,0,3.1,17,17,2.65,C,33,4,2.35,2.5,1,Sophomore
+LU26292,Fall 2025,Business,Accounting,0,0,1,0,3.69,14,14,2.57,C,71,0,2.81,2.69,1,Sophomore
+LU26293,Fall 2025,Undeclared,Undeclared,0,0,1,1,3.12,15,15,2.66,,5,1,2.46,2.56,1,Sophomore
+LU26294,Fall 2025,Arts & Sciences,Chemistry,1,1,0,0,3.19,14,14,3.56,B,81,0,2.56,3.06,0,Not enrolled
+LU26295,Fall 2025,Undeclared,Undeclared,0,0,0,1,2.97,14,14,2.08,C,113,1,2.04,2.06,1,Sophomore
+LU26296,Fall 2025,Business,Accounting,0,0,1,0,3.37,16,16,3.38,A,188,2,3.14,3.26,1,Sophomore
+LU26297,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.02,15,15,2.64,,52,2,2.81,2.72,1,Sophomore
+LU26298,Fall 2025,Business,Management,0,0,0,0,3.91,15,15,3.34,B,110,0,3.19,3.27,1,Sophomore
+LU26299,Fall 2025,Education,Secondary Education,0,0,0,1,3.03,14,14,3.24,,31,1,3.51,3.37,1,Sophomore
+LU26300,Fall 2025,Arts & Sciences,English,0,1,0,1,3.75,13,13,3.17,C,117,0,3.35,3.26,1,Sophomore
+LU26301,Fall 2025,Business,Accounting,0,1,1,1,3.7,14,14,3.14,B,74,1,2.87,3.0,1,Sophomore
+LU26302,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.21,12,12,2.86,,111,0,2.96,2.91,1,Sophomore
+LU26303,Fall 2025,Engineering,Civil Engineering,1,1,0,1,2.9,17,8,0.68,,9,3,0.67,0.67,1,Freshman
+LU26304,Fall 2025,Business,Management,0,0,1,1,3.67,15,15,2.52,B,53,0,2.53,2.52,1,Sophomore
+LU26305,Fall 2025,Arts & Sciences,Psychology,0,0,1,1,3.73,13,13,3.31,,62,0,2.99,3.15,1,Sophomore
+LU26306,Fall 2025,Arts & Sciences,Economics,0,0,0,0,4.0,12,12,3.43,,70,0,3.6,3.52,1,Sophomore
+LU26307,Fall 2025,Nursing & Health,Nursing,1,0,1,1,3.37,15,12,1.61,,48,4,1.28,1.44,0,Not enrolled
+LU26308,Fall 2025,Nursing & Health,Nursing,1,0,0,0,2.8,15,12,2.15,D,80,3,2.38,2.26,1,Sophomore
+LU26309,Fall 2025,Business,Accounting,0,1,0,0,3.85,13,13,3.92,,140,1,3.95,3.93,1,Sophomore
+LU26310,Fall 2025,Arts & Sciences,English,0,1,0,0,2.46,15,15,2.9,,67,0,2.66,2.78,0,Not enrolled
+LU26311,Fall 2025,Business,Marketing,0,0,1,0,4.0,14,14,2.99,A,105,1,,2.99,0,Not enrolled
+LU26312,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.44,16,16,2.87,,111,0,2.49,2.68,0,Not enrolled
+LU26313,Fall 2025,Business,Finance,0,1,0,0,3.44,16,16,2.53,C,97,1,2.44,2.49,1,Sophomore
+LU26314,Fall 2025,Business,Finance,0,0,0,0,3.18,16,16,2.6,W,99,1,,2.6,0,Not enrolled
+LU26315,Fall 2025,Business,Accounting,0,1,1,0,3.59,13,9,2.19,C,116,4,2.51,2.35,1,Freshman
+LU26316,Fall 2025,Engineering,Civil Engineering,1,1,1,0,4.0,16,16,3.78,B,113,1,3.62,3.7,1,Sophomore
+LU26317,Fall 2025,Arts & Sciences,Political Science,0,0,1,1,3.95,13,13,3.55,,40,2,3.46,3.5,1,Sophomore
+LU26318,Fall 2025,Nursing & Health,Nursing,1,1,1,0,3.25,16,16,2.41,D,143,1,3.03,2.72,1,Sophomore
+LU26319,Fall 2025,Engineering,Mechanical Engineering,1,1,1,0,3.07,15,8,2.19,F,94,2,,2.19,0,Not enrolled
+LU26320,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.25,16,16,2.51,D,81,3,2.19,2.35,1,Sophomore
+LU26321,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.22,14,10,1.84,W,76,1,1.49,1.67,0,Not enrolled
+LU26322,Fall 2025,Arts & Sciences,Political Science,0,0,0,1,3.87,15,15,3.55,A,103,0,3.17,3.36,1,Sophomore
+LU26323,Fall 2025,Engineering,Computer Science,1,0,0,1,3.78,17,17,2.93,B,77,3,2.78,2.86,1,Sophomore
+LU26324,Fall 2025,Business,Accounting,0,1,1,1,3.33,17,17,2.09,D,77,2,2.58,2.33,1,Sophomore
+LU26325,Fall 2025,Education,Secondary Education,0,1,1,1,3.99,15,15,4.0,,64,3,3.98,3.99,1,Sophomore
+LU26326,Fall 2025,Education,Secondary Education,0,1,0,0,3.4,15,15,2.68,,54,1,2.83,2.76,1,Sophomore
+LU26327,Fall 2025,Arts & Sciences,English,0,0,0,0,2.95,17,17,2.57,C,82,0,2.93,2.75,1,Sophomore
+LU26328,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.64,15,15,2.65,C,88,2,2.59,2.62,1,Sophomore
+LU26329,Fall 2025,Arts & Sciences,English,0,0,0,0,2.99,16,13,1.87,,89,3,1.73,1.8,1,Sophomore
+LU26330,Fall 2025,Business,Management,0,1,1,0,3.43,15,15,3.27,C,25,1,3.74,3.5,1,Sophomore
+LU26331,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.73,14,14,2.98,D,69,1,3.2,3.09,1,Sophomore
+LU26332,Fall 2025,Arts & Sciences,English,0,0,1,1,3.44,16,16,2.25,,71,0,1.27,1.76,1,Sophomore
+LU26333,Fall 2025,Engineering,Electrical Engineering,1,1,1,1,3.56,15,15,2.76,C,65,3,3.26,3.01,1,Sophomore
+LU26334,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,4.0,14,14,2.95,D,137,3,2.99,2.97,1,Sophomore
+LU26335,Fall 2025,Business,Marketing,0,1,1,0,3.87,15,15,2.22,C,95,0,1.76,1.99,0,Not enrolled
+LU26336,Fall 2025,Business,Marketing,0,0,0,0,2.91,14,7,1.81,F,76,4,1.62,1.72,0,Not enrolled
+LU26337,Fall 2025,Business,Marketing,0,0,1,0,3.28,15,15,3.87,,73,1,4.0,3.93,1,Sophomore
+LU26338,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,4.0,15,15,3.68,A,80,1,3.62,3.65,1,Sophomore
+LU26339,Fall 2025,Business,Marketing,0,0,0,1,3.27,17,17,3.13,B,76,2,3.36,3.24,1,Sophomore
+LU26340,Fall 2025,Arts & Sciences,Biology,1,0,0,0,3.73,14,14,3.24,B,50,0,3.38,3.31,1,Sophomore
+LU26341,Fall 2025,Business,Marketing,0,0,1,1,3.66,14,14,2.14,C,81,0,2.11,2.12,1,Sophomore
+LU26342,Fall 2025,Engineering,Mechanical Engineering,1,1,0,0,2.9,15,15,2.56,C,106,2,2.27,2.42,1,Sophomore
+LU26343,Fall 2025,Business,Management,0,1,0,0,3.77,16,16,3.16,B,89,2,2.94,3.05,1,Sophomore
+LU26344,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.56,16,16,3.15,,56,0,2.92,3.03,1,Sophomore
+LU26345,Fall 2025,Engineering,Computer Science,1,0,0,0,4.0,16,16,3.22,A,108,3,3.57,3.4,1,Sophomore
+LU26346,Fall 2025,Arts & Sciences,Mathematics,1,0,1,0,3.5,16,16,2.62,C,92,0,,2.62,0,Not enrolled
+LU26347,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.78,15,15,2.75,C,71,2,3.03,2.89,1,Sophomore
+LU26348,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.37,16,16,3.26,B,51,3,3.31,3.29,1,Sophomore
+LU26349,Fall 2025,Business,Accounting,0,1,0,0,3.64,15,15,3.04,B,88,3,2.82,2.93,1,Sophomore
+LU26350,Fall 2025,Education,Elementary Education,0,1,1,1,3.63,16,16,3.1,,105,2,3.39,3.24,1,Sophomore
+LU26351,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.39,17,17,2.21,D,89,2,2.32,2.26,1,Sophomore
+LU26352,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.37,16,16,2.7,,113,3,2.8,2.75,1,Sophomore
+LU26353,Fall 2025,Business,Management,0,1,0,0,3.58,14,14,4.0,B,68,2,4.0,4.0,1,Sophomore
+LU26354,Fall 2025,Arts & Sciences,Psychology,0,1,0,1,3.96,12,12,3.61,,81,0,3.67,3.64,1,Sophomore
+LU26355,Fall 2025,Education,Elementary Education,0,0,0,0,3.73,16,16,3.78,,101,1,3.51,3.64,1,Sophomore
+LU26356,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,4.0,12,12,2.94,C,51,1,3.07,3.0,1,Sophomore
+LU26357,Fall 2025,Arts & Sciences,English,0,1,1,1,3.93,16,13,2.0,,46,2,1.25,1.63,1,Sophomore
+LU26358,Fall 2025,Engineering,Computer Science,1,1,1,1,3.83,14,14,3.88,A,46,4,3.91,3.9,1,Sophomore
+LU26359,Fall 2025,Arts & Sciences,Mathematics,1,1,0,0,3.85,12,12,2.51,F,51,3,2.74,2.62,1,Sophomore
+LU26360,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.14,16,9,1.45,F,78,0,1.85,1.65,1,Freshman
+LU26361,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.52,17,17,4.0,A,164,2,3.92,3.96,1,Sophomore
+LU26362,Fall 2025,Business,Management,0,0,0,0,3.87,14,14,2.61,C,102,2,2.61,2.61,1,Sophomore
+LU26363,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.27,14,14,3.06,B,144,0,3.34,3.2,1,Sophomore
+LU26364,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.31,14,14,2.34,,30,0,2.1,2.22,1,Sophomore
+LU26365,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.79,13,13,2.59,C,65,5,2.64,2.62,1,Sophomore
+LU26366,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.55,16,16,3.15,C,95,0,3.19,3.17,1,Sophomore
+LU26367,Fall 2025,Business,Marketing,0,0,0,0,3.39,16,16,4.0,B,95,1,4.0,4.0,1,Sophomore
+LU26368,Fall 2025,Engineering,Computer Science,1,1,1,0,3.83,16,16,3.29,B,88,1,2.61,2.95,1,Sophomore
+LU26369,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.35,16,16,2.87,B,103,3,2.63,2.75,1,Sophomore
+LU26370,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.71,15,15,3.53,,97,3,3.4,3.46,1,Sophomore
+LU26371,Fall 2025,Nursing & Health,Nursing,1,1,0,1,3.52,15,15,2.55,C,62,2,2.71,2.63,1,Sophomore
+LU26372,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.42,17,17,2.79,B,100,1,2.85,2.82,1,Sophomore
+LU26373,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,4.0,12,12,3.31,B,86,1,1.96,2.63,0,Not enrolled
+LU26374,Fall 2025,Nursing & Health,Kinesiology,1,0,1,1,3.86,14,14,2.63,C,40,1,3.05,2.84,1,Sophomore
+LU26375,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.07,17,14,1.22,,50,2,1.38,1.3,0,Not enrolled
+LU26376,Fall 2025,Business,Marketing,0,0,0,0,3.87,13,13,3.52,A,98,1,3.59,3.56,1,Sophomore
+LU26377,Fall 2025,Education,Secondary Education,0,0,0,1,3.4,15,15,2.66,,56,1,2.62,2.64,1,Sophomore
+LU26378,Fall 2025,Undeclared,Undeclared,0,1,1,1,3.69,15,15,2.67,,91,0,1.93,2.3,1,Sophomore
+LU26379,Fall 2025,Nursing & Health,Kinesiology,1,1,0,0,3.74,16,16,3.11,B,49,0,3.04,3.08,1,Sophomore
+LU26380,Fall 2025,Business,Finance,0,0,1,1,3.92,14,14,4.0,A,110,4,4.0,4.0,1,Sophomore
+LU26381,Fall 2025,Arts & Sciences,Mathematics,1,1,1,1,3.71,15,12,1.75,D,70,2,2.02,1.89,1,Sophomore
+LU26382,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,3.14,17,14,2.07,C,5,3,1.83,1.95,1,Sophomore
+LU26383,Fall 2025,Business,Accounting,0,1,1,0,3.43,16,16,2.91,,101,0,2.68,2.79,1,Sophomore
+LU26384,Fall 2025,Education,Secondary Education,0,1,0,0,3.87,15,15,3.32,,49,2,3.72,3.52,1,Sophomore
+LU26385,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.25,15,15,3.8,B,67,1,3.75,3.77,1,Sophomore
+LU26386,Fall 2025,Engineering,Mechanical Engineering,1,0,0,1,4.0,17,14,1.86,F,71,4,1.96,1.91,1,Sophomore
+LU26387,Fall 2025,Arts & Sciences,English,0,0,0,0,3.4,16,16,3.15,,134,0,3.54,3.35,1,Sophomore
+LU26388,Fall 2025,Business,Marketing,0,0,0,1,3.36,14,14,2.64,C,87,1,2.87,2.76,1,Sophomore
+LU26389,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,3.37,13,9,2.02,C,82,3,1.34,1.68,1,Freshman
+LU26390,Fall 2025,Nursing & Health,Nursing,1,1,0,1,2.96,15,15,2.83,B,60,1,3.15,2.99,1,Sophomore
+LU26391,Fall 2025,Arts & Sciences,Economics,0,0,0,1,3.22,16,16,3.08,B,86,1,,3.08,0,Not enrolled
+LU26392,Fall 2025,Business,Marketing,0,0,0,1,2.91,15,15,2.28,F,85,1,1.96,2.12,0,Not enrolled
+LU26393,Fall 2025,Business,Accounting,0,1,0,0,2.86,13,10,1.5,D,72,1,1.51,1.5,0,Not enrolled
+LU26394,Fall 2025,Engineering,Computer Science,1,0,1,0,3.6,12,12,3.41,B,95,0,3.83,3.62,1,Sophomore
+LU26395,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.38,16,16,2.55,W,117,0,2.77,2.66,1,Sophomore
+LU26396,Fall 2025,Engineering,Electrical Engineering,1,1,1,0,3.24,15,15,2.84,C,99,2,2.84,2.84,1,Sophomore
+LU26397,Fall 2025,Nursing & Health,Public Health,0,1,0,1,3.27,12,12,2.31,C,101,0,2.07,2.19,1,Sophomore
+LU26398,Fall 2025,Arts & Sciences,English,0,1,0,0,3.08,12,12,2.53,,50,1,,2.53,0,Not enrolled
+LU26399,Fall 2025,Arts & Sciences,Chemistry,1,1,1,1,3.01,17,14,2.13,,73,2,2.34,2.24,1,Sophomore
+LU26400,Fall 2025,Engineering,Computer Science,1,0,0,0,2.78,15,11,1.95,W,102,1,2.5,2.22,1,Freshman
+LU26401,Fall 2025,Arts & Sciences,English,0,0,1,0,4.0,15,15,2.86,C,47,2,3.14,3.0,1,Sophomore
+LU26402,Fall 2025,Nursing & Health,Nursing,1,0,1,1,3.5,16,16,2.53,C,50,1,2.26,2.4,1,Sophomore
+LU26403,Fall 2025,Nursing & Health,Kinesiology,1,1,1,1,3.08,13,9,1.82,W,87,1,,1.82,0,Not enrolled
+LU26404,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.18,12,12,2.82,,129,1,3.29,3.05,1,Sophomore
+LU26405,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.13,14,14,3.24,C,126,0,3.93,3.58,1,Sophomore
+LU26406,Fall 2025,Business,Accounting,0,0,0,0,4.0,15,15,4.0,A,141,0,4.0,4.0,1,Sophomore
+LU26407,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.62,16,16,3.18,B,82,1,3.74,3.46,1,Sophomore
+LU26408,Fall 2025,Nursing & Health,Public Health,0,0,0,0,3.3,15,12,2.12,,125,0,1.82,1.97,1,Sophomore
+LU26409,Fall 2025,Nursing & Health,Kinesiology,1,0,0,0,3.08,16,16,3.85,A,63,1,3.78,3.82,1,Sophomore
+LU26410,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.17,15,15,2.25,C,54,4,,2.25,0,Not enrolled
+LU26411,Fall 2025,Business,Finance,0,0,1,0,3.29,15,15,3.5,A,75,2,2.95,3.23,1,Sophomore
+LU26412,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.87,16,16,2.84,B,96,0,2.68,2.76,1,Sophomore
+LU26413,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.35,14,14,2.54,,25,2,2.27,2.4,1,Sophomore
+LU26414,Fall 2025,Business,Accounting,0,1,1,0,3.82,16,16,3.99,B,102,0,4.0,4.0,1,Sophomore
+LU26415,Fall 2025,Engineering,Civil Engineering,1,1,0,0,3.52,16,16,3.23,B,37,0,3.03,3.13,1,Sophomore
+LU26416,Fall 2025,Arts & Sciences,English,0,0,0,0,3.79,17,17,4.0,B,102,0,3.97,3.98,1,Sophomore
+LU26417,Fall 2025,Arts & Sciences,Biology,1,1,1,0,3.86,15,15,2.91,C,127,2,2.7,2.8,1,Sophomore
+LU26418,Fall 2025,Arts & Sciences,Biology,1,1,0,0,2.68,14,7,2.11,C,97,1,2.33,2.22,0,Not enrolled
+LU26419,Fall 2025,Engineering,Computer Science,1,0,0,1,3.42,15,15,2.32,C,53,0,2.58,2.45,0,Not enrolled
+LU26420,Fall 2025,Arts & Sciences,Economics,0,0,0,1,4.0,16,16,3.27,B,100,3,2.8,3.04,1,Sophomore
+LU26421,Fall 2025,Engineering,Electrical Engineering,1,0,0,1,3.34,17,17,3.62,C,37,4,4.0,3.81,1,Sophomore
+LU26422,Fall 2025,Nursing & Health,Public Health,0,0,0,0,2.6,15,8,1.23,,114,2,0.9,1.06,1,Freshman
+LU26423,Fall 2025,Business,Finance,0,0,0,0,3.26,15,12,2.08,C,55,3,1.58,1.83,0,Not enrolled
+LU26424,Fall 2025,Business,Accounting,0,0,0,0,3.94,12,12,3.65,B,121,1,4.0,3.82,1,Sophomore
+LU26425,Fall 2025,Undeclared,Undeclared,0,1,0,0,3.3,12,12,2.38,C,99,0,2.02,2.2,1,Sophomore
+LU26426,Fall 2025,Arts & Sciences,Biology,1,0,0,1,3.7,16,16,2.21,C,67,1,2.12,2.16,1,Sophomore
+LU26427,Fall 2025,Engineering,Computer Science,1,1,0,0,3.73,16,16,3.67,B,31,2,4.0,3.83,1,Sophomore
+LU26428,Fall 2025,Arts & Sciences,English,0,1,0,0,3.56,15,15,3.17,,108,2,3.47,3.32,1,Sophomore
+LU26429,Fall 2025,Engineering,Electrical Engineering,1,0,0,0,3.22,15,15,3.04,C,61,1,2.86,2.95,1,Sophomore
+LU26430,Fall 2025,Undeclared,Undeclared,0,0,1,1,4.0,14,14,2.91,,91,1,2.62,2.76,1,Sophomore
+LU26431,Fall 2025,Arts & Sciences,Economics,0,0,0,0,3.1,13,13,3.12,C,88,1,3.18,3.15,1,Sophomore
+LU26432,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.48,13,13,3.88,A,106,2,3.96,3.92,1,Sophomore
+LU26433,Fall 2025,Education,Secondary Education,0,0,0,0,3.71,15,15,4.0,,157,0,4.0,4.0,1,Sophomore
+LU26434,Fall 2025,Engineering,Mechanical Engineering,1,1,1,1,3.47,16,16,2.48,B,98,2,1.75,2.12,1,Sophomore
+LU26435,Fall 2025,Nursing & Health,Nursing,1,0,0,0,3.5,16,16,3.15,B,98,0,2.9,3.03,1,Sophomore
+LU26436,Fall 2025,Engineering,Computer Science,1,1,1,1,3.12,13,7,0.83,W,27,0,0.56,0.7,0,Not enrolled
+LU26437,Fall 2025,Arts & Sciences,Political Science,0,1,0,0,3.22,14,2,0.97,,54,1,0.44,0.7,0,Not enrolled
+LU26438,Fall 2025,Engineering,Civil Engineering,1,0,0,0,3.41,17,17,3.91,B,68,1,4.0,3.96,1,Sophomore
+LU26439,Fall 2025,Arts & Sciences,Chemistry,1,0,1,1,3.55,12,12,2.55,C,69,1,2.43,2.49,1,Sophomore
+LU26440,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.49,14,14,2.52,,90,3,1.94,2.23,1,Sophomore
+LU26441,Fall 2025,Arts & Sciences,Chemistry,1,0,0,1,3.06,17,17,2.77,B,90,2,2.68,2.73,1,Sophomore
+LU26442,Fall 2025,Undeclared,Undeclared,0,1,1,1,2.81,16,16,2.28,,71,1,2.22,2.25,1,Sophomore
+LU26443,Fall 2025,Arts & Sciences,Economics,0,0,1,0,3.63,16,16,2.34,C,93,1,2.18,2.26,1,Sophomore
+LU26444,Fall 2025,Arts & Sciences,Psychology,0,0,0,1,2.72,14,14,2.2,,96,0,2.28,2.24,1,Sophomore
+LU26445,Fall 2025,Education,Elementary Education,0,1,0,0,3.83,14,14,4.0,,77,3,4.0,4.0,1,Sophomore
+LU26446,Fall 2025,Arts & Sciences,Economics,0,0,1,1,3.56,14,14,2.4,,89,1,,2.4,0,Not enrolled
+LU26447,Fall 2025,Undeclared,Undeclared,0,0,0,1,3.72,13,13,3.14,,19,2,4.0,3.57,1,Sophomore
+LU26448,Fall 2025,Nursing & Health,Public Health,0,1,0,1,3.59,17,17,3.76,B,56,1,3.43,3.6,1,Sophomore
+LU26449,Fall 2025,Business,Marketing,0,1,1,0,3.16,14,14,3.74,A,138,1,3.99,3.87,1,Sophomore
+LU26450,Fall 2025,Engineering,Civil Engineering,1,0,1,1,3.6,12,12,2.68,F,75,0,2.95,2.81,1,Sophomore
+LU26451,Fall 2025,Arts & Sciences,Psychology,0,1,1,1,3.32,14,10,1.76,,5,2,2.1,1.93,1,Freshman
+LU26452,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.78,14,14,3.36,B,83,0,3.7,3.53,1,Sophomore
+LU26453,Fall 2025,Arts & Sciences,Psychology,0,1,0,0,2.97,13,13,2.16,,37,0,2.67,2.41,1,Sophomore
+LU26454,Fall 2025,Arts & Sciences,Chemistry,1,0,0,0,3.8,16,16,3.04,B,63,0,3.07,3.05,1,Sophomore
+LU26455,Fall 2025,Engineering,Civil Engineering,1,1,0,0,3.57,15,15,2.26,W,75,1,2.47,2.36,1,Sophomore
+LU26456,Fall 2025,Education,Secondary Education,0,0,0,0,3.56,12,12,2.59,,85,1,2.53,2.56,0,Not enrolled
+LU26457,Fall 2025,Engineering,Computer Science,1,0,0,1,3.64,14,14,2.41,C,72,3,,2.41,0,Not enrolled
+LU26458,Fall 2025,Undeclared,Undeclared,0,0,0,0,3.69,16,16,2.14,,79,1,2.01,2.08,1,Sophomore
+LU26459,Fall 2025,Nursing & Health,Public Health,0,0,0,1,3.59,15,15,2.52,,77,0,2.39,2.45,1,Sophomore
+LU26460,Fall 2025,Arts & Sciences,Psychology,0,0,1,0,3.17,14,14,2.24,F,92,2,2.26,2.25,1,Sophomore
+LU26461,Fall 2025,Engineering,Computer Science,1,0,0,1,3.67,15,15,2.84,,68,0,3.04,2.94,1,Sophomore
+LU26462,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.7,17,17,2.88,C,44,1,2.8,2.84,1,Sophomore
+LU26463,Fall 2025,Arts & Sciences,English,0,0,0,0,3.32,14,14,3.23,,150,1,2.94,3.09,1,Sophomore
+LU26464,Fall 2025,Undeclared,Undeclared,0,1,1,0,3.56,15,15,2.3,,77,1,2.28,2.29,1,Sophomore
+LU26465,Fall 2025,Arts & Sciences,Mathematics,1,0,0,1,3.74,14,14,2.28,D,44,1,2.1,2.19,1,Sophomore
+LU26466,Fall 2025,Arts & Sciences,Economics,0,1,1,0,3.53,17,17,2.62,W,83,0,1.84,2.23,0,Not enrolled
+LU26467,Fall 2025,Arts & Sciences,Mathematics,1,1,1,0,3.33,14,14,2.87,C,51,1,3.32,3.09,1,Sophomore
+LU26468,Fall 2025,Business,Management,0,0,0,1,3.53,17,17,3.2,C,72,0,3.08,3.14,1,Sophomore
+LU26469,Fall 2025,Engineering,Mechanical Engineering,1,1,0,1,3.22,17,17,2.61,C,5,1,2.71,2.66,1,Sophomore
+LU26470,Fall 2025,Arts & Sciences,Psychology,0,0,0,0,3.04,12,12,3.47,,42,1,3.49,3.48,1,Sophomore
+LU26471,Fall 2025,Business,Marketing,0,1,1,1,2.3,14,10,1.68,F,28,3,2.07,1.87,1,Freshman
+LU26472,Fall 2025,Arts & Sciences,Mathematics,1,0,0,0,3.94,15,15,3.14,A,78,1,2.83,2.98,1,Sophomore
+LU26473,Fall 2025,Nursing & Health,Nursing,1,1,0,0,3.63,17,17,3.65,B,95,1,4.0,3.82,1,Sophomore
+LU26474,Fall 2025,Engineering,Mechanical Engineering,1,1,1,1,2.53,14,14,1.56,,65,1,,1.56,0,Not enrolled
+LU26475,Fall 2025,Engineering,Computer Science,1,1,1,1,3.87,12,12,3.03,,73,2,3.72,3.38,1,Sophomore
+LU26476,Fall 2025,Engineering,Computer Science,1,0,0,0,2.73,14,14,1.79,W,165,4,1.65,1.72,1,Sophomore
+LU26477,Fall 2025,Business,Accounting,0,1,0,0,3.07,15,15,2.45,W,109,0,2.41,2.43,1,Sophomore
+LU26478,Fall 2025,Undeclared,Undeclared,0,0,1,1,3.47,13,13,2.76,,37,2,2.35,2.56,1,Sophomore
+LU26479,Fall 2025,Nursing & Health,Kinesiology,1,0,0,1,3.68,13,13,2.66,W,93,2,2.93,2.8,1,Sophomore

@@ -4,17 +4,20 @@ Guidance for agents working in this repo. For what the Labs are, read `README.md
 
 ## These pages are demos, not the product
 
-Five pages, one per CampusMind offering. A presenter drives each one during a live
+Seven pages, one per CampusMind offering. A presenter drives each one during a live
 demo. All data is written into the page's own JavaScript. Do not add API calls,
 analytics, or storage unless the user asks for them. Every page tells its reader that
 the content is illustrative, and that statement has to stay true.
+
+Strictly think about what visuals will support my argument. No paragraphs and or not alot of text, we want to focus on supporting graphics and storu telling graphically that support my main demo.  no one is reading a bunch of stuff on the lab.
 
 ## Constraints
 
 - Add no build step and no dependencies. There is no `package.json`, bundler, or
   framework, and Vercel serves the files as they are.
-- Add no web fonts. The four brand Labs use `-apple-system, BlinkMacSystemFont,
-  "Segoe UI"`. Accessibility and Virtual Teaching Assistant use `Inter, "Avenir Next"`.
+- Add no web fonts. The hub and the four brand Labs use `-apple-system,
+  BlinkMacSystemFont, "Segoe UI"`, and LLM Chat follows them. Accessibility and Virtual
+  Teaching Assistant use `Inter, "Avenir Next"`.
 - Keep the three-file naming. Every Lab is `<lab>.html`, `<lab>.css`, and `<lab>.js` at
   the repo root. Add no subdirectories and no shared modules. Accessibility is the one
   exception, because it also loads `accessibility-examples.js`.
@@ -45,7 +48,7 @@ Three formatting styles coexist in this repo.
 
 | Style | Files |
 |-------|-------|
-| Pretty-printed | `index.html`, `home.css`, `labs-navigation.css`, `virtual-teaching-assistant.*` |
+| Pretty-printed | `index.html`, `home.css`, `labs-navigation.css`, `virtual-teaching-assistant.*`, `llm-chat.*` |
 | One rule or element per line | `ontology.html`, `ontology.css` |
 | Collapsed whitespace | `accessibility.*`, `recruitment.*`, `retention.*` |
 
@@ -88,6 +91,18 @@ comments. The question trace advances every 1500 ms, or every 2600 ms when
 `prefers-reduced-motion` matches. `qcard()` builds the card shell with `innerHTML` and
 then writes each field with `textContent`. Keep those two steps separate, so that card
 data cannot inject markup.
+
+**LLM Chat.** The only Lab that runs beside a live demo of the product it describes, so it
+argues rather than imitates. It has no chat mockups on purpose. Do not add message bubbles, a
+composer bar, or a fake transcript, because the real thing is on the next screen. The page is a
+run sheet in the order the presenter runs it: three demo runs, thirteen numbered steps, then one
+before-and-after graphic as the closer. Every prompt a presenter types carries a Copy button whose
+`data-copy` is the exact string. Those strings are the script, so change them only when the
+script changes. Concepts sit inside the step where they first matter: the skill primer in run 1
+step 1, the model catalogue in run 2 step 3, the agent reach and the entity scope in run 3
+step 1. Keep it that way rather than adding sections before the first step. `--mark` is a second teal, one step
+above `--teal`, because the brand teal sits below the chart-color chroma floor. Collapsing the
+two drops the bars, wires and timeline below it.
 
 **Virtual Teaching Assistant.** The smallest Lab, and the only unfinished one. All
 three LMS panels show a `.screenshot-placeholder` frame that reads "Product screenshot
