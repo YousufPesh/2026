@@ -19,6 +19,7 @@ Vercel deploys `main` automatically on merge.
 | 03 | Retention | Early identification and coordinated student support | Expand a seven-stage visual flow, then open each stage to see student signals, institutional triggers, configured points, response thresholds, outreach, advisor context, and early intervention. |
 | 04 | Ontology | The semantic layer over campus systems | Open any of six architecture layers. Run an animated trace of one question through all of them. Compare 13 × u point-to-point integrations against 13 + u. |
 | 05 | Virtual Teaching Assistant | Student support inside the LMS | Switch between Canvas, Blackboard, and D2L. Read the example question categories. The screenshots are still placeholders. |
+| 06 | Agent Studio | Agent design and governance | Follow a concise path from institutional purpose through agent design, connected knowledge, testing, and governed release. |
 
 ## Run the Labs locally
 
