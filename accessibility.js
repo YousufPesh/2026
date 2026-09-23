@@ -14,13 +14,22 @@ function drawWorkflowWires(){
   const svg=$('.workflow-wires');svg.setAttribute('viewBox',`0 0 ${base.width} ${base.height}`);
   for(let i=0;i<4;i++){
     const a=rects[i],b=rects[i+1];
-    const path=b.x>=a.x+a.w+8
-      ? `M ${a.x+a.w+3} ${a.y+a.h/2} L ${b.x-4} ${b.y+b.h/2}`
-      : `M ${a.x+a.w/2} ${a.y-3} L ${b.x+b.w/2} ${b.y+b.h+4}`;
+    let path,arrowX,arrowY;
+    if(b.x>=a.x+a.w+18){
+      const sx=a.x+a.w+5,sy=a.y+a.h/2,ex=b.x-8,ey=b.y+b.h/2,mx=(sx+ex)/2;
+      path=`M ${sx} ${sy} C ${mx} ${sy} ${mx} ${ey} ${ex} ${ey}`;
+      arrowX=mx;arrowY=(sy+ey)/2;
+    }else{
+      const sx=a.x+a.w/2,sy=a.y-5,ex=b.x+b.w/2,ey=b.y+b.h+6,mid=(sy+ey)/2,sign=ex>=sx?1:-1;
+      const radius=Math.max(3,Math.min(10,Math.abs(ex-sx)/2,Math.abs(sy-ey)/2));
+      path=`M ${sx} ${sy} V ${mid+radius} Q ${sx} ${mid} ${sx+sign*radius} ${mid} H ${ex-sign*radius} Q ${ex} ${mid} ${ex} ${mid-radius} V ${ey}`;
+      arrowX=(sx+ex)/2;arrowY=mid;
+    }
     $(`#workflow-forward-${i}`).setAttribute('d',path);
+    $(`#workflow-step-arrow-${i}`).setAttribute('transform',`translate(${arrowX} ${arrowY})`);
   }
-  const top=rects[4],source=rects[0],right=base.width-11,bottom=base.height-22;
-  $('#workflow-return').setAttribute('d',`M ${top.x+top.w+3} ${top.y+top.h/2} H ${right-8} Q ${right} ${top.y+top.h/2} ${right} ${top.y+top.h/2+8} V ${bottom-10} Q ${right} ${bottom} ${right-10} ${bottom} H ${source.x+source.w/2+8} Q ${source.x+source.w/2} ${bottom} ${source.x+source.w/2} ${bottom-8} V ${source.y+source.h+5}`);
+  const top=rects[4],source=rects[0],right=base.width-24,bottom=base.height-32;
+  $('#workflow-return').setAttribute('d',`M ${top.x+top.w+5} ${top.y+top.h/2} H ${right-10} Q ${right} ${top.y+top.h/2} ${right} ${top.y+top.h/2+10} V ${bottom-10} Q ${right} ${bottom} ${right-10} ${bottom} H ${source.x+source.w/2+10} Q ${source.x+source.w/2} ${bottom} ${source.x+source.w/2} ${bottom-10} V ${source.y+source.h+7}`);
 }
 let wireAnimation;
 function animateWorkflowWires(){cancelAnimationFrame(wireAnimation);const end=performance.now()+1000;function frame(){drawWorkflowWires();if(performance.now()<end)wireAnimation=requestAnimationFrame(frame);}frame();}
