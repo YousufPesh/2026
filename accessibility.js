@@ -109,6 +109,7 @@ function openStep(id,{focus=true,hash=true,transition=false}={}){
  if(!panels[id])return;
  if(!transition)cancelStepSwitch();
  if(!revealed)setRevealed(true);
+ const enteringReview=id==='review'&&activeStep!=='review';
  activeStep=id;
  updateStepNavigation();
 
@@ -121,13 +122,15 @@ function openStep(id,{focus=true,hash=true,transition=false}={}){
  animateWorkflowWires();
  if(!$('#step-panel').open)$('#step-panel').showModal();
  $('.step-popup-body').scrollTop=0;
+ if(id==='review')startReviewLoop({reset:enteringReview});else stopReviewLoop();
  if(focus)$('#panel-title').focus({preventScroll:true});
  announce(id==='remediation'?`${title} ${examples[selected].name}.`:title);
 }
-function closeStep(){cancelStepSwitch();if($('#step-panel').open)$('#step-panel').close();}
+function closeStep(){cancelStepSwitch();stopReviewLoop();if($('#step-panel').open)$('#step-panel').close();}
 $('#close-step').addEventListener('click',closeStep);
 $('#step-panel').addEventListener('close',()=>{
  cancelStepSwitch();
+ stopReviewLoop();
  const previous=activeStep;activeStep=null;
  document.querySelectorAll('[data-flow]').forEach(el=>{el.setAttribute('aria-expanded','false');el.removeAttribute('aria-current');});
  history.replaceState(null,'','#access');
@@ -159,9 +162,23 @@ function renderExample(){
 $('#example-select').addEventListener('change',event=>{selected=Number(event.target.value);renderExample();announce(`${examples[selected].name} selected for the walkthrough.`);});
 document.querySelectorAll('[data-state],[data-dialog-state]').forEach(button=>button.addEventListener('click',()=>{view=button.dataset.state||button.dataset.dialogState;renderExample();announce(`${examples[selected].name}, ${view}. ${$('#example-caption').textContent}`);}));
 document.querySelectorAll('[data-mode]').forEach(el=>el.addEventListener('click',()=>{selected=el.dataset.mode==='reconstruct'?4:0;view='after';renderExample();}));
-function selectReview(index){document.querySelectorAll('.review-sequence [data-review]').forEach(el=>el.setAttribute('aria-pressed',String(Number(el.dataset.review)===index)));document.querySelectorAll('[data-review-visual]').forEach(el=>el.hidden=Number(el.dataset.reviewVisual)!==index);}
-document.querySelectorAll('[data-review]').forEach(el=>el.addEventListener('click',()=>selectReview(Number(el.dataset.review))));
-$('#edit-tag').addEventListener('click',()=>{const edited=$('#editable-tag').textContent==='H1';$('#editable-tag').textContent=edited?'H2':'H1';$('#page-tag').textContent=edited?'H2':'H1';$('#edit-tag').setAttribute('aria-label',`Change the illustrative section tag to ${edited?'H1':'H2'}`);$('.active-tag').classList.toggle('is-edited',edited);announce(`Illustrative section tag changed to ${edited?'H2':'H1'}.`);});
+const reviewPhases=[
+ ['Inspect & edit','Inspect the document. Choose the right tag and reading order.'],
+ ['Apply changes','Approve the edits and apply them to the PDF.'],
+ ['Revalidate','Scan the revised PDF against the accessibility checks.'],
+ ['Updated report','Place the revised PDF beside its new compliance report.']
+];
+const reviewDurations=[8000,4500,6000,6000];
+const reviewMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+let reviewPhase=0,reviewTimer=null,reviewPaused=reviewMotion.matches;
+function updateReviewToggle(){const button=$('#review-loop-toggle');button.setAttribute('aria-pressed',String(reviewPaused));button.textContent=reviewPaused?(reviewMotion.matches?'Play loop':'Resume loop'):'Pause loop';$('.review-loop-controls>span').classList.toggle('is-paused',reviewPaused);}
+function stopReviewLoop(){clearTimeout(reviewTimer);reviewTimer=null;}
+function scheduleReviewLoop(){stopReviewLoop();if(activeStep!=='review'||reviewPaused)return;reviewTimer=setTimeout(()=>{setReviewPhase((reviewPhase+1)%reviewPhases.length,{restart:false});scheduleReviewLoop();},reviewDurations[reviewPhase]);}
+function setReviewPhase(index,{restart=true,announcePhase=false}={}){reviewPhase=(index+reviewPhases.length)%reviewPhases.length;$('#review-loop').dataset.reviewPhase=reviewPhase;document.querySelectorAll('.review-sequence [data-review]').forEach(el=>el.setAttribute('aria-pressed',String(Number(el.dataset.review)===reviewPhase)));$('#review-loop-caption').textContent=reviewPhases[reviewPhase][1];if(announcePhase)announce(`${reviewPhases[reviewPhase][0]}. ${reviewPhases[reviewPhase][1]}`);if(restart)scheduleReviewLoop();}
+function startReviewLoop({reset=false}={}){if(reset){reviewPaused=reviewMotion.matches;setReviewPhase(0,{restart:false});}updateReviewToggle();scheduleReviewLoop();}
+document.querySelectorAll('.review-sequence [data-review]').forEach(el=>el.addEventListener('click',()=>setReviewPhase(Number(el.dataset.review),{announcePhase:true})));
+$('#review-loop-toggle').addEventListener('click',()=>{reviewPaused=!reviewPaused;updateReviewToggle();if(reviewPaused){stopReviewLoop();announce('Human review loop paused.');}else{scheduleReviewLoop();announce('Human review loop playing.');}});
+reviewMotion.addEventListener('change',event=>{reviewPaused=event.matches;updateReviewToggle();if(reviewPaused)stopReviewLoop();else scheduleReviewLoop();});
 const dialog=$('#image-dialog');
 function resetZoom(){ $('.dialog-scroll').classList.remove('zoomed');$('#zoom').setAttribute('aria-pressed','false');$('#zoom').textContent='Zoom in';$('.dialog-scroll').scrollTo(0,0);}
 $('#enlarge').addEventListener('click',()=>{renderExample();resetZoom();dialog.showModal();});$('#close-dialog').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>$('#enlarge').focus({preventScroll:true}));
@@ -172,5 +189,5 @@ $('#zoom').addEventListener('click',()=>{const zoomed=$('.dialog-scroll').classL
 history.scrollRestoration='manual';
 function readHash(){const hash=location.hash.slice(1);const aliases={scale:'sources',approach:'remediation',pipeline:'review',results:'remediation',oversight:'output','your-pdf':'sources'};const id=aliases[hash]||hash;if(panels[id])openStep(id,{focus:false,hash:false});else if(activeStep)closeStep();}
 window.addEventListener('hashchange',readHash);
-setRevealed(false);selectReview(0);renderExample();readHash();animateWorkflowWires();
+setRevealed(false);setReviewPhase(0,{restart:false});updateReviewToggle();renderExample();readHash();animateWorkflowWires();
 requestAnimationFrame(()=>window.scrollTo({top:0,behavior:'instant'}));
