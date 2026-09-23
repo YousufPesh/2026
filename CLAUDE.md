@@ -95,7 +95,7 @@ data cannot inject markup.
 **LLM Chat.** The only Lab that runs beside a live demo of the product it describes, so it
 argues rather than imitates. It has no chat mockups on purpose. Do not add message bubbles, a
 composer bar, or a fake transcript, because the real thing is on the next screen. The page is a
-run sheet in the order the presenter runs it: three demo runs, twelve numbered steps, then one
+run sheet in the order the presenter runs it: three demo runs, thirteen numbered steps, then one
 before-and-after graphic as the closer. Every prompt a presenter types carries a Copy button whose
 `data-copy` is the exact string. Those strings are the script, so change them only when the
 script changes. Concepts sit inside the step where they first matter: the skill primer in run 1

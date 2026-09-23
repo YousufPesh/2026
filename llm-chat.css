@@ -75,6 +75,17 @@ section { padding: 30px 0 40px; border-top: 1px solid var(--line); }
 .chip.tool { border-color: #c9c4f2; background: #f1efff; color: #4c42b7; }
 .mark { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--navy); color: var(--white); font-size: .68rem; font-weight: 800; }
 
+/* run 2 step 5 · one shared thread, segments split by a surface gap */
+.collab { padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.timeline { display: flex; gap: 2px; }
+.seg { flex: 1 1 0; display: grid; gap: 6px; align-content: start; justify-items: center; padding: 0 4px; color: var(--ink); font-size: .74rem; font-weight: 650; text-align: center; line-height: 1.2; }
+.seg:nth-child(2) { flex-basis: 24%; flex-grow: 0; }
+.bar { display: block; width: 100%; height: 12px; background: var(--mark); }
+.seg:first-child .bar { border-radius: 6px 0 0 6px; }
+.seg:last-child .bar { border-radius: 0 6px 6px 0; }
+.bar.is-paused { background: var(--amber); }
+.seg em { padding: 1px 6px; border: 1px solid var(--amber-line); border-radius: 999px; background: var(--amber-soft); color: var(--amber-ink); font-size: .6rem; font-style: normal; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
+
 /* 04 · before and after */
 .before-after { display: grid; gap: 14px; }
 .panel { padding: 14px 14px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--white); }
@@ -241,6 +252,7 @@ section { padding: 30px 0 40px; border-top: 1px solid var(--line); }
   .section-nav select { max-width: 100%; }
   .step { padding: 13px; }
   .step-head h3 { font-size: 1.02rem; }
+  .seg { font-size: .64rem; }
   .brand-header img { width: 126px; }
   .brand-header span { max-width: 135px; font-size: .64rem; }
   .intro { padding-top: 28px; }
