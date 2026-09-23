@@ -170,13 +170,14 @@ const OFFERINGS = [
     standalone: true,
     volumeBased: true,
     includes: ['Audit and issue report', 'AI remediation with human review', 'Tag editor and revalidation', 'Course and department views'],
-    license: 12000,
+    license: 42000,
     infra: 6000,
-    docsIncluded: 6000,
-    perThousandDocs: 1500,
+    /* Remediation is billed per page, and the rate depends on who hosts it.
+       PLACEHOLDER: the hosted rate is a guess until confirmed. */
+    pageRate: { tenant: 0.15, saas: 0.25 },
     reconstructionUplift: 0.60,
     questions: [
-      { id: 'docs', type: 'slider', label: 'Documents per year', min: 1000, max: 60000, step: 1000, def: 6000 },
+      { id: 'pages', type: 'slider', label: 'Pages per year', min: 5000, max: 500000, step: 5000, def: 35000 },
       {
         id: 'mode', type: 'single', label: 'What kind of documents?',
         options: [
@@ -426,13 +427,12 @@ function aiCostFor(o, size) {
 
 function accessibilityVolume() {
   const o = offering('accessibility');
-  const docs = state.answers['accessibility.docs'];
-  const over = Math.max(0, docs - o.docsIncluded);
-  let cost = (over / 1000) * o.perThousandDocs;
+  const pages = state.answers['accessibility.pages'];
+  const rate = o.pageRate[state.answers.deployment === 'saas' ? 'saas' : 'tenant'];
   const mode = state.answers['accessibility.mode'];
   const uplift = mode === 'heavy' ? o.reconstructionUplift : mode === 'mixed' ? o.reconstructionUplift / 2 : 0;
-  cost *= (1 + uplift);
-  return { cost, docs, over, uplift };
+  const effective = rate * (1 + uplift);
+  return { cost: pages * effective, pages, rate, effective, uplift };
 }
 
 function calculate() {
@@ -453,8 +453,7 @@ function calculate() {
     const inf = saas ? 0 : hosting;
     infra += inf;
 
-    let use = aiCostFor(o, size);
-    if (o.id === 'accessibility') use = 0;
+    const use = o.id === 'accessibility' ? accessibilityVolume().cost : aiCostFor(o, size);
     ai += use;
 
     const add = addOnsFor(o);
@@ -462,13 +461,6 @@ function calculate() {
 
     rows.push({ name: o.name, lic, inf, use, add });
   });
-
-  if (state.picked.includes('accessibility')) {
-    const v = accessibilityVolume();
-    license += v.cost;
-    const r = rows.find(x => x.name === 'Accessibility');
-    if (r) { r.volume = v; r.lic += v.cost; }
-  }
 
   const total = license + infra + ai + oneOff;
   return { rows, license, infra, ai, oneOff, total, saas, multi, size };
@@ -482,7 +474,7 @@ function renderQuote(q) {
     return;
   }
   const pilot = state.answers.term === 'pilot';
-  let html = '<table><thead><tr><th>Product</th><th>Licence</th><th>Infra</th><th>AI usage</th><th>One-off</th></tr></thead><tbody>';
+  let html = '<table><thead><tr><th>Product</th><th>Licence</th><th>Infra</th><th>Usage</th><th>One-off</th></tr></thead><tbody>';
   q.rows.forEach(r => {
     html += `<tr><td class="lab">${r.name}${r.add.items.length ? `<span class="row-note">${r.add.items.join(' · ')}</span>` : ''}</td>` +
       `<td class="n">${fmt(r.lic)}</td><td class="n">${r.inf ? fmt(r.inf) : '—'}</td>` +
@@ -499,9 +491,9 @@ function renderQuote(q) {
   if (state.picked.includes('llmchat') && state.answers['llmchat.frontier'] === 'yes') a.push(`Frontier models on, so AI usage carries a ${FRONTIER_MULT}× multiplier.`);
   if (state.picked.includes('accessibility')) {
     const v = accessibilityVolume();
-    a.push(`${v.docs.toLocaleString()} documents a year, ${offering('accessibility').docsIncluded.toLocaleString()} included${v.uplift ? `, ${Math.round(v.uplift * 100)}% uplift for reconstruction` : ''}.`);
+    a.push(`${v.pages.toLocaleString()} pages a year at $${v.effective.toFixed(2)} a page${v.uplift ? ` (base $${v.rate.toFixed(2)} plus ${Math.round(v.uplift * 100)}% for reconstruction)` : ''}.`);
   }
-  a.push('AI usage is an estimate, is billed on what you actually use, and is capped by your own controls.');
+  a.push('Usage is an estimate, is billed on what you actually use, and is capped by your own controls.');
   $('quote-assumptions').textContent = a.join(' ');
 }
 
@@ -510,7 +502,7 @@ function renderTotalBar(q) {
   $('tb-total').textContent = state.picked.length ? fmt(pilot ? PILOT_PRICE : q.total) : '$0';
   $('tb-label').textContent = pilot ? '3-month pilot, flat' : 'Year one, all in';
   $('tb-detail').innerHTML = state.picked.length
-    ? `<span><i>Licence</i>${fmt(q.license)}</span><span><i>Infrastructure</i>${q.infra ? fmt(q.infra) : 'included'}</span><span><i>AI usage</i>${fmt(q.ai)}</span><span><i>One-off</i>${fmt(q.oneOff)}</span>`
+    ? `<span><i>Licence</i>${fmt(q.license)}</span><span><i>Infrastructure</i>${q.infra ? fmt(q.infra) : 'included'}</span><span><i>Usage</i>${fmt(q.ai)}</span><span><i>One-off</i>${fmt(q.oneOff)}</span>`
     : '<span>Nothing selected yet.</span>';
 }
 $('tb-toggle').addEventListener('click', () => {
@@ -555,7 +547,7 @@ $('copy-quote').addEventListener('click', () => {
     lines.push(`${r.name}`);
     lines.push(`  Licence      ${fmt(r.lic)}`);
     if (r.inf) lines.push(`  Infra        ${fmt(r.inf)}`);
-    if (r.use) lines.push(`  AI usage     ${fmt(r.use)}`);
+    if (r.use) lines.push(`  Usage        ${fmt(r.use)}`);
     if (r.add.total) lines.push(`  One-off      ${fmt(r.add.total)}  (${r.add.items.join(', ')})`);
   });
   lines.push('');
