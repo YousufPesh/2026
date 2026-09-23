@@ -257,3 +257,20 @@ tbody tr:last-child td { border-bottom: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* ---- tier ladder ---- */
+.tier-grid { display: grid; gap: 12px; }
+@media (min-width: 620px) { .tier-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); } }
+.tier-card { border: 1px solid var(--line, #cbdfe2); border-radius: 13px; background: #fff; padding: 14px 16px; }
+.tier-card h3 { font-size: .9375rem; margin: 0 0 12px; color: var(--navy, #023347); letter-spacing: -.01em; }
+.tier-row { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: baseline; padding: 8px 0; border-top: 1px solid #eef3f4; }
+.tier-row:first-of-type { border-top: 0; }
+.tier-bar { grid-column: 1 / -1; height: 5px; background: #eef4f5; border-radius: 3px; overflow: hidden; margin-bottom: 5px; }
+.tier-bar i { display: block; height: 100%; background: #b9d0d4; }
+.tier-row.is-on .tier-bar i { background: var(--teal, #087985); }
+.tier-n { font-size: .8125rem; color: var(--muted, #566570); }
+.tier-row strong { font-size: .9375rem; color: var(--navy, #023347); font-variant-numeric: tabular-nums; }
+.tier-row.is-on .tier-n, .tier-row.is-on strong { color: var(--teal, #087985); font-weight: 700; }
+.tier-note { margin: 12px 0 0; font-size: .75rem; color: var(--muted, #566570); }
+.opts.is-tiers .opt { flex: 1 1 90px; text-align: center; }
+.opts.is-tiers .opt-l { font-variant-numeric: tabular-nums; }
