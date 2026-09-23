@@ -35,6 +35,35 @@ const CUSTOM_INTEGRATION = { simple: 5000, complex: 8000 };
 
 const FABRIC = { license: 50000, perSystem: 2500, includedSystems: 4 };
 
+/* -------------------------------------------------------------------------
+   ACCESSIBILITY prices differently from everything else, so it has its own
+   block. Monthly figures, because that is how it was quoted.
+
+   On tenant  : $3,500 licence + $1,000 infrastructure a month, $5,000 to
+                onboard, and pages run on your own AI spend at $0.15.
+   Hosted     : $2,500 licence + $1,000 infrastructure a month, which carries
+                3,000 pages, $2,500 to onboard. Pages beyond that come from a
+                prepaid bundle, or cost $0.50 each with a $500 minimum.
+
+   ASSUMPTION — the bundle rates as given were not monotonic ($0.35 at
+   10,000+ but $0.40 at 50,000+, which prices volume upwards). They are
+   ordered here so a bigger commitment is always a better rate. Confirm.
+   ------------------------------------------------------------------------- */
+const ACCESS = {
+  tenant: { licenceMonthly: 3500, infraMonthly: 1000, onboarding: 5000, perPage: 0.15, includedPagesMonthly: 0 },
+  saas: { licenceMonthly: 2500, infraMonthly: 1000, onboarding: 2500, includedPagesMonthly: 3000 },
+  bundles: [
+    { pages: 5000, rate: 0.45 },
+    { pages: 10000, rate: 0.45 },
+    { pages: 25000, rate: 0.45 },
+    { pages: 50000, rate: 0.40 },
+    { pages: 100000, rate: 0.35 },
+    { pages: 1000000, rate: 0.35 }
+  ],
+  overage: { perPage: 0.50, minBlock: 1000, minCharge: 500 },
+  customConnector: { simple: 5000, complex: 12000 }
+};
+
 const OFFERINGS = [
   {
     id: 'llmchat',
@@ -170,35 +199,37 @@ const OFFERINGS = [
     standalone: true,
     volumeBased: true,
     includes: ['Audit and issue report', 'AI remediation with human review', 'Tag editor and revalidation', 'Course and department views'],
-    license: 42000,
-    infra: 6000,
-    /* Remediation is billed per page, and the rate depends on who hosts it.
-       PLACEHOLDER: the hosted rate is a guess until confirmed. */
-    pageRate: { tenant: 0.15, saas: 0.25 },
-    reconstructionUplift: 0.60,
+    license: ACCESS.tenant.licenceMonthly * 12,
+    infra: ACCESS.tenant.infraMonthly * 12,
+    ownPricing: true,
     questions: [
-      { id: 'pages', type: 'slider', label: 'Pages per year', min: 5000, max: 500000, step: 5000, def: 35000 },
       {
-        id: 'mode', type: 'single', label: 'What kind of documents?',
+        id: 'integrations', type: 'multi', label: 'Integrations needed',
         options: [
-          { v: 'layout', l: 'Mostly clean PDFs', note: 'preserve layout, add structure' },
-          { v: 'mixed', l: 'Some scans and handwriting', note: 'partial reconstruction' },
-          { v: 'heavy', l: 'Lots of scans, math, charts', note: 'full reconstruction' }
-        ],
-        def: 'layout'
-      },
-      {
-        id: 'sources', type: 'multi', label: 'Where do documents come from?',
-        options: [
-          { v: 'canvas', l: 'Canvas', add: 0, note: 'out of the box' },
-          { v: 'blackboard', l: 'Blackboard', add: 0, note: 'out of the box' },
-          { v: 'd2l', l: 'Brightspace D2L', add: 0, note: 'out of the box' },
           { v: 'sharepoint', l: 'SharePoint', add: 0, note: 'out of the box' },
-          { v: 'gdrive', l: 'Google Drive', add: 5000, note: 'custom' },
-          { v: 'box', l: 'Box', add: 5000, note: 'custom' },
-          { v: 'other', l: 'Another repository', add: 5000, note: 'scoped on a call' }
+          { v: 'canvas', l: 'Canvas', add: 0, note: 'out of the box' },
+          { v: 'brightspace', l: 'Brightspace', add: 0, note: 'out of the box' },
+          { v: 'blackboard', l: 'Blackboard', add: 0, note: 'out of the box' }
         ],
         def: ['canvas']
+      },
+      { id: 'customCount', type: 'slider', label: 'Custom connectors', min: 0, max: 6, step: 1, def: 0, note: 'built on request' },
+      {
+        id: 'customComplexity', type: 'single', label: 'How involved are they?',
+        options: [
+          { v: 'simple', l: 'Straightforward', note: fmt(ACCESS.customConnector.simple) + ' each' },
+          { v: 'complex', l: 'Complex', note: fmt(ACCESS.customConnector.complex) + ' each' }
+        ],
+        def: 'simple'
+      },
+      {
+        id: 'bundle', type: 'single', label: 'Pages a year, bought up front',
+        options: ACCESS.bundles.map(b => ({
+          v: String(b.pages),
+          l: b.pages.toLocaleString() + ' pages',
+          note: '$' + b.rate.toFixed(2) + ' a page'
+        })),
+        def: '25000'
       }
     ]
   },
@@ -425,14 +456,39 @@ function aiCostFor(o, size) {
   return 0;
 }
 
-function accessibilityVolume() {
-  const o = offering('accessibility');
-  const pages = state.answers['accessibility.pages'];
-  const rate = o.pageRate[state.answers.deployment === 'saas' ? 'saas' : 'tenant'];
-  const mode = state.answers['accessibility.mode'];
-  const uplift = mode === 'heavy' ? o.reconstructionUplift : mode === 'mixed' ? o.reconstructionUplift / 2 : 0;
-  const effective = rate * (1 + uplift);
-  return { cost: pages * effective, pages, rate, effective, uplift };
+function accessibilityQuote() {
+  const saas = state.answers.deployment === 'saas';
+  const plan = saas ? ACCESS.saas : ACCESS.tenant;
+  const pages = Number(state.answers['accessibility.bundle']);
+  const bundle = ACCESS.bundles.find(b => b.pages === pages) || ACCESS.bundles[0];
+
+  const lic = plan.licenceMonthly * 12;
+  const inf = plan.infraMonthly * 12;
+  const includedPages = plan.includedPagesMonthly * 12;
+
+  let use, rate, chargeable;
+  if (saas) {
+    chargeable = Math.max(0, pages - includedPages);
+    rate = bundle.rate;
+    use = chargeable * rate;
+  } else {
+    chargeable = pages;
+    rate = plan.perPage;
+    use = pages * rate;
+  }
+
+  const items = [];
+  let oneOff = plan.onboarding;
+  items.push('onboarding');
+
+  const customCount = state.answers['accessibility.customCount'];
+  if (customCount > 0) {
+    const each = ACCESS.customConnector[state.answers['accessibility.customComplexity']];
+    oneOff += customCount * each;
+    items.push(`${customCount} custom connector${customCount > 1 ? 's' : ''}`);
+  }
+
+  return { lic, inf, use, oneOff, items, pages, rate, chargeable, includedPages, saas, onboarding: plan.onboarding };
 }
 
 function calculate() {
@@ -444,6 +500,21 @@ function calculate() {
 
   state.picked.forEach(id => {
     const o = offering(id);
+
+    /* Accessibility carries its own price list and ignores the shared
+       size, hosting-margin and multi-year rules. */
+    if (o.ownPricing) {
+      const a = accessibilityQuote();
+      let lic = a.lic;
+      if (multi) lic *= (1 - MULTIYEAR_DISCOUNT);
+      license += lic;
+      infra += a.inf;
+      ai += a.use;
+      oneOff += a.oneOff;
+      rows.push({ name: o.name, lic, inf: a.inf, use: a.use, add: { total: a.oneOff, items: a.items } });
+      return;
+    }
+
     const hosting = o.infra * SIZES[size].infraMult;
     let lic = o.license;
     if (multi) lic *= (1 - MULTIYEAR_DISCOUNT);
@@ -453,7 +524,7 @@ function calculate() {
     const inf = saas ? 0 : hosting;
     infra += inf;
 
-    const use = o.id === 'accessibility' ? accessibilityVolume().cost : aiCostFor(o, size);
+    const use = aiCostFor(o, size);
     ai += use;
 
     const add = addOnsFor(o);
@@ -486,12 +557,16 @@ function renderQuote(q) {
 
   const a = [];
   a.push(`${SIZES[q.size].label} students, modelled as ${SIZES[q.size].population.toLocaleString()} people.`);
-  a.push(q.saas ? 'Hosted by CampusMind, so infrastructure is inside the licence.' : 'Your own tenant, so the infrastructure line is your cloud spend.');
+  const sharedPicked = state.picked.some(id => !offering(id).ownPricing);
+  if (sharedPicked) a.push(q.saas ? 'Hosted by CampusMind, so infrastructure is inside the licence.' : 'Your own tenant, so the infrastructure line is your cloud spend.');
   if (q.multi) a.push(`24-month term, ${Math.round(MULTIYEAR_DISCOUNT * 100)}% off licence.`);
   if (state.picked.includes('llmchat') && state.answers['llmchat.frontier'] === 'yes') a.push(`Frontier models on, so AI usage carries a ${FRONTIER_MULT}× multiplier.`);
   if (state.picked.includes('accessibility')) {
-    const v = accessibilityVolume();
-    a.push(`${v.pages.toLocaleString()} pages a year at $${v.effective.toFixed(2)} a page${v.uplift ? ` (base $${v.rate.toFixed(2)} plus ${Math.round(v.uplift * 100)}% for reconstruction)` : ''}.`);
+    const v = accessibilityQuote();
+    a.push(`Accessibility: ${fmt(v.lic / 12)} licence and ${fmt(v.inf / 12)} infrastructure a month, ${fmt(v.onboarding)} to onboard.`);
+    a.push(v.saas
+      ? `${v.pages.toLocaleString()} pages a year, ${v.includedPages.toLocaleString()} carried by the hosting, ${v.chargeable.toLocaleString()} prepaid at $${v.rate.toFixed(2)} a page. Pages beyond the bundle are $${ACCESS.overage.perPage.toFixed(2)}, minimum ${fmt(ACCESS.overage.minCharge)} per ${ACCESS.overage.minBlock.toLocaleString()}.`
+      : `${v.pages.toLocaleString()} pages a year at $${v.rate.toFixed(2)} a page, running on your own AI spend.`);
   }
   a.push('Usage is an estimate, is billed on what you actually use, and is capped by your own controls.');
   $('quote-assumptions').textContent = a.join(' ');
