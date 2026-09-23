@@ -247,6 +247,18 @@ const announce = m => { $('live').textContent = m; };
 function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
 function offering(id) { return OFFERINGS.find(o => o.id === id); }
 
+const OFFERING_ICONS = {
+  llmchat: '<path d="M21 13a4 4 0 0 1-4 4H8l-5 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8M8 13h5"/>',
+  agents: '<path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/><path d="m5.6 5.6 2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',
+  recruitment: '<circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 4a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2"/>',
+  retention: '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/><path d="M7 12h3l1-2 2 4 1-2h3"/>',
+  accessibility: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/>',
+  fabric: '<path d="m12 2 9 5-9 5-9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/>'
+};
+function offeringIcon(id) {
+  return `<span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24">${OFFERING_ICONS[id] || OFFERING_ICONS.llmchat}</svg></span>`;
+}
+
 const state = { picked: [], answers: {} };
 
 /* seed defaults */
@@ -261,6 +273,7 @@ function renderOfferings() {
     const on = state.picked.includes(o.id);
     const badge = o.addOn ? 'ADD-ON' : o.topUp ? 'TOP-UP' : o.standalone ? 'STANDALONE' : 'BASE';
     return `<button type="button" class="offer" data-offer="${o.id}" aria-pressed="${on}">
+      ${offeringIcon(o.id)}
       <span class="offer-top"><span class="offer-badge">${badge}</span><span class="offer-tick" aria-hidden="true">${on ? '✓' : ''}</span></span>
       <strong>${o.name}</strong>
       <span class="offer-tag">${o.tagline}</span>
@@ -292,14 +305,14 @@ function questionHTML(q, key) {
   const val = state.answers[key];
   let body = '';
   if (q.type === 'single') {
-    body = `<div class="opts" role="group" aria-label="${q.label}">` + q.options.map(o =>
-      `<button type="button" class="opt" data-key="${key}" data-val="${o.v}" aria-pressed="${val === o.v}">
-        <span class="opt-l">${o.l}</span>${o.note ? `<span class="opt-n">${o.note}</span>` : ''}
+    body = `<div class="opts" role="radiogroup" aria-label="${q.label}">` + q.options.map(o =>
+      `<button type="button" class="opt" role="radio" data-key="${key}" data-val="${o.v}" aria-checked="${val === o.v}">
+        <span class="opt-l">${o.l}</span>${o.note ? `<span class="opt-n">${o.note}</span>` : ''}<span class="control-mark" aria-hidden="true">•</span>
       </button>`).join('') + '</div>';
   } else if (q.type === 'multi') {
     body = `<div class="opts" role="group" aria-label="${q.label}">` + q.options.map(o =>
       `<button type="button" class="opt" data-key="${key}" data-val="${o.v}" data-multi="1" aria-pressed="${val.includes(o.v)}">
-        <span class="opt-l">${o.l}</span><span class="opt-n${o.add ? ' is-paid' : ''}">${o.add ? '+' + fmt(o.add) + ' · ' + o.note : o.note}</span>
+        <span class="opt-l">${o.l}</span><span class="opt-n${o.add ? ' is-paid' : ''}">${o.add ? '+' + fmt(o.add) + ' · ' + o.note : o.note}</span><span class="control-mark" aria-hidden="true">✓</span>
       </button>`).join('') + '</div>';
   } else if (q.type === 'slider') {
     body = `<div class="range-row">
