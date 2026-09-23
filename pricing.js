@@ -357,14 +357,39 @@ function accessibilityQuote() {
   const lic = plan.licenceMonthly * months();
   const inf = plan.infraMonthly * months();
   const use = tierCost('accessibility', pages) || 0;
+  const included = plan.includedPagesMonthly * months();
   const items = ['onboarding'];
   let oneOff = plan.onboarding;
   const n = state.answers['accessibility.customCount'];
+  const complexity = state.answers['accessibility.customComplexity'];
   if (n > 0) {
-    oneOff += n * ACCESS.customConnector[state.answers['accessibility.customComplexity']];
+    oneOff += n * ACCESS.customConnector[complexity];
     items.push(`${n} custom connector${n > 1 ? 's' : ''}`);
   }
-  return { lic, inf, use, oneOff, items, pages, included: plan.includedPagesMonthly * months() };
+
+  const chargeable = Math.max(0, pages - included);
+  const rate = dep === 'saas'
+    ? (ACCESS.bundles.find(b => b.pages === pages) || {}).rate
+    : plan.perPage;
+  const lines = [
+    { label: 'Licence', detail: `${fmt(plan.licenceMonthly)} a month × ${months()}`, amount: lic },
+    { label: 'Infrastructure', detail: `${fmt(plan.infraMonthly)} a month × ${months()}`, amount: inf },
+    {
+      label: 'Pages',
+      detail: chargeable
+        ? `${chargeable.toLocaleString()} chargeable at $${rate.toFixed(2)}${included ? ` (${included.toLocaleString()} carried)` : ''}`
+        : `${pages.toLocaleString()} pages, all carried by the hosting`,
+      amount: use
+    },
+    { label: 'Onboarding', detail: 'one-off', amount: plan.onboarding }
+  ];
+  if (n > 0) lines.push({
+    label: 'Custom connectors',
+    detail: `${n} × ${fmt(ACCESS.customConnector[complexity])} ${complexity === 'complex' ? 'complex' : 'straightforward'}`,
+    amount: n * ACCESS.customConnector[complexity]
+  });
+
+  return { lic, inf, use, oneOff, items, pages, included, lines };
 }
 
 function offeringQuote(o) {
@@ -380,14 +405,39 @@ function offeringQuote(o) {
   const items = [];
   let oneOff = plan.onboarding || 0;
   if (oneOff) items.push('onboarding');
-  let use = 0;
+  let use = 0, tier = null;
   const q = (o.questions || []).find(x => x.type === 'tier');
-  if (q) use = tierCost(o.id, Number(state.answers[o.id + '.' + q.id])) || 0;
+  if (q) {
+    tier = Number(state.answers[o.id + '.' + q.id]);
+    use = tierCost(o.id, tier) || 0;
+  }
+
+  const infraMonth = plan.infraMonthly
+    ? (typeof plan.infraMonthly === 'object' ? plan.infraMonthly[size] : plan.infraMonthly)
+    : 0;
+  const includedConv = (o.includedConvMonthly || 0) * months();
+  const lines = [
+    { label: 'Licence', detail: `${fmt(licYear)} a year${months() === 12 ? '' : `, pro-rated to ${months()} months`}`, amount: lic }
+  ];
+  if (inf) lines.push({ label: 'Infrastructure', detail: `${fmt(infraMonth)} a month × ${months()}`, amount: inf });
+  if (tier !== null) lines.push({
+    label: 'Conversations',
+    detail: use
+      ? `${tier.toLocaleString()} for the term${includedConv ? `, ${includedConv.toLocaleString()} included` : ''}`
+      : `${tier.toLocaleString()} for the term, covered by the ${includedConv.toLocaleString()} included`,
+    amount: use
+  });
+  if (plan.onboarding) lines.push({ label: 'Onboarding', detail: 'one-off', amount: plan.onboarding });
+
   if (o.id === 'fabric') {
     const extra = Math.max(0, state.answers['fabric.systems'] - o.includedSystems);
-    if (extra) { oneOff += extra * o.perSystem; items.push(`${extra} extra source system${extra > 1 ? 's' : ''}`); }
+    if (extra) {
+      oneOff += extra * o.perSystem;
+      items.push(`${extra} extra source system${extra > 1 ? 's' : ''}`);
+      lines.push({ label: 'Extra source systems', detail: `${extra} × ${fmt(o.perSystem)}, first ${o.includedSystems} included`, amount: extra * o.perSystem });
+    }
   }
-  return { lic, inf, use, oneOff, items };
+  return { lic, inf, use, oneOff, items, lines };
 }
 
 function calculate() {
@@ -397,7 +447,7 @@ function calculate() {
     const o = offering(id);
     const q = offeringQuote(o);
     license += q.lic; infra += q.inf; ai += q.use; oneOff += q.oneOff;
-    rows.push({ name: o.name, lic: q.lic, inf: q.inf, use: q.use, add: { total: q.oneOff, items: q.items } });
+    rows.push({ name: o.name, lic: q.lic, inf: q.inf, use: q.use, lines: q.lines, subtotal: q.lic + q.inf + q.use + q.oneOff, add: { total: q.oneOff, items: q.items } });
   });
   return { rows, license, infra, ai, oneOff, total: license + infra + ai + oneOff };
 }
@@ -438,13 +488,17 @@ function renderQuote(q) {
     $('quote-assumptions').textContent = '';
     return;
   }
-  let html = '<table><thead><tr><th>Product</th><th>Licence</th><th>Infra</th><th>Usage</th><th>One-off</th></tr></thead><tbody>';
+  const multiple = q.rows.length > 1;
+  let html = '<div class="lines">';
   q.rows.forEach(r => {
-    html += `<tr><td class="lab">${r.name}${r.add.items.length ? `<span class="row-note">${r.add.items.join(' · ')}</span>` : ''}</td>` +
-      `<td class="n">${fmt(r.lic)}</td><td class="n">${r.inf ? fmt(r.inf) : '—'}</td>` +
-      `<td class="n">${r.use ? fmt(r.use) : '—'}</td><td class="n">${r.add.total ? fmt(r.add.total) : '—'}</td></tr>`;
+    html += `<div class="line-group"><h3>${r.name}</h3>`;
+    r.lines.forEach(l => {
+      html += `<div class="line"><span class="line-l">${l.label}<i>${l.detail}</i></span><b>${l.amount ? fmt(l.amount) : 'included'}</b></div>`;
+    });
+    if (multiple) html += `<div class="line is-sub"><span class="line-l">Subtotal</span><b>${fmt(r.subtotal)}</b></div>`;
+    html += '</div>';
   });
-  html += `</tbody><tfoot><tr><td class="lab">${TERMS[state.answers.term].label} total</td><td class="n">${fmt(q.license)}</td><td class="n">${q.infra ? fmt(q.infra) : '—'}</td><td class="n">${fmt(q.ai)}</td><td class="n">${fmt(q.oneOff)}</td></tr></tfoot></table>`;
+  html += `<div class="grand"><span>${TERMS[state.answers.term].label} total</span><strong>${fmt(q.total)}</strong></div></div>`;
   $('quote-table').innerHTML = html;
 
   const a = [];
