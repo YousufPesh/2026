@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing Builder · CampusMind</title>
+  <meta name="description" content="Answer a few questions and build an indicative CampusMind quote.">
+  <meta name="theme-color" content="#023347">
+  <link rel="icon" href="./assets/campusmind-favicon.png">
+  <link rel="stylesheet" href="./labs-navigation.css">
+  <link rel="stylesheet" href="./pricing-redesign.css">
+  <script src="./pricing.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the builder</a>
+  <div class="page-atmosphere" aria-hidden="true"></div>
+  <nav class="labs-navigation" aria-label="Labs">
+    <a href="./index.html">Labs</a>
+    <a href="./accessibility.html">Accessibility</a>
+    <a href="./recruitment.html">Recruitment</a>
+    <a href="./retention.html">Retention</a>
+    <a href="./ontology.html">Ontology</a>
+    <a href="./virtual-teaching-assistant.html">Teaching assistant</a>
+    <a href="./agent-studio.html">Agent Studio</a>
+    <a href="./pricing.html" aria-current="page">Pricing</a>
+  </nav>
+
+  <div class="shell">
+    <div class="masthead">
+      <div class="masthead-brand">
+        <img src="./assets/campusmind-logo.svg" alt="CampusMind" width="143" height="31">
+        <span>PRICING BUILDER</span>
+      </div>
+    </div>
+
+    <nav class="builder-steps" aria-label="Pricing builder sections">
+      <a href="#offerings"><span>01</span>Offerings</a>
+      <a href="#about"><span>02</span>About you</a>
+      <a href="#detail"><span>03</span>Detail</a>
+      <a href="#usage"><span>04</span>AI usage</a>
+      <a href="#quote"><span>05</span>Quote</a>
+    </nav>
+
+    <div class="totalbar" id="totalbar">
+      <div class="tb-main">
+        <span class="tb-label" id="tb-label">Year one, all in</span>
+        <strong class="tb-total" id="tb-total">$0</strong>
+      </div>
+      <button type="button" class="tb-toggle" id="tb-toggle" aria-expanded="false" aria-controls="tb-detail">Breakdown</button>
+      <div class="tb-detail" id="tb-detail" hidden></div>
+    </div>
+
+    <main id="main">
+
+      <section id="offerings" aria-labelledby="offerings-heading">
+        <p class="eyebrow"><b>01</b> WHAT DO YOU NEED</p>
+        <h1 id="offerings-heading">Pick everything you are interested in.</h1>
+        <div class="offer-grid" id="offer-grid"></div>
+        <p class="hint" id="offer-hint">Agent Marketplace includes LLM Chat. Fabric can be added to any of them.</p>
+      </section>
+
+      <section id="about" aria-labelledby="about-heading">
+        <p class="eyebrow"><b>02</b> ABOUT YOU</p>
+        <h2 id="about-heading">Three questions we ask everyone.</h2>
+        <div id="about-questions"></div>
+      </section>
+
+      <section id="detail" aria-labelledby="detail-heading" hidden>
+        <p class="eyebrow"><b>03</b> THE DETAIL</p>
+        <h2 id="detail-heading">A few follow-ups per product.</h2>
+        <div id="detail-questions"></div>
+      </section>
+
+      <section id="usage" aria-labelledby="usage-heading">
+        <p class="eyebrow"><b>04</b> AI USAGE</p>
+        <h2 id="usage-heading">What does that budget actually buy?</h2>
+        <div class="range-row">
+          <label class="sr-only" for="aibudget">Annual AI budget</label>
+          <input type="range" id="aibudget" min="6000" max="120000" value="12000" step="2000">
+          <output id="aibudget-value" for="aibudget">$12,000</output>
+        </div>
+        <div class="buy-grid" id="buy-grid"></div>
+        <p class="assumption" id="usage-assumption"></p>
+      </section>
+
+      <section id="quote" aria-labelledby="quote-heading">
+        <p class="eyebrow"><b>05</b> THE NUMBER</p>
+        <h2 id="quote-heading">Indicative quote.</h2>
+        <div class="quote-table" id="quote-table"></div>
+        <div class="controls">
+          <button type="button" class="primary-button" id="copy-quote">Copy quote</button>
+          <button type="button" class="ghost-button" id="reset-all">Start over</button>
+        </div>
+        <p class="assumption" id="quote-assumptions"></p>
+        <p class="micro">Indicative only · not a contract · all figures in USD</p>
+      </section>
+
+    </main>
+
+    <div class="closing"><a href="./index.html">← All Labs</a></div>
+  </div>
+
+  <p id="live" class="sr-only" role="status" aria-live="polite"></p>
+  <noscript><p style="padding:22px">Enable JavaScript to use the pricing builder.</p></noscript>
+</body>
+</html>
