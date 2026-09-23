@@ -14,8 +14,21 @@ function drawWorkflowWires(){
   const svg=$('.workflow-wires');svg.setAttribute('viewBox',`0 0 ${base.width} ${base.height}`);
   for(let i=0;i<4;i++){
     const a=rects[i],b=rects[i+1];
-    let path,arrowX,arrowY;
-    if(b.x>=a.x+a.w+18){
+    let path,arrowX,arrowY,arrowRotation=0;
+    if(base.width<700){
+      const routeRight=i%2===0;
+      const sy=a.y+a.h*.52,ey=b.y+b.h*.52,radius=10;
+      if(routeRight){
+        const sx=a.x+a.w+4,ex=b.x+b.w+4,lane=Math.min(base.width-36,Math.max(a.x+a.w,b.x+b.w)+34);
+        path=`M ${sx} ${sy} H ${lane-radius} Q ${lane} ${sy} ${lane} ${sy-radius} V ${ey+radius} Q ${lane} ${ey} ${lane-radius} ${ey} H ${ex}`;
+        arrowX=lane;arrowY=(sy+ey)/2;
+      }else{
+        const sx=a.x-4,ex=b.x-4,lane=Math.max(22,Math.min(a.x,b.x)-48);
+        path=`M ${sx} ${sy} H ${lane+radius} Q ${lane} ${sy} ${lane} ${sy-radius} V ${ey+radius} Q ${lane} ${ey} ${lane+radius} ${ey} H ${ex}`;
+        arrowX=lane;arrowY=(sy+ey)/2;
+      }
+      arrowRotation=-90;
+    }else if(b.x>=a.x+a.w+18){
       const sx=a.x+a.w+5,sy=a.y+a.h/2,ex=b.x-8,ey=b.y+b.h/2,mx=(sx+ex)/2;
       path=`M ${sx} ${sy} C ${mx} ${sy} ${mx} ${ey} ${ex} ${ey}`;
       arrowX=mx;arrowY=(sy+ey)/2;
@@ -26,7 +39,7 @@ function drawWorkflowWires(){
       arrowX=(sx+ex)/2;arrowY=mid;
     }
     $(`#workflow-forward-${i}`).setAttribute('d',path);
-    $(`#workflow-step-arrow-${i}`).setAttribute('transform',`translate(${arrowX} ${arrowY})`);
+    $(`#workflow-step-arrow-${i}`).setAttribute('transform',`translate(${arrowX} ${arrowY}) rotate(${arrowRotation})`);
   }
   const top=rects[4],source=rects[0],right=base.width-24,bottom=base.height-32;
   $('#workflow-return').setAttribute('d',`M ${top.x+top.w+5} ${top.y+top.h/2} H ${right-10} Q ${right} ${top.y+top.h/2} ${right} ${top.y+top.h/2+10} V ${bottom-10} Q ${right} ${bottom} ${right-10} ${bottom} H ${source.x+source.w/2+10} Q ${source.x+source.w/2} ${bottom} ${source.x+source.w/2} ${bottom-10} V ${source.y+source.h+7}`);
