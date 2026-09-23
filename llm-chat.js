@@ -194,6 +194,26 @@ document.querySelectorAll('.reach-out').forEach((fig) => {
   });
 });
 
+/* ---------- files a presenter drags into the demo ---------- */
+// Chrome accepts a File added at dragstart, so a drop into the product's attach zone
+// lands like a drag from Finder. DownloadURL covers a drag to the desktop. The href
+// stays a plain download for everything else.
+document.querySelectorAll('.chip.file.drag').forEach((chip) => {
+  const name = chip.textContent.trim();
+  const url = new URL(chip.getAttribute('href'), location.href).href;
+  let file = null;
+  fetch(url).then((r) => r.blob()).then((b) => { file = new File([b], name, { type: chip.dataset.type }); }).catch(() => {});
+  chip.addEventListener('dragstart', (e) => {
+    const dt = e.dataTransfer;
+    if (file) { try { dt.items.add(file); } catch (err) { /* browser refused a File on the drag; the link still works */ } }
+    dt.setData('DownloadURL', `${chip.dataset.type}:${name}:${url}`);
+    dt.setData('text/uri-list', url);
+    dt.effectAllowed = 'copy';
+    chip.classList.add('is-dragging');
+  });
+  chip.addEventListener('dragend', () => chip.classList.remove('is-dragging'));
+});
+
 /* ---------- section nav ---------- */
 $('section-jump').addEventListener('change', (e) => {
   const id = e.target.value;

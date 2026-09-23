@@ -56,8 +56,9 @@ own `:root` design tokens.
 
 ## Assets
 
-`assets/` holds 21 MB across 16 files, mostly the twelve before and after PNGs that the
-Accessibility Lab swaps between.
+`assets/` holds 21 MB, mostly the twelve before and after PNGs that the Accessibility Lab
+swaps between. It also holds the three synthetic files the LLM Chat Lab hands a presenter to
+drag into the demo: a graded quiz PDF, a page of meeting notes, and a cohort CSV.
 
 ```sh
 du -sh assets
