@@ -116,8 +116,8 @@ function openStep(id,{focus=true,hash=true,transition=false}={}){
  document.querySelectorAll('[data-panel]').forEach(el=>el.hidden=el.dataset.panel!==id);
  document.querySelectorAll('[data-flow]').forEach(el=>{const current=el.dataset.flow===id;el.setAttribute('aria-expanded',String(current));if(current)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current');});
  const [kicker,title]=panels[id];$('#panel-kicker').textContent=kicker;$('#panel-title').textContent=title;
- $('#example-view').hidden=id!=='remediation';$('.document-context').hidden=id!=='remediation';
- view=id==='audit'?'before':'after';renderExample();
+ $('#example-view').hidden=id!=='remediation';$('.document-context').hidden=true;
+ view=id==='audit'||id==='remediation'?'before':'after';renderExample();
  if(hash)history.replaceState(null,'',`#${id}`);
  animateWorkflowWires();
  if(!$('#step-panel').open)$('#step-panel').showModal();
@@ -161,7 +161,7 @@ function renderExample(){
 }
 $('#example-select').addEventListener('change',event=>{selected=Number(event.target.value);renderExample();announce(`${examples[selected].name} selected for the walkthrough.`);});
 document.querySelectorAll('[data-state],[data-dialog-state]').forEach(button=>button.addEventListener('click',()=>{view=button.dataset.state||button.dataset.dialogState;renderExample();announce(`${examples[selected].name}, ${view}. ${$('#example-caption').textContent}`);}));
-document.querySelectorAll('[data-mode]').forEach(el=>el.addEventListener('click',()=>{selected=el.dataset.mode==='reconstruct'?4:0;view='after';renderExample();}));
+document.querySelectorAll('[data-mode]').forEach(el=>el.addEventListener('click',()=>{selected=el.dataset.mode==='reconstruct'?4:0;view='before';renderExample();}));
 const reviewPhases=[
  ['Inspect & edit','Inspect the document. Choose the right tag and reading order.'],
  ['Apply changes','Approve the edits and apply them to the PDF.'],
