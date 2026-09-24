@@ -637,9 +637,58 @@ $('tb-toggle').addEventListener('click', () => {
 });
 
 /* ---------------- copy + reset ---------------- */
+/* Saved quotes live in this browser only. Nothing is sent anywhere, so the
+   CSV is the only way off the machine — clear it at the end of the day. */
+const SAVED_KEY = 'campusmind-quotes';
+
+function readSaved() {
+  try {
+    const raw = localStorage.getItem(SAVED_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) { return []; }
+}
+function writeSaved(rows) {
+  try { localStorage.setItem(SAVED_KEY, JSON.stringify(rows)); return true; }
+  catch (e) { return false; }
+}
+function renderSaved() {
+  const rows = readSaved();
+  $('saved-bar').hidden = rows.length === 0;
+  $('saved-count').textContent = rows.length === 1 ? '1 quote saved on this device' : `${rows.length} quotes saved on this device`;
+}
+function csvCell(v) { return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"'; }
+
+$('download-saved').addEventListener('click', () => {
+  const rows = readSaved();
+  if (!rows.length) return;
+  const head = ['Saved at', 'Name', 'Contact', 'Products', 'Deployment', 'Term', 'Licence', 'Infrastructure', 'Usage', 'One-off', 'Total'];
+  const body = rows.map(r => [r.savedAt, r.name, r.contact, r.products, r.deployment, r.term, r.licence, r.infra, r.usage, r.oneOff, r.total].map(csvCell).join(','));
+  const blob = new Blob([[head.map(csvCell).join(','), ...body].join('\r\n')], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'campusmind-quotes.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+  announce(`${rows.length} quotes downloaded.`);
+});
+
+$('clear-saved').addEventListener('click', () => {
+  if (!window.confirm('Delete every saved quote on this device? This cannot be undone.')) return;
+  try { localStorage.removeItem(SAVED_KEY); } catch (e) { /* storage unavailable */ }
+  renderSaved();
+  announce('Saved quotes cleared.');
+});
+
 $('copy-quote').addEventListener('click', () => {
   const q = calculate();
+  const name = $('lead-name').value.trim();
+  const contact = $('lead-contact').value.trim();
   const lines = ['CampusMind — indicative quote', ''];
+  if (name) lines.push(`Prepared for: ${name}`);
+  if (contact) lines.push(`Contact: ${contact}`);
+  if (name || contact) lines.push('');
   if (neededShared().includes('size')) lines.push(`Institution: ${SIZES[state.answers.size].label}, ${SIZES[state.answers.size].detail}`);
   lines.push(`Deployment: ${deployment() === 'saas' ? 'Hosted by CampusMind' : 'Your own tenant'}`);
   lines.push(`Term: ${TERMS[state.answers.term].label}`);
@@ -655,8 +704,32 @@ $('copy-quote').addEventListener('click', () => {
   lines.push(`TOTAL (${TERMS[state.answers.term].label}): ${fmt(q.total)}`);
   lines.push('');
   lines.push('Indicative only, not a contract.');
+  /* A quote is only worth keeping if it is attached to someone. */
+  let saved = false;
+  if (name || contact) {
+    const rows = readSaved();
+    rows.push({
+      savedAt: new Date().toISOString(),
+      name, contact,
+      products: q.rows.map(r => r.name).join(' + '),
+      deployment: deployment() === 'saas' ? 'Hosted by CampusMind' : 'Own tenant',
+      term: TERMS[state.answers.term].label,
+      licence: Math.round(q.license),
+      infra: Math.round(q.infra),
+      usage: Math.round(q.ai),
+      oneOff: Math.round(q.oneOff),
+      total: Math.round(q.total)
+    });
+    saved = writeSaved(rows);
+    renderSaved();
+  }
+
   const btn = $('copy-quote');
-  const done = () => { btn.textContent = 'Copied'; announce('Quote copied.'); setTimeout(() => { btn.textContent = 'Copy quote'; }, 1600); };
+  const done = () => {
+    btn.textContent = saved ? 'Copied & saved' : 'Copied';
+    announce(saved ? `Quote copied and saved for ${name || contact}.` : 'Quote copied.');
+    setTimeout(() => { btn.textContent = 'Copy quote'; }, 1800);
+  };
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(lines.join('\n')).then(done, done);
   else done();
 });
@@ -679,3 +752,4 @@ function renderAll() {
   renderTotalBar(q);
 }
 renderAll();
+renderSaved();

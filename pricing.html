@@ -82,9 +82,21 @@
         <p class="eyebrow"><b>05</b> THE NUMBER</p>
         <h2 id="quote-heading">Indicative quote.</h2>
         <div class="quote-table" id="quote-table"></div>
+
+        <div class="lead-fields">
+          <label for="lead-name">Name<input type="text" id="lead-name" autocomplete="off" placeholder="Who you spoke to"></label>
+          <label for="lead-contact">Contact<input type="text" id="lead-contact" autocomplete="off" placeholder="Email or phone"></label>
+        </div>
+
         <div class="controls">
           <button type="button" class="primary-button" id="copy-quote">Copy quote</button>
           <button type="button" class="ghost-button" id="reset-all">Start over</button>
+        </div>
+
+        <div class="saved-bar" id="saved-bar" hidden>
+          <span id="saved-count"></span>
+          <button type="button" class="link-button" id="download-saved">Download CSV</button>
+          <button type="button" class="link-button is-danger" id="clear-saved">Clear</button>
         </div>
         <p class="assumption" id="quote-assumptions"></p>
         <p class="micro">Indicative only · not a contract · all figures in USD</p>
