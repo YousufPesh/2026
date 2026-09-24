@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin Console Lab · CampusMind</title><meta name="description" content="Visual companion for the CampusMind admin console: budgets, enforcement, roles and branding."><meta name="theme-color" content="#023347"><link rel="icon" href="/assets/campusmind-favicon.png"><link rel="stylesheet" href="/labs-navigation.css"><link rel="stylesheet" href="/admin-console.css"><script src="/admin-console.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to the Lab</a><nav class="labs-navigation" aria-label="Labs"><a href="/">Labs</a><a href="/accessibility.html">Accessibility</a><a href="/recruitment.html">Recruitment</a><a href="/retention.html">Retention</a><a href="/ontology.html">Data Bridge</a><a href="/virtual-teaching-assistant.html">Teaching assistant</a><a href="/agent-studio.html">Agent Studio</a><a href="/campus-chat.html">Campus Chat</a><a href="/admin-console.html" aria-current="page">Admin Console</a><a href="/pricing.html">Pricing</a></nav>
+
+<div class="shell">
+<div class="masthead"><img src="/assets/campusmind-logo.svg" alt="CampusMind" width="143" height="31"><span>ADMIN CONSOLE LAB</span></div>
+
+<div class="section-nav">
+<select id="section-jump" aria-label="Jump to section">
+<option value="runaway">1 · The runaway bill</option>
+<option value="scopes">2 · Where the cap sits</option>
+<option value="mode">3 · Enforcement mode</option>
+<option value="widget">4 · The public agent</option>
+<option value="dashboard">5 · Who spent what</option>
+<option value="roles">6 · Roles &amp; permissions</option>
+<option value="brand">7 · Make it yours</option>
+</select>
+<label class="notes-toggle"><input type="checkbox" id="notes-on"> Notes</label>
+</div>
+
+<main id="main">
+
+<!-- ===== 01 ===== -->
+<section id="runaway" aria-labelledby="runaway-heading">
+<p class="eyebrow"><b>01</b> THE RUNAWAY BILL</p>
+<h1 id="runaway-heading">One invoice. No idea who spent it.</h1>
+
+<div class="controls"><button type="button" id="burn-play" class="primary-button">▶ Run the month</button></div>
+<p class="step-caption" id="burn-caption" aria-live="polite">&nbsp;</p>
+
+<figure class="figure">
+  <div class="meter"><span class="meter-fill" id="burn-fill"></span><span class="meter-cap" id="burn-cap" hidden><i>cap</i></span></div>
+  <div class="burn-head">
+    <div><strong id="burn-spend">$0</strong><span>spent this month</span></div>
+    <div class="is-right"><strong id="burn-top">0%</strong><span>from 3 people</span></div>
+  </div>
+  <div class="dotgrid" id="burn-dots" role="img" aria-labelledby="burn-alt"></div>
+  <p class="sr-only" id="burn-alt"></p>
+  <div class="dot-legend"><span><i class="d-normal"></i>normal use</span><span><i class="d-heavy"></i>heavy use</span><span><i class="d-runaway"></i>runaway</span></div>
+</figure>
+<p class="pnote" hidden>Without a cap, a handful of accounts can consume a month of budget in days, and nobody notices until the invoice arrives.</p>
+</section>
+
+<!-- ===== 02 ===== -->
+<section id="scopes" aria-labelledby="scopes-heading">
+<p class="eyebrow"><b>02</b> WHERE THE CAP SITS</p>
+<h2 id="scopes-heading">Four places to stop the spend.</h2>
+
+<div class="choices" role="group" aria-label="Choose a scope" id="scope-picker"></div>
+<div class="nest" id="nest">
+  <div class="nest-ring is-tenant" data-scope="tenant"><span class="nest-tag">TENANT</span>
+    <div class="nest-ring is-group" data-scope="group"><span class="nest-tag">GROUP</span>
+      <div class="nest-ring is-user" data-scope="user"><span class="nest-tag">USER</span>
+        <div class="nest-dots" id="nest-dots" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+  <div class="nest-ring is-agent" data-scope="agent"><span class="nest-tag">AGENT</span><span class="nest-note">public widget · no login</span></div>
+</div>
+<p class="scope-caption" id="scope-caption"></p>
+<p class="pnote" hidden>Each scope answers a different failure. Tenant protects the invoice, group protects a department, user protects everyone else from one person, agent protects you from the public.</p>
+</section>
+
+<!-- ===== 03 ===== -->
+<section id="mode" aria-labelledby="mode-heading">
+<p class="eyebrow"><b>03</b> ENFORCEMENT MODE</p>
+<h2 id="mode-heading">Which limits get checked.</h2>
+
+<div class="choices" role="group" aria-label="Enforcement mode" id="mode-picker"></div>
+
+<figure class="figure">
+  <p class="field-label">Set the situation</p>
+  <div class="switch-row" id="state-toggles"></div>
+  <div class="verdict" id="verdict"><strong id="verdict-word">ALLOWED</strong><span id="verdict-why"></span></div>
+</figure>
+<p class="pnote" hidden>Both is the strictest and the recommended default: a request has to clear every budget that applies to it, not just one.</p>
+</section>
+
+<!-- ===== 04 ===== -->
+<section id="widget" aria-labelledby="widget-heading">
+<p class="eyebrow"><b>04</b> THE PUBLIC AGENT</p>
+<h2 id="widget-heading">Anyone on the internet can use it.</h2>
+
+<div class="choices" role="group" aria-label="Agent budget">
+<button type="button" data-agentcap="off" aria-pressed="true">No agent cap</button>
+<button type="button" data-agentcap="on" aria-pressed="false">Agent cap on</button>
+</div>
+
+<figure class="figure">
+  <div class="flood" id="flood" aria-hidden="true"></div>
+  <div class="pool-row">
+    <div class="pool"><span class="pool-label">AGENT BUDGET</span><div class="pool-bar"><i id="pool-agent"></i></div><span id="pool-agent-n">—</span></div>
+    <div class="pool"><span class="pool-label">EVERYONE ELSE</span><div class="pool-bar"><i id="pool-org"></i></div><span id="pool-org-n">—</span></div>
+  </div>
+  <div class="controls"><button type="button" id="flood-play" class="primary-button">▶ Send 10,000 requests</button></div>
+  <p class="figure-takeaway" id="flood-verdict">A capped agent fails alone. An uncapped one takes the institution with it.</p>
+</figure>
+<p class="pnote" hidden>An agent budget is charged to the agent, not to whoever happened to open the widget, so abuse exhausts one line item instead of a real person's allowance.</p>
+</section>
+
+<!-- ===== 05 ===== -->
+<section id="dashboard" aria-labelledby="dashboard-heading">
+<p class="eyebrow"><b>05</b> WHO SPENT WHAT</p>
+<h2 id="dashboard-heading">The invoice, itemised.</h2>
+
+<div class="choices" role="group" aria-label="Period" id="period-picker"></div>
+
+<div class="stat-row" id="stat-row"></div>
+
+<div class="panel-pair">
+  <figure class="figure"><span class="kicker">TOP SPENDERS</span><div class="bars" id="bars-people"></div></figure>
+  <figure class="figure"><span class="kicker">SPEND BY GROUP</span><div class="bars" id="bars-groups"></div></figure>
+</div>
+<p class="pnote" hidden>Every figure here is attributable. Replenish a single user, raise one group, or cap an agent, without touching anyone else.</p>
+</section>
+
+<!-- ===== 06 ===== -->
+<section id="roles" aria-labelledby="roles-heading">
+<p class="eyebrow"><b>06</b> ROLES &amp; PERMISSIONS</p>
+<h2 id="roles-heading">Same platform. Different powers.</h2>
+
+<div class="choices" role="group" aria-label="Choose a role" id="role-picker"></div>
+<div class="perm-grid" id="perm-grid"></div>
+<p class="perm-caption" id="perm-caption"></p>
+<p class="pnote" hidden>Permissions are per role and per capability, so a tool can be switched off for students and left on for staff without deploying anything.</p>
+</section>
+
+<!-- ===== 07 ===== -->
+<section id="brand" aria-labelledby="brand-heading">
+<p class="eyebrow"><b>07</b> MAKE IT YOURS</p>
+<h2 id="brand-heading">Your name on the door.</h2>
+
+<div class="brand-controls">
+  <label class="field">Institution<input type="text" id="brand-name" value="Northstar University" autocomplete="off" maxlength="28"></label>
+  <div class="field"><span>Accent</span><div class="swatches" id="swatches" role="group" aria-label="Accent colour"></div></div>
+</div>
+
+<div class="preview" id="preview">
+  <div class="preview-bar"><span class="preview-mark" id="preview-mark">N</span><strong id="preview-name">Northstar University</strong><span class="preview-chip">Admin</span></div>
+  <div class="preview-body">
+    <div class="preview-side"><span></span><span></span><span></span><span></span></div>
+    <div class="preview-main"><div class="preview-btn" id="preview-btn">Ask an agent</div><div class="preview-line"></div><div class="preview-line short"></div></div>
+  </div>
+</div>
+<p class="closing-question">Which of these would your CIO ask about first?</p>
+<p class="micro">Illustrative figures · not product output</p>
+</section>
+
+</main>
+
+<div class="closing"><a href="/">← All Labs</a><a href="/pricing.html">Pricing →</a></div>
+</div>
+
+<p id="live" class="sr-only" role="status" aria-live="polite"></p>
+<noscript><p style="padding:22px">Enable JavaScript to explore this Lab.</p></noscript>
+</body></html>
