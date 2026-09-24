@@ -382,43 +382,55 @@ document.querySelectorAll('[data-example]').forEach(b => b.addEventListener('cli
 }));
 
 /* ================= 05 + 07 · questions ================= */
-const THREADS = {
-  opener: [
-    { step: 'ASK FIRST', q: 'How many campus event registrations do we have on record?', expect: '1,200' },
-    { step: 'THEN ASK', q: 'How many students actually attended a campus event this term?', expect: '398' }
-  ],
-  finance: [
-    {
-      step: 'BEAT 1 · 73 SEC',
-      q: 'Which students are within one term of a degree but will be stopped from registering, and what is actually stopping each one?',
-      expect: '25 students, named',
-      note: 'No hold-reason field exists, so it names the hold and stops. Two of the 25 are held at a $0 balance.'
-    },
-    {
-      step: 'BEAT 2 · EXPECT A REFUSAL',
-      q: 'Which of those students were flagged, assigned to someone, and never actually reached?',
-      expect: 'It declines',
-      note: 'It names the relationship that does not exist, then offers a proxy with the caveat attached.'
-    },
-    {
-      step: 'BEAT 3 · 20 SEC',
-      q: 'How many of those 25 students have a financial aid advising case?',
-      expect: '0 of 25',
-      note: 'Advising cases carry no term, so this is any case, not only Fall 2026.'
-    },
-    {
-      step: 'BEAT 4',
-      q: 'Have those 25 students made any payments this term, do they have financial aid on file, and what would it cost to clear all of their balances?',
-      expect: '$80,500 to clear',
-      note: 'All 25 paid, $208,000 total. 21 hold aid awards worth $173,000. Paying is not the same as clearing.'
-    }
-  ],
-  housing: [
-    { step: 'BEAT 1', q: 'How many students currently reside in Kestrel Hall, and how many hold a housing assignment record there?', expect: '115 vs 148' },
-    { step: 'BEAT 2', q: 'If Kestrel Hall goes offline for renovation in Fall 2027, how many current residents would need rehousing?', expect: '92, not 115' },
-    { step: 'BEAT 3', q: 'For each accommodation requirement held by Kestrel residents, how many suitable vacant beds exist in the other halls?', expect: '−4 accessible beds' }
-  ]
-};
+/* The three production data agents, with the questions to paste into each.
+   Expected answers are filled in only where the result has been verified. */
+const AGENTS = [
+  {
+    label: 'Student Success',
+    name: 'Fabric · Student Success Assistant',
+    url: 'https://app.mind-platform.ai/agents/create?agent_id=assistd6135354c82740beac248877a1a0d553',
+    questions: [
+      { q: 'Tell me about my meal plan this term.' },
+      {
+        q: 'What financial aid do I have on file for Fall 2026, and what is its current status?',
+        expect: '$15,000, Pending Verification',
+        note: 'Retest before relying on this. It has previously reported no aid on file, by filtering on statuses that do not exist in the data.'
+      },
+      { q: 'Do I have anything that could stop me from registering, and what does my record show about it?' },
+      { q: 'What courses am I enrolled in this term, and how many credits do I have remaining toward my degree?' }
+    ]
+  },
+  {
+    label: 'Housing',
+    name: 'Fabric · Student Housing Insights',
+    url: 'https://app.mind-platform.ai/agents/create?agent_id=assistc77d380bbc464e70a472a44d89673b47',
+    questions: [
+      {
+        q: 'How many students currently reside in Kestrel Hall, and how many hold a housing assignment record there?',
+        expect: '115 residents · 148 records',
+        note: 'The 148 records belong to 141 people. 15 never checked in, 11 checked out, 7 hold two open records.'
+      },
+      {
+        q: 'If Kestrel Hall goes offline for renovation in Fall 2027, how many current residents would need rehousing?',
+        expect: '92, not 115',
+        note: '14 of the current residents graduate before Fall 2027, so they are not displaced.'
+      },
+      { q: 'Which current Kestrel Hall residents would need rehousing in Fall 2027, and why do they qualify?' },
+      { q: 'How many vacant beds are available in rooms that satisfy a specific accommodation requirement?' }
+    ]
+  },
+  {
+    label: 'Student Insights',
+    name: 'Fabric · Student Insights Agent',
+    url: 'https://app.mind-platform.ai/agents/create?agent_id=assistef013196d2da4852a5745330f680af5a',
+    questions: [
+      { q: 'How many students are enrolled in Fall 2026, grouped by program?' },
+      { q: 'Which courses have the highest late-submission rates in Fall 2026?' },
+      { q: 'Which courses have the highest withdrawal rates in Fall 2026, and what are the enrollment counts for those courses?' }
+    ]
+  }
+];
+
 const STUDENT_Q = [
   { step: 'AS THE STUDENT', q: 'Do I have a financial hold on my student account for Fall 2026, and what is my balance?', expect: '$4,800 · hold' },
   { step: 'THEN', q: 'What financial aid do I have on file for Fall 2026, and what is its status?', expect: '$15,000 pending' },
@@ -428,7 +440,7 @@ function qcard(item) {
   const n = document.createElement('article');
   n.className = 'qcard';
   n.innerHTML = '<div class="qcard-top"><span class="qcard-step"></span><button class="copy" type="button">Copy</button></div><p class="qcard-q"></p><span class="qcard-expect"></span><p class="qcard-note" hidden></p>';
-  n.querySelector('.qcard-step').textContent = item.step;
+  n.querySelector('.qcard-step').textContent = item.step || '';
   n.querySelector('.qcard-q').textContent = '“' + item.q + '”';
   n.querySelector('.qcard-expect').textContent = item.expect;
   n.querySelector('.copy').dataset.copy = item.q;
@@ -441,16 +453,24 @@ function qcard(item) {
   }
   return n;
 }
-function renderThread(key) {
+function showAgent(index) {
+  const agent = AGENTS[index];
+  [...$('agent-picker').children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
+  $('agent-link').href = agent.url;
+  $('agent-link').textContent = 'Open ' + agent.name;
   const w = $('thread-questions');
   w.innerHTML = '';
-  THREADS[key].forEach(i => w.appendChild(qcard(i)));
-  announce(`${THREADS[key].length} questions ready.`);
+  agent.questions.forEach(i => w.appendChild(qcard(i)));
+  announce(`${agent.name}. ${agent.questions.length} questions ready.`);
 }
-document.querySelectorAll('[data-thread]').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('[data-thread]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-  renderThread(b.dataset.thread);
-}));
+AGENTS.forEach((agent, index) => {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.textContent = agent.label;
+  b.setAttribute('aria-pressed', String(index === 0));
+  b.addEventListener('click', () => showAgent(index));
+  $('agent-picker').appendChild(b);
+});
 STUDENT_Q.forEach(i => $('student-questions').appendChild(qcard(i)));
 
 /* ================= 06 · who sees what ================= */
@@ -524,5 +544,5 @@ window.addEventListener('scroll', () => {
 /* ================= init ================= */
 renderNets();
 renderExample('events');
-renderThread('opener');
+showAgent(0);
 renderRole('student');

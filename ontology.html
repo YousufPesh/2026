@@ -11,7 +11,7 @@
 <option value="layer">2 · The wiring</option>
 <option value="sources">3 · The systems</option>
 <option value="meaning">4 · Who answers</option>
-<option value="ask">5 · Questions</option>
+<option value="ask">5 · Agents</option>
 <option value="governance">6 · Who sees what</option>
 <option value="campusmind">7 · The handoff</option>
 </select>
@@ -103,15 +103,11 @@
 
 <!-- ===== 05 ===== -->
 <section id="ask" aria-labelledby="ask-heading">
-<p class="eyebrow"><b>05</b> QUESTIONS</p>
+<p class="eyebrow"><b>05</b> AGENTS</p>
 <h2 id="ask-heading">Copy. Paste. Narrate.</h2>
 
-<div class="choices" role="group" aria-label="Choose a thread">
-<button type="button" data-thread="opener" aria-pressed="true">Opener</button>
-<button type="button" data-thread="finance" aria-pressed="false">Blocked by money</button>
-<button type="button" data-thread="housing" aria-pressed="false">Hall offline</button>
-</div>
-
+<div class="choices" role="group" aria-label="Choose an agent" id="agent-picker"></div>
+<p class="agent-open"><a id="agent-link" href="#" target="_blank" rel="noopener"></a></p>
 <div id="thread-questions"></div>
 </section>
 

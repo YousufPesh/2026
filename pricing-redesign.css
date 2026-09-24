@@ -335,3 +335,16 @@ tbody tr:last-child td { border-bottom: 0; }
 .ladder .offer-top { grid-row: 1; grid-column: 1; justify-self: end; align-self: center; }
 .ladder .offer strong, .ladder .offer-tag { grid-column: 1; }
 .offer.is-carried .offer-tag { color: var(--muted); font-weight: 450; }
+
+/* Standalones share the step row's three-up rhythm. */
+@media (min-width: 560px) { .standalones { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Three-up standalones are as narrow as the steps, so they stack the same way. */
+@media (min-width: 560px) {
+  .standalones .offer { grid-template-columns: 1fr; grid-template-rows: auto auto auto auto; row-gap: 9px; }
+  .standalones .offer-icon { grid-row: 1; grid-column: 1; justify-self: start; }
+  .standalones .offer-top { grid-row: 1; grid-column: 1; justify-self: end; align-self: center; }
+  /* The row already says these stand alone, so the badge would only crowd the icon. */
+  .standalones .offer-badge { display: none; }
+  .standalones .offer strong, .standalones .offer-tag { grid-column: 1; }
+}
