@@ -328,6 +328,10 @@ tbody tr:last-child td { border-bottom: 0; }
   .ladder .offer-icon { width: 30px; height: 30px; }
 }
 
-/* Step cards carry only a name and a tick, so they do not need the tall frame. */
-.ladder .offer { min-height: 0; grid-template-rows: auto auto; align-content: center; row-gap: 8px; }
-.ladder .offer-icon { grid-row: 1 / span 2; }
+/* Step cards are narrow, so the icon sits above the text rather than beside
+   it, with the tick opposite. */
+.ladder .offer { min-height: 0; grid-template-columns: 1fr; grid-template-rows: auto auto auto; row-gap: 9px; }
+.ladder .offer-icon { grid-row: 1; grid-column: 1; justify-self: start; }
+.ladder .offer-top { grid-row: 1; grid-column: 1; justify-self: end; align-self: center; }
+.ladder .offer strong, .ladder .offer-tag { grid-column: 1; }
+.offer.is-carried .offer-tag { color: var(--muted); font-weight: 450; }

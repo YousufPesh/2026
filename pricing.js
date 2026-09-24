@@ -159,7 +159,7 @@ const OFFERINGS = [
   {
     id: 'fabric',
     name: 'Data Bridge',
-    tagline: 'One governed layer under every use case',
+    tagline: 'Ontology, semantic model and data layer to power your AI agents',
     badge: 'STEP 3',
     tier: 3,
     requires: 'aistudio',
@@ -247,17 +247,15 @@ function offerCard(o) {
   const on = state.picked.includes(o.id);
   const top = topLadderPicked();
   const carried = on && o.tier && top !== o.id;
-  /* The three platform steps are just the name and a tick. The standalones
-     keep their badge and one line of explanation. */
+  /* The platform steps drop the badge but keep their line of description. */
   const head = o.tier
     ? `<span class="offer-top"><span class="offer-tick" aria-hidden="true">${on ? '✓' : ''}</span></span>`
     : `<span class="offer-top"><span class="offer-badge">${o.badge}</span><span class="offer-tick" aria-hidden="true">${on ? '✓' : ''}</span></span>`;
-  const tag = o.tier ? '' : `<span class="offer-tag">${o.tagline}</span>`;
   return `<button type="button" class="offer${o.tier ? ' is-step' : ''}${carried ? ' is-carried' : ''}" data-offer="${o.id}" aria-pressed="${on}">
     ${offeringIcon(o.id)}
     ${head}
     <strong>${o.name}</strong>
-    ${tag}
+    <span class="offer-tag">${o.tagline}</span>
   </button>`;
 }
 
