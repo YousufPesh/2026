@@ -62,10 +62,11 @@ const ACCESS = {
 const OFFERINGS = [
   {
     id: 'llmchat',
-    name: 'LLM Chat',
+    name: 'Campus Chat',
     tagline: 'Every leading model, for everyone on campus',
-    badge: 'BASE',
-    excludes: ['aistudio'],
+    badge: 'STEP 1',
+    tier: 1,
+
     needs: ['deployment', 'size', 'term'],
     includes: ['All frontier + open models', 'File attachments', 'Web search & code interpreter', 'Coach mode', 'Group chats', 'Cost controls'],
     from: 20000,
@@ -77,17 +78,18 @@ const OFFERINGS = [
   },
   {
     id: 'aistudio',
-    name: 'AI Studio + Agent Marketplace',
+    name: 'Campus Chat Plus',
     tagline: 'Build, connect and govern your own agents',
-    badge: 'INCLUDES LLM CHAT',
-    excludes: ['llmchat'],
+    badge: 'STEP 2',
+    tier: 2,
+    requires: 'llmchat',
     needs: ['deployment', 'size', 'term'],
-    includes: ['Everything in LLM Chat', 'Custom agents and knowledge bases', 'MCP, APIs, webhooks, crawlers', 'Orchestrator and sub-agents', 'Drag-and-drop workflows', 'Guardrails, RBAC, observability', '1,000 conversations a month included'],
+    includes: ['Everything in Campus Chat', 'Custom agents and knowledge bases', 'MCP, APIs, webhooks, crawlers', 'Orchestrator and sub-agents', 'Drag-and-drop workflows', 'Guardrails, RBAC, observability', '1,000 conversations a month included'],
     from: 50000,
     includedConvMonthly: 1000,
     price: {
-      tenant: { onboarding: ONBOARDING.tenant, licence: { s: 50000, m: 70000, l: 100000 }, infraMonthly: { s: 2000, m: 3000, l: 4000 } },
-      saas: { onboarding: ONBOARDING.saas, licence: { s: 50000, m: 70000, l: 100000 }, conv: HOSTED_CONV }
+      tenant: { onboarding: ONBOARDING.tenant, licence: { s: 30000, m: 45000, l: 70000 }, infraMonthly: { s: 2000, m: 3000, l: 4000 } },
+      saas: { onboarding: ONBOARDING.saas, licence: { s: 30000, m: 45000, l: 70000 }, conv: HOSTED_CONV }
     },
     questions: [{ id: 'conv', type: 'tier', label: 'Conversations for the term', tiers: CONV_TIERS, def: '10000' }]
   },
@@ -156,10 +158,12 @@ const OFFERINGS = [
   },
   {
     id: 'fabric',
-    name: 'Fabric + Ontology',
+    name: 'Data Ontology',
     tagline: 'One governed layer under every use case',
-    badge: 'ADD-ON',
-    needs: ['term'],
+    badge: 'STEP 3',
+    tier: 3,
+    requires: 'aistudio',
+    needs: ['deployment', 'size', 'term'],
     includes: ['Discovery and source mapping', 'Medallion pipeline into OneLake', 'Ontology and semantic model', 'Row and column security, Purview'],
     from: 50000,
     price: {
@@ -231,27 +235,51 @@ function months() { return TERMS[state.answers.term].months; }
 function proRata() { return months() / 12; }
 
 /* ---------------- offering cards ---------------- */
+/* The three platform steps stack: each one includes everything below it. */
+const LADDER = ['llmchat', 'aistudio', 'fabric'];
+function ladderTier(id) { return LADDER.indexOf(id); }
+function topLadderPicked() {
+  const picked = LADDER.filter(id => state.picked.includes(id));
+  return picked.length ? picked[picked.length - 1] : null;
+}
+
+function offerCard(o) {
+  const on = state.picked.includes(o.id);
+  const top = topLadderPicked();
+  const carried = on && o.tier && top !== o.id;
+  return `<button type="button" class="offer${o.tier ? ' is-step' : ''}${carried ? ' is-carried' : ''}" data-offer="${o.id}" aria-pressed="${on}">
+    ${offeringIcon(o.id)}
+    <span class="offer-top"><span class="offer-badge">${o.badge}</span><span class="offer-tick" aria-hidden="true">${on ? '✓' : ''}</span></span>
+    <strong>${o.name}</strong>
+    <span class="offer-tag">${carried ? 'Included in ' + offering(top).name : o.tagline}</span>
+  </button>`;
+}
+
 function renderOfferings() {
-  $('offer-grid').innerHTML = OFFERINGS.map(o => {
-    const on = state.picked.includes(o.id);
-    return `<button type="button" class="offer" data-offer="${o.id}" aria-pressed="${on}">
-      ${offeringIcon(o.id)}
-      <span class="offer-top"><span class="offer-badge">${o.badge}</span><span class="offer-tick" aria-hidden="true">${on ? '✓' : ''}</span></span>
-      <strong>${o.name}</strong>
-      <span class="offer-tag">${o.tagline}</span>
-      <span class="offer-price">from ${fmt(o.from)}<i> / yr</i></span>
-    </button>`;
-  }).join('');
+  const steps = OFFERINGS.filter(o => o.tier).sort((a, b) => a.tier - b.tier);
+  const rest = OFFERINGS.filter(o => !o.tier);
+  $('offer-grid').innerHTML =
+    `<div class="ladder">` +
+    steps.map((o, i) => (i ? '<span class="ladder-arrow" aria-hidden="true">→</span>' : '') + offerCard(o)).join('') +
+    `</div><div class="standalones">` + rest.map(offerCard).join('') + `</div>`;
 }
 $('offer-grid').addEventListener('click', ev => {
   const b = ev.target.closest('[data-offer]');
   if (!b) return;
   const id = b.dataset.offer, o = offering(id);
+  const t = ladderTier(id);
   if (state.picked.includes(id)) {
-    state.picked = state.picked.filter(x => x !== id);
+    if (t >= 0) {
+      /* dropping a step drops everything above it too */
+      state.picked = state.picked.filter(x => ladderTier(x) < t || ladderTier(x) === -1);
+    } else {
+      state.picked = state.picked.filter(x => x !== id);
+    }
+  } else if (t >= 0) {
+    /* picking a step carries every step below it */
+    LADDER.slice(0, t + 1).forEach(x => { if (!state.picked.includes(x)) state.picked.push(x); });
   } else {
     state.picked.push(id);
-    (o.excludes || []).forEach(x => { state.picked = state.picked.filter(y => y !== x); });
   }
   renderAll();
   announce(`${o.name} ${state.picked.includes(id) ? 'added' : 'removed'}.`);
@@ -294,8 +322,24 @@ function renderAbout() {
   $('about-questions').innerHTML = needed.map(k => questionHTML(SHARED[k], k)).join('');
 }
 
+/* Ladder steps share one set of answers, so only the top step asks. */
+/* Which picked step owns each shared answer. The conversation tier belongs
+   to the highest step that has one, which is not always the top step. */
+function convOwner() {
+  const withTier = LADDER.filter(id => state.picked.includes(id) && (offering(id).questions || []).some(q => q.type === 'tier'));
+  return withTier.length ? withTier[withTier.length - 1] : null;
+}
+function visibleForQuestions(o) {
+  const t = ladderTier(o.id);
+  if (t === -1) return state.picked.includes(o.id);
+  if (!state.picked.includes(o.id)) return false;
+  /* a step shows its questions only if it owns one nobody above it owns */
+  if ((o.questions || []).some(q => q.type === 'tier')) return convOwner() === o.id;
+  return true;
+}
+
 function renderDetail() {
-  const picked = OFFERINGS.filter(o => state.picked.includes(o.id) && (o.questions || []).length);
+  const picked = OFFERINGS.filter(o => visibleForQuestions(o) && (o.questions || []).length);
   $('detail').hidden = picked.length === 0;
   $('detail-questions').innerHTML = picked.map(o =>
     `<div class="qgroup"><h3>${o.name}</h3>` +
@@ -443,18 +487,71 @@ function offeringQuote(o) {
 function calculate() {
   const rows = [];
   let license = 0, infra = 0, ai = 0, oneOff = 0;
-  state.picked.forEach(id => {
+
+  /* One platform, one deployment: the steps share infrastructure, onboarding
+     and a conversation tier. Only the licences stack. */
+  const steps = LADDER.filter(id => state.picked.includes(id));
+  if (steps.length) {
+    const top = offering(steps[steps.length - 1]);
+    const lines = [];
+    let lic = 0;
+    steps.forEach(id => {
+      const o = offering(id);
+      const q = offeringQuote(o);
+      const licLine = q.lines.find(l => l.label === 'Licence');
+      lic += q.lic;
+      lines.push({ label: `${o.name} licence`, detail: licLine ? licLine.detail : '', amount: q.lic });
+    });
+    /* Infrastructure and onboarding come from the top step. The conversation
+       tier comes from the highest step that actually has one. */
+    const topQ = offeringQuote(top);
+    const owner = convOwner();
+    const ownerQ = owner ? offeringQuote(offering(owner)) : null;
+
+    /* Campus Chat and Campus Chat Plus are one platform, so the larger
+       footprint supersedes the smaller. Data Ontology is separate capacity,
+       so it adds on top. */
+    const platformSteps = steps.filter(id => id !== 'fabric');
+    let platformInf = 0, platformLine = null;
+    platformSteps.forEach(id => {
+      const pq = offeringQuote(offering(id));
+      if (pq.inf > platformInf) {
+        platformInf = pq.inf;
+        platformLine = pq.lines.find(l => l.label === 'Infrastructure') || null;
+      }
+    });
+    let fabricInf = 0, fabricLine = null;
+    if (steps.includes('fabric')) {
+      const fq = offeringQuote(offering('fabric'));
+      fabricInf = fq.inf;
+      const l = fq.lines.find(x => x.label === 'Infrastructure');
+      if (l) fabricLine = { label: 'Data Ontology infrastructure', detail: l.detail, amount: l.amount };
+    }
+    if (platformLine) lines.push(platformLine);
+    if (fabricLine) lines.push(fabricLine);
+    if (ownerQ) ownerQ.lines.filter(l => l.label === 'Conversations').forEach(l => lines.push(l));
+    topQ.lines.filter(l => !['Licence', 'Infrastructure', 'Conversations'].includes(l.label)).forEach(l => lines.push(l));
+
+    const inf = platformInf + fabricInf;
+    const use = ownerQ ? ownerQ.use : 0;
+    const one = topQ.oneOff;
+    license += lic; infra += inf; ai += use; oneOff += one;
+    rows.push({ name: top.name, lic, inf, use, lines, subtotal: lic + inf + use + one, add: { total: one, items: topQ.items } });
+  }
+
+  state.picked.filter(id => ladderTier(id) === -1).forEach(id => {
     const o = offering(id);
     const q = offeringQuote(o);
     license += q.lic; infra += q.inf; ai += q.use; oneOff += q.oneOff;
     rows.push({ name: o.name, lic: q.lic, inf: q.inf, use: q.use, lines: q.lines, subtotal: q.lic + q.inf + q.use + q.oneOff, add: { total: q.oneOff, items: q.items } });
   });
+
   return { rows, license, infra, ai, oneOff, total: license + infra + ai + oneOff };
 }
 
 /* ---------------- tier visibility ---------------- */
 function renderTiers() {
-  const picked = OFFERINGS.filter(o => state.picked.includes(o.id) && (o.questions || []).some(q => q.type === 'tier'));
+  const picked = OFFERINGS.filter(o => visibleForQuestions(o) && (o.questions || []).some(q => q.type === 'tier'));
   $('usage').hidden = picked.length === 0;
   if (!picked.length) { $('tier-grid').innerHTML = ''; return; }
   const dep = deployment();

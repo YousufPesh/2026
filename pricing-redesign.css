@@ -301,3 +301,29 @@ tbody tr:last-child td { border-bottom: 0; }
 .grand strong {
   font-size: 2.25rem; line-height: 1; letter-spacing: -.05em; font-variant-numeric: tabular-nums;
 }
+
+/* ---- upgrade ladder ---- */
+.ladder { display: grid; gap: 10px; align-items: stretch; margin-bottom: 14px; }
+@media (min-width: 720px) { .ladder { grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; } }
+.ladder-arrow { display: none; color: #9dcdd1; font-size: 1.25rem; text-align: center; }
+@media (min-width: 720px) { .ladder-arrow { display: block; } }
+.standalones { display: grid; gap: 10px; }
+@media (min-width: 560px) { .standalones { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); } }
+.offer.is-step[aria-pressed="true"] { border-color: var(--teal, #087985); }
+.offer.is-carried { opacity: .92; }
+.offer.is-carried .offer-badge { background: var(--teal, #087985); color: #fff; }
+.offer.is-carried .offer-tag { color: var(--teal, #087985); font-weight: 650; }
+
+/* The offer grid now holds two rows of its own, so it stops being a grid. */
+.offer-grid { display: block; }
+@media (min-width: 620px) { .offer-grid { grid-template-columns: none; } }
+
+/* Ladder becomes a row earlier, since the builder is often read at half width. */
+@media (min-width: 560px) {
+  .ladder { grid-template-columns: 1fr auto 1fr auto 1fr; align-items: stretch; }
+  .ladder-arrow { display: grid; place-items: center; align-self: center; }
+  .ladder .offer { padding: 12px; }
+  .ladder .offer strong { font-size: .9375rem; letter-spacing: -.02em; }
+  .ladder .offer-tag { font-size: .75rem; }
+  .ladder .offer-icon { width: 30px; height: 30px; }
+}
