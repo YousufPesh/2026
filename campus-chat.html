@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LLM Chat Lab · CampusMind</title>
-  <meta name="description" content="A presenter companion to the CampusMind LLM Chat demo: one institutional layer, every model, three people on one platform, reusable workflows, governed data, and real files out.">
+  <title>Campus Chat Lab · CampusMind</title>
+  <meta name="description" content="A presenter companion to the CampusMind Campus Chat demo: one institutional layer, every model, three people on one platform, reusable workflows, governed data, and real files out.">
   <meta name="theme-color" content="#023347">
   <link rel="icon" href="/assets/campusmind-favicon.png">
   <link rel="stylesheet" href="/labs-navigation.css">
-  <link rel="stylesheet" href="/llm-chat.css">
-  <script src="/llm-chat.js" defer></script>
+  <link rel="stylesheet" href="/campus-chat.css">
+  <script src="/campus-chat.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to the LLM Chat Lab</a>
+  <a class="skip" href="#main">Skip to the Campus Chat Lab</a>
   <nav class="labs-navigation" aria-label="Labs">
     <a href="/">Labs</a>
     <a href="/accessibility.html">Accessibility</a>
@@ -21,20 +21,20 @@
     <a href="/ontology.html">Data Bridge</a>
     <a href="/virtual-teaching-assistant.html">Teaching assistant</a>
     <a href="/agent-studio.html">Agent Studio</a>
-    <a href="/llm-chat.html" aria-current="page">LLM Chat</a>
+    <a href="/campus-chat.html" aria-current="page">Campus Chat</a>
     <a href="/pricing.html">Pricing</a>
   </nav>
 
   <div class="story-shell">
     <header class="brand-header">
       <img src="/assets/campusmind-logo.svg" alt="CampusMind" width="140" height="30">
-      <span>LLM Chat demo companion</span>
+      <span>Campus Chat demo companion</span>
     </header>
 
     <div class="section-nav"><label for="section-jump">Jump to</label><select id="section-jump"><option value="student">1 · Run 1 Student</option><option value="advisor">2 · Run 2 Advisor</option><option value="leadership">3 · Run 3 Leadership</option><option value="problem">4 · What changed</option></select></div>
 
 <main id="main" tabindex="-1">
-<header class="intro"><p class="eyebrow">LLM Chat</p><h1>Three people. One platform.</h1><p class="honesty">Illustrative · Synthetic illustrations · Not product outputs</p></header>
+<header class="intro"><p class="eyebrow">Campus Chat</p><h1>Three people. One platform.</h1><p class="honesty">Illustrative · Synthetic illustrations · Not product outputs</p></header>
 <section id="student" aria-labelledby="student-title">
 <div class="section-heading"><p class="section-number" aria-hidden="true">01</p><div><p class="eyebrow">Run 1 · Student</p><h2 id="student-title">A bad grade becomes a plan.</h2></div></div>
 <ul class="key" aria-label="Chip key"><li><span class="chip ui">where in the app</span></li><li><span class="chip file">file · drag it into the demo</span></li><li><span class="chip agent">agent</span></li><li><span class="chip model">model</span></li><li><span class="chip tool">tool</span></li><li><span class="chip slash">/skill</span></li></ul><ol class="steps"><li class="step"><div class="step-head"><span class="step-num" aria-hidden="true">1</span><h3><span class="sr-only">Step 1. </span>Diagnose the quiz.</h3></div><div class="step-row"><p class="row-label">Do</p><div class="chips"><a class="chip file drag" href="/assets/Maya_Quiz3_Graded.pdf" download draggable="true" data-type="application/pdf" title="Drag into the demo, or click to download">Maya_Quiz3_Graded.pdf</a><span class="chip slash">/Error autopsy</span></div></div><figure class="skill-flow" aria-label="What a skill is, in four beats"><div class="once-node"><span class="once-tag">1</span><strong>You type <code>/</code></strong></div><svg class="once-arrow" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12h30M26 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="once-node"><span class="once-tag">2</span><strong>Pick a skill, like <code>/Error autopsy</code></strong></div><svg class="once-arrow" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12h30M26 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="once-node"><span class="once-tag">3</span><strong>It loads that skill's instructions</strong></div><svg class="once-arrow" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12h30M26 5l8 7-8 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="once-node is-cmd"><span class="once-tag">4</span><strong>Fills them from your fields</strong></div><figcaption>A skill is a saved way of working. Written once, run by anyone.</figcaption></figure><ul class="fields" aria-label="Fields for step 1 of run 1"><li class="field"><span class="f-name">graded_work</span><code class="f-val">My Calc I Quiz 3 on derivative rules (attached PDF, I got 5.5/10).</code><button class="copy" type="button" data-copy="My Calc I Quiz 3 on derivative rules (attached PDF, I got 5.5/10)."><span class="copy-label">Copy</span><span class="sr-only"> graded_work, run 1 step 1</span></button></li><li class="field"><span class="f-name">Add to the request</span><code class="f-val">Reply in the chat, no files.</code><button class="copy" type="button" data-copy="Reply in the chat, no files."><span class="copy-label">Copy</span><span class="sr-only"> Add to the request, run 1 step 1</span></button></li></ul></li><li class="step"><div class="step-head"><span class="step-num" aria-hidden="true">2</span><h3><span class="sr-only">Step 2. </span>Drill the gap.</h3></div><div class="step-row"><p class="row-label">Do</p><div class="chips"><span class="chip slash">/Practice set generator</span></div></div><ul class="fields" aria-label="Fields for step 2 of run 1"><li class="field"><span class="f-name">topic</span><code class="f-val">Chain rule vs. product rule</code><button class="copy" type="button" data-copy="Chain rule vs. product rule"><span class="copy-label">Copy</span><span class="sr-only"> topic, run 1 step 2</span></button></li><li class="field"><span class="f-name">count</span><code class="f-val">8</code><button class="copy" type="button" data-copy="8"><span class="copy-label">Copy</span><span class="sr-only"> count, run 1 step 2</span></button></li><li class="field"><span class="f-name">context</span><code class="f-val">Midterm 1 on Oct 1, no calculators.</code><button class="copy" type="button" data-copy="Midterm 1 on Oct 1, no calculators."><span class="copy-label">Copy</span><span class="sr-only"> context, run 1 step 2</span></button></li><li class="field"><span class="f-name">Add to the request</span><code class="f-val">No files.</code><button class="copy" type="button" data-copy="No files."><span class="copy-label">Copy</span><span class="sr-only"> Add to the request, run 1 step 2</span></button></li></ul></li><li class="step"><div class="step-head"><span class="step-num" aria-hidden="true">3</span><h3><span class="sr-only">Step 3. </span>Build the plan.</h3></div><div class="step-row"><p class="row-label">Do</p><div class="chips"><span class="chip slash">/Exam study plan</span></div></div><ul class="fields" aria-label="Fields for step 3 of run 1"><li class="field"><span class="f-name">exam</span><code class="f-val">Midterm 1, Calc I</code><button class="copy" type="button" data-copy="Midterm 1, Calc I"><span class="copy-label">Copy</span><span class="sr-only"> exam, run 1 step 3</span></button></li><li class="field"><span class="f-name">date</span><code class="f-val">Oct 1</code><button class="copy" type="button" data-copy="Oct 1"><span class="copy-label">Copy</span><span class="sr-only"> date, run 1 step 3</span></button></li><li class="field"><span class="f-name">anchors</span><code class="f-val">Quiz 4 on Sep 24, review session Sep 22, office hours Tuesday and Thursday.</code><button class="copy" type="button" data-copy="Quiz 4 on Sep 24, review session Sep 22, office hours Tuesday and Thursday."><span class="copy-label">Copy</span><span class="sr-only"> anchors, run 1 step 3</span></button></li><li class="field"><span class="f-name">hours per week</span><code class="f-val">8</code><button class="copy" type="button" data-copy="8"><span class="copy-label">Copy</span><span class="sr-only"> hours per week, run 1 step 3</span></button></li><li class="field"><span class="f-name">weak areas</span><code class="f-val">Chain rule, product rule, implicit differentiation.</code><button class="copy" type="button" data-copy="Chain rule, product rule, implicit differentiation."><span class="copy-label">Copy</span><span class="sr-only"> weak areas, run 1 step 3</span></button></li></ul></li></ol>
@@ -90,10 +90,10 @@
           </figure>
 
           <figure class="panel is-after">
-            <figcaption><span class="panel-tag">With LLM Chat</span></figcaption>
+            <figcaption><span class="panel-tag">With Campus Chat</span></figcaption>
             <svg viewBox="0 0 340 186" role="img" aria-labelledby="after-title after-desc">
               <title id="after-title">Campus AI with one institutional layer</title>
-              <desc id="after-desc">The same six groups, students included, connect to one LLM Chat layer with one login, governance and audit. That layer reaches all seven providers: OpenAI, Anthropic, DeepSeek, Moonshot AI, xAI, Google and Alibaba Qwen.</desc>
+              <desc id="after-desc">The same six groups, students included, connect to one Campus Chat layer with one login, governance and audit. That layer reaches all seven providers: OpenAI, Anthropic, DeepSeek, Moonshot AI, xAI, Google and Alibaba Qwen.</desc>
               <g class="wire is-on">
                 <path d="M32 36 L32 74"/><path d="M87 36 L87 74"/><path d="M142 36 L142 74"/>
                 <path d="M197 36 L197 74"/><path d="M252 36 L252 74"/><path d="M307 36 L307 74"/>
@@ -110,7 +110,7 @@
               </g>
               <g class="layer">
                 <rect x="16" y="74" width="308" height="30" rx="8"/>
-                <text x="170" y="93">LLM Chat · one login · governed · audited</text>
+                <text x="170" y="93">Campus Chat · one login · governed · audited</text>
               </g>
               <g class="provider">
                 <circle cx="32" cy="150" r="12"/><text class="mark" x="32" y="154">O</text><text class="foot" x="32" y="178">OpenAI</text>
@@ -122,7 +122,7 @@
                 <circle cx="308" cy="150" r="12"/><text class="mark" x="308" y="154">Q</text><text class="foot" x="308" y="178">Qwen</text>
               </g>
             </svg>
-            <ul class="counts" aria-label="With LLM Chat, in numbers">
+            <ul class="counts" aria-label="With Campus Chat, in numbers">
               <li><strong>1</strong><span>contract</span></li>
               <li><strong>1</strong><span>login</span></li>
               <li><strong>1</strong><span>audit trail</span></li>

@@ -16,7 +16,7 @@ Strictly think about what visuals will support my argument. No paragraphs and or
 - Add no build step and no dependencies. There is no `package.json`, bundler, or
   framework, and Vercel serves the files as they are.
 - Add no web fonts. The hub and the four brand Labs use `-apple-system,
-  BlinkMacSystemFont, "Segoe UI"`, and LLM Chat follows them. Accessibility and Virtual
+  BlinkMacSystemFont, "Segoe UI"`, and Campus Chat follows them. Accessibility and Virtual
   Teaching Assistant use `Inter, "Avenir Next"`.
 - Keep the three-file naming. Every Lab is `<lab>.html`, `<lab>.css`, and `<lab>.js` at
   the repo root. Add no subdirectories and no shared modules. Accessibility is the one
@@ -48,7 +48,7 @@ Three formatting styles coexist in this repo.
 
 | Style | Files |
 |-------|-------|
-| Pretty-printed | `index.html`, `home.css`, `labs-navigation.css`, `virtual-teaching-assistant.*`, `llm-chat.*` |
+| Pretty-printed | `index.html`, `home.css`, `labs-navigation.css`, `virtual-teaching-assistant.*`, `campus-chat.*` |
 | One rule or element per line | `ontology.html`, `ontology.css` |
 | Collapsed whitespace | `accessibility.*`, `recruitment.*`, `retention.*` |
 
@@ -92,7 +92,7 @@ comments. The question trace advances every 1500 ms, or every 2600 ms when
 then writes each field with `textContent`. Keep those two steps separate, so that card
 data cannot inject markup.
 
-**LLM Chat.** The only Lab that runs beside a live demo of the product it describes, so it
+**Campus Chat.** The only Lab that runs beside a live demo of the product it describes, so it
 argues rather than imitates. It has no chat mockups on purpose. Do not add message bubbles, a
 composer bar, or a fake transcript, because the real thing is on the next screen. The page is a
 run sheet in the order the presenter runs it: three demo runs, thirteen numbered steps, then one
