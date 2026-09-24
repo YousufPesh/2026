@@ -150,3 +150,46 @@ main { padding: 0 22px 54px; }
 }
 .live-link a::after { content: "→"; }
 .live-link a:hover { background: #066a75; border-color: #066a75; }
+
+/* Questions to paste into the live course */
+.try-list { display: grid; gap: 8px; max-width: 700px; margin: 16px 0 0; padding: 0; list-style: none; }
+.try-list li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 13px 12px 34px;
+  border: 1px solid #dce7ea;
+  border-radius: 6px 13px 13px 13px;
+  background: #f7fafb;
+  color: var(--ink);
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+.try-list li::before {
+  content: "“";
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  color: var(--teal);
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.try-copy {
+  flex: none;
+  min-height: 34px;
+  padding: 6px 11px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.try-copy:hover { border-color: var(--teal); color: var(--teal); }
+.try-copy[data-done] { border-color: var(--teal); background: var(--teal); color: #fff; }
