@@ -388,10 +388,30 @@ const THREADS = {
     { step: 'THEN ASK', q: 'How many students actually attended a campus event this term?', expect: '398' }
   ],
   finance: [
-    { step: 'BEAT 1 · ~2 MIN', q: 'Which students are within one term of a degree but will be stopped from registering, and what is actually stopping each one?', expect: '25 students, named' },
-    { step: 'BEAT 2 · EXPECT A REFUSAL', q: 'Which of those students were flagged, assigned to someone, and never actually reached?', expect: 'It declines' },
-    { step: 'BEAT 3', q: 'How many of those 25 students have a financial aid advising case?', expect: 'Zero' },
-    { step: 'BEAT 4', q: 'Have those 25 students made any payments this term, do they have financial aid on file, and what would it cost to clear all of their balances?', expect: '$80,500' }
+    {
+      step: 'BEAT 1 · 73 SEC',
+      q: 'Which students are within one term of a degree but will be stopped from registering, and what is actually stopping each one?',
+      expect: '25 students, named',
+      note: 'No hold-reason field exists, so it names the hold and stops. Two of the 25 are held at a $0 balance.'
+    },
+    {
+      step: 'BEAT 2 · EXPECT A REFUSAL',
+      q: 'Which of those students were flagged, assigned to someone, and never actually reached?',
+      expect: 'It declines',
+      note: 'It names the relationship that does not exist, then offers a proxy with the caveat attached.'
+    },
+    {
+      step: 'BEAT 3 · 20 SEC',
+      q: 'How many of those 25 students have a financial aid advising case?',
+      expect: '0 of 25',
+      note: 'Advising cases carry no term, so this is any case, not only Fall 2026.'
+    },
+    {
+      step: 'BEAT 4',
+      q: 'Have those 25 students made any payments this term, do they have financial aid on file, and what would it cost to clear all of their balances?',
+      expect: '$80,500 to clear',
+      note: 'All 25 paid, $208,000 total. 21 hold aid awards worth $173,000. Paying is not the same as clearing.'
+    }
   ],
   housing: [
     { step: 'BEAT 1', q: 'How many students currently reside in Kestrel Hall, and how many hold a housing assignment record there?', expect: '115 vs 148' },
@@ -407,11 +427,18 @@ const STUDENT_Q = [
 function qcard(item) {
   const n = document.createElement('article');
   n.className = 'qcard';
-  n.innerHTML = '<div class="qcard-top"><span class="qcard-step"></span><button class="copy" type="button">Copy</button></div><p class="qcard-q"></p><span class="qcard-expect"></span>';
+  n.innerHTML = '<div class="qcard-top"><span class="qcard-step"></span><button class="copy" type="button">Copy</button></div><p class="qcard-q"></p><span class="qcard-expect"></span><p class="qcard-note" hidden></p>';
   n.querySelector('.qcard-step').textContent = item.step;
   n.querySelector('.qcard-q').textContent = '“' + item.q + '”';
   n.querySelector('.qcard-expect').textContent = item.expect;
   n.querySelector('.copy').dataset.copy = item.q;
+  /* What the agent said it could not prove. Shown with the Notes toggle. */
+  if (item.note) {
+    const note = n.querySelector('.qcard-note');
+    note.textContent = item.note;
+    note.classList.add('pnote');
+    note.hidden = !$('notes-on').checked;
+  }
   return n;
 }
 function renderThread(key) {
