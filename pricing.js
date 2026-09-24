@@ -158,7 +158,7 @@ const OFFERINGS = [
   },
   {
     id: 'fabric',
-    name: 'Data Ontology',
+    name: 'Data Bridge',
     tagline: 'One governed layer under every use case',
     badge: 'STEP 3',
     tier: 3,
@@ -247,11 +247,17 @@ function offerCard(o) {
   const on = state.picked.includes(o.id);
   const top = topLadderPicked();
   const carried = on && o.tier && top !== o.id;
+  /* The three platform steps are just the name and a tick. The standalones
+     keep their badge and one line of explanation. */
+  const head = o.tier
+    ? `<span class="offer-top"><span class="offer-tick" aria-hidden="true">${on ? '✓' : ''}</span></span>`
+    : `<span class="offer-top"><span class="offer-badge">${o.badge}</span><span class="offer-tick" aria-hidden="true">${on ? '✓' : ''}</span></span>`;
+  const tag = o.tier ? '' : `<span class="offer-tag">${o.tagline}</span>`;
   return `<button type="button" class="offer${o.tier ? ' is-step' : ''}${carried ? ' is-carried' : ''}" data-offer="${o.id}" aria-pressed="${on}">
     ${offeringIcon(o.id)}
-    <span class="offer-top"><span class="offer-badge">${o.badge}</span><span class="offer-tick" aria-hidden="true">${on ? '✓' : ''}</span></span>
+    ${head}
     <strong>${o.name}</strong>
-    <span class="offer-tag">${carried ? 'Included in ' + offering(top).name : o.tagline}</span>
+    ${tag}
   </button>`;
 }
 
@@ -509,7 +515,7 @@ function calculate() {
     const ownerQ = owner ? offeringQuote(offering(owner)) : null;
 
     /* Campus Chat and Campus Chat Plus are one platform, so the larger
-       footprint supersedes the smaller. Data Ontology is separate capacity,
+       footprint supersedes the smaller. Data Bridge is separate capacity,
        so it adds on top. */
     const platformSteps = steps.filter(id => id !== 'fabric');
     let platformInf = 0, platformLine = null;
@@ -525,7 +531,7 @@ function calculate() {
       const fq = offeringQuote(offering('fabric'));
       fabricInf = fq.inf;
       const l = fq.lines.find(x => x.label === 'Infrastructure');
-      if (l) fabricLine = { label: 'Data Ontology infrastructure', detail: l.detail, amount: l.amount };
+      if (l) fabricLine = { label: 'Data Bridge infrastructure', detail: l.detail, amount: l.amount };
     }
     if (platformLine) lines.push(platformLine);
     if (fabricLine) lines.push(fabricLine);

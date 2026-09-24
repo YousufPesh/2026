@@ -327,3 +327,7 @@ tbody tr:last-child td { border-bottom: 0; }
   .ladder .offer-tag { font-size: .75rem; }
   .ladder .offer-icon { width: 30px; height: 30px; }
 }
+
+/* Step cards carry only a name and a tick, so they do not need the tall frame. */
+.ladder .offer { min-height: 0; grid-template-rows: auto auto; align-content: center; row-gap: 8px; }
+.ladder .offer-icon { grid-row: 1 / span 2; }
