@@ -74,3 +74,76 @@ document.addEventListener('click', (event) => {
     fail();
   }
 });
+
+/* Live courses the presenter can open, with the questions to paste into each.
+   Add a course by adding an entry here; the picker builds itself. */
+const LIVE_COURSES = [
+  {
+    name: 'Introduction to European Art',
+    url: 'https://app.mind-platform.ai/chat/vta_id/assist4f12281159c342beb4092e78c5bd7f21',
+    questions: [
+      'Trace the development of Egyptian tomb types — how do we get from early tombs to the pyramids?',
+      'Explain the research paper — what can I choose, what must it cover, and what’s due when?',
+      'How is my grade calculated, and what happens if I fail a quiz or submit the paper late?',
+      'What is style analysis, and which specific elements should I discuss when analysing an Egyptian work?'
+    ]
+  },
+  {
+    name: 'Machine Learning Operations',
+    url: 'https://app.mind-platform.ai/vta?vta_id=assist690ab9e1b9f9407a9c1c92c8699468ce&tab=course',
+    questions: [
+      'What is a feature store, and what problem does it actually solve? Give sources',
+      'What does Assignment 1 require, and is there an alternative to DP-SGD?',
+      'What do I need to know about the Final Project — deliverables, deadline and presentations?',
+      'Explain the main sources of bias in machine learning and how fairness is measured.'
+    ]
+  },
+  {
+    name: 'Time Series Analysis',
+    url: 'https://app.mind-platform.ai/vta?vta_id=assist762cd1e903384bd7a85916d7baccf64f&tab=course',
+    questions: [
+      'What’s due in Week 4, and which data files do I need for the I-80 traffic assignment?',
+      'When is each assignment due, and what does each one cover?',
+      'How do I use the ACF and PACF to decide between an AR, MA or ARMA model?',
+      'When should I use a GARCH model instead of ARIMA?'
+    ]
+  }
+];
+
+const coursePicker = document.getElementById('course-picker');
+const courseLink = document.getElementById('course-link');
+const courseQuestions = document.getElementById('course-questions');
+
+function showCourse(index) {
+  const course = LIVE_COURSES[index];
+  [...coursePicker.children].forEach((button, i) => {
+    button.setAttribute('aria-pressed', String(i === index));
+  });
+  courseLink.href = course.url;
+  courseLink.textContent = course.name;
+  courseQuestions.innerHTML = '';
+  course.questions.forEach((question) => {
+    const item = document.createElement('li');
+    const text = document.createElement('span');
+    text.textContent = question;
+    const copy = document.createElement('button');
+    copy.type = 'button';
+    copy.className = 'try-copy';
+    copy.textContent = 'Copy';
+    item.append(text, copy);
+    courseQuestions.appendChild(item);
+  });
+  if (status) status.textContent = `${course.name} selected.`;
+}
+
+LIVE_COURSES.forEach((course, index) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'course-chip';
+  button.textContent = course.name;
+  button.setAttribute('aria-pressed', String(index === 0));
+  button.addEventListener('click', () => showCourse(index));
+  coursePicker.appendChild(button);
+});
+
+showCourse(0);

@@ -34,15 +34,11 @@
         <p class="eyebrow">Virtual Teaching Assistant</p>
         <h1>Course help, right where students are learning.</h1>
         <p>Students can get course-aware support directly inside Canvas, Blackboard, and Brightspace D2L.</p>
-        <p class="live-link">
-          <a href="https://app.mind-platform.ai/chat/vta_id/assist4f12281159c342beb4092e78c5bd7f21" target="_blank" rel="noopener">Introduction to European Art</a>
-        </p>
-        <ul class="try-list" aria-label="Questions to try in the course">
-          <li><span>Trace the development of Egyptian tomb types — how do we get from early tombs to the pyramids?</span><button type="button" class="try-copy">Copy</button></li>
-          <li><span>Explain the research paper — what can I choose, what must it cover, and what's due when?</span><button type="button" class="try-copy">Copy</button></li>
-          <li><span>How is my grade calculated, and what happens if I fail a quiz or submit the paper late?</span><button type="button" class="try-copy">Copy</button></li>
-          <li><span>What is style analysis, and which specific elements should I discuss when analysing an Egyptian work?</span><button type="button" class="try-copy">Copy</button></li>
-        </ul>
+        <div class="live-courses">
+          <div class="course-picker" id="course-picker" role="group" aria-label="Choose a live course"></div>
+          <p class="live-link"><a id="course-link" href="#" target="_blank" rel="noopener"></a></p>
+          <ul class="try-list" id="course-questions" aria-label="Questions to try in this course"></ul>
+        </div>
       </header>
 
       <section class="integration-section" aria-labelledby="integration-title">
