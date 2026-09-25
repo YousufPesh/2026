@@ -9,20 +9,10 @@ const stages = {
     title: 'See what changed across the student journey',
     summary: 'Signals are observable events—a missed assignment, a falling grade, or fewer logins. They are reasons to look closer, not conclusions about a student.'
   },
-  triggers: {
-    label: 'Set activation triggers',
-    title: 'Decide when a signal should count',
-    summary: 'The signal is what happened. Your institutional trigger is the rule that decides when that observation becomes active.'
-  },
-  points: {
-    label: 'Weight active signals',
-    title: 'Show how every active trigger contributes',
-    summary: 'Give each active trigger a visible point value. Adjust the weights to explore how the same signals can create a different support profile.'
-  },
-  thresholds: {
-    label: 'Set risk thresholds',
-    title: 'Turn a point total into a response',
-    summary: 'Your institution defines the risk levels, where each level begins, and what support workflow each one starts.'
+  model: {
+    label: 'Decide when to respond',
+    title: 'Turn signals into a clear support decision',
+    summary: 'Your institution decides when a signal becomes active, how much it contributes, and what response the student’s total should start.'
   },
   outreach: {
     label: 'Automate + coordinate',
@@ -40,6 +30,8 @@ const stages = {
     summary: 'The goal is not a score. It is an earlier, better-informed conversation that connects a student with the right support.'
   }
 };
+
+const stageAliases = { triggers: 'model', points: 'model', thresholds: 'model' };
 
 const state = {
   observedDays: 6,
@@ -85,7 +77,7 @@ function render() {
   const total = score();
   const risk = riskFor(total);
 
-  $('#trigger-days-compact').textContent = `${state.triggerThreshold} days`;
+  $('#mini-trigger-rule').textContent = `${state.observedDays} ${isActive ? '≥' : '<'} ${state.triggerThreshold}`;
   $('#trigger-value').textContent = `${state.triggerThreshold} days`;
   $('#trigger-result').classList.toggle('is-active', isActive);
   $('#trigger-result').classList.toggle('is-inactive', !isActive);
@@ -111,8 +103,7 @@ function render() {
   updateText('.js-score', total);
   updateText('.js-risk', risk.name);
   updateText('.js-action', risk.action);
-  $('#flow-score').textContent = `${total} points · ${risk.name}`;
-  $('#flow-response').textContent = `${risk.name} → ${risk.action}`;
+  $('#flow-model').textContent = `${total} points → ${risk.action}`;
 
   $$('.js-score-strip').forEach(strip => {
     strip.setAttribute('aria-label', `${parts.join(' plus ')} equals ${total} points`);
@@ -197,6 +188,7 @@ function setExpanded(value, { focus = false } = {}) {
 }
 
 function openStage(id) {
+  id = stageAliases[id] || id;
   if (!stages[id]) return;
   if (!expanded) setExpanded(true);
   opener = $(`[data-stage="${id}"]`);
@@ -269,11 +261,12 @@ $('#replay').addEventListener('click', () => setExpanded(!expanded));
 $('#expand-cover').addEventListener('click', () => setExpanded(true, { focus: true }));
 new ResizeObserver(drawWires).observe($('.workflow-canvas'));
 window.addEventListener('hashchange', () => {
-  const id = location.hash.slice(1);
+  const id = stageAliases[location.hash.slice(1)] || location.hash.slice(1);
   if (stages[id]) openStage(id);
   else if ($('#step-panel').open) $('#step-panel').close();
 });
 
 render();
 setExpanded(false);
-if (stages[location.hash.slice(1)]) openStage(location.hash.slice(1));
+const initialStage = stageAliases[location.hash.slice(1)] || location.hash.slice(1);
+if (stages[initialStage]) openStage(initialStage);
