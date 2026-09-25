@@ -382,8 +382,8 @@ document.querySelectorAll('[data-example]').forEach(b => b.addEventListener('cli
 }));
 
 /* ================= 05 + 07 · questions ================= */
-/* The three production data agents, with the questions to paste into each.
-   Expected answers are filled in only where the result has been verified. */
+/* Two production data agents, each with a chat link, a saved conversation
+   and the questions to paste in. */
 const AGENTS = [
   {
     label: 'Leadership',
@@ -396,7 +396,7 @@ const AGENTS = [
       { q: 'Which program are we seeing the most students at risk?' },
       { q: 'Which advisors are supporting those students?' },
       { q: 'Show me a few students who are struggling with missing assignments.' },
-      { q: 'What’s going on with this student?', note: 'Pick a name from the previous answer and use it here.' }
+      { q: 'What’s going on with this student?' }
     ]
   },
   {
@@ -407,42 +407,9 @@ const AGENTS = [
     threadLabel: 'One student · “What does my record show?”',
     questions: [
       { q: 'Tell me about my meal plan this term.' },
-      {
-        q: 'What financial aid do I have on file for Fall 2026, and what is its current status?',
-        expect: '$15,000, Pending Verification',
-        note: 'Retest before relying on this. It has previously reported no aid on file, by filtering on statuses that do not exist in the data.'
-      },
+      { q: 'What financial aid do I have on file for Fall 2026, and what is its current status?' },
       { q: 'Do I have anything that could stop me from registering, and what does my record show about it?' },
       { q: 'What courses am I enrolled in this term, and how many credits do I have remaining toward my degree?' }
-    ]
-  },
-  {
-    label: 'Housing',
-    name: 'Fabric · Student Housing Insights',
-    url: 'https://app.mind-platform.ai/agents/create?agent_id=assistc77d380bbc464e70a472a44d89673b47',
-    questions: [
-      {
-        q: 'How many students currently reside in Kestrel Hall, and how many hold a housing assignment record there?',
-        expect: '115 residents · 148 records',
-        note: 'The 148 records belong to 141 people. 15 never checked in, 11 checked out, 7 hold two open records.'
-      },
-      {
-        q: 'If Kestrel Hall goes offline for renovation in Fall 2027, how many current residents would need rehousing?',
-        expect: '92, not 115',
-        note: '14 of the current residents graduate before Fall 2027, so they are not displaced.'
-      },
-      { q: 'Which current Kestrel Hall residents would need rehousing in Fall 2027, and why do they qualify?' },
-      { q: 'How many vacant beds are available in rooms that satisfy a specific accommodation requirement?' }
-    ]
-  },
-  {
-    label: 'Student Insights',
-    name: 'Fabric · Student Insights Agent',
-    url: 'https://app.mind-platform.ai/agents/create?agent_id=assistef013196d2da4852a5745330f680af5a',
-    questions: [
-      { q: 'How many students are enrolled in Fall 2026, grouped by program?' },
-      { q: 'Which courses have the highest late-submission rates in Fall 2026?' },
-      { q: 'Which courses have the highest withdrawal rates in Fall 2026, and what are the enrollment counts for those courses?' }
     ]
   }
 ];
@@ -463,32 +430,38 @@ function qcard(item) {
   }
   return n;
 }
-function showAgent(index) {
-  const agent = AGENTS[index];
-  [...$('agent-picker').children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
-  $('agent-link').href = agent.url;
-  $('agent-link').textContent = 'Open ' + agent.name;
-  /* A saved thread replays the whole conversation without retyping it. */
-  const t = $('agent-thread');
+/* Two agents, each with its own links and questions. No picker, no state. */
+AGENTS.forEach(agent => {
+  const box = document.createElement("section");
+  box.className = "agent-block";
+
+  const h = document.createElement("h3");
+  h.textContent = agent.name;
+  box.appendChild(h);
+
+  const links = document.createElement("p");
+  links.className = "agent-open";
+  const open = document.createElement("a");
+  open.id = "";
+  open.className = "agent-primary";
+  open.href = agent.url;
+  open.target = "_blank";
+  open.rel = "noopener";
+  open.textContent = "Open the agent";
+  links.appendChild(open);
   if (agent.thread) {
+    const t = document.createElement("a");
+    t.className = "agent-thread";
     t.href = agent.thread;
-    t.textContent = agent.threadLabel || 'Open the saved conversation';
-    t.hidden = false;
-  } else {
-    t.hidden = true;
+    t.target = "_blank";
+    t.rel = "noopener";
+    t.textContent = "Open previous chat";
+    links.appendChild(t);
   }
-  const w = $('thread-questions');
-  w.innerHTML = '';
-  agent.questions.forEach(i => w.appendChild(qcard(i)));
-  announce(`${agent.name}. ${agent.questions.length} questions ready.`);
-}
-AGENTS.forEach((agent, index) => {
-  const b = document.createElement('button');
-  b.type = 'button';
-  b.textContent = agent.label;
-  b.setAttribute('aria-pressed', String(index === 0));
-  b.addEventListener('click', () => showAgent(index));
-  $('agent-picker').appendChild(b);
+  box.appendChild(links);
+
+  agent.questions.forEach(i => box.appendChild(qcard(i)));
+  document.getElementById("agent-list").appendChild(box);
 });
 
 /* ================= 06 · who sees what ================= */
@@ -562,5 +535,4 @@ window.addEventListener('scroll', () => {
 /* ================= init ================= */
 renderNets();
 renderExample('events');
-showAgent(0);
 renderRole('student');
