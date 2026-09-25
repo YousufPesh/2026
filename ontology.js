@@ -401,8 +401,10 @@ const AGENTS = [
   },
   {
     label: 'Student Success',
-    name: 'Fabric · Student Success Assistant',
-    url: 'https://app.mind-platform.ai/agents/create?agent_id=assistd6135354c82740beac248877a1a0d553',
+    name: 'Student Success Assistant',
+    url: 'https://app.mind-platform.ai/chat/agent_id/assistd6135354c82740beac248877a1a0d553',
+    thread: 'https://app.mind-platform.ai/chat/agent_id/assistd6135354c82740beac248877a1a0d553?thread=conv_067473e3b607e03b006u0VammER0FtUKouZQCf3eNgLQvbzTum',
+    threadLabel: 'One student · “What does my record show?”',
     questions: [
       { q: 'Tell me about my meal plan this term.' },
       {
