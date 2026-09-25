@@ -386,6 +386,20 @@ document.querySelectorAll('[data-example]').forEach(b => b.addEventListener('cli
    Expected answers are filled in only where the result has been verified. */
 const AGENTS = [
   {
+    label: 'Leadership',
+    name: 'Leadership Agent',
+    url: 'https://app.mind-platform.ai/chat/agent_id/assist4bbbe03c89544ae99a9fe9535e53a865',
+    thread: 'https://app.mind-platform.ai/chat/agent_id/assist4bbbe03c89544ae99a9fe9535e53a865?thread=conv_0fbd0ac49100348400ambIg5HD4djvmC1FfBkNCScQFR38lP9B',
+    threadLabel: 'Student success · “Where should our advisors focus?”',
+    questions: [
+      { q: 'Give me list of students who are at high risk?' },
+      { q: 'Which program are we seeing the most students at risk?' },
+      { q: 'Which advisors are supporting those students?' },
+      { q: 'Show me a few students who are struggling with missing assignments.' },
+      { q: 'What’s going on with this student?', note: 'Pick a name from the previous answer and use it here.' }
+    ]
+  },
+  {
     label: 'Student Success',
     name: 'Fabric · Student Success Assistant',
     url: 'https://app.mind-platform.ai/agents/create?agent_id=assistd6135354c82740beac248877a1a0d553',
@@ -430,12 +444,6 @@ const AGENTS = [
     ]
   }
 ];
-
-const STUDENT_Q = [
-  { step: 'AS THE STUDENT', q: 'Do I have a financial hold on my student account for Fall 2026, and what is my balance?', expect: '$4,800 · hold' },
-  { step: 'THEN', q: 'What financial aid do I have on file for Fall 2026, and what is its status?', expect: '$15,000 pending' },
-  { step: 'THEN', q: 'Show me everything I have going on this term: my courses, my housing, my meal plan, my clubs, and anything open with my advisor.', expect: '6 systems, 1 answer' }
-];
 function qcard(item) {
   const n = document.createElement('article');
   n.className = 'qcard';
@@ -458,6 +466,15 @@ function showAgent(index) {
   [...$('agent-picker').children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
   $('agent-link').href = agent.url;
   $('agent-link').textContent = 'Open ' + agent.name;
+  /* A saved thread replays the whole conversation without retyping it. */
+  const t = $('agent-thread');
+  if (agent.thread) {
+    t.href = agent.thread;
+    t.textContent = agent.threadLabel || 'Open the saved conversation';
+    t.hidden = false;
+  } else {
+    t.hidden = true;
+  }
   const w = $('thread-questions');
   w.innerHTML = '';
   agent.questions.forEach(i => w.appendChild(qcard(i)));
@@ -471,7 +488,6 @@ AGENTS.forEach((agent, index) => {
   b.addEventListener('click', () => showAgent(index));
   $('agent-picker').appendChild(b);
 });
-STUDENT_Q.forEach(i => $('student-questions').appendChild(qcard(i)));
 
 /* ================= 06 · who sees what ================= */
 const ROLES = {

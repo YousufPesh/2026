@@ -11,9 +11,8 @@
 <option value="layer">2 · The wiring</option>
 <option value="sources">3 · The systems</option>
 <option value="meaning">4 · Who answers</option>
-<option value="ask">5 · Agents</option>
-<option value="governance">6 · Who sees what</option>
-<option value="campusmind">7 · The handoff</option>
+<option value="governance">5 · Who sees what</option>
+<option value="ask">6 · Agents</option>
 </select>
 <label class="notes-toggle"><input type="checkbox" id="notes-on"> Notes</label>
 </div>
@@ -102,18 +101,8 @@
 </section>
 
 <!-- ===== 05 ===== -->
-<section id="ask" aria-labelledby="ask-heading">
-<p class="eyebrow"><b>05</b> AGENTS</p>
-<h2 id="ask-heading">Copy. Paste. Narrate.</h2>
-
-<div class="choices" role="group" aria-label="Choose an agent" id="agent-picker"></div>
-<p class="agent-open"><a id="agent-link" href="#" target="_blank" rel="noopener"></a></p>
-<div id="thread-questions"></div>
-</section>
-
-<!-- ===== 06 ===== -->
 <section id="governance" aria-labelledby="governance-heading">
-<p class="eyebrow"><b>06</b> WHO SEES WHAT</p>
+<p class="eyebrow"><b>05</b> WHO SEES WHAT</p>
 <h2 id="governance-heading">Same question. Same layer. Different rows.</h2>
 
 <div class="choices" role="group" aria-label="Who is asking">
@@ -135,26 +124,14 @@
 <p class="pnote" hidden>A prompt is not a security boundary. The real boundary is here, where identity decides which rows are reachable at all.</p>
 </section>
 
-<!-- ===== 07 ===== -->
-<section id="campusmind" aria-labelledby="campusmind-heading">
-<p class="eyebrow"><b>07</b> THE HANDOFF</p>
-<h2 id="campusmind-heading">One layer. Two audiences.</h2>
+<!-- ===== 06 ===== -->
+<section id="ask" aria-labelledby="ask-heading">
+<p class="eyebrow"><b>06</b> AGENTS</p>
+<h2 id="ask-heading">Copy. Paste. Narrate.</h2>
 
-<div class="pipeline">
-<div class="pipe-node"><span class="pipe-label">SOURCE SYSTEMS</span><strong>13</strong></div>
-<div class="pipe-arrow" aria-hidden="true">↓</div>
-<div class="pipe-node is-core"><span class="pipe-label">ONTOLOGY &amp; SEMANTIC MODEL</span><strong>55 entities · ~90 relationships</strong></div>
-<div class="pipe-arrow" aria-hidden="true">↓</div>
-<div class="pipe-split">
-  <div class="pipe-node"><span class="pipe-label">DATA AGENT</span><strong>Staff</strong></div>
-  <div class="pipe-node"><span class="pipe-label">CAMPUSMIND</span><strong>Students</strong></div>
-</div>
-</div>
-
-<div id="student-questions"></div>
-
-<p class="closing-question">Which use case would you build second?</p>
-<p class="micro">Synthetic demonstration data · no real records</p>
+<div class="choices" role="group" aria-label="Choose an agent" id="agent-picker"></div>
+<p class="agent-open"><a id="agent-link" href="#" target="_blank" rel="noopener"></a><a class="agent-thread" id="agent-thread" href="#" target="_blank" rel="noopener" hidden></a></p>
+<div id="thread-questions"></div>
 </section>
 
 </main>
