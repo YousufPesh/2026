@@ -527,7 +527,7 @@ window.addEventListener('scroll', () => {
     pending = false;
     const line = document.querySelector('.section-nav').getBoundingClientRect().height + 60;
     let id = 'architecture';
-    document.querySelectorAll('main section').forEach(s => { if (s.getBoundingClientRect().top <= line) id = s.id; });
+    document.querySelectorAll('main > section').forEach(s => { if (s.getBoundingClientRect().top <= line) id = s.id; });
     $('section-jump').value = id;
   });
 }, { passive: true });
@@ -536,3 +536,88 @@ window.addEventListener('scroll', () => {
 renderNets();
 renderExample('events');
 renderRole('student');
+
+/* ================= 07 · work iq ================= */
+const WORKIQ = {
+  name: 'Work Briefing',
+  url: 'https://dev.campusmind.ai/chat/agent_id/assistfdf0ebc2fddb48ae8eba6d51572e1325',
+  thread: 'https://dev.campusmind.ai/chat/agent_id/assistfdf0ebc2fddb48ae8eba6d51572e1325?thread=conv_0d8e82afd132d7b000WCDuP5ckccircYbtHuY6l8z5yMmGJuZX',
+  questions: [
+    { q: 'What is still open from my recent email threads about students who cannot register?' },
+    { q: 'Which students have been named in those threads, and what was said about each one?' },
+    { q: 'Has anyone actually contacted those students, or have we only discussed them between ourselves?' },
+    { q: 'What did we agree to do, and has anyone confirmed it was done?' },
+    { q: 'Give me a short briefing I can send to the registrar based on those threads.' }
+  ]
+};
+
+/* 25 blocked students: 5 were named in an email, 0 were written to. */
+const WIQ_TOTAL = 25, WIQ_TALKED = 5, WIQ_CONTACTED = 0;
+const wiqCells = buildDots($('wiq-grid'), WIQ_TOTAL);
+let wiqTimer = null;
+
+function resetWiq() {
+  if (wiqTimer) clearTimeout(wiqTimer);
+  wiqCells.forEach(c => { c.className = 'w-record'; });
+  $('wiq-a').textContent = WIQ_TOTAL;
+  $('wiq-b').textContent = '—';
+  $('wiq-c').textContent = '—';
+  $('wiq-caption').textContent = '';
+  $('wiq-alt').textContent = `${WIQ_TOTAL} students blocked from registering.`;
+}
+const WIQ_STEPS = [
+  { b: null, c: null, text: 'Twenty-five students cannot register. That much is in the record.' },
+  { b: WIQ_TALKED, c: null, text: 'Five of them were named in an email between two administrators.' },
+  { b: WIQ_TALKED, c: WIQ_CONTACTED, text: 'None of the twenty-five were written to.' }
+];
+$('wiq-play').addEventListener('click', () => {
+  resetWiq();
+  const btn = $('wiq-play');
+  btn.disabled = true;
+  btn.textContent = 'Following…';
+  let i = 0;
+  const step = () => {
+    const s = WIQ_STEPS[i];
+    if (s.b !== null) wiqCells.forEach((c, n) => { c.className = n < s.b ? 'w-talked' : 'w-record'; });
+    $('wiq-b').textContent = s.b === null ? '—' : s.b;
+    $('wiq-c').textContent = s.c === null ? '—' : s.c;
+    $('wiq-caption').textContent = s.text;
+    $('wiq-alt').textContent = s.text;
+    announce(s.text);
+    i++;
+    if (i < WIQ_STEPS.length) wiqTimer = setTimeout(step, REDUCED ? 2600 : 1600);
+    else {
+      btn.disabled = false;
+      btn.textContent = '▶ Follow them again';
+    }
+  };
+  step();
+});
+resetWiq();
+
+(function renderWorkIq() {
+  const box = document.createElement('section');
+  box.className = 'agent-block';
+  const h = document.createElement('h3');
+  h.textContent = WORKIQ.name;
+  box.appendChild(h);
+  const links = document.createElement('p');
+  links.className = 'agent-open';
+  const open = document.createElement('a');
+  open.className = 'agent-primary';
+  open.href = WORKIQ.url;
+  open.target = '_blank';
+  open.rel = 'noopener';
+  open.textContent = 'Open the agent';
+  links.appendChild(open);
+  const t = document.createElement('a');
+  t.className = 'agent-thread';
+  t.href = WORKIQ.thread;
+  t.target = '_blank';
+  t.rel = 'noopener';
+  t.textContent = 'Open previous chat';
+  links.appendChild(t);
+  box.appendChild(links);
+  WORKIQ.questions.forEach(i => box.appendChild(qcard(i)));
+  $('workiq-agent').appendChild(box);
+})();

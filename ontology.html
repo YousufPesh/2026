@@ -13,6 +13,7 @@
 <option value="meaning">4 · Who answers</option>
 <option value="governance">5 · Who sees what</option>
 <option value="ask">6 · Agents</option>
+<option value="workiq">7 · Work IQ</option>
 </select>
 <label class="notes-toggle"><input type="checkbox" id="notes-on"> Notes</label>
 </div>
@@ -130,6 +131,31 @@
 <h2 id="ask-heading">Copy. Paste. Narrate.</h2>
 
 <div id="agent-list"></div>
+</section>
+
+<!-- ===== 07 ===== -->
+<section id="workiq" aria-labelledby="workiq-heading">
+<p class="eyebrow"><b>07</b> WORK IQ</p>
+<h2 id="workiq-heading">The decision is not in the database.</h2>
+
+<div class="controls"><button type="button" id="wiq-play" class="primary-button">▶ Follow the 25</button></div>
+<p class="step-caption" id="wiq-caption" aria-live="polite">&nbsp;</p>
+
+<figure class="figure">
+  <div class="wiq-head">
+    <div><strong id="wiq-a">25</strong><span>in the record</span></div>
+    <div><strong id="wiq-b">—</strong><span>discussed by staff</span></div>
+    <div><strong id="wiq-c">—</strong><span>actually contacted</span></div>
+  </div>
+  <div class="wiq-grid" id="wiq-grid" role="img" aria-labelledby="wiq-alt"></div>
+  <p class="sr-only" id="wiq-alt"></p>
+  <div class="dot-legend"><span><i class="w-record"></i>record only</span><span><i class="w-talked"></i>discussed by staff</span><span><i class="w-contacted"></i>contacted</span></div>
+</figure>
+
+<p class="rel-line">The record knows a student is blocked. Only the mailbox knows whether anyone did anything about it.</p>
+
+<div id="workiq-agent"></div>
+<p class="pnote" hidden>Five of the twenty-five were named in an email between two administrators. None of the twenty-five were written to. An unanswered conversation never becomes a case, which is why the record shows nothing.</p>
 </section>
 
 </main>

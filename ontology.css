@@ -216,3 +216,19 @@ h1,h2{color:var(--navy);font-size:1.875rem;line-height:1.1;font-weight:650;lette
 .agent-block .qcard { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .agent-block .qcard-q { flex: 1; min-width: 0; margin: 0; }
 .agent-block .qcard-top { order: 2; margin: 0; flex: none; }
+
+/* ---- 07 work iq ---- */
+.wiq-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.wiq-head>div{flex:1 1 90px}
+.wiq-head strong{display:block;font-size:1.75rem;line-height:1;color:var(--navy);font-variant-numeric:tabular-nums;letter-spacing:-.045em}
+.wiq-head>div:nth-child(2) strong{color:var(--teal)}
+.wiq-head>div:nth-child(3) strong{color:var(--warn)}
+.wiq-head span{display:block;font-size:.75rem;color:var(--muted);margin-top:4px;line-height:1.3}
+.wiq-grid{display:grid;grid-template-columns:repeat(13,1fr);gap:5px;margin:16px 0 0}
+.wiq-grid span{aspect-ratio:1;border-radius:4px;background:#dfe7e9;transition:background .35s}
+.wiq-grid span.w-record{background:#dfe7e9}
+.wiq-grid span.w-talked{background:var(--teal)}
+.wiq-grid span.w-contacted{background:var(--gold)}
+.dot-legend .w-record{background:#dfe7e9}
+.dot-legend .w-talked{background:var(--teal)}
+.dot-legend .w-contacted{background:var(--gold)}
