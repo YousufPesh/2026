@@ -4,23 +4,28 @@ Guidance for agents working in this repo. For what the Labs are, read `README.md
 
 ## These pages are demos, not the product
 
-Seven pages, one per CampusMind offering. A presenter drives each one during a live
-demo. All data is written into the page's own JavaScript. Do not add API calls,
-analytics, or storage unless the user asks for them. Every page tells its reader that
-the content is illustrative, and that statement has to stay true.
+Eight Labs, one per CampusMind offering, plus the hub and a Pricing page. A presenter
+drives each Lab during a live demo. All data is written into the page's own JavaScript.
+Do not add API calls, analytics, or storage unless the user asks for them. Pricing is
+the one page that already stores data, in `localStorage`. Every page tells its reader
+that the content is illustrative, and that statement has to stay true.
 
-Strictly think about what visuals will support my argument. No paragraphs and or not alot of text, we want to focus on supporting graphics and storu telling graphically that support my main demo.  no one is reading a bunch of stuff on the lab.
+Strictly think about what visuals will support my argument. No paragraphs, and not a lot
+of text. Focus on supporting graphics and on telling the story graphically, in support
+of my main demo. No one reads a lot of text on a Lab.
 
 ## Constraints
 
 - Add no build step and no dependencies. There is no `package.json`, bundler, or
   framework, and Vercel serves the files as they are.
-- Add no web fonts. The hub and the four brand Labs use `-apple-system,
-  BlinkMacSystemFont, "Segoe UI"`, and Campus Chat follows them. Accessibility and Virtual
-  Teaching Assistant use `Inter, "Avenir Next"`.
+- Add no web fonts. Two system stacks are in use. The hub, Data Bridge, Campus Chat,
+  Campus Chat Plus, and Admin Console use `-apple-system, BlinkMacSystemFont, "Segoe UI"`.
+  Accessibility, Recruitment, Retention, Virtual Teaching Assistant, and Pricing use
+  `Inter, "Avenir Next", Avenir` with the same system fallback.
 - Keep the three-file naming. Every Lab is `<lab>.html`, `<lab>.css`, and `<lab>.js` at
-  the repo root. Add no subdirectories and no shared modules. Accessibility is the one
-  exception, because it also loads `accessibility-examples.js`.
+  the repo root. Add no subdirectories and no shared modules. Two pages break the
+  pattern. Accessibility also loads `accessibility-examples.js`. Pricing loads
+  `pricing-redesign.css`, not `pricing.css`.
 - Match the existing accessibility standard. These pages use tablists with roving
   `tabIndex`, `aria-pressed` toggles, `aria-live` regions, visible focus rings, and
   `prefers-reduced-motion` branches. One of the Labs demos an accessibility product.
@@ -28,36 +33,44 @@ Strictly think about what visuals will support my argument. No paragraphs and or
 ## The duplication is deliberate
 
 Every stylesheet declares its own `:root` tokens, `.shell`, `.masthead`,
-`.section-nav`, and `.eyebrow`. Every JavaScript file defines its own `$`. Three Labs
-implement scroll tracking, two of them with identical code.
+`.section-nav`, and `.eyebrow`. Every JavaScript file defines its own `$`. Four Labs
+(`ontology.js`, `campus-chat.js`, `campus-chat-plus.js`, and `admin-console.js`)
+implement scroll tracking with the same code and a different default section.
 
 Do not extract a shared stylesheet or a shared JavaScript module on your own
 initiative. A presenter who edits one Lab on the morning of a talk cannot break the
-other four. If the user asks for consolidation, that is a real task. Otherwise, leave
-it.
+others. If the user asks for consolidation, that is a real task. Otherwise, leave it.
 
-The tokens already differ on purpose. `--gold` is `#e8b949` in `recruitment.css` and
-`#a67312` in both `retention.css` and `ontology.css`.
+The tokens already differ on purpose. `--gold` has three values.
+
+| `--gold` | Files |
+|----------|-------|
+| `#a67312` | `ontology.css`, `campus-chat.css`, `campus-chat-plus.css`, `admin-console.css`, `pricing-redesign.css` |
+| `#876328` | `accessibility.css`, `retention.css` |
+| `#9a6811` | `recruitment.css` |
+
 `virtual-teaching-assistant.css` defines `--gold-soft` instead, and `home.css` defines
-no gold at all. `accessibility.css` uses a different palette: `--teal: #306d7e`,
-`--deep`, `--pale`, and `--border`.
+no gold at all. `accessibility.css` also uses `--teal: #306d7e`, `--deep`, `--pale`,
+and `--border`.
 
 ## Do not run a formatter
 
-Three formatting styles coexist in this repo.
+Three formatting styles coexist in this repo, sometimes inside one Lab.
 
 | Style | Files |
 |-------|-------|
-| Pretty-printed | `index.html`, `home.css`, `labs-navigation.css`, `virtual-teaching-assistant.*`, `campus-chat.*` |
-| One rule or element per line | `ontology.html`, `ontology.css` |
-| Collapsed whitespace | `accessibility.*`, `recruitment.*`, `retention.*` |
+| Pretty-printed | `index.html`, `home.css`, `labs-navigation.css`, `virtual-teaching-assistant.*`, `pricing.*`, `pricing-redesign.css`, and the JavaScript of Accessibility, Recruitment, Data Bridge, Campus Chat, Campus Chat Plus, and Admin Console |
+| One rule or element per line | `ontology.html`, `ontology.css`, `campus-chat.html`, `campus-chat.css`, `campus-chat-plus.html`, `campus-chat-plus.css`, `admin-console.html`, `admin-console.css` |
+| Collapsed whitespace | `recruitment.html`, `recruitment.css`, `retention.*`, `accessibility.css` |
 
-The collapsed files are complete pages, not stubs. `recruitment.html` holds 15.6 KB on
-11 lines, and `accessibility.css` holds one line of 19,621 characters. To see the
-longest line in a file:
+The collapsed files are complete pages, not stubs. `recruitment.css` is one line of
+20,488 characters. `accessibility.css` has 229 lines, and one of them holds 19,621
+characters. To list the line count and longest line of every file:
 
 ```sh
-awk '{ if (length($0) > m) m = length($0) } END { print FILENAME, m }' accessibility.css
+for f in *.html *.css *.js; do
+	awk -v f="$f" '{ if (length($0) > m) m = length($0) } END { print f, NR, m }' "$f"
+done
 ```
 
 A formatter turns a one-line change into a diff of a thousand lines, and the real
@@ -74,39 +87,71 @@ runtime from `getBoundingClientRect()` measurements, and a `ResizeObserver` plus
 one-second animation loop redraw them. If you change CSS that affects node geometry,
 check the page at more than one viewport width.
 
-**Recruitment.** `recruitment.js` registers a browser-agent tool through
-`document.modelContext.registerTool`. The call uses optional chaining and aborts on
-`pagehide`. No other Lab does this, and nothing in the repo records whether it is an
-experiment or the start of a convention. Ask before you copy it to another Lab or
-delete it.
+**Recruitment.** The page is a journey of five stage cards (interest, expertise, slate,
+review, next), and each card opens in a dialog. The visitor picks one of four channels
+and one of three question routes. The review stage offers Approve, Edit, and Hold, and
+the result is recorded in Slate.
 
 **Retention.** The page opens as a compact illustrated card stack. Expanding it reveals
 seven connected stage cards, and each card opens its visual in one native `<dialog>`.
-`drawWires()` calculates the connectors from the cards' rendered positions; keep its
-`ResizeObserver` and redraw loop when changing card geometry. The dialog updates the
+`drawWires()` calculates the connectors from the cards' rendered positions. Keep its
+`ResizeObserver` and redraw loop when you change card geometry. The dialog updates the
 URL hash, returns focus to the opening card, and supports direct links to every stage.
+All of this lives in `retention.js`, which has 15 collapsed lines.
 
-**Ontology.** The largest JavaScript file at 431 lines, and the only file with section
-comments. The question trace advances every 1500 ms, or every 2600 ms when
-`prefers-reduced-motion` matches. `qcard()` builds the card shell with `innerHTML` and
-then writes each field with `textContent`. Keep those two steps separate, so that card
-data cannot inject markup.
+**Data Bridge.** The files are still named `ontology.*`, and the page's meta
+description still says "Fabric IQ ontology". The question trace advances every 1400 ms,
+or every 2400 ms when `prefers-reduced-motion` matches. `qcard()` builds the card shell
+with `innerHTML` and then writes each field with `textContent`. Keep those two steps
+separate, so that card data cannot inject markup. `AGENTS` holds two agents, Leadership
+Agent and Student Success Assistant, and each links to the live product.
 
-**Campus Chat.** The only Lab that runs beside a live demo of the product it describes, so it
-argues rather than imitates. It has no chat mockups on purpose. Do not add message bubbles, a
-composer bar, or a fake transcript, because the real thing is on the next screen. The page is a
-run sheet in the order the presenter runs it: three demo runs, thirteen numbered steps, then one
-before-and-after graphic as the closer. Every prompt a presenter types carries a Copy button whose
-`data-copy` is the exact string. Those strings are the script, so change them only when the
-script changes. Concepts sit inside the step where they first matter: the skill primer in run 1
-step 1, the model catalogue in run 2 step 3, the agent reach and the entity scope in run 3
-step 1. Keep it that way rather than adding sections before the first step. `--mark` is a second teal, one step
-above `--teal`, because the brand teal sits below the chart-color chroma floor. Collapsing the
-two drops the bars, wires and timeline below it.
+**Virtual Teaching Assistant.** The Canvas, Blackboard, and D2L tablist works, but all
+three panels still show a `.screenshot-placeholder` frame that reads "Product
+screenshot forthcoming". Adding the screenshots is the remaining work. A course picker
+links to three live courses, and each course has suggested questions with Copy
+buttons.
 
-**Virtual Teaching Assistant.** The smallest Lab, and the only unfinished one. All
-three LMS panels show a `.screenshot-placeholder` frame that reads "Product screenshot
-forthcoming". The tablist works. Adding the screenshots is the remaining work.
+**Campus Chat.** The argument for one licence that covers every model and every
+person. It shows chat bubbles, because it illustrates people and models sharing one
+thread. Its last section opens the real thread in the live product.
+
+**Campus Chat Plus.** Everything in Campus Chat, plus custom agents. At the booth the
+live product runs on the left screen and this Lab on the right, and the presenter does
+the talking. The page borrows the layout of the Campus Chat Plus marketing video: each
+section is one scene with a short headline and one visual, and there is no body copy.
+Unlike the other Labs, the page is fluid rather than a fixed 620px column, so it
+follows the window as the presenter resizes it beside the live demo. The page sits
+against the left edge of the window, not in the centre. `main` is a size
+container. Below 1000px of container width, each scene stacks the headline above a
+visual up to 680px wide. From 1000px, the headline and the visual sit side by side.
+Headline size and scene padding scale with `cqi` units.
+
+The eight scenes are the scattered offices that join one hub, the composer's model
+picker, the Agent Marketplace, one Educause Info answer with its sources, a group chat,
+an orchestration agent calling three agents, the web widget, and four questions to
+copy. The answer, group chat, and orchestration scenes play once when they scroll into
+view, and each has a replay button. `player()` runs all three from step tables, so add
+a beat by adding a row to `ANSWER`, `TURNS`, or `ORCH`. The Agents tab in the picker
+lists the agents added in the marketplace scene.
+
+The live agent is **Educause Info**, which covers EDUCAUSE 2026 in Denver (September 29
+to October 2) and online (October 14 and 15). It appears in the chat's agent list, not
+in the marketplace search. All four Copy questions were asked of the live agent on
+2026-09-26 and returned real sessions. Name a date in a question, not "day two",
+because the agent counts the preconference days. The model counts in `PROVIDERS` and
+the skill names in `SKILLS` were copied from the live picker on 2026-09-26, and they
+drift as models are added. The sessions, rooms, people, and other agents on the page
+are fictional.
+
+**Admin Console.** Seven sections, reached through a `<select>` jump menu. A Notes
+checkbox shows the hidden `.pnote` presenter narration. The branding preview writes the
+typed institution name with `textContent`.
+
+**Pricing.** All prices sit in one block at the top of `pricing.js`. Its header comment lists the
+pricing assumptions, which the page repeats in its notes. Unlike every other page, `pricing.html` uses relative paths such
+as `./labs-navigation.css`. `pricing-redesign.css` overrides `.labs-navigation`, so the
+navigation looks different on this page only. Edits to `pricing.css` do nothing.
 
 ## Check a change before you call it done
 
@@ -116,7 +161,7 @@ The repo has no tests, no linter, and no CI. Serve the directory and look at the
 python3 -m http.server 8000
 ```
 
-`file://` does not work, because the pages load CSS and JavaScript from root-absolute
+`file://` does not work, because most pages load CSS and JavaScript from root-absolute
 paths. Use the `.html` URLs locally. Production drops the extension through
 `cleanUrls`. Before you finish, move through the page with the keyboard, and view it at
 a narrow width.
@@ -125,10 +170,11 @@ a narrow width.
 
 Do not fix these unless the user asks.
 
-- `accessibility.css` has 35 unused class selectors out of 138, and `recruitment.css`
-  has 14 out of 99. Both sets are left over from an earlier design. Before you delete a
-  selector that looks unused, grep the JavaScript too, because several classes are
-  applied at runtime. To list them again:
+- `pricing.css` is not loaded by any page. It is the stylesheet that
+  `pricing-redesign.css` replaced.
+- `accessibility.css` has many selectors left over from an earlier design. The loop
+  below flags 82 of 231 classes. Before you delete one, grep all the JavaScript, because
+  several classes are applied at runtime.
 
   ```sh
   for c in $(grep -o '\.[a-zA-Z][a-zA-Z0-9_-]*' accessibility.css | sort -u | tr -d '.'); do
@@ -136,18 +182,20 @@ Do not fix these unless the user asks.
   done
   ```
 
-- `assets/` holds 21 MB. No image has a `srcset` or a smaller derivative, and only
-  `recruitment-student.png` sets `loading="lazy"`. `recruitment.html` declares
-  `width="1024"` and `height="1024"` on two images that are 1254 by 1254 pixels. Both
-  are square, so the page does not shift.
-- Every internal link is written as `/x.html`, and `cleanUrls` serves `/x`. Each
+- `assets/` holds 21 MB. No image has a `srcset`, a smaller derivative, or
+  `loading="lazy"`. `recruitment-student.png` and `student-website-visit.png` (3.1 MB
+  together) are not referenced by any page.
+- Most internal links are written as `/x.html`, and `cleanUrls` serves `/x`. Each
   navigation inside the site costs one redirect in production.
-- `accessibility.js` writes its own Tab cycling and its own backdrop-click-to-close for
-  `<dialog>` elements that it opens with `showModal()`. The browser already does both.
-- `ontology.css` hardcodes `scroll-padding-top: 95px` for the same sticky navigation
-  that `retention.js` measures into `--section-nav-height`.
-- The favicon is declared three ways. `index.html`, `ontology.html`, and
-  `virtual-teaching-assistant.html` use `/assets/campusmind-favicon.png`.
-  `accessibility.html` uses the relative path `assets/campusmind-favicon.png`.
-  `recruitment.html` and `retention.html` use an inline SVG data URI that does not match
-  the PNG mark. `accessibility.html` and `recruitment.html` set no `theme-color`.
+- `accessibility.js` and `retention.js` write their own Tab cycling and their own
+  backdrop-click-to-close for `<dialog>` elements that they open with `showModal()`.
+  The browser already handles Tab inside a modal dialog.
+- `assets/` still holds the three demo files that the old Campus Chat Plus run sheet
+  handed out: `Maya_Quiz3_Graded.pdf`, `Nair_meeting_notes_Maya.txt`, and
+  `Lakeview_Fall2025_FirstYear_Cohort.csv`. No page references them now.
+- The favicon path differs by page. `accessibility.html` uses `assets/…`,
+  `pricing.html` uses `./assets/…`, and every other page uses
+  `/assets/campusmind-favicon.png`. `accessibility.html` and `recruitment.html` set no
+  `theme-color`.
+- The Pricing CSV export escapes quotes but does not guard against spreadsheet formula
+  injection in the name and contact fields.

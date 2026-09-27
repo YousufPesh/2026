@@ -8,24 +8,35 @@ No page calls an API, and no page sends data anywhere. The disclaimers printed o
 pages ("Illustrative", "Synthetic illustrations · Not product outputs") are accurate,
 and they have to stay accurate.
 
+Three pages link out to the live product at `app.mind-platform.ai`, so a presenter can
+switch from the Lab to the real thing. Those are plain links, not API calls.
+
 Vercel deploys `main` automatically on merge.
 
 ## The Labs
 
-| # | Lab | Offering | What a visitor can do |
-|---|-----|----------|-----------------------|
-| 01 | Accessibility | Document remediation | Reveal the five-step remediation loop and open any stage in place. In AI remediation, compare six sample documents before and after. |
-| 02 | Recruitment | Prospective-student questions | Step through four kinds of student question and see which specialist answers each one. One question escalates to a person. Approve, edit, or hold the draft reply. |
-| 03 | Retention | Early identification and coordinated student support | Expand a seven-stage visual flow, then open each stage to see student signals, institutional triggers, configured points, response thresholds, outreach, advisor context, and early intervention. |
-| 04 | Ontology | The semantic layer over campus systems | Open any of six architecture layers. Run an animated trace of one question through all of them. Compare 13 × u point-to-point integrations against 13 + u. |
-| 05 | Virtual Teaching Assistant | Student support inside the LMS | Switch between Canvas, Blackboard, and D2L. Read the example question categories. The screenshots are still placeholders. |
-| 06 | Agent Studio | Agent design and governance | Follow a concise path from institutional purpose through agent design, connected knowledge, testing, and governed release. |
-| 07 | Campus Chat | Campus-wide access to every model | A run sheet for the live demo, in the order it is presented. Jump to any of the three runs, copy each of the 26 prompts straight into the product, watch an agent reach out to Canvas or through Fabric to the systems of record, and browse 23 models by provider at the step where the model changes. |
+The hub at `index.html` lists eight Labs in this order.
+
+| # | Lab | Files | What a visitor can do |
+|---|-----|-------|-----------------------|
+| 01 | Accessibility | `accessibility.*` | Reveal the five-stage remediation flow and open any stage in a dialog. Compare six sample documents before and after AI remediation. |
+| 02 | Recruitment | `recruitment.*` | Walk a prospective student through five stages, from first interest to next step. Pick a channel and a question route, then approve, edit, or hold the counselor reply before it goes to Slate. |
+| 03 | Retention | `retention.*` | Expand a seven-stage flow, then open each stage to see student signals, triggers, points, thresholds, outreach, advisor context, and intervention. |
+| 04 | Data Bridge | `ontology.*` | Open any of six architecture layers. Run an animated trace of one question through all of them. Compare 13 × u point-to-point integrations against 13 + u. Open the two production agents in the live product. |
+| 05 | Virtual Teaching Assistant | `virtual-teaching-assistant.*` | Switch between Canvas, Blackboard, and D2L. Pick one of three live courses, copy a suggested question, and ask it in the live course. |
+| 06 | Campus Chat | `campus-chat.*` | See why one licence for every model beats separate subscriptions, with people and models in the same thread. Open the real thread in the live product. |
+| 07 | Campus Chat Plus | `campus-chat-plus.*` | Eight scenes, each a headline and one visual: offices that each bought their own AI join one hub, the model picker, the Agent Marketplace, an Educause Info answer with its sources, a group chat, an orchestration agent, and the web widget. Copy four questions for the live Educause Info agent, or open a saved thread. |
+| 08 | Admin Console | `admin-console.*` | Watch a runaway bill, then set caps by tenant, group, user, and agent. Compare enforcement modes, review roles and permissions, and preview institution branding. |
+
+`pricing.html` is not a Lab and has no hub card. It is a five-step quote builder that
+the top navigation links to. It is the one page that stores data. It saves each copied
+quote that carries a name or contact to `localStorage` under `campusmind-quotes`, and
+it can export the saved quotes as a CSV file. Nothing leaves the browser.
 
 ## Run the Labs locally
 
 The repo has no build step, no bundler, and no dependencies. Opening a page with
-`file://` does not work, because every page loads its CSS and JavaScript from
+`file://` does not work, because most pages load their CSS and JavaScript from
 root-absolute paths such as `/labs-navigation.css`. Serve the directory instead.
 
 ```sh
@@ -49,16 +60,18 @@ Every Lab is three files at the repo root, named the same way.
 <lab>.js
 ```
 
-`index.html` and `home.css` are the hub page. `labs-navigation.css` holds the top
-navigation, and it is the only stylesheet that more than one page loads. No JavaScript
-is shared between Labs, and there is no shared base stylesheet. Each Lab declares its
-own `:root` design tokens.
+The file name does not always match the Lab name. The Data Bridge Lab lives in
+`ontology.*`. `index.html` and `home.css` are the hub page. The Pricing page loads
+`pricing-redesign.css`, and `pricing.css` is no longer loaded by any page.
+
+`labs-navigation.css` holds the top navigation, and it is the only stylesheet that more
+than one page loads. No JavaScript is shared between pages, and there is no shared base
+stylesheet. Each page declares its own `:root` design tokens.
 
 ## Assets
 
-`assets/` holds 21 MB, mostly the twelve before and after PNGs that the Accessibility Lab
-swaps between. It also holds the three synthetic files the Campus Chat Lab hands a presenter to
-drag into the demo: a graded quiz PDF, a page of meeting notes, and a cohort CSV.
+`assets/` holds 21 MB. Most of it is the twelve before and after PNGs that the
+Accessibility Lab swaps between.
 
 ```sh
 du -sh assets
