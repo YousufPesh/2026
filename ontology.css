@@ -232,3 +232,9 @@ h1,h2{color:var(--navy);font-size:1.875rem;line-height:1.1;font-weight:650;lette
 .dot-legend .w-record{background:#dfe7e9}
 .dot-legend .w-talked{background:var(--teal)}
 .dot-legend .w-contacted{background:var(--gold)}
+
+/* the Fabric side, shown after an agent answers */
+.fabric-open{margin:0 0 16px}
+.fabric-link{display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);font-size:.875rem;font-weight:650;text-decoration:none}
+.fabric-link::after{content:"↗";color:var(--teal)}
+.fabric-link:hover{border-color:var(--teal);color:var(--teal)}
