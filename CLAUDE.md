@@ -146,7 +146,8 @@ are fictional.
 
 **Admin Console.** Seven sections, reached through a `<select>` jump menu. A Notes
 checkbox shows the hidden `.pnote` presenter narration. The branding preview writes the
-typed institution name with `textContent`.
+typed institution name with `textContent`. A link at the top opens the live admin
+console at `admin.mind-platform.ai`.
 
 **Pricing.** All prices sit in one block at the top of `pricing.js`. Its header comment lists the
 pricing assumptions, which the page repeats in its notes. Unlike every other page, `pricing.html` uses relative paths such

@@ -8,8 +8,10 @@ No page calls an API, and no page sends data anywhere. The disclaimers printed o
 pages ("Illustrative", "Synthetic illustrations · Not product outputs") are accurate,
 and they have to stay accurate.
 
-Three pages link out to the live product at `app.mind-platform.ai`, so a presenter can
-switch from the Lab to the real thing. Those are plain links, not API calls.
+Five Labs link out to the live product, so a presenter can switch from the Lab to the
+real thing. Data Bridge, Virtual Teaching Assistant, Campus Chat, and Campus Chat Plus
+link to `app.mind-platform.ai`. Admin Console links to `admin.mind-platform.ai`. Those
+are plain links, not API calls.
 
 Vercel deploys `main` automatically on merge.
 
