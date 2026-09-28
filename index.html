@@ -9,18 +9,20 @@
   <link rel="icon" href="/assets/campusmind-favicon.png">
   <link rel="stylesheet" href="/labs-navigation.css">
   <link rel="stylesheet" href="/home.css">
+  <script src="/home.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to Labs</a>
   <nav class="labs-navigation" aria-label="Labs">
     <a href="/" aria-current="page">Labs</a>
-    <a href="/accessibility.html">Accessibility</a>
-    <a href="/recruitment.html">Recruitment</a>
-    <a href="/retention.html">Retention</a>
+    <a href="/campus-chat.html">Campus Chat</a>
+    <a href="/campus-chat-plus.html">Campus Chat Plus</a>
     <a href="/ontology.html">Data Bridge</a>
+    <a href="/admin-console.html">Admin Console</a>
     <a href="/virtual-teaching-assistant.html">Teaching assistant</a>
-    
-    <a href="/campus-chat.html">Campus Chat</a><a href="/campus-chat-plus.html">Campus Chat Plus</a><a href="/admin-console.html">Admin Console</a>
+    <a href="/retention.html">Retention</a>
+    <a href="/recruitment.html">Recruitment</a>
+    <a href="/accessibility.html">Accessibility</a>
     <a href="/pricing.html">Pricing</a>
   </nav>
   <main id="main">
@@ -31,35 +33,26 @@
       <p>Use these focused companion pages alongside a live product demonstration.</p>
     </header>
     <section class="lab-list" aria-label="Available Labs">
-      <a class="lab-card accessibility" href="/accessibility.html">
+<a class="lab-card campus-chat" href="/campus-chat.html">
         <span class="number">01</span>
         <div>
-          <span class="label">Accessibility</span>
-          <h2>Follow a document through remediation.</h2>
-          <p>Explore audit, AI-assisted remediation, human review, and revalidation.</p>
+          <span class="label">Campus Chat</span>
+          <h2>Every model, for everyone.</h2>
+          <p>One licence instead of individual subscriptions, with people and models in the same thread.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
-      <a class="lab-card recruitment" href="/recruitment.html">
+<a class="lab-card campus-chat-plus" href="/campus-chat-plus.html">
         <span class="number">02</span>
         <div>
-          <span class="label">Recruitment</span>
-          <h2>Keep prospective students moving forward.</h2>
-          <p>See where interest gets lost and how useful context supports the next step.</p>
+          <span class="label">Campus Chat Plus</span>
+          <h2>Every AI, person, agent, and system. One chat.</h2>
+          <p>Add custom agents from the marketplace, and let one agent call the others.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
-      <a class="lab-card retention" href="/retention.html">
+<a class="lab-card ontology" href="/ontology.html">
         <span class="number">03</span>
-        <div>
-          <span class="label">Retention</span>
-          <h2>Turn early signals into coordinated support.</h2>
-          <p>Explore warning signs, thresholds, points, outreach, and advisor context.</p>
-        </div>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="lab-card ontology" href="/ontology.html">
-        <span class="number">04</span>
         <div>
           <span class="label">Data Bridge</span>
           <h2>Build the layer every use case stands on.</h2>
@@ -67,7 +60,16 @@
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
-      <a class="lab-card teaching-assistant" href="/virtual-teaching-assistant.html">
+<a class="lab-card admin-console" href="/admin-console.html">
+        <span class="number">04</span>
+        <div>
+          <span class="label">Admin Console</span>
+          <h2>Keep the bill under control.</h2>
+          <p>Budgets by tenant, group, user and agent, plus roles, permissions and branding.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+<a class="lab-card teaching-assistant" href="/virtual-teaching-assistant.html">
         <span class="number">05</span>
         <div>
           <span class="label">Virtual Teaching Assistant</span>
@@ -76,32 +78,48 @@
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
-      <a class="lab-card campus-chat" href="/campus-chat.html">
+<a class="lab-card retention" href="/retention.html">
         <span class="number">06</span>
         <div>
-          <span class="label">Campus Chat</span>
-          <h2>Every model, for everyone.</h2>
-          <p>One licence instead of individual subscriptions, with people and models in the same thread.</p>
+          <span class="label">Retention</span>
+          <h2>Turn early signals into coordinated support.</h2>
+          <p>Explore warning signs, thresholds, points, outreach, and advisor context.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
-      <a class="lab-card campus-chat-plus" href="/campus-chat-plus.html">
+<a class="lab-card recruitment" href="/recruitment.html">
         <span class="number">07</span>
         <div>
-          <span class="label">Campus Chat Plus</span>
-          <h2>Every AI, person, agent, and system. One chat.</h2>
-          <p>Add custom agents from the marketplace, and let one agent call the others.</p>
+          <span class="label">Recruitment</span>
+          <h2>Keep prospective students moving forward.</h2>
+          <p>See where interest gets lost and how useful context supports the next step.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
-      <a class="lab-card admin-console" href="/admin-console.html">
+<a class="lab-card accessibility" href="/accessibility.html">
         <span class="number">08</span>
         <div>
-          <span class="label">Admin Console</span>
-          <h2>Keep the bill under control.</h2>
-          <p>Budgets by tenant, group, user and agent, plus roles, permissions and branding.</p>
+          <span class="label">Accessibility</span>
+          <h2>Follow a document through remediation.</h2>
+          <p>Explore audit, AI-assisted remediation, human review, and revalidation.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <section class="launcher" aria-labelledby="launcher-heading">
+      <div class="launcher-head">
+        <div>
+          <p class="eyebrow">Before the first visitor</p>
+          <h2 id="launcher-heading">Open the demo tabs.</h2>
+        </div>
+        <button type="button" class="launch-all" id="launch-all">Open everything</button>
+      </div>
+      <p class="launcher-note" id="launcher-note">Your browser will ask to allow pop-ups the first time. Allow them, or open each group on its own.</p>
+      <div class="launch-groups" id="launch-groups"></div>
+      <a class="booking" href="https://calendly.com/santosh-kumar-royalcyber/educause-2026" target="_blank" rel="noopener">
+        <span class="booking-label">Book a follow-up</span>
+        <strong>calendly.com/santosh-kumar-royalcyber</strong>
       </a>
     </section>
   </main>
