@@ -12,7 +12,7 @@ const DEMO_GROUPS = [
   {
     name: 'Campus Chat Plus',
     links: [
-      ['Educause info thread', 'https://app.mind-platform.ai/chat?c=conv_LBaBpZ85WjCwt1m9q8ctPE']
+      ['Educause info thread', 'https://app.mind-platform.ai/chat?c=conv_NEBhuhDEEYdJPDPnB66vg1']
     ]
   },
   {
