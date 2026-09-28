@@ -10,10 +10,9 @@
 <option value="architecture">1 · Architecture</option>
 <option value="layer">2 · The wiring</option>
 <option value="sources">3 · The systems</option>
-<option value="meaning">4 · Who answers</option>
-<option value="governance">5 · Who sees what</option>
-<option value="ask">6 · Agents</option>
-<option value="workiq">7 · Work IQ</option>
+<option value="governance">4 · Who sees what</option>
+<option value="ask">5 · Agents</option>
+<option value="workiq">6 · Work IQ</option>
 </select>
 <label class="notes-toggle"><input type="checkbox" id="notes-on"> Notes</label>
 </div>
@@ -72,38 +71,8 @@
 </section>
 
 <!-- ===== 04 ===== -->
-<section id="meaning" aria-labelledby="meaning-heading">
-<p class="eyebrow"><b>04</b> WHO ANSWERS</p>
-<h2 id="meaning-heading">Ask one system. Then ask the ontology.</h2>
-
-<div class="choices" role="group" aria-label="Choose an example">
-<button type="button" data-example="events" aria-pressed="true">Event attendance</button>
-<button type="button" data-example="housing" aria-pressed="false">Who lives here</button>
-</div>
-
-<div class="controls"><button type="button" id="paths-play" class="primary-button">▶ Ask both</button></div>
-<div class="paths" id="paths"></div>
-
-<h3 class="mini-head">Where the gap went</h3>
-<figure class="figure count-figure">
-  <div class="count-head">
-    <div class="count-side"><strong id="raw-value">1,200</strong><span id="raw-caption">rows in the table</span></div>
-    <span class="count-arrow" aria-hidden="true">→</span>
-    <div class="count-side is-right"><strong id="onto-value">398</strong><span id="onto-caption">actual students</span></div>
-  </div>
-  <div class="dotgrid" id="dots" role="img" aria-labelledby="dots-alt"></div>
-  <p class="sr-only" id="dots-alt"></p>
-  <div class="dot-legend" id="dot-legend"></div>
-  <div class="controls"><button type="button" id="dots-play" class="primary-button">▶ Show the gap</button></div>
-</figure>
-
-<p class="rel-line" id="relationship-text"></p>
-<p class="pnote" hidden>Both numbers are correct. They answer different questions. The ontology names the difference instead of hiding it.</p>
-</section>
-
-<!-- ===== 05 ===== -->
 <section id="governance" aria-labelledby="governance-heading">
-<p class="eyebrow"><b>05</b> WHO SEES WHAT</p>
+<p class="eyebrow"><b>04</b> WHO SEES WHAT</p>
 <h2 id="governance-heading">Same question. Same layer. Different rows.</h2>
 
 <div class="choices" role="group" aria-label="Who is asking">
@@ -125,9 +94,9 @@
 <p class="pnote" hidden>A prompt is not a security boundary. The real boundary is here, where identity decides which rows are reachable at all.</p>
 </section>
 
-<!-- ===== 06 ===== -->
+<!-- ===== 05 ===== -->
 <section id="ask" aria-labelledby="ask-heading">
-<p class="eyebrow"><b>06</b> AGENTS</p>
+<p class="eyebrow"><b>05</b> AGENTS</p>
 <h2 id="ask-heading">Copy. Paste. Narrate.</h2>
 
 <p class="fabric-open"><a class="fabric-link" href="https://app.fabric.microsoft.com/groups/643a7b0e-d2c5-4676-9113-a2c08cdd42fe/aiskills/09f8b5bb-5773-4716-a283-1408d8543e7d?experience=fabric-developer&amp;clientSideAuth=0" target="_blank" rel="noopener">Open the data agent in Fabric</a></p>
@@ -135,9 +104,9 @@
 <div id="agent-list"></div>
 </section>
 
-<!-- ===== 07 ===== -->
+<!-- ===== 06 ===== -->
 <section id="workiq" aria-labelledby="workiq-heading">
-<p class="eyebrow"><b>07</b> WORK IQ</p>
+<p class="eyebrow"><b>06</b> WORK IQ</p>
 <h2 id="workiq-heading">The decision is not in the database.</h2>
 
 <div class="controls"><button type="button" id="wiq-play" class="primary-button">▶ Follow the 25</button></div>
