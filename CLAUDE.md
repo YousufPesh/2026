@@ -141,7 +141,8 @@ in the marketplace search. All four Copy questions were asked of the live agent 
 2026-09-26 and returned real sessions. Name a date in a question, not "day two",
 because the agent counts the preconference days. The model counts in `PROVIDERS` and
 the skill names in `SKILLS` were copied from the live picker on 2026-09-26, and they
-drift as models are added. The sessions, rooms, people, and other agents on the page
+drift as models are added. The provider logos are `assets/logo-*.svg`, copied from Lobe Icons
+(`@lobehub/icons-static-svg`, MIT). A new provider needs its own file there. The sessions, rooms, people, and other agents on the page
 are fictional.
 
 **Admin Console.** Seven sections, reached through a `<select>` jump menu. A Notes

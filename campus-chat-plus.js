@@ -37,6 +37,12 @@ function wire(svg, from, to, color) {
   svg.appendChild(line);
   return line;
 }
+function logoImg(id) {
+  const img = make('img');
+  img.src = '/assets/logo-' + id + '.svg';
+  img.alt = '';
+  return img;
+}
 function place(node, [x, y]) {
   node.style.setProperty('--x', x);
   node.style.setProperty('--y', y);
@@ -89,17 +95,17 @@ $('connect-play').addEventListener('click', () => {
 showCampus('apart');
 
 /* ================= 02 · one box ================= */
-/* Counts are from the live model picker on 26 September 2026. */
+/* Counts are from the live model picker on 26 September 2026. Logos are from Lobe Icons (MIT), saved in assets/logo-*.svg. */
 const PROVIDERS = [
-  { name: 'OpenAI', letter: 'O', c: '#10a37f', count: 14, pick: 'GPT-5.4' },
-  { name: 'Anthropic', letter: 'A', c: '#c2643b', count: 5, pick: 'Claude Opus 5' },
-  { name: 'Google', letter: 'G', c: '#3f7be0', count: 5, pick: 'Gemini 3.5 Flash' },
-  { name: 'xAI', letter: 'X', c: '#1d1d1f', count: 2, pick: 'Grok 4.6' },
-  { name: 'DeepSeek', letter: 'D', c: '#4d5fe0', count: 2, pick: 'DeepSeek V4 Pro' },
-  { name: 'Alibaba Qwen', letter: 'Q', c: '#e8892b', count: 2, pick: 'Qwen3 235B' },
-  { name: 'Moonshot AI', letter: 'M', c: '#6f4bd8', count: 1, pick: 'Kimi K2.6' },
-  { name: 'MiniMax', letter: 'M', c: '#d6456a', count: 1, pick: 'MiniMax M3' },
-  { name: 'Z.ai', letter: 'Z', c: '#2d6a74', count: 1, pick: 'GLM 5.3' }
+  { name: 'OpenAI', logo: 'openai', count: 14, pick: 'GPT-5.4' },
+  { name: 'Anthropic', logo: 'anthropic', count: 5, pick: 'Claude Opus 5' },
+  { name: 'Google', logo: 'google', count: 5, pick: 'Gemini 3.5 Flash' },
+  { name: 'xAI', logo: 'xai', count: 2, pick: 'Grok 4.6' },
+  { name: 'DeepSeek', logo: 'deepseek', count: 2, pick: 'DeepSeek V4 Pro' },
+  { name: 'Alibaba Qwen', logo: 'qwen', count: 2, pick: 'Qwen3 235B' },
+  { name: 'Moonshot AI', logo: 'moonshot', count: 1, pick: 'Kimi K2.6' },
+  { name: 'MiniMax', logo: 'minimax', count: 1, pick: 'MiniMax M3' },
+  { name: 'Z.ai', logo: 'zai', count: 1, pick: 'GLM 5.3' }
 ];
 const SKILLS = [
   { name: 'xlsx', does: 'Build or read a spreadsheet' },
@@ -117,8 +123,8 @@ const MARKET = [
 /* Scene 01's hub rings itself with the first seven providers. They render here because PROVIDERS is declared here. */
 PROVIDERS.slice(0, 7).forEach((p, i, ring) => {
   const angle = (i / ring.length) * 2 * Math.PI - Math.PI / 2;
-  const dot = make('span', 'orbit-dot', p.letter);
-  dot.style.setProperty('--c', p.c);
+  const dot = make('span', 'orbit-dot');
+  dot.appendChild(logoImg(p.logo));
   dot.style.setProperty('--d', i);
   place(dot, [50 + 62 * Math.cos(angle), 50 + 62 * Math.sin(angle)]);
   $('office-hub').appendChild(dot);
@@ -128,7 +134,7 @@ const TABS = {
   Models: {
     head: `${modelCount} MODELS · ${PROVIDERS.length} PROVIDERS`,
     grid: true,
-    rows: () => PROVIDERS.map(p => ({ letter: p.letter, c: p.c, name: p.name, sub: p.pick, count: p.count + (p.count === 1 ? ' model' : ' models'), answer: p.pick }))
+    rows: () => PROVIDERS.map(p => ({ logo: p.logo, name: p.name, sub: p.pick, count: p.count + (p.count === 1 ? ' model' : ' models'), answer: p.pick }))
   },
   Agents: {
     head: 'FROM THE AGENT MARKETPLACE',
@@ -145,11 +151,13 @@ let skill = null;
 function pickRow(r) {
   const b = make('button', 'pick');
   b.type = 'button';
-  b.style.setProperty('--c', r.c);
   b.setAttribute('aria-pressed', String(r.answer ? r.answer === answering : r.skill === skill));
   const name = make('span', 'pick-name', r.name);
   name.appendChild(make('small', '', r.sub));
-  b.append(make('span', 'pick-letter', r.letter), name);
+  const icon = make('span', 'pick-letter', r.letter);
+  if (r.logo) icon.replaceChildren(logoImg(r.logo));
+  else icon.style.setProperty('--c', r.c);
+  b.append(icon, name);
   if (r.count !== undefined) b.appendChild(make('span', 'pick-count', String(r.count)));
   b.addEventListener('click', () => {
     if (r.answer) {
