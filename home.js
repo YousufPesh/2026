@@ -6,11 +6,34 @@ const DEMO_LINKS = [
   ['CampusMind', 'The chat everyone sees', 'https://app.mind-platform.ai/chat'],
   ['Admin dashboard', 'Budgets, roles, branding', 'https://admin.mind-platform.ai'],
   ['Fabric ontology', 'The graph view', 'https://app.fabric.microsoft.com/groups/643a7b0e-d2c5-4676-9113-a2c08cdd42fe/ontologies/fd3aefe7-1258-42f6-a02f-ea324df0e283?experience=fabric-developer&clientSideAuth=0'],
-  ['Canvas', 'Teaching Assistant inside the LMS', 'https://classbuddy.instructure.com/courses/281/external_tools/482'],
+  ['Canvas', 'Teaching Assistant inside the LMS', 'https://classbuddy.instructure.com/courses/281/external_tools/482', { user: 'admincb@royalcyber.com', pass: 'Cyber@2025' }],
   ['Calendly', 'Book a follow-up', 'https://calendly.com/santosh-kumar-royalcyber/educause-2026?month=2026-09&date=2026-09-29'],
-  ['Transfer Articulation', 'Posted in Teams', 'https://teams.microsoft.com/l/message/19:cbdaeacf-4f3f-4aa8-945a-e218c5ec401f_dddb5e80-623d-41f2-ae5c-226659018b4e@unq.gbl.spaces/1790060365891?context=%7B%22contextType%22%3A%22chat%22%7D'],
+  ['Transfer Articulation', 'Credit transfer demo', 'https://merritt-nursing.nicehill-947d3a93.eastus.azurecontainerapps.io/', null, [
+    ['Laney College transcript', '/assets/transfer/transcript-laney-college.pdf'],
+    ['City College SF transcript', '/assets/transfer/transcript-city-college-sf.pdf'],
+    ['ATI TEAS VI score report', '/assets/transfer/ati-teas-vi-score-report.pdf']
+  ]],
   ['Gmail', 'Inbox', 'https://mail.google.com/mail/u/0/?service=mail&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin#inbox']
 ];
+
+function copyText(text, btn) {
+  const done = () => {
+    btn.setAttribute('data-done', '');
+    setTimeout(() => btn.removeAttribute('data-done'), 1400);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, done);
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'absolute';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) { /* clipboard unavailable */ }
+    document.body.removeChild(ta);
+  }
+}
 
 const host = document.getElementById('launch-list');
 const note = document.getElementById('launcher-note');
@@ -31,7 +54,7 @@ function openMany(links, label) {
 }
 
 DEMO_LINKS.forEach((item, i) => {
-  const [name, what, url] = item;
+  const [name, what, url, creds, files] = item;
   const row = document.createElement('div');
   row.className = 'launch-row';
   row.innerHTML =
@@ -42,6 +65,41 @@ DEMO_LINKS.forEach((item, i) => {
   row.querySelector('.launch-name strong').textContent = name;
   row.querySelector('.launch-name i').textContent = what;
   row.querySelector('.launch-one').addEventListener('click', () => openMany([item], name));
+
+  /* A sign-in you would otherwise retype on every monitor. */
+  if (creds) {
+    const bar = document.createElement('div');
+    bar.className = 'launch-creds';
+    [['user', creds.user], ['pass', creds.pass]].forEach(([kind, value]) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cred';
+      b.innerHTML = '<i></i><span></span>';
+      b.querySelector('i').textContent = kind === 'user' ? 'user' : 'pass';
+      b.querySelector('span').textContent = value;
+      b.addEventListener('click', () => copyText(value, b));
+      bar.appendChild(b);
+    });
+    row.appendChild(bar);
+  }
+
+  /* Files the demo needs to hand to the app. */
+  if (files) {
+    const bar = document.createElement('div');
+    bar.className = 'launch-files';
+    files.forEach(([label, href]) => {
+      const a = document.createElement('a');
+      a.className = 'file';
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.download = '';
+      a.textContent = label;
+      bar.appendChild(a);
+    });
+    row.appendChild(bar);
+  }
+
   host.appendChild(row);
 });
 
