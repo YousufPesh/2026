@@ -13,7 +13,7 @@ const DEMO_LINKS = [
     ['City College SF transcript', '/assets/transfer/transcript-city-college-sf.pdf'],
     ['ATI TEAS VI score report', '/assets/transfer/ati-teas-vi-score-report.pdf']
   ]],
-  ['Gmail', 'Inbox', 'https://mail.google.com/mail/u/0/?service=mail&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin#inbox']
+  ['Gmail', 'Inbox', 'https://mail.google.com/mail/u/0/?service=mail&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin#inbox', { user: 'classbuddydemo@gmail.com', pass: 'classbuddy11@@', note: 'Duo approval goes to Jazil' }]
 ];
 
 function copyText(text, btn) {
@@ -80,6 +80,12 @@ DEMO_LINKS.forEach((item, i) => {
       b.addEventListener('click', () => copyText(value, b));
       bar.appendChild(b);
     });
+    if (creds.note) {
+      const n = document.createElement('span');
+      n.className = 'cred-note';
+      n.textContent = creds.note;
+      bar.appendChild(n);
+    }
     row.appendChild(bar);
   }
 

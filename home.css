@@ -203,3 +203,10 @@ h1 { margin-bottom: 14px; color: var(--navy); font-size: clamp(2.3rem, 9vw, 4.2r
 }
 .file::before { content: "PDF"; font-size: .5625rem; font-weight: 800; letter-spacing: .06em; color: var(--muted); }
 .file:hover { border-color: var(--teal); color: var(--teal); }
+.cred-note {
+  align-self: center;
+  font-size: .75rem;
+  color: var(--gold, #a67312);
+  font-weight: 600;
+}
+.cred-note::before { content: "! "; font-weight: 800; }
