@@ -3,13 +3,13 @@
 /* The booth setup sequence, in the order you want the tabs across the
    monitors. Add a link here and it appears in the launcher, numbered. */
 const DEMO_LINKS = [
-  ['Gmail', 'Sign in first', 'https://mail.google.com/mail/u/0/?service=mail&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin#inbox'],
   ['CampusMind', 'The chat everyone sees', 'https://app.mind-platform.ai/chat'],
   ['Admin dashboard', 'Budgets, roles, branding', 'https://admin.mind-platform.ai'],
   ['Fabric ontology', 'The graph view', 'https://app.fabric.microsoft.com/groups/643a7b0e-d2c5-4676-9113-a2c08cdd42fe/ontologies/fd3aefe7-1258-42f6-a02f-ea324df0e283?experience=fabric-developer&clientSideAuth=0'],
   ['Canvas', 'Teaching Assistant inside the LMS', 'https://classbuddy.instructure.com/courses/281/external_tools/482'],
+  ['Calendly', 'Book a follow-up', 'https://calendly.com/santosh-kumar-royalcyber/educause-2026?month=2026-09&date=2026-09-29'],
   ['Transfer Articulation', 'Posted in Teams', 'https://teams.microsoft.com/l/message/19:cbdaeacf-4f3f-4aa8-945a-e218c5ec401f_dddb5e80-623d-41f2-ae5c-226659018b4e@unq.gbl.spaces/1790060365891?context=%7B%22contextType%22%3A%22chat%22%7D'],
-  ['Calendly', 'Book a follow-up', 'https://calendly.com/santosh-kumar-royalcyber/educause-2026?month=2026-09&date=2026-09-29']
+  ['Gmail', 'Inbox', 'https://mail.google.com/mail/u/0/?service=mail&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin#inbox']
 ];
 
 const host = document.getElementById('launch-list');
